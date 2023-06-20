@@ -1,3 +1,3 @@
-# [docs.bannerlordmodding.lt](docs.bannerlordmodding.lt)
+# [docs.bannerlordmodding.lt](https://docs.bannerlordmodding.lt)
 
 Bannerlord modding documentation
