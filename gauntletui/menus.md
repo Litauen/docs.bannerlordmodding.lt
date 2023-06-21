@@ -38,6 +38,16 @@ private void AddGameMenus(CampaignGameStarter starter)
 
 ## AddGameMenu
 
+``` cs
+public void AddGameMenu(
+    string menuId,
+    string menuText,
+    OnInitDelegate initDelegate,
+    GameOverlays.MenuOverlayType overlay = GameOverlays.MenuOverlayType.None,
+    GameMenu.MenuFlags menuFlags = GameMenu.MenuFlags.None,
+    object relatedObject = null)
+```
+
 ### Background Image
 
 ``` cs
@@ -57,10 +67,15 @@ Can use custom 445x805 sprite there.
 
 
 ``` cs
-public void AddGameMenuOption(string menuId, string optionId, string optionText, 
+public void AddGameMenuOption(
+    string menuId,
+    string optionId,
+    string optionText,
     GameMenuOption.OnConditionDelegate condition,
     GameMenuOption.OnConsequenceDelegate consequence,
-    bool isLeave = false, int index = -1, bool isRepeatable = false)
+    bool isLeave = false,
+    int index = -1,
+    bool isRepeatable = false)
 ```
 
 

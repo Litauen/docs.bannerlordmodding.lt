@@ -93,6 +93,20 @@ hero.SetNewOccupation(Occupation.Wanderer); // spawns in the tavern, engine relo
     * CaravanGuard
     * Special
 
+    Check for occupation:
+
+    * hero.IsGangLeader
+    * hero.IsMerchant
+    * hero.IsArtisan
+    * hero.IsLord
+    * hero.IsPreacher
+    * hero.IsWanderer
+    * hero.IsRuralNotable
+    * hero.IsUrbanNotable
+    * hero.IsHeadman
+    * hero.IsMinorFactionHero
+    * hero.IsNotable
+
 
 ## Relations
 
