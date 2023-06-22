@@ -10,7 +10,7 @@ OnBeforeInitialModuleScreenSetAsRoot|(Second) Starts when the first loading scre
 OnGameStart|(Third) Starts as soon as you load a game. Called immediately upon loading after selecting a game mode (submodule) from the main menu
 BeginGameStart|(Fourth) Starts when the game starts loading. Called immediately after loading the selected game mode (submodule) has completed
 OnGameLoaded|(Fifth) Starts when the game finishes loading. Called only after loading a save
-OnNewGameCreated|Starts when a new Campaign game is created. Called when starting a new save in the campaign mode specifically
+OnNewGameCreated|Starts when a new Campaign or Sandbox game is created.
 OnCampaignStart|Starts when you press the Campaign Button on the main screen. Called once any game mode is started
 OnGameInitializationFinished|(Last) Starts after the game finishes initializing. Called once the initialization for a game mode has finished
 OnAfterGameInitializationFinished|

@@ -107,6 +107,39 @@ dataStore.SyncData<float[]>("_bookProgress", ref this._bookProgress);
 dataStore.SyncData<Dictionary<Hero, TradeData>>("_tradeData", ref MyBehaviour.TradeAgentsData);
 ```
 
+## Save data leaking to a new game
+
+!!! danger "Not properly handled custom data from the save can leak to a new game (Campaign or Sandbox)!"
+
+    How to reproduce:
+
+    1. Have a mod that saves custom data and shows it on start, every hour, etc - should have an easy way to check
+    2. Load a save file with such data
+    3. Exit this to the main menu
+    4. Start Campaign or Sandbox game
+    5. Run it
+    6. Observe how data from your save file is still present in the new game
+
+    ??? example "More info to reproduce"
+        Artem:  I think I'm uncovering something here, I tested the idea of global saving on different mods that save data, specifically https://www.nexusmods.com/mountandblade2bannerlord/mods/4948 and https://www.nexusmods.com/mountandblade2bannerlord/mods/5249
+        In healthy relationships rewrite I won a tournament in one save file which enables you to dedicate this tournament victory to an npc. I saved the file, started a new campaign and the option to dedicate the tournament is still there even though it shouldn't be. Same with small talk, I complimented someone, gained relation, saved, started a new game, complimented the same person again and got no relation increase?
+
+    Fix:
+
+    Init/clear your custom data in OnNewGameCreated:
+
+    ``` cs
+    public override void RegisterEvents()
+    {
+        CampaignEvents.OnNewGameCreatedEvent.AddNonSerializedListener(this, new Action<CampaignGameStarter>(this.OnNewGameCreated));
+    }
+
+    private void OnNewGameCreated(CampaignGameStarter starter)
+    {
+        YourCustomData.Clear(); // example with the Dictionary type
+    }
+    ```
+
 ## Saving Custom Class
 
 ??? example "Needs CustomSaveDefiner, like this:"

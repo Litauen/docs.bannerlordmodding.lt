@@ -99,6 +99,9 @@ InventoryManager.OpenScreenAsReceiveItems(itemRoster, new TextObject("Top Left N
 
     \Modules\SandBoxCore\ModuleData\items
 
+    Basic trade goods described in this file:
+    \Modules\SandBoxCore\ModuleData\items\horses_and_others.xml
+
 For mods:
 
     \MODFolder\ModuleData

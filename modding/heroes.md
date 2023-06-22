@@ -1,5 +1,7 @@
 # Heroes
 
+[TaleWorlds.CampaignSystem.Hero Class Reference](https://apidoc.bannerlord.com/v/1.1.0/class_tale_worlds_1_1_campaign_system_1_1_hero.html){target=_blank}
+
     Hero.MainHero
 
 ## Skills/Attributes/Focus/Xp
@@ -52,6 +54,16 @@ int intelligence = Hero.MainHero.GetAttributeValue(DefaultCharacterAttributes.In
     * Medicine
     * Engineering
 
+
+## Health
+
+``` cs
+bool IsHealthFull()
+void Heal(int healAmount, bool addXp=false)
+void MakeWounded(Hero killerHero=null, KillCharacterAction.KillCharacterActionDetail deathMarkDetail=KillCharacterAction.KillCharacterActionDetail.None)
+int  MaxHitPoints [get]
+int  HitPoints [get, set]
+```
 
 ## Occupation
 
