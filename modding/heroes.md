@@ -65,6 +65,33 @@ int  MaxHitPoints [get]
 int  HitPoints [get, set]
 ```
 
+!!! question "How to increase max health (MaxHitPoints) of the hero?"
+
+
+## Power
+
+    float hero.Power
+    void  hero.AddPower (float value)
+
+
+??? abstract "Defines how powerfull a notable is (Regular [0..99], Influential [100..199], Powerful [200+])"
+
+
+    <center>![](https://imgur.com/LggRpKJ.png)</center>
+
+        private DefaultNotablePowerModel.NotablePowerRank[] NotablePowerRanks = new DefaultNotablePowerModel.NotablePowerRank[]
+        {
+            new DefaultNotablePowerModel.NotablePowerRank(new TextObject("{=aTeuX4L0}Regular", null), 0, 0.05f),
+            new DefaultNotablePowerModel.NotablePowerRank(new TextObject("{=nTETQEmy}Influential", null), 100, 0.1f),
+            new DefaultNotablePowerModel.NotablePowerRank(new TextObject("{=UCpyo9hw}Powerful", null), 200, 0.15f)
+        };
+
+
+
+A lof of stuff done in NotablePowerModel ([DefaultNotablePowerModel Class](https://apidoc.bannerlord.com/v/1.1.0/class_tale_worlds_1_1_campaign_system_1_1_game_components_1_1_default_notable_power_model.html){target=_blank}), example:
+
+    int Campaign.Current.Models.NotablePowerModel.RegularNotableMaxPowerLevel
+
 ## Occupation
 
 hero.SetNewOccupation(Occupation.Special); // spawns in the keep

@@ -1,5 +1,8 @@
 # Time
 
+[CampaignTime Struct Reference](https://apidoc.bannerlord.com/v/1.1.0/struct_tale_worlds_1_1_campaign_system_1_1_campaign_time.html){target=_blank}
+
+
 ``` cs
 int hour = (int)CampaignTime.Now.CurrentHourInDay;
 ```

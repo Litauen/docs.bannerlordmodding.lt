@@ -4,7 +4,7 @@
 
 * [Bannerlord Project Template - Tutorial on how to get started writing scripts](https://www.nexusmods.com/mountandblade2bannerlord/mods/5594){target=_blank} by Cheyros
 * [Bannerlord Translation Tutorial and Translate M&B tool](https://forums.taleworlds.com/index.php?threads/tutorial-translation-bannerlord-translation-tutorial-and-translate-m-b-tool.453464/){target=_blank}
-* [Custom Kingdom Creation Guide](https://www.nexusmods.com/mountandblade2bannerlord/mods/3185){target=_blank} by TheREALHayster
+* [Custom Kingdom Creation Guide](https://www.nexusmods.com/mountandblade2bannerlord/mods/3185){target=_blank} by TheREALHayster [Backup](https://drive.google.com/file/d/1ZcaMPq4TJcimiF80m5cBXWmxj28nDmuF/view?usp=drive_link)
 
 
 ## Editor
