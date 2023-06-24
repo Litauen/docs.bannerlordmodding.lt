@@ -35,6 +35,15 @@ private void AddGameMenus(CampaignGameStarter starter)
 
 ```
 
+## Menus in-game
+
+- "town"
+    - "town_keep"
+    - "town_arena"
+    - "town_backstreet" Tavern District
+- "castle"
+- "village"
+
 
 ## AddGameMenu
 
