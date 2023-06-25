@@ -72,8 +72,15 @@ MBInformationManager.ShowMultiSelectionInquiry(MultiSelectionInquiryData data);
 
 ## AddQuickInformation
 
+![](https://imgur.com/dRrDaYF.png)
+
 ``` cs
-MBInformationManager.AddQuickInformation(content, 0, announcer, sounEventPath);
+MBInformationManager.AddQuickInformation(TextObject content, int priority, CharacterObject announcer, string sounEventPath);
 ```
 
-![](https://imgur.com/hHlWSBu.png)
+Priority determines how long the message stays, approximate values:
+
+- 0 - 2.5s
+- 1000 - 3.5s
+- 5000 - 7.5s
+- 10000 - 13s

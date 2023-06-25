@@ -35,3 +35,9 @@ PartyBase MobileParty.Party
 .ItemRoster
 .MemberRoster
 ```
+
+
+## Scouting
+
+    mobileParty.EffectiveScout
+

@@ -5,6 +5,7 @@
 
 ``` cs
 int hour = (int)CampaignTime.Now.CurrentHourInDay;
+Campaign.CurrentTime { return (float)CampaignTime.Now.ToHours; }
 ```
 
 Now, Never, IsFuture, IsPast, IsNow, IsDayTime, IsNightTime
@@ -39,3 +40,9 @@ ToMilliseconds, ToSeconds. ToMinutes, ToHours, ToDays, ToWeeks, ToSeasons, ToYea
 ## Conversion to CampaignTime
 
 public static CampaignTime Milliseconds(long valueInMilliseconds), Seconds, Minutes, Hours, Days, Weeks, Seasons, Years
+
+## SetTimeSpeed
+
+``` cs
+Campaign.SetTimeSpeed (0/1/2)
+```
