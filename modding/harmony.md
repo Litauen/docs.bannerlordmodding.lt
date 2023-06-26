@@ -32,6 +32,22 @@ TextObject newItemName = new(item.Name + " ***");
 setter.Invoke(item, new object[] { newItemName });
 ```
 
+
+## Postfix for the getter
+
+``` cs
+protected virtual int SkillLevelToAdd
+{
+    get
+    {
+        return 10;
+    }
+}
+
+[HarmonyPatch(typeof(CharacterCreationContentBase), "SkillLevelToAdd", MethodType.Getter)]
+protected static void Postfix(int __result) => __result = 30;
+```
+
 ## Ambiguous match for HarmonyMethod
 
 ``` cs
