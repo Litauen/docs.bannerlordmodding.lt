@@ -10,3 +10,18 @@
 
     int Tier [get]
 
+
+## .IsNomad .IsMafia .IsSect
+
+These properties change dialog lines for a different answer. Also impact hero name and Encyclopedia entries. Nothing else.
+
+Can be set in XML as 'is_nomad'
+
+??? example "dnSpy output"
+
+    ![](https://imgur.com/10TEfnN.png)
+
+    ![](https://imgur.com/1ZxDEdK.png)
+
+    ![](https://imgur.com/m8aHPFU.png)
+

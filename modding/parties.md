@@ -41,3 +41,9 @@ PartyBase MobileParty.Party
 
     mobileParty.EffectiveScout
 
+
+## Examples
+
+Player's clan parties count:
+
+    int active = MobileParty.All.Where(party => party.LeaderHero?.Clan == Clan.PlayerClan).Count;
