@@ -82,6 +82,12 @@ eventRef.SetPosition(_mission.MainAgent.Position);
 eventRef.Play();
 ```
 
+## is2D option
+
+Setting is2D to true makes it play at a constant volume throughout the entire scene.
+
+is_2d="true" in XML
+
 ## Sound in menus
 
 ```cs
@@ -92,6 +98,8 @@ args.MenuContext.SetAmbientSound("event:/map/ambient/node/settlements/2d/village
 ## Sound Events
 
 Possible to play sound (events) with InformationManager.AddQuickInformation(text, 0, null, <span style="color:green">string SoundEventPath</style>)
+
+You need to null the SoundEvent when you leave the mission.
 
 Same with MultiSelectionInquiryData and in the menus
 
@@ -162,6 +170,23 @@ Defined in [GAME_FOLDER]\Sounds\GUIDs.txt
     </center>
 
 
+## Issues with sound volume using SoundEvent
+
+??? quote "Windwhistle: My findings so far:"
+
+    When using SoundEvent to play a custom sound in module_sounds.xml from the sound category "mission_ambient_3d_small" and "mission_ambient_3d_medium", if the attribute is_2d is set to false, the volume of the sound at max volume (close to the sound source) is directly related to the distance at which it was spawned to the player.
+
+    So, if you set the position of the SoundEvent FARTHER from the player, it will be FAINTER at MAX volume. If you set the position of the SoundEvent CLOSER to the player, it will be LOUDER at MAX volume.
+
+    It draws confusion, as I do not mean that the sound becomes fainter as you travel farther away from it. That's normal. I am not talking about that. There's some videos if you scroll up that depict what I am talking about, because it's pretty hard to describe.
+
+    To fix this: I just set is_2d to true instead of false, and the sound plays how I wanted it to play.
+
+    Why: I don't know. I'm going to test it out in a regular scene/mission to see if it's my code somehow, or if it's a genuine bug. It might not even be a bug but intentional, but it'd be weird if it were.
+
+    EDIT: it also suffers from the same problem in a regular scene. Setting the position repeatedly on tick also does not alleviate the issue. Making the file format .wav also did not help.
+
+    [Source](https://discord.com/channels/411286129317249035/677511186295685150/1123190415420555344){target=_blank}
 
 ## Delayed stop to prevent ambient sounds from looping
 

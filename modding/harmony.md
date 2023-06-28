@@ -48,13 +48,22 @@ protected virtual int SkillLevelToAdd
 protected static void Postfix(int __result) => __result = 30;
 ```
 
+## Private method match
+
+    [HarmonyPatch(typeof(BarterManager), "ApplyBarterOffer")]
+
+vs when not private:
+
+    [HarmonyPatch(typeof(LeaveKingdomAsClanBarterable), nameof(LeaveKingdomAsClanBarterable.Apply))]
+
+
 ## Ambiguous match for HarmonyMethod
 
 ``` cs
 HarmonyLib.HarmonyException: 'Ambiguous match for HarmonyMethod[(class=TaleWorlds.CampaignSystem.GameComponents.DefaultCharacterDevelopmentModel, methodname=CalculateLearningRate, type=Normal, args=undefined)]'
 ```
 
-Means that several method exist with the same name but different arguments.<br>
+Means that several methods exist with the same name but different arguments. Method have overrides.<br>
 Define arguments for Harmony to properly match the method:
 
 ``` cs
