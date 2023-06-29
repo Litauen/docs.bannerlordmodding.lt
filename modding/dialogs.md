@@ -225,14 +225,12 @@ Just a guess that could be used in the dialog with several NPCs.
 
 
 <br>
-## OneToOneConversationCharacter
+## OneToOneConversationHero
 
-Get the Character Object/Hero for the dialog "partner"
+Get the Hero you are talking to in the dialog
 
 ``` cs
-CharacterObject co = CharacterObject.OneToOneConversationCharacter;
-Hero dialogPartner = CharacterObject.OneToOneConversationCharacter.HeroObject;
-
+Hero.OneToOneConversationHero;
 ```
 
 

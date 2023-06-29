@@ -42,6 +42,11 @@ PartyBase MobileParty.Party
     mobileParty.EffectiveScout
 
 
+## Add hero to a party
+
+    AddCompanionAction.Apply()
+
+
 ## Examples
 
 Player's clan parties count:
