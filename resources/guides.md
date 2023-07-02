@@ -4,7 +4,6 @@
 
 * [Bannerlord Project Template - Tutorial on how to get started writing scripts](https://www.nexusmods.com/mountandblade2bannerlord/mods/5594){target=_blank} by Cheyros
 * [Bannerlord Translation Tutorial and Translate M&B tool](https://forums.taleworlds.com/index.php?threads/tutorial-translation-bannerlord-translation-tutorial-and-translate-m-b-tool.453464/){target=_blank}
-* [Custom Kingdom Creation Guide](https://www.nexusmods.com/mountandblade2bannerlord/mods/3185){target=_blank} by TheREALHayster [Backup](https://drive.google.com/file/d/1ZcaMPq4TJcimiF80m5cBXWmxj28nDmuF/view?usp=drive_link)
 
 
 ## Editor
@@ -16,9 +15,13 @@
 * [Testing Custom Scene Ingame](https://docs.google.com/document/d/1Rwsd9pdv5QA5s3K4oOuJX16_K9A5NaoWh0p78IcUi1w/edit){target=_blank} by ??
 * [Prepping a Singleplayer Town](https://docs.google.com/document/d/1aLo0vrdXvKbnanfaGBzyehZ9xZxxAQ7_fFCkBI3I3Og/edit?pli=1){target=_blank} by Sheepbitter
 * [Hand Morphing Tool and Tutorial (3DS Max and Blender)](https://forums.taleworlds.com/index.php?threads/hand-morphing-tool-and-tutorial-3ds-max-and-blender.444631/){target=_blank} by Enpremi/John_M
+
+## XML Editing
+
 * [How to creat a new race and use my new face model](https://forums.taleworlds.com/index.php?threads/how-to-creat-a-new-race-and-use-my-new-face-model.455092/#post-9837517){target=_blank} by NPC99?
 * [Custom Races Template](https://www.nexusmods.com/mountandblade2bannerlord/mods/4099){target=_blank} by KingOfTheN0rth
-
+* [KingdomEditor](https://www.nexusmods.com/mountandblade2bannerlord/mods/5687){target=_blank} by KingOfTheN0rth
+* [Custom Kingdom Creation Guide](https://www.nexusmods.com/mountandblade2bannerlord/mods/3185){target=_blank} by TheREALHayster [Backup](https://drive.google.com/file/d/1ZcaMPq4TJcimiF80m5cBXWmxj28nDmuF/view?usp=drive_link)
 
 ## Multi Player
 

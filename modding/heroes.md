@@ -55,6 +55,93 @@ int intelligence = Hero.MainHero.GetAttributeValue(DefaultCharacterAttributes.In
     * Engineering
 
 
+## Traits
+
+[TaleWorlds.CampaignSystem.CharacterDevelopment.DefaultTraits](https://apidoc.bannerlord.com/v/1.1.0/class_tale_worlds_1_1_campaign_system_1_1_character_development_1_1_default_traits.html)
+
+``` cs
+int Hero.GetTraitLevel(TraitObject trait)
+void Hero.SetTraitLevel(TraitObject trait, int value)
+void Hero.ClearTraits()
+```
+
+Personality traits
+
+* Mercy - Mercy represents your general aversion to suffering and your willingness to help strangers or even enemies. Cruel tag if Mercy < 0.
+* Valor - Valor represents your reputation for risking your life to win glory or wealth or advance your cause.
+* Honor - Honor represents your reputation for respecting your formal commitments, like keeping your word and obeying the law. Devious tag if Honor < 0.
+* Generosity - Generosity represents your loyalty to your kin and those who serve you, and your gratitude to those who have done you a favor.
+* Calculating - Calculating represents your ability to control your emotions for the sake of your long-term interests.
+
+
+??? abstract "Other traits"
+
+    Political:
+
+    * Egalitarian
+    * Oligarchic
+    * Authoritarian
+
+    Voice:
+
+    * PersonaCurt
+    * PersonaEarnest
+    * PersonaIronic
+    * PersonaSoftspoken
+
+    Profession?
+
+    * Surgery
+    * Siegecraft
+    * Blacksmith
+    * Fighter
+    * Commander
+    * Politician
+    * Manager
+    * Trader
+    * Thug
+    * Thief
+    * Gambler
+    * Smuggler
+
+    Skills:
+
+    * ScoutSkills
+    * RogueSkills
+    * SergeantCommandSkills
+    * KnightFightingSkills
+    * CavalryFightingSkills
+    * HorseArcherFightingSkills
+    * HopliteFightingSkills
+    * ArcherFIghtingSkills
+    * CrossbowmanStyle
+    * PeltastFightingSkills
+    * HuscarlFightingSkills
+    * BossFightingSkills
+
+    Equipment:
+
+    * WandererEquipment
+    * GentryEquipment
+
+    Body build:
+
+    * MuscularBuild
+    * HeavyBuild
+    * LightBuild
+    * OutOfShapeBuild
+
+    Hair:
+
+    * RomanHair
+    * FrankishHair
+    * CelticHair
+    * RusHair
+    * ArabianHair
+    * SteppeHair
+
+
+
 ## Health
 
 ``` cs
@@ -239,3 +326,105 @@ List<Hero> heroList = (from characterObject in Hero.MainHero.PartyBelongedTo.Mem
 ## Special Items
 
     public List<ItemObject> SpecialItems
+
+
+## Conversation Tags
+
+[TaleWorlds.CampaignSystem.Conversation.Tags](https://apidoc.bannerlord.com/v/1.1.0/namespace_tale_worlds_1_1_campaign_system_1_1_conversation_1_1_tags.html)
+
+??? abstract "List"
+
+    * AlliedLordTag
+    * AmoralTag
+    * AnyNotableTypeTag
+    * ArtisanNotableTypeTag
+    * AseraiTag
+    * AttackingTag
+    * AttractedToPlayerTag
+    * BattanianTag
+    * CalculatingTag
+    * CautiousTag
+    * ChivalrousTag
+    * CombatantTag
+    * ConversationTag
+    * ConversationTagHelper
+    * CruelTag
+    * CurrentConversationIsFirst
+    * DefaultTag
+    * DeviousTag
+    * DrinkingInTavernTag
+    * EmpireTag
+    * EngagedToPlayerTag
+    * FirstMeetingTag
+    * FriendlyRelationshipTag
+    * GangLeaderNotableTypeTag
+    * GenerosityTag
+    * HeadmanNotableTypeTag
+    * HighRegisterTag
+    * HonorTag
+    * HostileRelationshipTag
+    * ImpoliteTag
+    * ImpulsiveTag
+    * InHomeSettlementTag
+    * KhuzaitTag
+    * LowRegisterTag
+    * MerchantNotableTypeTag
+    * MercyTag
+    * MetBeforeTag
+    * NoConflictTag
+    * NonCombatantTag
+    * NonviolentProfessionTag
+    * NpcIsFemaleTag
+    * NpcIsLiegeTag
+    * NpcIsMaleTag
+    * NpcIsNobleTag
+    * OldTag
+    * OnTheRoadTag
+    * OutlawSympathyTag
+    * PersonaCurtTag
+    * PersonaEarnestTag
+    * PersonaIronicTag
+    * PersonaSoftspokenTag
+    * PlayerBesiegingTag
+    * PlayerIsAffiliatedTag
+    * PlayerIsBrotherTag
+    * PlayerIsDaughterTag
+    * PlayerIsEnemyTag
+    * PlayerIsFamousTag
+    * PlayerIsFatherTag
+    * PlayerIsFemaleTag
+    * PlayerIsKinTag
+    * PlayerIsKnownButNotFamousTag
+    * PlayerIsLiegeTag
+    * PlayerIsMaleTag
+    * PlayerIsMotherTag
+    * PlayerIsNobleTag
+    * PlayerIsRulerTag
+    * PlayerIsSisterTag
+    * PlayerIsSonTag
+    * PlayerIsSpouseTag
+    * PreacherNotableTypeTag
+    * RogueSkillsTag
+    * RomanticallyInvolvedTag
+    * SexistTag
+    * SturgianTag
+    * TribalRegisterTag
+    * UncharitableTag
+    * UnderCommandTag
+    * UngratefulTag
+    * ValorTag
+    * VlandianTag
+    * VoiceGroupPersonaCurtLowerTag
+    * VoiceGroupPersonaCurtTribalTag
+    * VoiceGroupPersonaCurtUpperTag
+    * VoiceGroupPersonaEarnestLowerTag
+    * VoiceGroupPersonaEarnestTribalTag
+    * VoiceGroupPersonaEarnestUpperTag
+    * VoiceGroupPersonaIronicLowerTag
+    * VoiceGroupPersonaIronicTribalTag
+    * VoiceGroupPersonaIronicUpperTag
+    * VoiceGroupPersonaSoftspokenLowerTag
+    * VoiceGroupPersonaSoftspokenTribalTag
+    * VoiceGroupPersonaSoftspokenUpperTag
+    * WandererTag
+    * WaryTag
