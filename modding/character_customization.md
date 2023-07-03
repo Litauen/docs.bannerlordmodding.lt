@@ -16,6 +16,12 @@ Excel spreadsheet [by NPC99](https://forums.taleworlds.com/index.php?threads/how
 
 ![](https://imgur.com/zzuXdFy.png)
 
+### Beards
+
+NPC99: TW sharing the 15th digit between hair styles and beards wasn't a clever plan for making face-codes moddable IMO.
+
+![](https://imgur.com/zvXCnr7.png)
+
 ### Female Hair
 
 Female hair is determined by 15th and 16th digits of the 128 digit face/body keys. Digits are in hex - max 16 possibilities for one digit, forcing use of two digits to cover all options.
