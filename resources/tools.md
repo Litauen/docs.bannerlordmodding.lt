@@ -33,8 +33,3 @@ rhubarb.exe -f xml -o D:\audio.xml D:\audio.ogg
 ```
 
 
-## XSLT
-
-- [Validation](https://www.freeformatter.com/xsl-transformer.html){target=_blank}
-- [Update Attribute in Elements](https://gist.github.com/cpburnz/e11fa0b792e81ee071d443b64e06516f){target=_blank}
-- [Remove Attribute from Elements](https://gist.github.com/cpburnz/6cc05c4a0ea4d66e875ccbebbd6eda4a){target=_blank}

@@ -140,6 +140,13 @@ Personality traits
     * ArabianHair
     * SteppeHair
 
+??? abstract "NPC99: Approx relationship between Lord traits and skills:"
+
+    ![](https://imgur.com/JCtw0gl.png)
+
+    ![](https://imgur.com/YuKhQw2.png)
+
+    ![](https://imgur.com/47ysvNJ.png)
 
 
 ## Health
