@@ -30,6 +30,27 @@ Used in DefaultPersuasionModel.GetDefaultSuccessChance
     VeryEasy
     ExtremelyEasy
 
+??? danger "Make sure you are not going to -4, like ExtremelyHard - 1, that way it overflows to Normal"
+
+    Possible function to clamp values:
+
+    ``` cs
+    PersuasionArgumentStrength GetPersuasionArgumentStrength(int value)
+    {
+        PersuasionArgumentStrength persuasionArgumentStrength = PersuasionArgumentStrength.Normal;
+
+        if (value < -2) return PersuasionArgumentStrength.ExtremelyHard;
+        if (value == -2) return PersuasionArgumentStrength.VeryHard;
+        if (value == -1) return PersuasionArgumentStrength.Hard;
+        if (value == 1) return PersuasionArgumentStrength.Easy;
+        if (value == 2) return PersuasionArgumentStrength.VeryEasy;
+        if (value > 2) return PersuasionArgumentStrength.ExtremelyEasy;
+
+        return persuasionArgumentStrength;
+    }
+    ```
+
+
 ??? abstract "Impact on persuasion argument:"
 
     With PersuasionDifficulty.Medium:

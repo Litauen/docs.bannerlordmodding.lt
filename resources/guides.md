@@ -22,6 +22,7 @@
 * [Custom Races Template](https://www.nexusmods.com/mountandblade2bannerlord/mods/4099){target=_blank} by KingOfTheN0rth
 * [KingdomEditor](https://www.nexusmods.com/mountandblade2bannerlord/mods/5687){target=_blank} by KingOfTheN0rth
 * [Custom Kingdom Creation Guide](https://www.nexusmods.com/mountandblade2bannerlord/mods/3185){target=_blank} by TheREALHayster [Backup](https://drive.google.com/file/d/1ZcaMPq4TJcimiF80m5cBXWmxj28nDmuF/view?usp=drive_link)
+* [NPCEditor](https://www.nexusmods.com/mountandblade2bannerlord/mods/5705){target=_blank} by KingOfTheN0rth - A few simple xml files that change the NPC in game along with a video guide. (Troops, Caravans Ect.)
 
 ## XSLT
 
