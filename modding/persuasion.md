@@ -2,8 +2,24 @@
 
 ## Implementation Examples
 
-* LordDefectionCampaignBehavior
-* RomanceCampaignBehavior
+### LordDefectionCampaignBehavior
+
+??? abstract "Structure of LordDefectionCampaignBehavior"
+
+    [Fullsize Link](https://i.imgur.com/j5Sm0Zs.png){target=_blank}
+
+    ![](https://imgur.com/j5Sm0Zs.png)
+
+
+### RomanceCampaignBehavior
+
+### [Trade Agent mod](https://www.nexusmods.com/mountandblade2bannerlord/mods/5618){target=_blank}
+
+[Link](https://github.com/Litauen/LT_TradeAgent/blob/master/LTTABarter.cs){target=_blank}
+
+??? abstract "Structure"
+
+    ![](https://imgur.com/OjHOkDe.png)
 
 ## PersuasionDifficulty
 
