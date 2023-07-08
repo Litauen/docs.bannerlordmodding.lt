@@ -11,10 +11,12 @@
 
 * [Community documentation](https://docs.bannerlordmodding.com){target=_blank}
 * [TW Forum - Documentation & Tutorials](https://forums.taleworlds.com/index.php?forums/documentation-tutorials.753/){target=_blank}
+
 * [English Modding Discord](https://discord.gg/ykFVJGQ){target=_blank}
 * [French Modding Discord](https://discord.com/invite/S5G2HBw){target=_blank}
 * [samuel bannerlord-wiki](https://coda.io/@samuel/bannerlord-wiki){target=_blank}
 * [Source code for Bannerlord Mods](https://forums.taleworlds.com/index.php?threads/source-code-for-bannerlord-mods.448829/){target=_blank}
+* [Bannerlord Modding CN](https://yigu-studio.gitbook.io/bannerlord-modding-cn/_csharp-api){target=_blank}
 
 ## MOD Launchers
 

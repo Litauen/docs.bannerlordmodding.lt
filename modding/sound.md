@@ -247,4 +247,4 @@ if (outputDevice != null)
 
 ```
 
-Example: Artem's Assassination Mod
+Implementation example: [Artem's Assassination Mod](https://www.nexusmods.com/mountandblade2bannerlord/mods/5653){target=_blank}

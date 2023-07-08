@@ -19,7 +19,7 @@ In PowerShell run:
 
 In PowerShell:
 
-    cd YOUR_MOD_FOLDER_HERE
+    cd YOUR_FOLDER_WHERE_YOU_KEEP_YOUR_MODS
     dotnet new blmodfx --name "YOUR_MOD_NAME_HERE"
 
 ## Open in the Visual Studio

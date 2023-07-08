@@ -209,3 +209,10 @@ Then you can use it in your mod. Example:
         <equipment slot="Head"
             id="Item.thinhide_coif" />
 ```
+
+
+## Helmet Hair Coverage
+
+??? abstract "Helmet Hair Coverage"
+
+    ![](https://imgur.com/Iq2hAG0.png)

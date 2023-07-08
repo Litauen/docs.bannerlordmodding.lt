@@ -6,6 +6,8 @@
 
 ### [Modding tutorial series | 19 parts](https://forums.taleworlds.com/index.php?threads/youtube-modding-tutorial-series-19-parts-mod-setup-dialogs-game-menu-gauntletui-etc.451081/){target=_blank}
 
+[Github](https://github.com/LesserScholar/ArtisanBeer){target=_blank}
+
 Mod setup, dialogs, game menu, GauntletUI, etc.
 
 * [Ep 0: Introduction](https://www.youtube.com/watch?v=tOziMRXJ7tM&list=PLzebdAxJeltRwfJ8jzsNolgHkRvLjoCRC&index=1){target=_blank}
