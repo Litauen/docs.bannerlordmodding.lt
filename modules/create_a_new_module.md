@@ -15,14 +15,31 @@ In PowerShell run:
 ![](https://imgur.com/OrsHtAd.png)
 
 
-## Create the Module
+## Create a Module
 
 In PowerShell:
 
-    cd YOUR_FOLDER_WHERE_YOU_KEEP_YOUR_MODS
+    cd YOUR_FOLDER_WHERE_YOU_KEEP_ALL_YOUR_MODS
     dotnet new blmodfx --name "YOUR_MOD_NAME_HERE"
 
 ## Open in the Visual Studio
 
 Go to newly created module's folder and press on .csproj file
 
+
+
+## If Breakpoints and Hot Reload does not work
+
+!!! failure "The breakpoint will not currently be hit. No symbols have been loaded for this document."
+
+To fix in the .csproj file change line:
+
+``` xml
+    <TargetFramework>netstandard2.0</TargetFramework>
+```
+
+to
+
+``` xml
+    <TargetFramework>net472</TargetFramework>
+```
