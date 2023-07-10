@@ -208,6 +208,25 @@ private async void DelayedStop(SoundEvent eventRef)
     DelayedStop(eventRef); // used to prevent ambient sounds from looping
     ```
 
+## Short sounds for agents in Mission
+
+``` cs
+agent.MakeVoice(SkinVoiceManager.VoiceType.Grunt, SkinVoiceManager.CombatVoiceNetworkPredictionType.NoPrediction);
+```
+
+??? abstract "SkinVoiceManager.VoiceType examples"
+    - Grunt - eeh
+    - Jump - yah
+    - Yell - eyah, hey, yeee
+    - Pain - uh, mhmph
+    - Death - uuuuhmmm
+    - Stun - yyy, aaaa, eeee
+    - Fear - yaaaaah, aaaah
+    - Climb - ?
+    - Focus - (silence?)
+    - Debacle - aaaaaaah, shriek/screech
+    - and many others...
+
 ## NAudio
 
 !!! quote
