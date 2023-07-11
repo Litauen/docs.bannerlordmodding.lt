@@ -24,6 +24,7 @@ Screen elements, main building blocks of [Prefabs](/gauntletui/prefabs)
 * [WidthSizePolicy / HeightSizePolicy](/gauntletui/widgets/#widthsizepolicy-heightsizepolicy)
 * [HorizontalAlignment / VerticalAlignment](/gauntletui/widgets/#horizontalalignment-verticalalignment)
 * [MarginLeft / MarginRight / MarginTop / MarginBottom](/gauntletui/widgets/#marginleft-marginright-margintop-marginbottom)
+* [PositionXOffset / PositionYOffset](/gauntletui/widgets/#positionxoffset-positionyoffset)
 * [Brush](/gauntletui/brushes)
 * Command.Click (Command.YourKeyHere)
 * DataSource (Properties with DataSourceProperty Attribute in C#)
@@ -37,9 +38,11 @@ Screen elements, main building blocks of [Prefabs](/gauntletui/prefabs)
 ## WidthSizePolicy / HeightSizePolicy
 
 ??? example "Examples"
-    <Widget WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="590" SuggestedHeight="125" ...<br>
-    <Widget WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" ...<br>
-    <ListPanel WidthSizePolicy="CoverChildren" HeightSizePolicy="Fixed" SuggestedHeight="40" ...<br>
+    ``` xml
+    <Widget WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="590" SuggestedHeight="125" ...
+    <Widget WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" ...
+    <ListPanel WidthSizePolicy="CoverChildren" HeightSizePolicy="Fixed" SuggestedHeight="40" ...
+    ```
 
 - Fixed - fixed size (width/height)
     * SuggestedWidth - sets the width in pixels
@@ -51,9 +54,11 @@ Screen elements, main building blocks of [Prefabs](/gauntletui/prefabs)
 ## HorizontalAlignment / VerticalAlignment
 
 ??? example "Examples"
-    <Widget VerticalAlignment="Top" HorizontalAlignment="Left" ...<br>
-    <HintWidget HorizontalAlignment="Center" ... <br>
+    ``` xml
+    <Widget VerticalAlignment="Top" HorizontalAlignment="Left" ...
+    <HintWidget HorizontalAlignment="Center" ...
     <RichTextWidget HorizontalAlignment="Right" VerticalAlignment="Center" ...
+    ```
 
 
 These attributes allow to specify how the UI element should be positioned horizontally and vertically within its parent container.
@@ -82,9 +87,11 @@ In this example, the Widget element will be horizontally centered within its par
 ## MarginLeft / MarginRight / MarginTop / MarginBottom
 
 ??? example "Examples"
-    <Standard.PopupCloseButton MarginTop="840" ... <br>
-    <Widget MarginLeft="70" MarginTop="50" ... <br>
+    ``` xml
+    <Standard.PopupCloseButton MarginTop="840" ...
+    <Widget MarginLeft="70" MarginTop="50" ...
     <ListPanel MarginLeft="260" MarginRight="70" MarginTop="100" ...
+    ```
 
 These attributes are used to define the margins or spacing around a UI element within its parent container. These attributes allow you to control the placement and positioning of the UI element within its layout.
 
@@ -103,7 +110,26 @@ In this example, the Widget element will be positioned with a left margin of 10 
 
 
 
+## PositionXOffset / PositionYOffset
+
+??? example "Examples"
+    ``` xml
+    <RichTextWidget ... PositionXOffset="-48" PositionYOffset="-44" ...
+    ```
+
+The PositionXOffset and PositionYOffset attributes are used to adjust the position of a prefab element relative to its parent or reference point.
+
+* PositionXOffset: This attribute specifies the horizontal offset of the prefab element from its parent or reference point. A positive value moves the element to the right, while a negative value moves it to the left.
+
+* PositionYOffset: This attribute determines the vertical offset of the prefab element from its parent or reference point. A positive value moves the element downwards, while a negative value moves it upwards.
+
+By adjusting these offsets, you can fine-tune the placement of elements within the user interface (UI). These attributes are particularly useful when you want to align or position elements precisely according to your design or gameplay requirements.
+
+``` xml
+<ButtonWidget PositionXOffset="10" PositionYOffset="-5">
+```
+In this example, the button element will be shifted 10 units to the right and 5 units upwards from its parent or reference point.
 
 ## Notes
 
-!!! danger "Using Attribute twice in the same Widget will crash the game"
+!!! danger "Using same Attribute twice in the same Widget will crash the game"

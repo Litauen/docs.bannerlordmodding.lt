@@ -74,7 +74,7 @@ Did not work:
 SoundEvent.PlaySound2D(soundIndex);
 ```
 
-Not tested:
+Works:
 
 ``` cs
 SoundEvent eventRef = SoundEvent.CreateEvent(soundIndex, mission.Scene);
@@ -198,6 +198,7 @@ private async void DelayedStop(SoundEvent eventRef)
 }
 ```
 
+!!! question "How to get sound duration?"
 
 ??? info "Stop looping example"
 
