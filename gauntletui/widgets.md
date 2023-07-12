@@ -25,7 +25,9 @@ Screen elements, main building blocks of [Prefabs](/gauntletui/prefabs)
 * [HorizontalAlignment / VerticalAlignment](/gauntletui/widgets/#horizontalalignment-verticalalignment)
 * [MarginLeft / MarginRight / MarginTop / MarginBottom](/gauntletui/widgets/#marginleft-marginright-margintop-marginbottom)
 * [PositionXOffset / PositionYOffset](/gauntletui/widgets/#positionxoffset-positionyoffset)
+* [ScaledPositionXOffset / ScaledPositionYOffset](/gauntletui/widgets/#scaledpositionxoffset-scaledpositionyoffset)
 * [Brush](/gauntletui/brushes)
+* [IsVisible / IsHidden](/gauntletui/widgets/#isvisible-ishidden)
 * Command.Click (Command.YourKeyHere)
 * DataSource (Properties with DataSourceProperty Attribute in C#)
 * DoNotAcceptEvents
@@ -130,6 +132,31 @@ By adjusting these offsets, you can fine-tune the placement of elements within t
 ```
 In this example, the button element will be shifted 10 units to the right and 5 units upwards from its parent or reference point.
 
+!!! warning "X and Y here are not measured in the screen pixels. This is something else. On my screen with resolution 3440x1440 X and Y for this measurement system is ~2200x1000. Use 'scaled' versions of the attributed to operate in real screen pixels."
+
+
+## ScaledPositionXOffset / ScaledPositionYOffset
+
+Same as PositionXOffset / PositionYOffset but measured in real screen pixels. Can be used with MBWindowManager.WorldToScreen.
+
+
+## IsVisible / IsHidden
+
+??? example "Examples"
+
+    ``` xml
+    <ListPanel IsVisible="@IsVisible" ...
+    <Widget IsHidden="true" ...
+    ```
+
+The attributes IsVisible and IsHidden are used to control the visibility of UI elements.
+
+IsVisible: This attribute determines whether an element is visible on the screen. When set to true, the element will be displayed, and when set to false, the element will be hidden. It affects the visibility of the element itself as well as any child elements it may contain.
+
+IsHidden: This attribute also controls the visibility of an element, similar to IsVisible. However, it is usually used in conjunction with conditions or triggers. The IsHidden attribute allows you to dynamically control the visibility of an element based on certain conditions or events. It can be bound to a script or other mechanisms to determine when the element should be hidden.
+
+
 ## Notes
 
 !!! danger "Using same Attribute twice in the same Widget will crash the game"
+
