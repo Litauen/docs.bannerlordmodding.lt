@@ -28,6 +28,7 @@ Screen elements, main building blocks of [Prefabs](/gauntletui/prefabs)
 * [ScaledPositionXOffset / ScaledPositionYOffset](/gauntletui/widgets/#scaledpositionxoffset-scaledpositionyoffset)
 * [Brush](/gauntletui/brushes)
 * [IsVisible / IsHidden](/gauntletui/widgets/#isvisible-ishidden)
+* [AlphaFactor](/gauntletui/widgets/#alphafactor)
 * Command.Click (Command.YourKeyHere)
 * DataSource (Properties with DataSourceProperty Attribute in C#)
 * DoNotAcceptEvents
@@ -156,7 +157,24 @@ IsVisible: This attribute determines whether an element is visible on the screen
 IsHidden: This attribute also controls the visibility of an element, similar to IsVisible. However, it is usually used in conjunction with conditions or triggers. The IsHidden attribute allows you to dynamically control the visibility of an element based on certain conditions or events. It can be bound to a script or other mechanisms to determine when the element should be hidden.
 
 
+## AlphaFactor
+
+This attribute is used to control the transparency or opacity of a UI element. The AlphaFactor specifies a value between 0 and 1, where 0 represents complete transparency (invisible) and 1 represents full opacity (completely visible).
+
+When applied to a UI element, the AlphaFactor attribute determines the overall transparency level of that element and its children (if any). By adjusting the AlphaFactor value, you can make the UI element partially or completely transparent.
+
+
+
 ## Notes
 
-!!! danger "Using same Attribute twice in the same Widget will crash the game"
+!!! danger "Using the same Attribute twice in the same Widget will crash the game"
+
+!!! danger "Using wrong/non-existant Attribute will crash the game"
+
+!!! warning "It seems it's not allowed to use the same variable on the several attributes:"
+
+    ``` xml
+    <Widget WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="@IconSize" SuggestedHeight="@IconSize" ...
+    ```
+    Does not work. Changing second @IconSize to something else - works.
 
