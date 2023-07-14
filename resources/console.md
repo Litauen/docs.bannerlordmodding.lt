@@ -36,6 +36,9 @@ Kill hero:
 
     campaign.kill_hero Corena
 
+Change Relation:
+
+    campaign.change_hero_relation Olek -50
 
 GUI Layers
 

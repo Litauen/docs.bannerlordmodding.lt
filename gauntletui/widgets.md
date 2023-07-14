@@ -163,6 +163,7 @@ This attribute is used to control the transparency or opacity of a UI element. T
 
 When applied to a UI element, the AlphaFactor attribute determines the overall transparency level of that element and its children (if any). By adjusting the AlphaFactor value, you can make the UI element partially or completely transparent.
 
+Note: For Brushes use Brush.GlobalAlphaFactor
 
 
 ## Notes
@@ -171,10 +172,11 @@ When applied to a UI element, the AlphaFactor attribute determines the overall t
 
 !!! danger "Using wrong/non-existant Attribute will crash the game"
 
-!!! warning "It seems it's not allowed to use the same variable on the several attributes:"
+!!! warning "It seems it's not allowed to use the same variable on the several attributes (in the same widget):"
 
     ``` xml
     <Widget WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="@IconSize" SuggestedHeight="@IconSize" ...
     ```
     Does not work. Changing second @IconSize to something else - works.
 
+    Using the same variable in the separate widgets is ok.
