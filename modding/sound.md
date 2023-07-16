@@ -247,6 +247,7 @@ if (this.outputDevice == null)
 
 if (this.audioFile == null)
 {
+    //string assemblyFolder = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
     string fullName = Directory.GetParent(Directory.GetParent(Directory.GetParent(Assembly.GetExecutingAssembly().Location).FullName).FullName).FullName;
     this.audioLocation = System.IO.Path.Combine(fullName, "ModuleSounds\\");
     this.audioFile = new AudioFileReader(this.audioLocation + "encounter_river_pirates_9.wav");

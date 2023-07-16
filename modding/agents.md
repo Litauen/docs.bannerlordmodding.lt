@@ -31,3 +31,13 @@ if (agent.IsHuman && agent.Character != null && agent.Character.IsHero) {
 .IsFemale
 .HasMount
 ```
+
+
+
+## Various
+
+How to get the position of a bone on an agent skeleton?
+
+``` cs
+boneFrame = TargetAgent.AgentVisuals.GetGlobalFrame().TransformToParent(TargetAgent.AgentVisuals.GetBoneEntitialFrame(i, false));
+```
