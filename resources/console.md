@@ -38,7 +38,7 @@ Kill hero:
 
 Change Relation:
 
-    campaign.change_hero_relation Olek -50
+    campaign.change_hero_relation -50 Olek
 
 GUI Layers
 
