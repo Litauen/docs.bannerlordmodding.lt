@@ -48,6 +48,19 @@ protected virtual int SkillLevelToAdd
 protected static void Postfix(int __result) => __result = 30;
 ```
 
+## Working with the List
+
+``` cs
+[HarmonyPatch(typeof(MapEventSide), "ApplyRenownAndInfluenceChanges")]
+public static void Postfix(MBList<MapEventParty> ____battleParties)
+{
+  foreach(MapEventParty mapEventParty in ___battleParties)
+  {
+    //...
+  }
+}
+```
+
 ## Private method match
 
     [HarmonyPatch(typeof(BarterManager), "ApplyBarterOffer")]

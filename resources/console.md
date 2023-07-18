@@ -1,6 +1,7 @@
 # Console
 
  * [Commands](https://www.radiotimes.com/technology/gaming/bannerlord-cheats-codes-console-commands/){target=_blank}
+ * [VIDEO How to use](https://www.youtube.com/watch?v=2WJcRFJmX0k){target=_blank} by Strat Gaming
 
 ## Enable
 
