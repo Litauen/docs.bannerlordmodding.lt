@@ -36,9 +36,36 @@ Test in the real game.
 
 ## Nexus
 
-Header file size: 1536x438
+### Header image
+
+Header image size: 1536x438
+
+![](https://imgur.com/KukQAvR.png)
+
+
+
+### Primary image
+
+![](https://imgur.com/MN1lY54.png)
+
+For primary image to show properly, aspect ratio is important. Resized image is 236x133, so use these sizes:
+
+    1180 x 665
+    1416 x 798
+    1652 x 931
+    1888 x 1064
+    2124 x 1197
+    2360 x 1330
 
 
 ## Steam
 
 [Preparing Your Module For Publishing](https://moddocs.bannerlord.com/steam-workshop/uploading_updating_mod/){target=_blank}
+
+Why some modders don't like Steam:
+
+* They don't earn money from downloads on Steam Workshop
+* In order to publish on Steam Workshop it's necessary to launch up the scene editor and do a whole bunch of extra steps
+* Auto updates look convenient at first glance but they are forced-fed and can brick hundreds of hours worth of saves easily
+* Nightmarish standard folder structure, based on workshop ID number instead of names. It's absolute garbage to backup/maintain a complex list
+
