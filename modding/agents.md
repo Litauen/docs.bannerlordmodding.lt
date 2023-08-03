@@ -41,3 +41,17 @@ How to get the position of a bone on an agent skeleton?
 ``` cs
 boneFrame = TargetAgent.AgentVisuals.GetGlobalFrame().TransformToParent(TargetAgent.AgentVisuals.GetBoneEntitialFrame(i, false));
 ```
+
+
+## Outline agent
+
+``` cs
+uint focusedContourColor = new TaleWorlds.Library.Color(1f, 0.84f, 0.35f, 1f).ToUnsignedInteger();
+agent.AgentVisuals?.SetContourColor(focusedContourColor, true);
+
+agent.AgentVisuals?.SetContourColor(null); to remove it
+```
+
+??? example "Looks like this:"
+
+    ![](https://imgur.com/3XV9smr.png)
