@@ -55,3 +55,26 @@ agent.AgentVisuals?.SetContourColor(null); to remove it
 ??? example "Looks like this:"
 
     ![](https://imgur.com/3XV9smr.png)
+
+
+## BoneBodyPartType
+
+``` cs
+public enum BoneBodyPartType : sbyte
+{
+    None = -1,
+    Head,
+    Neck,
+    Chest,
+    Abdomen,
+    ShoulderLeft,
+    ShoulderRight,
+    ArmLeft,
+    ArmRight,
+    Legs,
+    NumOfBodyPartTypes,
+    CriticalBodyPartsBegin = 0,
+    CriticalBodyPartsEnd = 6
+}
+```
+

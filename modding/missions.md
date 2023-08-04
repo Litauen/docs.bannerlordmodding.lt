@@ -17,3 +17,23 @@ Where you control your character in 3D environment. Not a global map. Examples: 
         handling reinformcements
         handling routing
 
+
+
+## OnAgentHit
+
+``` cs
+void OnAgentHit(Agent affectedAgent, Agent affectorAgent, in MissionWeapon attackerWeapon, in Blow blow, in AttackCollisionData attackCollisionData)
+
+int inflictedDamage = blow.InflictedDamage;
+
+// weapon
+WeaponComponentData attackerWeaponComponentData = attackerWeapon.CurrentUsageItem;
+attackerWeaponComponentData.WeaponClass
+
+bool blow.IsMissile
+
+bool blow.IsHeadShot
+
+BoneBodyPartType blow.VictimBodyPart
+
+```
