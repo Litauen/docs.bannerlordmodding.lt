@@ -41,6 +41,12 @@ In ...\Modules\\\*YOUR_MOD*\
 </base>
 ```
 
+#### Pitch
+
+Can set pitch for the sound like this: min_pitch_multiplier="0.9" max_pitch_multiplier="1.1"
+
+If values are different - random value between min-max is selected. If you need constant pitch - make both values equal.
+
 ### project.mbproj
 
 ``` xml
@@ -49,6 +55,35 @@ In ...\Modules\\\*YOUR_MOD*\
   <file id="soln_module_sound" name="ModuleData/module_sounds.xml" type="module_sound" />
 </base>
 ```
+
+## Sound Categories
+
+    From: \Native\ModuleData\module_sounds.xml
+
+| Category                  | Duration   | Comment
+|---------------------------|------------|---------------|
+| mission_ambient_bed       | persistent | General scene ambient
+| mission_ambient_3d_big    | persistent | Loud ambient sounds e.g. barn fire
+| mission_ambient_3d_medium | persistent | Common ambient sounds e.g. fireplace
+| mission_ambient_3d_small  | persistent | Quiet ambient sounds e.g. torch
+| mission_material_impact   | max 4 sec. | Weapon clash kind of sounds
+| mission_combat_trivial    | max 2 sec. | Damage extra foley like armor layer
+| mission_combat            | max 8 sec. | Damage or bow release sounds
+| mission_foley             | max 4 sec. | Other kind of motion fillers
+| mission_voice_shout       | max 8 sec. | War cries, shouted orders, horse whinnies etc.
+| mission_voice             | max 4 sec. | Grunts, exertions etc.
+| mission_voice_trivial     | max 4 sec. | Small exertions like jumping
+| mission_siege_loud        | max 8 sec. | Big explosions, destructions
+| mission_footstep          | max 1 sec. | Human footsteps, foley
+| mission_footstep_run      | max 1 sec. | Human running (contributes to BASS)
+| mission_horse_gallop      | max 2 sec. | Loud mount gallop footsteps (contributes to BASS)
+| mission_horse_walk        | max 1 sec. | Quiet mount footsteps, walk
+| ui                        | max 4 sec. | All UI sounds
+| alert                     | max 10 sec.| Pseudo-3D in-mission alerts like warning bells
+| campaign_node             | persistent | Campaign map point sound like rivers etc.
+| campaign_bed              | persistent | Campaign amboent bed
+
+- Sounds that dont have valid categories wont be played!
 
 
 ## How to play a sound
