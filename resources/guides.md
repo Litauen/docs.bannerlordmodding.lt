@@ -36,6 +36,7 @@
 * [Multiplayer Modding - General how-to-do and logic](https://docs.google.com/document/d/1567x5sEEMfr617bll68BBzN0Fhh4HC6LPeHs1-W58zg/edit#heading=h.qjtsjkh8ca2c){target=_blank} By MattWillen#1604
 * [Teleport doors in MP](https://discord.com/channels/411286129317249035/1025408210628251759/1073025467008962581){target=_blank}
 * [Dedicated Server On Linux](https://forums.taleworlds.com/index.php?threads/guide-dedicated-server-on-linux.454799/){target=_blank}
+* [Shockbyte Bannerlord Knowledgebase](https://shockbyte.com/billing/knowledgebase/56/Mount-and-Blade-2-Bannerlord){target=_blank}
 
 ## Audio
 
