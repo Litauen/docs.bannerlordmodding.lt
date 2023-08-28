@@ -251,6 +251,12 @@ int relation = notable.GetRelation(clan.Leader);
 ChangeRelationAction.ApplyRelationChangeBetweenHeroes(notable, clan.Leader, -20, true);
 ```
 
+## Culture
+
+Hero.Culture
+
+Check: if (hero.Culture.StringId == "sturgia") ..
+
 
 ## States
 
