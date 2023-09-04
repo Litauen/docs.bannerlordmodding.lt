@@ -16,23 +16,85 @@ if (agent.IsHuman && agent.Character != null && agent.Character.IsHero) {
 }
 ```
 
-## Properties
+## Public methods
 
 ``` cs
 .IsMainAgent
 .IsPlayerTroop
 .IsHero
+
 .IsActive()
+.IsRetreating
+.IsFadingOut
+.IsSliding
+.IsSitting
+.IsReleasingChainAttack
+
+.IsOnLand
+
+.IsEnemyOf
+.IsFriendOf
+
 .IsHuman
-.IsMount
 .IsAIControlled
 .IsPlayerControlled
 .IsRunningAway
 .IsFemale
+.HasWeapon
 .HasMount
+
+.IsMount
+.RiderAgent // if agent is a horse - gives the rider
 ```
 
 
+
+## AgentState
+
+agent.State
+
+``` cs
+* None
+* Active
+* Routed
+* Unconcious
+* Killed
+* Deleted
+```
+
+
+## Various actions
+
+``` cs
+DropItem(EquipmentIndex itemIndex, WeaponClass pickedUpItemType = WeaponClass.Undefined)
+EquipItemsFromSpawnEquipment(bool neededBatchedItems)
+EquipWeaponToExtraSlotAndWield(ref MissionWeapon weapon)
+RemoveEquippedWeapon(EquipmentIndex slotIndex)
+Die(Blow b, Agent.KillInfo overrideKillInfo = Agent.KillInfo.Invalid)
+MakeDead(bool isKilled, ActionIndexValueCache actionIndex)
+Mount(Agent mountAgent)
+SetCrouchMode(bool set)
+SetAlwaysAttackInMelee(bool attack)
+bool CheckSkillForMounting(Agent mountAgent) - can mount that mountAgent?
+```
+
+## [MissionEquipment](/modding/equipment/#missionequipment)
+
+``` cs
+public MissionEquipment Equipment { get; private set; }
+
+Agent.DropItem(EquipmentIndex itemIndex, WeaponClass pickedUpItemType = WeaponClass.Undefined)
+EquipItemsFromSpawnEquipment(bool neededBatchedItems)
+EquipWeaponToExtraSlotAndWield(ref MissionWeapon weapon)
+RemoveEquippedWeapon(EquipmentIndex slotIndex)
+
+```
+
+## Position
+
+agent.Position - position on the map in Vec3
+
+agent.Position.AsVec2 - position on the map in Vec2
 
 ## Various
 
@@ -42,6 +104,11 @@ How to get the position of a bone on an agent skeleton?
 boneFrame = TargetAgent.AgentVisuals.GetGlobalFrame().TransformToParent(TargetAgent.AgentVisuals.GetBoneEntitialFrame(i, false));
 ```
 
+## Get nearby enemy agents
+
+``` cs
+MBList<Agent> nearbyEnemyAgents = Mission.GetNearbyEnemyAgents(Agent.Main.Position.AsVec2, 20f, Mission.PlayerTeam, new MBList<Agent>());
+```
 
 ## Outline agent
 

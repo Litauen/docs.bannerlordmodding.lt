@@ -241,6 +241,13 @@ hero.SetNewOccupation(Occupation.Wanderer); // spawns in the tavern, engine relo
     * hero.IsNotable
 
 
+## [Equipment](/modding/equipment)
+
+``` cs
+Equipment equipment = Hero.MainHero.BattleEquipment;
+Equipment equipment = Hero.MainHero.CivilianEquipment;
+```
+
 ## Relations
 
 ``` cs

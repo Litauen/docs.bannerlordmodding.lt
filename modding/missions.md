@@ -37,3 +37,19 @@ bool blow.IsHeadShot
 BoneBodyPartType blow.VictimBodyPart
 
 ```
+
+
+## Teams
+
+``` cs
+public Mission.TeamCollection Teams { get; private set; }
+
+AttackerTeam
+DefenderTeam
+AttackerAllyTeam
+DefenderAllyTeam
+PlayerTeam
+PlayerEnemyTeam
+PlayerAllyTeam
+SpectatorTeam
+```
