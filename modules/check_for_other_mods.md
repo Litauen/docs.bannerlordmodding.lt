@@ -1,5 +1,7 @@
 # Check for other mods
 
+In SubModule.cs:
+
 ``` cs
 public override void OnGameInitializationFinished(Game game)    // executes after all mods are loaded
 {
