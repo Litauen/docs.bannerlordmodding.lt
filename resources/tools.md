@@ -11,6 +11,8 @@
 
 * [Fmod Bank Tools](https://www.nexusmods.com/rugbyleaguelive3/mods/2){target=_blank} - Extracts and Rebuilds Fmod .bank files, for example: Mount & Blade II Bannerlord\Sounds\PC\voice.assets.bank
 
+* [BareTail](https://www.baremetalsoft.com/baretail/){target=_blank} - real-time log monitoring, same as tail -f on Linux but for Windows
+
 ## ripgrep
 
 * [ripgrep](https://github.com/BurntSushi/ripgrep){target=_blank} - file grep/search program
