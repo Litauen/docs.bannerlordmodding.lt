@@ -177,3 +177,7 @@ Mod setup, dialogs, game menu, GauntletUI, etc.
 - [Zbrush](https://www.youtube.com/playlist?list=PLlJS25z8WHXxIVbyFkWnxHNuJFzr9YmBi){targer=_blank}
 - [3dsMax](https://www.youtube.com/playlist?list=PLlJS25z8WHXzCUpEJY9FJGVMtLGDPDkuw){targer=_blank}
 
+
+## Ladnar Gaming
+
+* [Make a Siege Scene](https://www.youtube.com/watch?v=NUveigSl6sU){_target=blank}
