@@ -135,6 +135,16 @@ Mod setup, dialogs, game menu, GauntletUI, etc.
 
 * [The Basic of Basics](https://www.youtube.com/watch?v=HT6iOAi_Uic&list=PLvRPtsz7OSFSYfta4t5YOgGzNr2B6OW6C&index=2){target=_blank}
 * [Apply a map to Custom Battle](https://www.youtube.com/watch?v=o7TxYfqPsc0&list=PLvRPtsz7OSFSYfta4t5YOgGzNr2B6OW6C&index=3){target=_blank}
+* [Speed Mapping #1](https://www.youtube.com/watch?v=GHFmvpKDca8)
+* [Speed Mapping #2](https://www.youtube.com/watch?v=G8dX30-SJgk)
+* [Speed Mapping #3](https://www.youtube.com/watch?v=-UijYMdqDlI)
+* [Speed Mapping #4](https://www.youtube.com/watch?v=i19oDQdlJL8)
+* [Speed Mapping #5](https://www.youtube.com/watch?v=CnFBIxKsmQQ)
+* [Speed Mapping #6](https://www.youtube.com/watch?v=P0xNCnG0pnM)
+* [Speed Mapping #7](https://www.youtube.com/watch?v=-KoAqRHXiAg)
+* [Speed Mapping #8](https://www.youtube.com/watch?v=OX60SsNfuEU)
+* [Speed Mapping #9](https://www.youtube.com/watch?v=V_rddwDGYdo)
+* [How to create large maps | Speed Mapping](https://www.youtube.com/watch?v=SZ_QRUArQ9I)
 
 ## FoozleMcDoozle
 
@@ -181,3 +191,13 @@ Mod setup, dialogs, game menu, GauntletUI, etc.
 ## Ladnar Gaming
 
 * [Make a Siege Scene](https://www.youtube.com/watch?v=NUveigSl6sU){_target=blank}
+
+
+## Space Pot8to
+
+* [Wall Building Script for Bannerlord Scene Editor](https://www.youtube.com/watch?v=c_-jOw-OZvo)
+
+
+## Resonant
+
+* [An IN DEPTH LOOK At Bannerlord's MAP EDITOR](https://www.youtube.com/watch?v=JU0MvyDoToE)
