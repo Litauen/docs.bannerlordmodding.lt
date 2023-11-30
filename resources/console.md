@@ -74,6 +74,7 @@ GUI Layers
 - campaign.declare_war faction1 faction2
 - campaign.declare_peace faction1 faction2
 
+NOTE: faction1/faction2 can be your clan's name
 
 ## Own console command
 

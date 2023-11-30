@@ -13,6 +13,10 @@
 
 * [BareTail](https://www.baremetalsoft.com/baretail/){target=_blank} - real-time log monitoring, same as tail -f on Linux but for Windows
 
+## dnSpy
+
+.NET debugger and assembly editor. [More details here](/resources/dnspy)
+
 ## ripgrep
 
 * [ripgrep](https://github.com/BurntSushi/ripgrep){target=_blank} - file grep/search program
