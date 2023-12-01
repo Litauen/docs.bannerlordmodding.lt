@@ -171,6 +171,11 @@ Type="Goods" sets ItemObject.IsTradeGood == true and ItemObject.ItemType == "Goo
     Gives 3 random "Goods" type items as a reward. So if your item type is "Goods", they will be given at some point.
 
 
+Q. How to make certain items not appear in the lootpool and also in the marketplace? <br>
+A. Set is_merchandise="false" and assign to the culture that does not have markets, e.g. Looters/Bandits (Culture.looter)
+
+
+
 <br>
 ## How to find ItemID
 
