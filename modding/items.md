@@ -174,6 +174,9 @@ Type="Goods" sets ItemObject.IsTradeGood == true and ItemObject.ItemType == "Goo
 Q. How to make certain items not appear in the lootpool and also in the marketplace? <br>
 A. Set is_merchandise="false" and assign to the culture that does not have markets, e.g. Looters/Bandits (Culture.looter)
 
+It appears that items that are not for sale (is_merchandise="false") may appear as prizes in tournaments.
+But it probably depends on the cost of the item - the higher it is, the greater the likelihood.
+
 
 
 <br>
