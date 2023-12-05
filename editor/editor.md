@@ -7,6 +7,10 @@
 - Version mismatch with the base game - does not start at all, no process - install same version
 - Hanged previous process - check Task Manager, kill old process
 
+### Crashes
+
+- When deleting used texture
+
 ### Hangs on save
 
 - Too much terrain editing (Smoothing?). Export heightmap before trying to save after a lot of Smoothing.
@@ -19,9 +23,9 @@ To cancel the Save, use X from the Taskbar:
 
 Try to save again.
 
-### Controls stops working
+### Controls stops to work
 
-Reload?
+Reload/Restart?
 
 ## Versions
 
