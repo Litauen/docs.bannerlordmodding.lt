@@ -9,7 +9,11 @@
 
 ### Crashes
 
-- When deleting used texture
+- When deleting used texture. After crash/restart Texture appears deleted
+
+#### Map crashes
+
+- Not fully saved map - could be the reason that game was active/loaded/in progress when map was saved. Go to the Main Menu, then save the map in the Editor.
 
 ### Hangs on save
 
@@ -48,7 +52,7 @@ Reload/Restart?
 | Mouse wheel | Increase brush size | |
 | Hold Shift | Smooth the terrain | In Rise Mode |
 | Hold Ctrl | Flatten the terrain | In Rise Mode |
-| | | |
+| Select multiple entities, press Shift, drag it out | Copy and paste multiple entities | |
 | | | |
 
 
