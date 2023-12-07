@@ -45,6 +45,7 @@ if (agent.IsHuman && agent.Character != null && agent.Character.IsHero) {
 
 .IsMount
 .RiderAgent // if agent is a horse - gives the rider
+.GetSteppedEntity  // returns the game entity agent is standing on
 ```
 
 
