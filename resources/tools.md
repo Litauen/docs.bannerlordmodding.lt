@@ -40,3 +40,8 @@ rhubarb.exe -f xml -o D:\audio.xml D:\audio.ogg
 
 
 ## [Banner Editor](https://bannerlord.party/banner/)
+
+
+## 3D Models
+
+- [Female body](https://drive.google.com/open?id=13oq_ni-a2eXTBlLF-8I7tI7s8tyfPvfk) / [Backup](https://drive.google.com/file/d/1jnBoOYNqH1jNcGofVRDYUIJEvfxm4_b4/view?usp=drive_link)
