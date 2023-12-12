@@ -60,7 +60,10 @@
 
 ### Hangs on map save in the Editor
 
-- Too much terrain editing (Smoothing?). Export heightmap before trying to save after a lot of Smoothing.
+Possible causes:
+
+- Too much terrain editing (Smoothing?)
+- Erasing a lot of info on some layer
 
 ![](https://imgur.com/MMmqYCn.png)
 
