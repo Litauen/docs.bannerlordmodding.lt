@@ -26,7 +26,9 @@
 
 ### Editor Crashes
 
-- When deleting used texture. After crash/restart Texture appears deleted
+#### Crash when deleting used texture
+
+After crash/restart Texture appears deleted
 
 #### Crash on the map save
 
@@ -34,7 +36,16 @@
 
 - Last line in the log: opening ../../Modules/MODULE_NAME/ModuleData/settlements.xml - missing settlements.xml
 
+#### Crash when deleting the paint layer
 
+No solution yet. Can't delete the layer...
+
+Log shows: [22:19:02.024] rglTerrain_shader_generator::handle_mesh_blend_state : 0.012403
+
+
+#### Crash when saving
+
+...
 
 
 ### Game crashes
@@ -72,6 +83,9 @@ To cancel the Save, use X from the Taskbar:
 ![](https://imgur.com/qOfC2xV.png)
 
 Try to save again.
+
+NOTE: after the save Editor often crashes. (At least you saved your last changes)
+
 
 ### Controls stops to work
 
