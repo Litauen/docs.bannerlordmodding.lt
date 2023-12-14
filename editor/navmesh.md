@@ -13,3 +13,13 @@
 ## Controls
 
 ![](https://imgur.com/FnZfJS5.png)
+
+
+## Problems/Solutions
+
+### Can't select any navmesh element
+
+Turn ON Helpers in the Visibility tab:
+
+![](https://imgur.com/nZJiVRD.png)
+
