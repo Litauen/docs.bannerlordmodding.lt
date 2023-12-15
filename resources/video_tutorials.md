@@ -75,6 +75,7 @@ Mod setup, dialogs, game menu, GauntletUI, etc.
 * [Creating New Heroes](https://www.youtube.com/watch?v=KyqVBAa7R4M&list=PLxhni8XI_dRDjRRDsCzEBZg4eUInzkzQT&index=6){target=_blank}
 * [Creating Mercenary Clan](https://www.youtube.com/watch?v=WGKgSv_3E_I&list=PLxhni8XI_dRDjRRDsCzEBZg4eUInzkzQT&index=7){target=_blank}
 * [Overriding original file](https://www.youtube.com/watch?v=vJJJowlMomg&list=PLxhni8XI_dRDjRRDsCzEBZg4eUInzkzQT&index=7){target=_blank}
+* [Creating New settlements](https://www.youtube.com/watch?v=XoUiYBfvHew)
 
 ### [Modding Tools](https://www.youtube.com/playlist?list=PLxhni8XI_dRALYs8R9NHpMLxpMI2wSGxA){target=_blank}
 

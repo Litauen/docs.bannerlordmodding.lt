@@ -12,6 +12,11 @@
 - On map save overwrites settlements.xml (crashes if this file is not present)
 - On map save Editor does not write/update/generate settlements_distance_cache.bin
 
+### High CPU usage
+
+In the Visibility tab turn off Game Entities, Helpers and Shadows
+
+![](https://imgur.com/B6B7BMC.png)
 
 <br>
 ## Problems/Solutions

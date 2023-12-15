@@ -9,42 +9,22 @@ Alt + `
 
 ## Commands
 
-Cheat mode:
 
-    config.cheat_mode 1
-
-
-Teleport:
-
-    CTRL + LMB
-
-Add money to hero:
-
-    campaign.add_gold_to_hero 1000000
-
-
-Speedup time:
-
-    campaign.multiply_campaign_speed 100 (does not work in 1.0.3)
-    campaign.set_campaign_speed_multiplier 15 (works in 1.1.0)
-
-
-Make hero fugitive:
-
-    campaign.make_hero_fugitive Corena
-
-Kill hero:
-
-    campaign.kill_hero Corena
-
-Change Relation:
-
-    campaign.change_hero_relation -50 Olek
-
-GUI Layers
-
-    ui.set_screen_debug_information_enabled true
-
+| Command | Comment |
+|---------|---------|
+|config.cheat_mode 1| Turn cheat mode ON |
+|CTRL + LMB | Teleport on the world map |
+|campaign.add_gold_to_hero 1000000|Add money to hero|
+|campaign.multiply_campaign_speed 100| Speedup time (does not work in 1.0.3)|
+|campaign.set_campaign_speed_multiplier 15| Speedup time (works in 1.1.0)|
+|campaign.make_hero_fugitive Corena|Make hero fugitive|
+|campaign.kill_hero Corena|Kill hero|
+|campaign.change_hero_relation -50 Olek|Change Relation|
+|campaign.start_player_vs_world_war|Player becomes enemy to everybody|
+|campaign.start_world_war|Everybody enemy to everybody|
+|campaign.add_troops aserai_tribesman \| 200 | Adds troops to the player |
+|campaign.print_main_party_position| Print's players coordinates |
+|ui.set_screen_debug_information_enabled true| Debug GUI Layers|
 
 ## Some other commands
 
