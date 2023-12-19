@@ -3,7 +3,7 @@
 ## Versions
 
 - Crashes - 1.1.4/1.1.6
-- Works - 1.2.5beta
+- Works (with problems) - 1.2.5beta/1.2.7
 
 
 <br>
@@ -72,7 +72,10 @@ Log shows: [22:19:02.024] rglTerrain_shader_generator::handle_mesh_blend_state :
     REASON1: Wrongly assigned Settlement, Kingdom without a settlement. Attach dnSpy, it will show faction.FactionMidSettlement == null. Fix your XML.
     <br><br>
     REASON2: Problems with Navmesh. Inaccessible settlements. Old/mismatching settlements_distance_cache.bin - fix navmesh, regenerate settlements_distance_cache.bin
-
+    <br><br>
+    **CampaignObjectManager.InitializeCachedData()**
+    <br><br>
+    REASON: settlements.xml error - I accidently deleted one settlement and village had no bounded castle (crash on settlement.OwnerClan.OnBoundVillageAdded(settlement.Village);). This was on new game start.
 
 ### Hangs on map save in the Editor
 
