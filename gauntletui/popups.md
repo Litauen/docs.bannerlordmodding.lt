@@ -57,6 +57,7 @@ MultiSelectionInquiryData(
   string descriptionText,
   List<InquiryElement> inquiryElements,
   bool isExitShown,
+  int minSelectableOptionCount,
   int maxSelectableOptionCount,
   string affirmativeText,
   string negativeText,
