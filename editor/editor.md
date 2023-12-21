@@ -77,6 +77,11 @@ Log shows: [22:19:02.024] rglTerrain_shader_generator::handle_mesh_blend_state :
     <br><br>
     REASON: settlements.xml error - I accidently deleted one settlement and village had no bounded castle (crash on settlement.OwnerClan.OnBoundVillageAdded(settlement.Village);). This was on new game start.
 
+??? failure "System.Reflection.TargetInvocationException"
+    **RuntimeMethodHandle.InvokeMethod**
+    <br><br>
+    REASON: map xscene settlement ID mismatch with settlements.xml settlement ID / settlements.xml has a settlement with ID, which is not present in the xscene file
+
 ### Hangs on map save in the Editor
 
 Possible causes:

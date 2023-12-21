@@ -16,10 +16,10 @@ OnGameInitializationFinished|(Last) Starts after the game finishes initializing.
 OnAfterGameInitializationFinished|
 DoLoading|Called seemingly as loading is ending, not entirely sure of this one
 OnGameEnd|Called on exiting out of a mission/campaign
+OnApplicationTick|This is called once every frame, you should avoid expensive operations being called directly here and instead do as little work as possible for performance reasons
 OnBeforeMissionBehaviorInitialize|
-OnMissionBehaviorInitialize|This is called once every frame, you should avoid expensive operations being called directly here and instead do as little work as possible for performance reasons
+OnMissionBehaviorInitialize|
 OnConfigChanged|
-OnApplicationTick|
 AfterAsyncTickTick|
 InitializeGameStarter|
 OnInitialState|
