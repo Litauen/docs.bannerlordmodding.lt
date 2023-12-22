@@ -46,6 +46,8 @@ if (agent.IsHuman && agent.Character != null && agent.Character.IsHero) {
 .IsMount
 .RiderAgent // if agent is a horse - gives the rider
 .GetSteppedEntity  // returns the game entity agent is standing on
+
+.IsDoingPassiveAttack // whether the agent is in a couched lance or braced spear state
 ```
 
 
