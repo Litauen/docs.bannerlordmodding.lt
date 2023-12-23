@@ -6,6 +6,7 @@
 * [Creating Custom Items - Part 2](https://www.youtube.com/watch?v=IKyJD9dzTEI&list=PLxhni8XI_dRDjRRDsCzEBZg4eUInzkzQT&index=3){target=_blank}
 
 
+
 ## ItemObject
 
 ``` cs
@@ -122,7 +123,13 @@ var orderedItems = Items.All
 foreach (ItemObject item in orderedItems) { // do something with the items }
 ```
 
-## XML properties
+## XML
+
+??? tip "PROBLEM: Items are not loaded from XML"
+    Check your engine logs for item read errors/warning. As I said before a new behavior that I experienced with 1.2++ versions of the game that if you have a faulty item, all the item definitions coming after it will not load either, not just the one that is bad. So maybe there has always been one that was bad, you just didnt notice it among the hundreds of items. ([hunharibo](https://discord.com/channels/411286129317249035/677511186295685150/1187684885457010690))
+
+
+### Properties
 
 * 'mesh' - 3D mesh
 * 'using_tableau' - value is used to determine whether or not the item can be displayed in the game's 3D model viewer, also known as the tableau
