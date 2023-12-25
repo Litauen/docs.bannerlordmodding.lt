@@ -147,6 +147,18 @@ Mod setup, dialogs, game menu, GauntletUI, etc.
 * [Speed Mapping #9](https://www.youtube.com/watch?v=V_rddwDGYdo)
 * [How to create large maps | Speed Mapping](https://www.youtube.com/watch?v=SZ_QRUArQ9I)
 
+## [Lykon Development](https://www.youtube.com/@LykonDevelopment/videos){target=_blank}
+
+* [Edit ALL NPCs](https://www.youtube.com/watch?v=5UsRni97tyQ){target=_blank}
+* [Custom LoadScreens](https://www.youtube.com/watch?v=rE_fLYCgX-o){target=_blank}
+* [Factions, Lords, Heroes, Clans and Lord Equipment Sets](https://www.youtube.com/watch?v=VxN7ER8LFOA){target=_blank}
+* [Edit Kingdoms with NO Code](https://www.youtube.com/watch?v=N7wTYs9LLI4){target=_blank}
+* [Editing Culture Selection Text](https://www.youtube.com/watch?v=YiLiv-f0z2s){target=_blank}
+* [Simple Weight Painting using Blender](https://www.youtube.com/watch?v=lW_3gppZ1zo){target=_blank}
+* [Full Troop and Weapon Crafting Tutorial](https://www.youtube.com/watch?v=snAkTZxAqTw){target=_blank}
+* [Troop Editor Tutorial](https://www.youtube.com/watch?v=x2nlpZx33U4){target=_blank}
+* [XML Editing - Basic Troop Items](https://www.youtube.com/watch?v=Xv6uYZiCgq4){target=_blank}
+
 ## FoozleMcDoozle
 
 * [Scene Editor Training](https://www.youtube.com/watch?v=UEyrQXKGImU){target=_blank} / [Forum Link](https://forums.taleworlds.com/index.php?threads/scene-editor-training-june-15-2021-by-foozlemcdoozle.444798/){target=_blank}

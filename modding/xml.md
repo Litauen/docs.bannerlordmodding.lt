@@ -3,6 +3,8 @@
 ![](https://imgur.com/yZvCYRb.png)
 
 
+## Crashes
+
 ??? failure "System.InvalidOperationException Sequence contains no matching element"
     **TSource System.Linq.Enumerable.First(IEnumerable source, Func predicate) / CaravanPartyComponent.InitializeCaravanOnCreation**
     <br><br>

@@ -48,6 +48,10 @@ if (agent.IsHuman && agent.Character != null && agent.Character.IsHero) {
 .GetSteppedEntity  // returns the game entity agent is standing on
 
 .IsDoingPassiveAttack // whether the agent is in a couched lance or braced spear state
+
+.SpawnEquipment - the equipment the agent spawned with
+.Equipment - agent's current equipment
+
 ```
 
 
