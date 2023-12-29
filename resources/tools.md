@@ -1,7 +1,29 @@
 # Tools
 
+## Development
+
+* [Visual Studio 2022 Community Edition](https://visualstudio.microsoft.com/vs/community/){target=_blank}
+* [Visual Studio Code](https://code.visualstudio.com/download){target=_blank}
+* [Notepad++](https://notepad-plus-plus.org/){target=_blank}
+
+## Debugging
+
+* [dnSpy](/resources/dnspy) - .NET debugger and assembly editor
+* [BareTail](https://www.baremetalsoft.com/baretail/){target=_blank} - real-time log monitoring, same as tail -f on Linux but for Windows
+
+
+## Assets
+
 * [TpacTool](https://github.com/szszss/TpacTool){_target=blank} - an open source asset explorer which can open TPAC format files, view and export the contents. [Fork](https://github.com/hunharibo/TpacTool){_target=blank}
 * [BannerEdge](https://github.com/hunharibo/BannerEdge){_target=blank} Its purpose is to provide ease of access to native game UI files by splitting the spritesheet atlas images into its individual sprite parts.
+* [Fmod Bank Tools](https://www.nexusmods.com/rugbyleaguelive3/mods/2){target=_blank} - Extracts and Rebuilds Fmod .bank files, for example: Mount & Blade II Bannerlord\Sounds\PC\voice.assets.bank
+
+### 3D Models
+
+- [Female body](https://drive.google.com/open?id=13oq_ni-a2eXTBlLF-8I7tI7s8tyfPvfk) / [Backup](https://drive.google.com/file/d/1jnBoOYNqH1jNcGofVRDYUIJEvfxm4_b4/view?usp=drive_link)
+
+
+## Various
 
 * [BannerlordDataTools](https://www.nexusmods.com/mountandblade2bannerlord/mods/4220){target=_blank} an unnoficial open source modding toolset, based on Unity3D Editor. That contains special editors for all most important moddeable data in Bannerlord.
 * [XML Translator](https://www.nexusmods.com/mountandblade2bannerlord/mods/5131){target=_blank} This tool finds all the texts in the xml file and translates it into your language.
@@ -9,13 +31,8 @@
 
 * [7-Zip file archiver](https://www.7-zip.org/){target=_blank} - Lesser Scholar [mentioned](https://youtu.be/1788IeNzOYQ?t=153){target=_blank} that it helps to avoid problems with DLLs
 
-* [Fmod Bank Tools](https://www.nexusmods.com/rugbyleaguelive3/mods/2){target=_blank} - Extracts and Rebuilds Fmod .bank files, for example: Mount & Blade II Bannerlord\Sounds\PC\voice.assets.bank
 
-* [BareTail](https://www.baremetalsoft.com/baretail/){target=_blank} - real-time log monitoring, same as tail -f on Linux but for Windows
 
-## dnSpy
-
-.NET debugger and assembly editor. [More details here](/resources/dnspy)
 
 ## ripgrep
 
@@ -42,6 +59,3 @@ rhubarb.exe -f xml -o D:\audio.xml D:\audio.ogg
 ## [Banner Editor](https://bannerlord.party/banner/)
 
 
-## 3D Models
-
-- [Female body](https://drive.google.com/open?id=13oq_ni-a2eXTBlLF-8I7tI7s8tyfPvfk) / [Backup](https://drive.google.com/file/d/1jnBoOYNqH1jNcGofVRDYUIJEvfxm4_b4/view?usp=drive_link)

@@ -69,6 +69,13 @@ int GetItemPrice(ItemObject item, MobileParty tradingParty = null, bool isSellin
 
 Returns Town to which the Village is trade bound.
 
+### Levels
+
+Village has 3 visual levels. Level depends on hearths: 
+
+* Lvl 1 - hearths 1..199
+* Lvl 2 - 200-599
+* Lvl 3 - 600+
 
 
 ## XML
@@ -119,8 +126,11 @@ What is interesting/weird - if you change name in the settlements.xml - the name
 
 ## Settlement Distance Cache
 
+If you add new settlements, or relocate existing ones, you will need to recalculate settlements_distance_cache.bin which the game uses to optimise AI path finding between different settlements. 
+The game crashes if settlements.xml and settlements_distance_cache.bin are incompatible.
 
-settlements_distance_cache.bin
+
+    settlements_distance_cache.bin
 
 Editor does not generate it by default on map save.
 
