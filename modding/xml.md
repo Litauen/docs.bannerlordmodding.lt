@@ -36,6 +36,18 @@
     veteran_caravan_guard="NPCCharacter.veteran_caravan_guard_sturgia"
 
     ```
+    <br>
+    **OnNewGameCreated**
+    <br><br>
+    REASON1: Lord (NPCCharacter) id mismatch with hero id
+    <br><br>
+    REASON2: 2 lords with the same id
+
+
+??? failure "NullReferenceException"
+    **UpdateFriendshipAndEnemies **
+    <br><br>
+    REASON: Lord/hero without the proper clan (clan not created)
 
 ## Culture
 
@@ -53,3 +65,21 @@ Traveling Caravan Guard NPCs on the world map are generated from the same cultur
 ``` xml
 Occupation.CaravanGuard && character.IsInfantry && character.Level == 26 && character.Culture == mobileParty.Party.Owner.Culture
 ```
+
+## Hero/Lord
+
+Add entry into heroes.xml
+
+``` xml
+<Hero id="lord_lit_1_1" spouse="Hero.lord_lit_1_2" father="Hero.lit_1_0" mother="Hero.lit_1_00" alive="false" faction="Faction.clan_lit_1" />
+```
+
+Add entry into lords.xml
+
+``` xml
+
+    <NPCCharacter ...
+```
+
+??? question "How to properly make lord dead?"
+    alive="false" makes him dead, but in description it writes: HERO_NAME is  member of ...
