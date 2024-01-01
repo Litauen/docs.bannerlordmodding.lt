@@ -39,7 +39,7 @@
     <br>
     **OnNewGameCreated**
     <br><br>
-    REASON1: Lord (NPCCharacter) id mismatch with hero id
+    REASON1: Lord (NPCCharacter) id mismatch with hero id, no lord for the heroe, "Hero." missed with hero id
     <br><br>
     REASON2: 2 lords with the same id
 
