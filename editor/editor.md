@@ -9,7 +9,7 @@
 <br>
 ## Notes
 
-- On map save overwrites settlements.xml (crashes if this file is not present)
+- On map save overwrites settlements.xml (crashes if this file is not present or has errors)
 - On map save Editor does not write/update/generate settlements_distance_cache.bin
 
 ### High CPU usage
@@ -38,6 +38,7 @@ After crash/restart Texture appears deleted
 #### Crash on the map save
 
 - When there is some error in the XML files (settlements.xml?)
+    Double < Settlements/> for example
 
 - Last line in the log: opening ../../Modules/MODULE_NAME/ModuleData/settlements.xml - missing settlements.xml
 
@@ -48,9 +49,6 @@ No solution yet. Can't delete the layer...
 Log shows: [22:19:02.024] rglTerrain_shader_generator::handle_mesh_blend_state : 0.012403
 
 
-#### Crash when saving
-
-...
 
 
 ### Game crashes

@@ -25,10 +25,10 @@
         <name name="Adalbern" />
     ```
 
-??? failure "Object reference not set to an instance of an object"
-    **GetBodyProperties - LocationCharacter - CreateMercenary - AddLocationCharacters - AddMercenaryCharacterToTavern**
-    <br><br>
-    REASON: In CUSTOM_culture.xml error in defining caravan guards:
+### Object reference not set to an instance of an object
+
+??? failure "GetBodyProperties - LocationCharacter - CreateMercenary - AddLocationCharacters - AddMercenaryCharacterToTavern"
+    In CUSTOM_culture.xml error in defining caravan guards:
     ``` xml
     caravan_master="NPCCharacter.caravan_master_sturgia"
     armed_trader="NPCCharacter.armed_trader_sturgia"
@@ -36,18 +36,21 @@
     veteran_caravan_guard="NPCCharacter.veteran_caravan_guard_sturgia"
 
     ```
-    <br>
-    **OnNewGameCreated**
-    <br><br>
+
+??? failure "OnNewGameCreated"
     REASON1: Lord (NPCCharacter) id mismatch with hero id, no lord for the heroe, "Hero." missed with hero id
     <br><br>
     REASON2: 2 lords with the same id
 
 
-??? failure "NullReferenceException"
-    **UpdateFriendshipAndEnemies **
-    <br><br>
-    REASON: Lord/hero without the proper clan (clan not created)
+
+### NullReferenceException
+
+??? failure "UpdateFriendshipAndEnemies"
+    Lord/hero without the proper clan (clan not created)
+
+??? failure "InitialChildGenerationCampaignBehavior.OnNewGameCreatedPartialFollowUp - CreateSpecialHero - CreateNewHero"
+    Hero present, lord not present, lord used in clan definition (owner)
 
 ## Culture
 
@@ -66,6 +69,8 @@ Traveling Caravan Guard NPCs on the world map are generated from the same cultur
 Occupation.CaravanGuard && character.IsInfantry && character.Level == 26 && character.Culture == mobileParty.Party.Owner.Culture
 ```
 
+Culture can exist without the female clan member (it was stated somewhere that otherwise).
+
 ## Hero/Lord
 
 Add entry into heroes.xml
@@ -83,3 +88,10 @@ Add entry into lords.xml
 
 ??? question "How to properly make lord dead?"
     alive="false" makes him dead, but in description it writes: HERO_NAME is  member of ...
+
+
+## Kingdom
+
+Kingdom can exists without owning a Town. Castle is enough. (It was stated somewhere otherwise)
+
+
