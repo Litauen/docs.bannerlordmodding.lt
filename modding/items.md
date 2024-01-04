@@ -142,6 +142,13 @@ foreach (ItemObject item in orderedItems) { // do something with the items }
 * 'item_category' - (need confirmation) influences price range based on the market. Example - if item_category="jewelry" and item value="1000", in-game item can cost from ~1000 at start and drop to 150 after few weeks. Because jewelry prices drop in the region. If this item_category is changed to let's say 'book', then in-game same item costs ~1000 again.
 * 'subtype' - is used to provide additional information about the type of item being defined. The subtype property is often used in conjunction with the item_category property to further refine the classification of an item
 
+### ItemObject
+
+Required skill/value:
+
+    ItemObject.RelevantSkill, ItemObject.Difficulty
+
+
 ### Type
 
 ??? "ItemTypeEnum"
