@@ -25,12 +25,11 @@
 
 ## Various
 
-* [BannerlordDataTools](https://www.nexusmods.com/mountandblade2bannerlord/mods/4220){target=_blank} an unnoficial open source modding toolset, based on Unity3D Editor. That contains special editors for all most important moddeable data in Bannerlord.
-* [XML Translator](https://www.nexusmods.com/mountandblade2bannerlord/mods/5131){target=_blank} This tool finds all the texts in the xml file and translates it into your language.
-* [SceneFromGIS](https://scenefromgis.14egaming.com/){_target=_blank} Create scenes for video game maps from real geographic data.
-
+* [BannerlordDataTools](https://www.nexusmods.com/mountandblade2bannerlord/mods/4220){target=_blank} - an unnoficial open source modding toolset, based on Unity3D Editor. That contains special editors for all most important moddeable data in Bannerlord.
+* [XML Translator](https://www.nexusmods.com/mountandblade2bannerlord/mods/5131){target=_blank} - This tool finds all the texts in the xml file and translates it into your language.
+* [SceneFromGIS](https://scenefromgis.14egaming.com/){_target=_blank} - Create scenes for video game maps from real geographic data.
 * [7-Zip file archiver](https://www.7-zip.org/){target=_blank} - Lesser Scholar [mentioned](https://youtu.be/1788IeNzOYQ?t=153){target=_blank} that it helps to avoid problems with DLLs
-
+* [AssertAutoIgnore](https://github.com/poheniks/AssertAutoIgnore) - A standalone executable that looks for assert popups while Bannerlord is running and closes them automatically
 
 
 
