@@ -103,14 +103,5 @@ NOTE: after the save Editor often crashes. (At least you saved your last changes
 Reload/Restart?
 
 
-### Resource Browser does not open
-
-It shows that it's opened, but not visible:
-
-![](https://imgur.com/3rhCdBz.png)
-
-RMB on it on the Taskbar and then Maximize:
-
-![](https://imgur.com/chSDgaB.png)
 
 
