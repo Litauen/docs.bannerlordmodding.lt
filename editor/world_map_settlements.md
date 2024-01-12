@@ -1,6 +1,11 @@
 # World Map Settlements
 
 
+## Entity limit in the scene
+
+[There is a limit around 512k for game entities](https://forums.taleworlds.com/index.php?threads/is-there-a-game_entity-limit-for-scenes.455430/). More == crash.
+
+
 ## Temporary Vista with Settlement placement
 
 I am using temporary vista with locations painted on it for better settlement placement:

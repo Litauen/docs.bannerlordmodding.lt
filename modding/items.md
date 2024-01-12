@@ -6,7 +6,6 @@
 * [Creating Custom Items - Part 2](https://www.youtube.com/watch?v=IKyJD9dzTEI&list=PLxhni8XI_dRDjRRDsCzEBZg4eUInzkzQT&index=3){target=_blank}
 
 
-
 ## ItemObject
 
 ``` cs
