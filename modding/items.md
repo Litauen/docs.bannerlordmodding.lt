@@ -1,5 +1,7 @@
 # Items
 
+- [ItemObject TaleWorlds.Core.ItemObject Class Reference 1.2.7](https://apidoc.bannerlord.com/v/1.2.7/class_tale_worlds_1_1_core_1_1_item_object.html){target=_blank}
+
 ## Tutorials
 
 * [Creating Custom Items - Part 1](https://www.youtube.com/watch?v=U-qAa4cmf28&list=PLxhni8XI_dRDjRRDsCzEBZg4eUInzkzQT&index=2){target=_blank}
@@ -69,6 +71,9 @@ int itemPrice = village.MarketData.GetPrice(item, MobileParty.MainParty, false, 
 <br>
 item.value - returns default item's value (from XML?)
 
+## Item Tier
+
+For a head armor Tier is set automatically based on the &lt;ItemComponent>&lt;Armor head_armor value
 
 ## InventoryManager
 

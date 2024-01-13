@@ -18,6 +18,8 @@ In the Visibility tab turn off Game Entities, Helpers and Shadows
 
 ![](https://imgur.com/B6B7BMC.png)
 
+Looking down to the ground also helps, so no entities will be visible.
+
 <br>
 ## Problems/Solutions
 

@@ -25,6 +25,11 @@
         <name name="Adalbern" />
     ```
 
+??? failure "The XmlReader state should be Interactive."
+    **ReadContentFrom - Load - ToXDocument - MergeTwoXmls - CreateMergedXmlFile - GetMergedXmlForManaged - LoadXML**
+    <br>
+    REASON: error in the XML file, example: missing opening tag &lt;Items> or wrong closing tag &lt;Items/> vs &lt;/Items>, etc
+
 ### Object reference not set to an instance of an object
 
 ??? failure "GetBodyProperties - LocationCharacter - CreateMercenary - AddLocationCharacters - AddMercenaryCharacterToTavern"

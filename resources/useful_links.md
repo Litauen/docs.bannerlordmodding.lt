@@ -3,7 +3,8 @@
 ## Tale Worlds
 
 * [Official modding documentation](https://moddocs.bannerlord.com){target=_blank}
-* [Reporting bugs & crashes](https://forums.taleworlds.com/index.php?forums/bug-crash-reports.784/){target=_blank}
+* [Reporting bugs & crashes](https://forums.taleworlds.com/index.php?forums/bug-crash-reports.784/){target=_blank} (for Editor/Modding)
+* [Reporting bugs & crashes](https://forums.taleworlds.com/index.php?forums/mount-blade-ii-bannerlord.528/){target=_blank} (for general game issues)
 * [Common Issues and Workarounds](https://forums.taleworlds.com/index.php?threads/common-issues-and-workarounds.427758/){target=_blank}
 * [API](https://apidoc.bannerlord.com/v/1.1.0/){target=_blank}
 

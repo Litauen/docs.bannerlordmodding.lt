@@ -1,5 +1,7 @@
 # Cultures
 
+- [XML Culture doc](https://docs.bannerlordmodding.com/_xmldocs/spcultures/culture/)
+
 ## Default cultures
 
 * aserai
