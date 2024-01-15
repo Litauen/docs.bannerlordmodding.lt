@@ -3,7 +3,7 @@
 
 ## Entity limit in the scene
 
-[There is a limit around 512k for game entities](https://forums.taleworlds.com/index.php?threads/is-there-a-game_entity-limit-for-scenes.455430/). More == crash.
+[There is a limit around 512k for game entities](https://forums.taleworlds.com/index.php?threads/is-there-a-game_entity-limit-for-scenes.455430/). Adding more leads to a crash.
 
 
 ## Temporary Vista with Settlement placement
@@ -44,6 +44,12 @@ I am using temporary vista with locations painted on it for better settlement pl
     * No flying houses, correct level of terrain, other anomalies
 
 
+## Cloning a Settlement
+
+### Wrong gate position
+
+If after cloning new settlement's gate is at the old settlement's gate - delete [settlement's distance cache](/modding/settlements/#settlements-distance-cache) and allow game to regenerate it.
+
 ## Deleting a Settlement
 
 Mark a settlement and press Del or select Delete from the menu:
@@ -56,4 +62,6 @@ Settlement is deleted, but it's decals remain:
 
 I was not able to find avay to get rid of them. They are gone when the map is reloaded (save-load).
 
-!!! danger "Do not forget to delete it from the settllements.xml also - game will crash otherwise"
+!!! danger "Do not forget to delete it from the settllements.xml - game will crash otherwise"
+
+!!! danger "If you are using CUSTOM_settlements.xml - delete from this file also :)"

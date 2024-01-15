@@ -30,7 +30,26 @@
     <br>
     REASON: error in the XML file, example: missing opening tag &lt;Items> or wrong closing tag &lt;Items/> vs &lt;/Items>, etc
 
-### Object reference not set to an instance of an object
+
+??? failure "An entry with the same key already exists"
+    **SortedList.Add - AiVisitSettlementBehavior.FindSettlementsToVisitWithDistances - AiHourlyTick**
+    <br>
+    REASON: had &lt;Village> with the same id in the settlements.xml
+
+
+### Type: System.NullReferenceException
+
+    Message: Object reference not set to an instance of an object.
+
+??? failure "InitializeCachedData - InitializeOnNewGame - OnInitialize - DoLoadingForGameType"
+    REASON: Settlement bound="Settlement.town_CR4" pointed to the non-existing settlement in settlements.xml
+
+??? failure "UpdateFriendshipAndEnemies"
+    Lord/hero without the proper clan (clan not created)
+
+??? failure "InitialChildGenerationCampaignBehavior.OnNewGameCreatedPartialFollowUp - CreateSpecialHero - CreateNewHero"
+    Hero present, lord not present, lord used in clan definition (owner)
+
 
 ??? failure "GetBodyProperties - LocationCharacter - CreateMercenary - AddLocationCharacters - AddMercenaryCharacterToTavern"
     In CUSTOM_culture.xml error in defining caravan guards:
@@ -49,13 +68,6 @@
 
 
 
-### NullReferenceException
-
-??? failure "UpdateFriendshipAndEnemies"
-    Lord/hero without the proper clan (clan not created)
-
-??? failure "InitialChildGenerationCampaignBehavior.OnNewGameCreatedPartialFollowUp - CreateSpecialHero - CreateNewHero"
-    Hero present, lord not present, lord used in clan definition (owner)
 
 ## Culture
 

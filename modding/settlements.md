@@ -124,11 +124,13 @@ What is interesting/weird - if you change name in the settlements.xml - the name
     Otherwise files will be different and Editor uses settlemens.xml and if you change something on the map, changes will go to settlements.xml, it's get deleted with xslt and your CUSTOM file will be used with mismatching map and you will get a crash.
 
 
-## Settlement Distance Cache
+## Settlements Distance Cache
 
-If you add new settlements, or relocate existing ones, you will need to recalculate settlements_distance_cache.bin which the game uses to optimise AI path finding between different settlements. 
+!!! quote "If you add new settlements, or relocate existing ones, you will need to recalculate settlements_distance_cache.bin which the game uses to optimise AI path finding between different settlements."
+
+!!! info "From my observation: when adding new settlements it's not necessary to recalculate it, game works as it is. It is necessary to recalculate at the end (when all settlements are added) for performance."
+
 The game crashes if settlements.xml and settlements_distance_cache.bin are incompatible.
-
 
     settlements_distance_cache.bin
 
