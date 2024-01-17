@@ -5,15 +5,6 @@
 
 ## Crashes
 
-??? failure "System.InvalidOperationException Sequence contains no matching element"
-    **TSource System.Linq.Enumerable.First(IEnumerable source, Func predicate) / CaravanPartyComponent.InitializeCaravanOnCreation**
-    <br><br>
-    REASON: CUSTOM_culture notable Merchant was expecting CaravanGuard with the same culture: character.Culture == mobileParty.Party.Owner.Culture
-    <br><br>
-    ``` xml
-    InitializeCaravanOnCreation
-    CharacterObject characterObject = CharacterObject.All.First((CharacterObject character) => character.Occupation == Occupation.CaravanGuard && character.IsInfantry && character.Level == 26 && character.Culture == mobileParty.Party.Owner.Culture);
-    ```
 
 ??? failure "System.ArgumentNullException Value cannot be null. Parameter name: source"
     **CreateHeroAtOccupation**
@@ -25,16 +16,36 @@
         <name name="Adalbern" />
     ```
 
-??? failure "The XmlReader state should be Interactive."
-    **ReadContentFrom - Load - ToXDocument - MergeTwoXmls - CreateMergedXmlFile - GetMergedXmlForManaged - LoadXML**
-    <br>
-    REASON: error in the XML file, example: missing opening tag &lt;Items> or wrong closing tag &lt;Items/> vs &lt;/Items>, etc
 
 
 ??? failure "An entry with the same key already exists"
     **SortedList.Add - AiVisitSettlementBehavior.FindSettlementsToVisitWithDistances - AiHourlyTick**
     <br>
     REASON: had &lt;Village> with the same id in the settlements.xml
+
+### Type: System.InvalidOperationException
+
+    Message: The XmlReader state should be Interactive.
+    Source: System.Xml.Linq
+
+??? failure "ReadContentFrom - Load - ToXDocument - MergeTwoXmls - CreateMergedXmlFile"
+    REASON: error in the XML file, example:<br>
+    - missing opening tag &lt;Items><br>
+    - wrong closing tag &lt;Items/> vs &lt;/Items><br>
+    - CUSTOM_settlements.xml completely empty<br>
+    - etc
+
+
+
+??? failure "Sequence contains no matching element"
+    **TSource System.Linq.Enumerable.First(IEnumerable source, Func predicate) / CaravanPartyComponent.InitializeCaravanOnCreation**
+    <br><br>
+    REASON: CUSTOM_culture notable Merchant was expecting CaravanGuard with the same culture: character.Culture == mobileParty.Party.Owner.Culture
+    <br><br>
+    ``` xml
+    InitializeCaravanOnCreation
+    CharacterObject characterObject = CharacterObject.All.First((CharacterObject character) => character.Occupation == Occupation.CaravanGuard && character.IsInfantry && character.Level == 26 && character.Culture == mobileParty.Party.Owner.Culture);
+    ```
 
 
 ### Type: System.NullReferenceException
@@ -44,11 +55,32 @@
 ??? failure "InitializeCachedData - InitializeOnNewGame - OnInitialize - DoLoadingForGameType"
     REASON: Settlement bound="Settlement.town_CR4" pointed to the non-existing settlement in settlements.xml
 
+---
+
+    Source: TaleWorlds.CampaignSystem
+
+??? failure "OnNewGameCreated"
+    REASON1: Lord (NPCCharacter) id mismatch with hero id, no lord for the heroe, "Hero." missed with hero id
+    <br><br>
+    REASON2: 2 lords with the same id
+    <br><br>
+    REASON3: Comments in spkingdoms.xml :D
+    ![](https://imgur.com/teP7QtL.png)
+    <br><br>
+    REASON4: NPCCharacter age="9.9" (not int) in lords.xml
+
+??? failure "OnHeroComesOfAge"
+    REASON: error/missing sandboxcore_equipment_sets.xml for the hero's culture. Hero turned 18
+
+---
+
+    Others
+
 ??? failure "UpdateFriendshipAndEnemies"
     Lord/hero without the proper clan (clan not created)
 
 ??? failure "InitialChildGenerationCampaignBehavior.OnNewGameCreatedPartialFollowUp - CreateSpecialHero - CreateNewHero"
-    Hero present, lord not present, lord used in clan definition (owner)
+    Hero present, lord not present, lord used in a clan definition (owner)
 
 
 ??? failure "GetBodyProperties - LocationCharacter - CreateMercenary - AddLocationCharacters - AddMercenaryCharacterToTavern"
@@ -60,13 +92,6 @@
     veteran_caravan_guard="NPCCharacter.veteran_caravan_guard_sturgia"
 
     ```
-
-??? failure "OnNewGameCreated"
-    REASON1: Lord (NPCCharacter) id mismatch with hero id, no lord for the heroe, "Hero." missed with hero id
-    <br><br>
-    REASON2: 2 lords with the same id
-
-
 
 
 ## Culture
