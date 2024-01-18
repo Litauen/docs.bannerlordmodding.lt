@@ -4,6 +4,10 @@
 
 * [Visual Studio 2022 Community Edition](https://visualstudio.microsoft.com/vs/community/){target=_blank}
 * [Visual Studio Code](https://code.visualstudio.com/download){target=_blank}
+
+    ??? hint "+ XML Tools extension - for quick XML validation"
+        ![](https://imgur.com/yu7eBvp.png)
+
 * [Notepad++](https://notepad-plus-plus.org/){target=_blank}
 
 ## Debugging

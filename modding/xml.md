@@ -93,6 +93,14 @@
 
     ```
 
+## Formatting
+
+- [Make it readable](https://www.liquid-technologies.com/online-xml-formatter){target=_blank}
+- [Fix Tab spaces](https://jsonformatter.org/xml-formatter){target=_blank}
+
+??? success "Make ugly XMLs easier to work with!"
+    ![](https://imgur.com/xENrxdr.png)
+
 
 ## Culture
 
@@ -128,7 +136,7 @@ Add entry into lords.xml
     <NPCCharacter ...
 ```
 
-??? question "How to properly make lord dead?"
+??? question "How to properly make a lord dead?"
     alive="false" makes him dead, but in description it writes: HERO_NAME is  member of ...
 
 
