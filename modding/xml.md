@@ -54,6 +54,14 @@
 
 ??? failure "InitializeCachedData - InitializeOnNewGame - OnInitialize - DoLoadingForGameType"
     REASON: Settlement bound="Settlement.town_CR4" pointed to the non-existing settlement in settlements.xml
+</p>
+
+    Source: SandBox
+
+??? failure "GetSuitableSpear - PrepareGuardAgentDataFromGarrison - TakeGuardAgentFromGarrisonTroopList - CreateStandGuardWithSpear"
+    I'm getting this crash whenever I take a settlement with my custom culture and try to go to Lord's hall or dungeon
+    <br>
+    REASON: Custom culture guards entries in spgenericcharacters.xml (sandbox folder) need to go in spnpcharacters.xml in your mod's folder
 
 ---
 
