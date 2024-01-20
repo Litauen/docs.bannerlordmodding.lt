@@ -63,6 +63,14 @@
     <br>
     REASON: Custom culture guards entries in spgenericcharacters.xml (sandbox folder) need to go in spnpcharacters.xml in your mod's folder
 
+</p>
+
+    Source: TaleWorlds.CampaignSystem
+
+??? failure "GetHeroesForEffectiveRelation - ApplyInternal - CreateRebelPartyAndClan - StartRebellionEvent - DailyTickSettlement"
+    REASON: ?
+
+
 ---
 
     Source: TaleWorlds.CampaignSystem

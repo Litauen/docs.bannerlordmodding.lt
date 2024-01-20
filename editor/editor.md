@@ -39,6 +39,8 @@ After crash/restart Texture appears deleted
 
 #### Crash on the map save
 
+- settlements.xml missing from /MOD/ModuleData folder
+
 - When there is some error in the XML files (settlements.xml?)
     Double < Settlements/> for example
 
