@@ -71,6 +71,17 @@
     REASON: ?
 
 
+
+??? failure "DefaultMapDistanceModel - 	GetDistance"
+    REASON1: Wrongly assigned Settlement, Kingdom without a settlement. Attach dnSpy, it will show faction.FactionMidSettlement == null. Fix your XML.
+    <br><br>
+    REASON2: Problems with Navmesh. Inaccessible settlements. Old/mismatching settlements_distance_cache.bin - fix navmesh, regenerate settlements_distance_cache.bin
+    <br><br>
+    **CampaignObjectManager.InitializeCachedData()**
+    <br><br>
+    REASON: settlements.xml error - I accidently deleted one settlement and village had no bounded castle (crash on settlement.OwnerClan.OnBoundVillageAdded(settlement.Village);). This was on new game start.
+
+
 ---
 
     Source: TaleWorlds.CampaignSystem
@@ -95,7 +106,7 @@
 ??? failure "UpdateFriendshipAndEnemies"
     Lord/hero without the proper clan (clan not created)
 
-??? failure "InitialChildGenerationCampaignBehavior.OnNewGameCreatedPartialFollowUp - CreateSpecialHero - CreateNewHero"
+??? failure "InitialChildGenerationCampaignBehavior - OnNewGameCreatedPartialFollowUp - CreateSpecialHero - CreateNewHero"
     Hero present, lord not present, lord used in a clan definition (owner)
 
 
@@ -108,6 +119,16 @@
     veteran_caravan_guard="NPCCharacter.veteran_caravan_guard_sturgia"
 
     ```
+
+    System.AccessViolationException
+
+??? failure "MapScene - GetNavigationMeshCenterPosition - DefaultMapDistanceModel - GetClosestSettlementForNavigationMesh"
+    REASON: CUSTOM_settlements.xml does not match settlements.xml
+
+
+??? failure "System.Reflection - TargetInvocationException - RuntimeMethodHandle - InvokeMethod"
+    REASON: map xscene settlement ID mismatch with settlements.xml settlement ID. settlements.xml has a settlement with ID, which is not present in the xscene file
+
 
 ## Formatting
 

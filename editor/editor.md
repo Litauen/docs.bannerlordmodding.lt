@@ -2,7 +2,7 @@
 
 ## Versions
 
-- Crashes - 1.1.4/1.1.6
+- Crashes - 1.1.4/1.1.6/1.2.8
 - Works (with problems) - 1.2.5beta/1.2.7
 
 
@@ -11,6 +11,9 @@
 
 - On map save overwrites settlements.xml (crashes if this file is not present or has errors)
 - On map save Editor does not write/update/generate settlements_distance_cache.bin
+
+!!! quote "NPC99: Saving uses extra memory. So, sometimes if you are over 80% use of your RAM its worth waiting for 10 minutes or so for the idle Editor to release some memory before saving."
+
 
 ### High CPU usage
 
@@ -52,8 +55,9 @@ No solution yet. Can't delete the layer...
 
 Log shows: [22:19:02.024] rglTerrain_shader_generator::handle_mesh_blend_state : 0.012403
 
+#### Crash on exit
 
-
+Reason: ??
 
 ### Game crashes
 
@@ -61,28 +65,6 @@ Log shows: [22:19:02.024] rglTerrain_shader_generator::handle_mesh_blend_state :
 
 ![](https://imgur.com/VYlzH6c.png)
 
-??? failure "System.AccessViolationException"
-    **at Vec2 SandBox.MapScene.GetNavigationMeshCenterPosition(PathFaceRecord face)**<br>
-    **at Settlement ..DefaultMapDistanceModel.GetClosestSettlementForNavigationMesh(PathFaceRecord face)**
-    <br><br>
-    REASON1: CUSTOM_settlements.xml does not match settlements.xml
-
-
-??? failure "System.NullReferenceException"
-    **DefaultMapDistanceModel.GetDistance(Settlement fromSettlement, Settlement toSettlement)**
-    <br><br>
-    REASON1: Wrongly assigned Settlement, Kingdom without a settlement. Attach dnSpy, it will show faction.FactionMidSettlement == null. Fix your XML.
-    <br><br>
-    REASON2: Problems with Navmesh. Inaccessible settlements. Old/mismatching settlements_distance_cache.bin - fix navmesh, regenerate settlements_distance_cache.bin
-    <br><br>
-    **CampaignObjectManager.InitializeCachedData()**
-    <br><br>
-    REASON: settlements.xml error - I accidently deleted one settlement and village had no bounded castle (crash on settlement.OwnerClan.OnBoundVillageAdded(settlement.Village);). This was on new game start.
-
-??? failure "System.Reflection.TargetInvocationException"
-    **RuntimeMethodHandle.InvokeMethod**
-    <br><br>
-    REASON: map xscene settlement ID mismatch with settlements.xml settlement ID / settlements.xml has a settlement with ID, which is not present in the xscene file
 
 ### Hangs on map save in the Editor
 
