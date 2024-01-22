@@ -24,7 +24,7 @@ I am using temporary vista with locations painted on it for better settlement pl
 
 - Apply tmp Vista to the map, to easily find the correct spot for the settlement
 - Google about the settlement, it's type/style, wooden/brick/stone castle, etc
-- Select [what model](modding/settlements.xml) will represent your settlement
+- Select [what model](/modding/settlements) will represent your settlement
 - Clean environment for the settlement if necessary (move away other entities/remove trees/etc)
 - Flatten the space for the settlement [LINK TO THE FLATTEN GUIDE]
 - Clone the settlement [LINK TO THE CLONE GUIDE]

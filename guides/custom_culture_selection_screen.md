@@ -110,4 +110,39 @@ Demo:
     <iframe width="640" height="360" src="https://www.youtube.com/embed/LRH9zWHL7sY" frameborder="0" allowfullscreen></iframe>
 </center>
 
-<br><br>
+
+
+## You were born into a family of...
+
+With the custom culture, this window is empty by default:
+
+![](https://imgur.com/NyqeknN.png)
+
+because menu selections are hardcoded for vanilla cultures only.
+
+??? info "Click here to see menus for vanilla cultures"
+    ![](https://imgur.com/61myENz.png)
+    ![](https://imgur.com/PuOXRlv.png)
+    ![](https://imgur.com/feLgRDw.png)
+    ![](https://imgur.com/Gdu5u5J.png)
+    ![](https://imgur.com/co4ShqN.png)
+    ![](https://imgur.com/hiHlbOV.png)
+
+To make this menu work for your custom culture we need a simple Harmony patch:
+
+``` cs
+[HarmonyPatch(typeof(SandboxCharacterCreationContent))]
+[HarmonyPatch("VlandianParentsOnCondition")]
+public class SandboxCharacterCreationContentVlandianParentsOnConditionPatch
+{
+    public static void Postfix(ref bool __result, SandboxCharacterCreationContent __instance)
+    {
+        if (__instance.GetSelectedCulture().StringId == "baltic") __result = true;
+    }
+}
+```
+
+This patch tells to use the Vlandia menu for custom baltic culture.
+
+Select the best vanilla culture for your custom culture and apply this patch with the necessary changes to have this menu working.
+
