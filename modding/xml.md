@@ -35,13 +35,15 @@
     - CUSTOM_settlements.xml completely empty<br>
     - etc
 
+</p>
 
+    Message: Sequence contains no matching element
+    Source: System.Core
 
-??? failure "Sequence contains no matching element"
-    **TSource System.Linq.Enumerable.First(IEnumerable source, Func predicate) / CaravanPartyComponent.InitializeCaravanOnCreation**
-    <br><br>
+??? failure "Enumerable.First - InitializeCaravanOnCreation - CreateCaravanParty - CreateParty - CreateCaravanParty"
+
     REASON: CUSTOM_culture notable Merchant was expecting CaravanGuard with the same culture: character.Culture == mobileParty.Party.Owner.Culture
-    <br><br>
+    <br>
     ``` xml
     InitializeCaravanOnCreation
     CharacterObject characterObject = CharacterObject.All.First((CharacterObject character) => character.Occupation == Occupation.CaravanGuard && character.IsInfantry && character.Level == 26 && character.Culture == mobileParty.Party.Owner.Culture);
@@ -72,7 +74,7 @@
 
 
 
-??? failure "DefaultMapDistanceModel - 	GetDistance"
+??? failure "DefaultMapDistanceModel - GetDistance"
     REASON1: Wrongly assigned Settlement, Kingdom without a settlement. Attach dnSpy, it will show faction.FactionMidSettlement == null. Fix your XML.
     <br><br>
     REASON2: Problems with Navmesh. Inaccessible settlements. Old/mismatching settlements_distance_cache.bin - fix navmesh, regenerate settlements_distance_cache.bin
