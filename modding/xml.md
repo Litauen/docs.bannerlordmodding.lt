@@ -128,17 +128,30 @@
     REASON: CUSTOM_settlements.xml does not match settlements.xml
 
 
-??? failure "System.Reflection - TargetInvocationException - RuntimeMethodHandle - InvokeMethod"
+### Type: System.Reflection.TargetInvocationException
+
+    Message: Exception has been thrown by the target of an invocation.
+    Source: mscorlib
+
+??? failure "InvokeMethod - Invoke - CreateInstanceImpl - CreateInstance - CreateScreen"
     REASON: map xscene settlement ID mismatch with settlements.xml settlement ID. settlements.xml has a settlement with ID, which is not present in the xscene file
+
+
 
 
 ## Formatting
 
+??? success "Make ugly XMLs easier to work with!"
+    ![](https://imgur.com/xENrxdr.png)
+
+??? hint "Notepad++ with XML Tools plugin"
+    ![](https://imgur.com/M6QGjrP.png)
+
+Online tools:
+
 - [Make it readable](https://www.liquid-technologies.com/online-xml-formatter){target=_blank}
 - [Fix Tab spaces](https://jsonformatter.org/xml-formatter){target=_blank}
 
-??? success "Make ugly XMLs easier to work with!"
-    ![](https://imgur.com/xENrxdr.png)
 
 
 ## Culture
