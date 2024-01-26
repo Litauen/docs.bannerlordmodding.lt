@@ -3,7 +3,7 @@
 
 ## Entity limit in the scene
 
-[There is a limit around 512k for game entities](https://forums.taleworlds.com/index.php?threads/is-there-a-game_entity-limit-for-scenes.455430/). Adding more leads to a crash.
+[There is a limit around 512k for game entities](https://forums.taleworlds.com/index.php?threads/is-there-a-game_entity-limit-for-scenes.455430/) / [50k limit?](https://forums.taleworlds.com/index.php?threads/map-entity-limit.460994/#post-9887478). Adding more leads to a crash.
 
 
 ## Temporary Vista with Settlement placement
