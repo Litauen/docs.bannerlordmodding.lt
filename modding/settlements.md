@@ -4,6 +4,7 @@
 - [Calradia World Map Castles](https://docs.google.com/spreadsheets/d/1aXAwpqAKICjhjr4PGIeXeV1A5GcKsLHDAnNMjX6K1Qs/edit){target=_blank}
 - [Calradia World Map Villages](https://docs.google.com/spreadsheets/d/1VqSQAa1xDS3MwrWku55P_roDQS_HWXdLdgzOMhz_O3g/edit){target=_blank}
 - [Town Scenes](https://docs.google.com/presentation/d/1GMQqoVQnrmqpTq8xDSfySev2kmBMKiFxNVGRdOazRQs/edit#slide=id.p){target=_blank} by d&h
+- [Castle Scenes](https://docs.google.com/presentation/d/1-Wc2IgQPuarkUlFCDsqYNYwqJHyOxlihWFuQOXSG_AQ/edit#slide=id.g2b3b6874ee5_0_45){target=_blank} by d&h
 
 ## Current Settlement we are at
 
