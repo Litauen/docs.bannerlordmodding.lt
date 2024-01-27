@@ -3,6 +3,10 @@
 ![](https://imgur.com/yZvCYRb.png)
 
 
+## Notes
+
+- If you change any native xml stuff you need to remove it with an xslt as well
+
 ## Crashes
 
 
@@ -89,6 +93,15 @@
     <br><br>
     REASON: settlements.xml error - I accidently deleted one settlement and village had no bounded castle (crash on settlement.OwnerClan.OnBoundVillageAdded(settlement.Village);). This was on new game start.
 
+??? failure "SpawnNotablesIfNeeded - NotablesCampaignBehavior - DailyTickSettlement"
+    REASON: Some type of notable is missing for some culture. I was missing RuralNotable<br>
+    Set in &lt;notable_and_wanderer_templates> in culture XML
+
+??? failure "CalculateAverageWage - DoLoadingForGameType - DoLoadingForGameManager"
+    REASON: ??? (maybe something related to party templates with non-existant troop IDs, but not confirmed)
+
+??? failure "CharacterObject - GetSkillValue - DefaultPartyMoraleModel - GetMoraleEffectsFromSkill - GetEffectivePartyMorale"
+    REASON: ???
 
 ---
 

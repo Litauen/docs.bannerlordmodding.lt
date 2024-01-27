@@ -11,7 +11,7 @@
 
 ## Equipment
 
-- [Troop Designer](https://www.nexusmods.com/mountandblade2bannerlord/mods/2354) - design and create troop xmls
+- [Troop Designer](https://www.nexusmods.com/mountandblade2bannerlord/mods/2354) - design and create troop xmls [OUTDATED]
 - [Equipment XML Print](https://www.nexusmods.com/mountandblade2bannerlord/mods/2786) - equip soldier in game and get XML for his equipment
 - [Item ID Tooltip](https://www.nexusmods.com/mountandblade2bannerlord/mods/4030) - this mod shows the ID of a item on it's inventory tooltip
 
