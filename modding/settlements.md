@@ -6,6 +6,7 @@
 - [Town Scenes](https://docs.google.com/presentation/d/1GMQqoVQnrmqpTq8xDSfySev2kmBMKiFxNVGRdOazRQs/edit#slide=id.p){target=_blank} by d&h
 - [Castle Scenes](https://docs.google.com/presentation/d/1-Wc2IgQPuarkUlFCDsqYNYwqJHyOxlihWFuQOXSG_AQ/edit#slide=id.g2b3b6874ee5_0_45){target=_blank} by d&h
 - [Village Scenes](https://docs.google.com/presentation/d/1t6DQuyzKwazqfxxs1_NIQDJk8Pxaj513uT8-T5pVvpg/edit?usp=sharing){target=_blank} by d&h
+- [Hideout Scenes](https://docs.google.com/presentation/d/1bhTmkf9ti--o-Jc_qvikNLkVMQw0k5YO-UwtFX_eXaM/edit?usp=drive_link){target=_blank} by d&h
 
 ## Current Settlement we are at
 
