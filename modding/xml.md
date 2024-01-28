@@ -10,7 +10,12 @@
 ## Crashes
 
 
-??? failure "System.ArgumentNullException Value cannot be null. Parameter name: source"
+### Type: System.ArgumentNullException
+
+    Message: Value cannot be null. Parameter name: source
+    Source: System.Core
+
+??? failure " Value cannot be null. Parameter name: source"
     **CreateHeroAtOccupation**
     <br><br>
     REASON: in CUSTOM_culture.xml commented out one name:
@@ -19,11 +24,19 @@
         <!-- <name name="Adalbert" /> -->
         <name name="Adalbern" />
     ```
+    also commented out one basic_mercenary_troops:
+    ``` xml
+    <basic_mercenary_troops>
+        <template name="NPCCharacter.eastern_mercenary" />
+        <template name="NPCCharacter.western_mercenary" />
+        <!--<template name="NPCCharacter.sword_sisters_sister_t3" /> -->
+    </basic_mercenary_troops>
+    ```
 
 
 
 ??? failure "An entry with the same key already exists"
-    **SortedList.Add - AiVisitSettlementBehavior.FindSettlementsToVisitWithDistances - AiHourlyTick**
+    **SortedList.Add - AiVisitSettlementBehavior - FindSettlementsToVisitWithDistances - AiHourlyTick**
     <br>
     REASON: had &lt;Village> with the same id in the settlements.xml
 
