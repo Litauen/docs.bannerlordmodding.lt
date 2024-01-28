@@ -101,6 +101,10 @@
     REASON: ??? (maybe something related to party templates with non-existant troop IDs, but not confirmed)
 
 ??? failure "CharacterObject - GetSkillValue - DefaultPartyMoraleModel - GetMoraleEffectsFromSkill - GetEffectivePartyMorale"
+    REASON: used not existant troop ID in the &lt;MBPartyTemplate id="villager_CUSTOM_CULTURE_template"><br>
+    HINT: Check Encyclopedia-Troops if necessary troop is actually in the game.
+
+??? failure "DefaultPartyWageModel - GetTotalWage - MobileParty - get_TotalWage - get_LimitedPartySize - CalculateGarrisonChangeInternal"
     REASON: ???
 
 ---
