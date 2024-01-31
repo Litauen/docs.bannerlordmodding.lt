@@ -4,7 +4,7 @@
 
 1) Exit from the Steam. DO NOT CLOSE IT with top-right X. Exit from the menu: Steam - Exit:
 
-![](https://i.imgur.com/qaJ9ToT.png)
+![](/pics/qaJ9ToT.png)
 
 2) Backup current version's file:
 
@@ -12,17 +12,17 @@ appmanifest_261550.acf in the ../Steam/steamapps folder
 
 I put version number at the end of the backup file.
 
-![](https://i.imgur.com/7Wg8ueC.png)
+![](/pics/7Wg8ueC.png)
 
 3) Rename the current Bannerlord's folder (I add version at the end):
 
-![](https://i.imgur.com/kf6adV7.png)
+![](/pics/kf6adV7.png)
 
 4) Start the Steam, RMB on Bannerlord -> Properties -> Betas -> Select the version you need, wait till the installation finishes.
 
-![](https://imgur.com/YKdZIyk.png)
+![](/pics/YKdZIyk.png)
 
-![](https://imgur.com/EBtg2sY.png)
+![](/pics/EBtg2sY.png)
 
 
 CONGRATS! Now you have new(old/different) Bannerlord version.

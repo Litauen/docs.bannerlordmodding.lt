@@ -28,4 +28,3 @@ Sincerely,
 
 Litauen#7731 @ [Modding Discord](https://discord.gg/ykFVJGQ){target=_blank}
 
-[This site on GitHub](https://github.com/Litauen/docs.bannerlordmodding.lt){target=_blank}

@@ -1,7 +1,12 @@
 # XML Modding
 
-![](https://imgur.com/yZvCYRb.png)
+![](/pics/yZvCYRb.png)
 
+* spcultures.xml - [Cultures](/modding/cultures/)
+* heroes.xml / lords.xml - [Heroes](/modding/heroes/#herolord-xml)
+* settlements.xml - [Settlements](/modding/settlements/#xml)
+* spclans.xml - [Clans](/modding/clans/)
+* spkingdoms.xml - [Kingdoms](/modding/kingdoms/)
 
 ## Notes
 
@@ -130,7 +135,7 @@
     REASON2: 2 lords with the same id
     <br><br>
     REASON3: Comments in spkingdoms.xml :D
-    ![](https://imgur.com/teP7QtL.png)
+    ![](/pics/teP7QtL.png)
     <br><br>
     REASON4: NPCCharacter age="9.9" (not int) in lords.xml
 
@@ -178,10 +183,10 @@
 ## Formatting
 
 ??? success "Make ugly XMLs easier to work with!"
-    ![](https://imgur.com/xENrxdr.png)
+    ![](/pics/xENrxdr.png)
 
 ??? hint "Notepad++ with XML Tools plugin"
-    ![](https://imgur.com/M6QGjrP.png)
+    ![](/pics/M6QGjrP.png)
 
 Online tools:
 
@@ -190,46 +195,7 @@ Online tools:
 
 
 
-## Culture
-
-These lines in CUSTOM_culture.xml define NPCs hirable in the Tavern, not the actual Caravan Guards that travel the world map.
-
-``` xml
-caravan_master="NPCCharacter.caravan_master_crusader"
-armed_trader="NPCCharacter.armed_trader_crusader"
-caravan_guard="NPCCharacter.caravan_guard_crusader"
-veteran_caravan_guard="NPCCharacter.veteran_caravan_guard_crusader"
-```
-
-Traveling Caravan Guard NPCs on the world map are generated from the same culture troop as Town's notable it belongs to, and must satisfy the following conditions:
-
-``` xml
-Occupation.CaravanGuard && character.IsInfantry && character.Level == 26 && character.Culture == mobileParty.Party.Owner.Culture
-```
-
-Culture can exist without the female clan member (it was stated somewhere that otherwise).
-
-## Hero/Lord
-
-Add entry into heroes.xml
-
-``` xml
-<Hero id="lord_lit_1_1" spouse="Hero.lord_lit_1_2" father="Hero.lit_1_0" mother="Hero.lit_1_00" alive="false" faction="Faction.clan_lit_1" />
-```
-
-Add entry into lords.xml
-
-``` xml
-
-    <NPCCharacter ...
-```
-
-??? question "How to properly make a lord dead?"
-    alive="false" makes him dead, but in description it writes: HERO_NAME is  member of ...
 
 
-## Kingdom
-
-Kingdom can exists without owning a Town. Castle is enough. (It was stated somewhere otherwise)
 
 

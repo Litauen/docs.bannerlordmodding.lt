@@ -43,4 +43,3 @@ public enum WeaponClass
     Banner,
     NumClasses
 }
-```

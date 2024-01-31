@@ -207,11 +207,10 @@ This will ensure you use a base id unique to your mod... people need to do this 
 
         In the C:/ProgramData/Mount and Blade II Bannerlord/logs/rgl_log_errors_....txt
 
-        ![](https://imgur.com/AMFkSht.png)
+        ![](/pics/AMFkSht.png)
 
 
 ## Saving Custom Struct
 
 ``` cs
 base.AddStructDefinition(typeof(YOUR_STRUCT), 1);
-```

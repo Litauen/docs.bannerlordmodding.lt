@@ -1,7 +1,7 @@
 # Custom Round Popup (MapNotification)
 
 <center>
-![](https://imgur.com/5PKXolQ.png)
+![](/pics/5PKXolQ.png)
 </center>
 
 ## Sprite
@@ -53,7 +53,7 @@ In YOUR_MODULE/GUI/Brushes copy file /SandBox/GUI/Brushes/MapNotification.xml, r
     AnotherCustomMapNotification.xml overwrites everything :(
 
     ??? info "Explanation"
-        ![](https://i.imgur.com/6KBoYgJ.gif)
+        ![](/pics/6KBoYgJ.gif)
 
         [Link](https://discord.com/channels/411286129317249035/677511186295685150/1112077680276410458){target=_blank}
 

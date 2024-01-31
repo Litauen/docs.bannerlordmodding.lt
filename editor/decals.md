@@ -25,7 +25,7 @@ Their projection geometries are cubes and they are projected in the Z direction.
 
 There are native decals in the game that look nice and support partial transparency. Example:
 
-![](https://imgur.com/bQXfNIo.png)
+![](/pics/bQXfNIo.png)
 
 Unfortunately, I was not able to make my own that look as good. 
 
@@ -33,7 +33,7 @@ Unfortunately, I was not able to make my own that look as good.
 
 ??? question "Why these decals are not visible on the world map?"
     I can see only these native decals on the world map:<br>
-    ![](https://imgur.com/EalqVzq.png)
+    ![](/pics/EalqVzq.png)
 
 
 !!! quote "npc99: Custom decals work differently. TW decals are optimized into atlases (where the material editor may be looking for an image to display) so you can use TW's ones unchanged but they'll fail if you try to override them. Custom decal materials must be added to a decal mesh in the scene."
@@ -51,15 +51,15 @@ Unfortunately, I was not able to make my own that look as good.
 
 Import your PNG in the Resource Browser:
 
-![](https://imgur.com/Y03syYs.png)
+![](/pics/Y03syYs.png)
 
 As I needed a decal for the terrain, I marked "For Terrain", but it works without it also, so not clear what is the purpose of this setting:
 
-![](https://imgur.com/GnVWpMo.png)
+![](/pics/GnVWpMo.png)
 
 This is a hint from the Editor, about what is necessary for the Material that can be used for terrain:
 
-![](https://imgur.com/P2BHsnk.png)
+![](/pics/P2BHsnk.png)
 
 ### Transparency
 
@@ -69,11 +69,11 @@ It is possible to have transparency with decals, but somehow very limited.
 
 For example, this PNG has partial transparency:
 
-![](https://imgur.com/mcVVckF.png)
+![](/pics/mcVVckF.png)
 
 and the final result is like this (only eyes and edges have full transparency):
 
-![](https://imgur.com/F4w7ql1.png)
+![](/pics/F4w7ql1.png)
 
 !!! question "Why is it backwards???"
 
@@ -89,24 +89,24 @@ Also, colors are messed up. I was unable to get the exact colors as in the origi
 
 In the Resource Browser:
 
-![](https://imgur.com/5M5SOc7.png)
+![](/pics/5M5SOc7.png)
 
 
 Set shader as decal:
 
-![](https://imgur.com/M53gHbV.png)
+![](/pics/M53gHbV.png)
 
 Set your texture for the DiffuseMap:
 
-![](https://imgur.com/i8xG77z.png)
+![](/pics/i8xG77z.png)
 
 Mark these flags:
 
-![](https://imgur.com/feBQB0c.png)
+![](/pics/feBQB0c.png)
 
 Check render_on_objects if you want to see the decal in the Material Editor
 
-![](https://imgur.com/lncG1kO.png)
+![](/pics/lncG1kO.png)
 
 turn it off if you don't need a decal on the objects but only on the terrain.
 
@@ -114,7 +114,7 @@ The official guide tells to enable these:
 
 !!! quote "Mandatory Settings at the ‘Others’ Tab. In order for the decal to be rendered correctly, “Cull Front Faces” and the “Don’t Modify Depth Buffer” flags should be enabled."
 
-![](https://imgur.com/SlJFhsi.png)
+![](/pics/SlJFhsi.png)
 
 My texture worked without these settings just as fine as with them.
 
@@ -123,15 +123,15 @@ My texture worked without these settings just as fine as with them.
 
 To use a decal without transparency/alpha channel BUT with almost exact colors as in the original texture use this:
 
-![](https://imgur.com/rMB53qH.png)
+![](/pics/rMB53qH.png)
 
 To use a decal with transparency, but with messed up colors use this:
 
-![](https://imgur.com/CfPF9W7.png)
+![](/pics/CfPF9W7.png)
 
 This is what I get:
 
-![](https://imgur.com/rPMAebk.png)
+![](/pics/rPMAebk.png)
 
 
 ## Setup Decal Prefab
@@ -140,34 +140,33 @@ The official guide tells:
 
 !!! quote "To create a decal entity/prefab, a specific mesh (Decal Mesh) should be added to an empty entity."
 
-![](https://imgur.com/Iz5kbfP.png)
+![](/pics/Iz5kbfP.png)
 
 Another way - find decal_mesh in the Resource Browser:
 
-![](https://imgur.com/1s9OyjE.png)
+![](/pics/1s9OyjE.png)
 
 and drop it on the map. After that, it looks like this:
 
-![](https://imgur.com/N78XqFO.png)
+![](/pics/N78XqFO.png)
 
 Then the material of that mesh should be changed to the material that we prepared before:
 
-![](https://imgur.com/ax36E80.png)
+![](/pics/ax36E80.png)
 
 change these:
 
-![](https://imgur.com/Nj8Tvqw.png)
+![](/pics/Nj8Tvqw.png)
 
 And decal should be visible in the scene.
 
-![](https://imgur.com/NKVu9mM.png)
+![](/pics/NKVu9mM.png)
 
 To adjust settings in the Texture/Material Editor and see changes in the scene almost instantly use: 
 
-![](https://imgur.com/jPtPPaS.png)
+![](/pics/jPtPPaS.png)
 
 <br><br>
 
 !!! danger "This is my personal experience. If you have something to add/correct me - please let me know. I will update this guide and hope it will save somebody a great amount of time in the future avoiding the same blunders I had."
 
-<br><br>

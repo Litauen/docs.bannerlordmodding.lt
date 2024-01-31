@@ -47,11 +47,11 @@ Collapse the folder named Native on the left of the resource browser to see your
 
 Open the GauntletUI folder in your module.
 
-![](https://i.imgur.com/G3Xd5ts.png)
+![](/pics/G3Xd5ts.png)
 
 press the “Scan new asset files” button which is pointed with a red arrow below
 
-![](https://i.imgur.com/rFDTvn5.png)
+![](/pics/rFDTvn5.png)
 
 ??? failure "If nothing happens"
 
@@ -64,11 +64,11 @@ press the “Scan new asset files” button which is pointed with a red arrow be
 
     2. If you are adding new sprites for the existing category or updating the old ones - make sure you did proper reimport as described below.
 
-![](https://imgur.com/PwZr8OQ.png)
+![](/pics/PwZr8OQ.png)
 
 Make sure your files are selected then press the Import button. Then, you should see something similar to this:
 
-![](https://i.imgur.com/T5QH7qk.png)
+![](/pics/T5QH7qk.png)
 
 Close the resource browser and the Editor(game). You should now see a new file named ui_{YOUR_CATEGORY_NAME}_1_tex.tpac under Modules\YOUR_MODULE_NAME\Assets\GauntletUI.
 
@@ -79,7 +79,7 @@ Close the resource browser and the Editor(game). You should now see a new file n
 * Run TaleWorlds.TwoDimension.SpriteSheetGenerator.exe
 * In resource.show_resource_browser press RMB on the existing category and select Reimport:
 
-![](https://i.imgur.com/b3kmMwv.png)
+![](/pics/b3kmMwv.png)
 
 
 
@@ -105,6 +105,6 @@ Possible reason: you added a new sprite, executed TaleWorlds.TwoDimension.Sprite
 
 ### Missing texture
 
-![](https://imgur.com/eiAJKer.png){ align=left }
+![](/pics/eiAJKer.png){ align=left }
 
 Make sure you [imported](https://moddocs.bannerlord.com/asset-management/generating_and_loading_ui_sprite_sheets/#importing-created-sprite-sheets){target=_blank} your sprite into the Resource Browser and tpac file was generated in the Assets or AssetPackages (after Mod publishing) folder.

@@ -1,6 +1,6 @@
 # Custom Culture Selection Screen
 
-![](https://imgur.com/c2soKfU.png)
+![](/pics/c2soKfU.png)
 
 
 On new game start character culture can be selected if it's marked in the culture XML as is_main_culture="true":
@@ -14,7 +14,7 @@ On new game start character culture can be selected if it's marked in the cultur
 
 ##Culture's Selection Cards
 
-![](https://imgur.com/dAbzEt7.png)
+![](/pics/dAbzEt7.png)
 
 
 The culture's name that is visible under the picture is defined in the module_strings.xml :
@@ -23,7 +23,7 @@ The culture's name that is visible under the picture is defined in the module_st
 <string id="str_culture_rich_name.baltic" text="Baltic" />
 ```
 
-![](https://imgur.com/nnjvduV.png)
+![](/pics/nnjvduV.png)
 
 
 Image dimensions for the culture's picture: 366 x 668
@@ -32,7 +32,7 @@ I leave some transparent space at the bottom to not cover the culture's name.
 
 Also round the corners, so the highlight would not look weird.
 
-![](https://imgur.com/cPK9nuC.png)
+![](/pics/cPK9nuC.png)
 
 These images should be named the same as culture ID:
 
@@ -56,12 +56,12 @@ The game uses these sprites for your new cultures automatically - nothing to be 
 
 ## Culture's Description
 
-![](https://imgur.com/SYqApNY.png)
+![](/pics/SYqApNY.png)
 
 
 The moving images are constructed out of 4 sprites. Each of them is stacked on top of another as visible in this example:
 
-![](https://imgur.com/2zkCAS4.png)
+![](/pics/2zkCAS4.png)
 
 4 at the bottom, does not move. Then sprite #3 - moves very slightly, #2 - moves more and #1 on the top, moves the most.
 
@@ -116,17 +116,17 @@ Demo:
 
 With the custom culture, this window is empty by default:
 
-![](https://imgur.com/NyqeknN.png)
+![](/pics/NyqeknN.png)
 
 because menu selections are hardcoded for vanilla cultures only.
 
 ??? info "Click here to see menus for vanilla cultures"
-    ![](https://imgur.com/61myENz.png)
-    ![](https://imgur.com/PuOXRlv.png)
-    ![](https://imgur.com/feLgRDw.png)
-    ![](https://imgur.com/Gdu5u5J.png)
-    ![](https://imgur.com/co4ShqN.png)
-    ![](https://imgur.com/hiHlbOV.png)
+    ![](/pics/61myENz.png)
+    ![](/pics/PuOXRlv.png)
+    ![](/pics/feLgRDw.png)
+    ![](/pics/Gdu5u5J.png)
+    ![](/pics/co4ShqN.png)
+    ![](/pics/hiHlbOV.png)
 
 To make this menu work for your custom culture we need a simple Harmony patch:
 

@@ -1,6 +1,6 @@
 # Custom Popup with Image
 
-![](https://i.imgur.com/tLujFvY.png)
+![](/pics/tLujFvY.png)
 
 
 

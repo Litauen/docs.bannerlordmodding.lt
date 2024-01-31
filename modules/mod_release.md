@@ -6,7 +6,7 @@
 
 [Exporting the Module via the Modding Tools](https://moddocs.bannerlord.com/steam-workshop/uploading_updating_mod/#exporting-the-module-via-the-modding-tools){target=_blank} packs Assets/AssetSources/RuntimeDataCache into AssetPackages/pack0.tpac
 
-![](https://imgur.com/bFhf0d8.png)
+![](/pics/bFhf0d8.png)
 
 Delete folders:
 
@@ -40,13 +40,13 @@ Test in the real game.
 
 Header image size: 1536x438
 
-![](https://imgur.com/KukQAvR.png)
+![](/pics/KukQAvR.png)
 
 
 
 ### Primary image
 
-![](https://imgur.com/MN1lY54.png)
+![](/pics/MN1lY54.png)
 
 For primary image to show properly, aspect ratio is important. Resized image is 236x133, so use these sizes:
 

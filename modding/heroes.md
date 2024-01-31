@@ -6,7 +6,7 @@
 
 ## Skills/Attributes/Focus/Xp
 
-![](https://i.imgur.com/ckk9hK4.png)
+![](/pics/ckk9hK4.png)
 
 ### Changes
 
@@ -142,11 +142,11 @@ Personality traits
 
 ??? abstract "NPC99: Approx relationship between Lord traits and skills:"
 
-    ![](https://imgur.com/JCtw0gl.png)
+    ![](/pics/JCtw0gl.png)
 
-    ![](https://imgur.com/YuKhQw2.png)
+    ![](/pics/YuKhQw2.png)
 
-    ![](https://imgur.com/47ysvNJ.png)
+    ![](/pics/47ysvNJ.png)
 
 
 ## Health
@@ -171,7 +171,7 @@ int  HitPoints [get, set]
 ??? abstract "Defines how powerfull a notable is (Regular [0..99], Influential [100..199], Powerful [200+])"
 
 
-    <center>![](https://imgur.com/LggRpKJ.png)</center>
+    <center>![](/pics/LggRpKJ.png)</center>
 
         private DefaultNotablePowerModel.NotablePowerRank[] NotablePowerRanks = new DefaultNotablePowerModel.NotablePowerRank[]
         {
@@ -448,3 +448,23 @@ List<Hero> heroList = (from characterObject in Hero.MainHero.PartyBelongedTo.Mem
     * VoiceGroupPersonaSoftspokenUpperTag
     * WandererTag
     * WaryTag
+
+
+## Hero/Lord XML
+
+Add entry into heroes.xml
+
+``` xml
+<Hero id="lord_lit_1_1" spouse="Hero.lord_lit_1_2" father="Hero.lit_1_0" mother="Hero.lit_1_00" alive="false" faction="Faction.clan_lit_1" />
+```
+
+Add entry into lords.xml
+
+``` xml
+
+    <NPCCharacter ...
+```
+
+??? question "How to properly make a lord dead in XML?"
+    alive="false" makes him dead, but in description it writes: HERO_NAME is  member of ...
+

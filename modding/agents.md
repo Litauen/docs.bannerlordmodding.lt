@@ -128,7 +128,7 @@ agent.AgentVisuals?.SetContourColor(null); to remove it
 
 ??? example "Looks like this:"
 
-    ![](https://imgur.com/3XV9smr.png)
+    ![](/pics/3XV9smr.png)
 
 
 ## BoneBodyPartType

@@ -58,7 +58,7 @@ NOTE: faction1/faction2 can be your clan's name
 
 ## Own console command
 
-![](https://i.imgur.com/Bk74f84.png)
+![](/pics/Bk74f84.png)
 
 
 ``` cs

@@ -6,4 +6,3 @@
 
 I needed Sturgian Clay Mining Village, that is not present in the Vanilla. I took Empire Clay Village, saved as a prefab, saved Sturgian village as a prefab, then edited prefab XML file to add clay mine data to the Sturgian village.
 
-Had to restart the Editor for this new prefab to appear in the prefabs window.

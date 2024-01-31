@@ -213,4 +213,3 @@ Mod setup, dialogs, game menu, GauntletUI, etc.
 
 ## Resonant
 
-* [An IN DEPTH LOOK At Bannerlord's MAP EDITOR](https://www.youtube.com/watch?v=JU0MvyDoToE)

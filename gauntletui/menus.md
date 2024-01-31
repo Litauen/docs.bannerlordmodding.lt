@@ -72,7 +72,7 @@ Can use custom 445x805 sprite there.
 
 ## AddGameMenuOption
 
-![](https://imgur.com/i2CQmtK.png)
+![](/pics/i2CQmtK.png)
 
 
 ``` cs
@@ -110,10 +110,10 @@ args.optionLeaveType = GameMenuOption.LeaveType.ICON_NAME;
 ```
 
 ??? abstract "ICON_NAMEs 1.1.0+"
-    ![](https://i.imgur.com/bWOtObC.png)
+    ![](/pics/bWOtObC.png)
 
 ??? abstract "ICON_NAMEs 1.0.3"
-    ![](https://i.imgur.com/DCeLFMO.png)
+    ![](/pics/DCeLFMO.png)
 
 
 
@@ -173,4 +173,3 @@ args.MenuContext.SetPanelSound("event:/ui/panels/settlement_village");
 args.MenuContext.SetAmbientSound("event:/map/ambient/node/settlements/2d/village");
 ```
 
-More about [Sound Events](/modding/sound/#sound-events)

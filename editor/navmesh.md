@@ -12,7 +12,7 @@
 
 ## Controls
 
-![](https://imgur.com/FnZfJS5.png)
+![](/pics/FnZfJS5.png)
 
 
 ## Problems/Solutions
@@ -21,5 +21,5 @@
 
 Turn ON Helpers in the Visibility tab:
 
-![](https://imgur.com/nZJiVRD.png)
+![](/pics/nZJiVRD.png)
 

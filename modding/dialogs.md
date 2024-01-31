@@ -66,7 +66,7 @@ private bool IsBookVendorInTown()
 
 Diagram of the example above:
 
-![](https://imgur.com/pC7cbU1.png)
+![](/pics/pC7cbU1.png)
 
 
 <br>
@@ -88,7 +88,7 @@ Diagram of the example above:
 ### Disable with Explanation
 
 <center>
-![](https://imgur.com/1taJpnI.png)
+![](/pics/1taJpnI.png)
 </center>
 
 Disable the PlayerLine with the Explanation like this:
@@ -266,7 +266,7 @@ For random text, generate it in the ConditionDelegate which is run on each menu 
 ## Face/Body NPC Tags
 
 <center>
-![](https://imgur.com/mbMm9iV.png)
+![](/pics/mbMm9iV.png)
 </center>
 
 [Face/Body control tags for NPCs in Dialogs](https://docs.google.com/document/d/1Vm_KkjmtLGOxad4wLBmaj3E9TQtgILacNP4jGNYqgIU/edit#heading=h.5mgttots7rq6){target=_blank}
@@ -285,4 +285,3 @@ You can try declaring the battle as an action and execute it after the conversat
 .Consequence(delegate { Campaign.Current.ConversationManager.ConversationEndOneShot += YourMethodCall; })
 ```
 
-<br><br>

@@ -1,6 +1,6 @@
 # [Controls](https://moddocs.bannerlord.com/editor/scene-editor/editor_shortcuts/)
 
-![](https://imgur.com/dCUYVZW.png)
+![](/pics/dCUYVZW.png)
 
 | Buttons | Action | Comments |
 | -- | --- | --- |

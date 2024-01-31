@@ -1,6 +1,6 @@
 # Cutscenes
 
-![](https://imgur.com/NBh2a8Y.png)<br>
+![](/pics/NBh2a8Y.png)<br>
 We are waiting... (No pressure :grin:)
 
 All info in this page is wisdom nuggets from Artem (picked over from the Discord).
@@ -29,4 +29,3 @@ If you're creating a cutscene you need to determine a scene notification item cl
 
 These classes should give you a good understanding:
 
-![](https://imgur.com/DSOChP8.png)

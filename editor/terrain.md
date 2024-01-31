@@ -8,11 +8,11 @@
 
 ## Create
 
-![](https://imgur.com/UE3sZpn.png)
+![](/pics/UE3sZpn.png)
 
 When creating new terrain you will see:
 
-![](https://imgur.com/yytdVZT.png)
+![](/pics/yytdVZT.png)
 
 ### Node/size/dimension?
 
@@ -30,7 +30,7 @@ Single node size refers to the length of each side of a square node. It is measu
 This represents the number of vertices (points) to be used on each side of each node to create the terrain mesh.
 The more vertices, the higher the resolution and detail of the terrain, but it also requires more computational resources.
 
-![](https://imgur.com/ZiL27AD.png)
+![](/pics/ZiL27AD.png)
 
 The default size of Calradia (Bannerlord's original map) are 16x16 nodes, 53 metres long and 256x256 vertices.
 

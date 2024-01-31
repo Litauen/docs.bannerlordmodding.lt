@@ -19,7 +19,7 @@
 
 In the Visibility tab turn off Game Entities, Helpers and Shadows
 
-![](https://imgur.com/B6B7BMC.png)
+![](/pics/B6B7BMC.png)
 
 Looking down to the ground also helps, so no entities will be visible.
 
@@ -63,7 +63,7 @@ Reason: ??
 
 - Not fully saved map - could be the reason that game was active/loaded/in progress when map was saved. Exit the game, then save the map in the Editor. Check map folder, should see following files:
 
-![](https://imgur.com/VYlzH6c.png)
+![](/pics/VYlzH6c.png)
 
 
 ### Hangs on map save in the Editor
@@ -73,11 +73,11 @@ Possible causes:
 - Too much terrain editing (Smoothing?)
 - Erasing a lot of info on some layer
 
-![](https://imgur.com/MMmqYCn.png)
+![](/pics/MMmqYCn.png)
 
 To cancel the Save, use X from the Taskbar:
 
-![](https://imgur.com/qOfC2xV.png)
+![](/pics/qOfC2xV.png)
 
 Try to save again.
 

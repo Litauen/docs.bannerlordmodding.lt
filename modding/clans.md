@@ -19,9 +19,9 @@ Can be set in XML as 'is_nomad'
 
 ??? example "dnSpy output"
 
-    ![](https://imgur.com/10TEfnN.png)
+    ![](/pics/10TEfnN.png)
 
-    ![](https://imgur.com/1ZxDEdK.png)
+    ![](/pics/1ZxDEdK.png)
 
-    ![](https://imgur.com/m8aHPFU.png)
+    ![](/pics/m8aHPFU.png)
 

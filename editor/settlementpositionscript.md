@@ -2,7 +2,7 @@
 
 Find in the lower bottom corner of the map or in the Entities filter.
 
-![](https://imgur.com/Vo8Iwc0.png)
+![](/pics/Vo8Iwc0.png)
 
 
 It contains a SettlementPositionScript with buttons to CheckPositions, SavePositions & ComputeAndSaveSettlementDistanceCache.
@@ -10,7 +10,7 @@ The game relies on caching distances between settlements for AI pathing and deci
 
 ## CheckPositions
 
-![](https://imgur.com/QyEK1Xk.png)
+![](/pics/QyEK1Xk.png)
 
 
 ### Workflow
@@ -30,12 +30,12 @@ The game relies on caching distances between settlements for AI pathing and deci
 
 ### Outside Navmesh
 
-![](https://imgur.com/J7ZiQXK.png)
+![](/pics/J7ZiQXK.png)
 
 
 ### Inaccessible terrain
 
-![](https://imgur.com/Ca4b2IN.png)
+![](/pics/Ca4b2IN.png)
 
 
 

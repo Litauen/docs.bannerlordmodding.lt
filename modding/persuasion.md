@@ -6,9 +6,9 @@
 
 ??? abstract "Structure of LordDefectionCampaignBehavior"
 
-    [Fullsize Link](https://i.imgur.com/j5Sm0Zs.png){target=_blank}
+    [Fullsize Link](/pics/j5Sm0Zs.png){target=_blank}
 
-    ![](https://imgur.com/j5Sm0Zs.png)
+    ![](/pics/j5Sm0Zs.png)
 
 
 ### RomanceCampaignBehavior
@@ -19,7 +19,7 @@
 
 ??? abstract "Structure"
 
-    ![](https://imgur.com/OjHOkDe.png)
+    ![](/pics/OjHOkDe.png)
 
 ## PersuasionDifficulty
 
@@ -72,7 +72,7 @@ Used in DefaultPersuasionModel.GetDefaultSuccessChance
     With PersuasionDifficulty.Medium:
 
     <center>
-    ![](https://imgur.com/cVU0hOH.png)
+    ![](/pics/cVU0hOH.png)
     </center>
 
 

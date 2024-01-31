@@ -10,7 +10,7 @@
 
 I am using temporary vista with locations painted on it for better settlement placement:
 
-![](https://imgur.com/7Nc7oZ9.png)
+![](/pics/7Nc7oZ9.png)
 
 - Import tmp Vista into Resource Browser
 
@@ -54,14 +54,13 @@ If after cloning new settlement's gate is at the old settlement's gate - delete 
 
 Mark a settlement and press Del or select Delete from the menu:
 
-![](https://imgur.com/5DzYkaU.png)
+![](/pics/5DzYkaU.png)
 
 Settlement is deleted, but it's decals remain:
 
-![](https://imgur.com/HHj7nPV.png)
+![](/pics/HHj7nPV.png)
 
 I was not able to find avay to get rid of them. They are gone when the map is reloaded (save-load).
 
 !!! danger "Do not forget to delete it from the settllements.xml - game will crash otherwise"
 
-!!! danger "If you are using CUSTOM_settlements.xml - delete from this file also :)"

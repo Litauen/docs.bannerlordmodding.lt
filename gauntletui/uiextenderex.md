@@ -20,9 +20,9 @@
 
     Should be visible in the Dependencies:
 
-    ![](https://imgur.com/PV7e8IX.png)
+    ![](/pics/PV7e8IX.png)
 
-    ![](https://imgur.com/4ULLtZa.png)
+    ![](/pics/4ULLtZa.png)
 
 ??? info "Register in the OnSubModuleLoad()"
 

@@ -10,7 +10,7 @@
 InformationManager.DisplayMessage(new InformationMessage("message", TaleWorlds.Library.Color.ConvertStringToColor("#FF0042FF")));
 ```
 
-![](https://imgur.com/1BK27yg.png)
+![](/pics/1BK27yg.png)
 
 ## ShowInquiry
 
@@ -18,7 +18,7 @@ InformationManager.DisplayMessage(new InformationMessage("message", TaleWorlds.L
 InformationManager.ShowInquiry(new InquiryData("Title", "Text", true, true, "AffirmativeText", "NegativeText", null, null, "event:/ui/notification/peace", 0f, null), true, false);
 ```
 
-![](https://i.imgur.com/y2cp4rK.png)
+![](/pics/y2cp4rK.png)
 
 
 ## ShowTextInquiry
@@ -46,7 +46,7 @@ ShowTextInquiry(
 InformationManager.ShowTextInquiry(new TextInquiryData("Title", "Text", true, true, "AffirmativeText", "NegativeText", null, null, false, null, "", "defaultInputText"), false, false);
 ```
 
-![](https://i.imgur.com/wgSyy4u.png)
+![](/pics/wgSyy4u.png)
 
 
 ## ShowMultiSelectionInquiry
@@ -68,12 +68,12 @@ MultiSelectionInquiryData(
 MBInformationManager.ShowMultiSelectionInquiry(MultiSelectionInquiryData data);
 ```
 
-![](https://i.imgur.com/zxK9WCD.png)
+![](/pics/zxK9WCD.png)
 
 
 ## AddQuickInformation
 
-![](https://imgur.com/dRrDaYF.png)
+![](/pics/dRrDaYF.png)
 
 ``` cs
 MBInformationManager.AddQuickInformation(TextObject content, int priority, CharacterObject announcer, string sounEventPath);

@@ -16,4 +16,3 @@ New field: int minSelectableOptionCount
 AddGameMenuOption(string menuId, string optionId, string optionText, GameMenuOption.OnConditionDelegate condition, GameMenuOption.OnConsequenceDelegate consequence, bool isLeave = false, int index = -1, bool isRepeatable = false, object relatedObject = null)
 ```
 
-NOT SOLVED: **index** field does not impact the menu option anymore - all newly added MenuOptions are added to the start of the menu.

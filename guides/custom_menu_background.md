@@ -1,7 +1,7 @@
 # Custom Menu Background
 
 <center>
-![](https://imgur.com/PeVfWv5.png)
+![](/pics/PeVfWv5.png)
 </center>
 
 ## Custom image

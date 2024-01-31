@@ -10,7 +10,7 @@ Report without a crash log is not very helpful. To get a crash log follow these 
 
 4. Do as said in the image:
 
-    ![](https://imgur.com/8n9Tn3F.png)
+    ![](/pics/8n9Tn3F.png)
 
 5. Also add a description what you were doing when the crash happened.
 
@@ -18,5 +18,5 @@ Report without a crash log is not very helpful. To get a crash log follow these 
 
 ??? failure "If 'Upload Report as a Permalink' button is missing"
 
-    ![](https://i.imgur.com/1v9ywSX.png)
+    ![](/pics/1v9ywSX.png)
 

@@ -12,7 +12,7 @@ In PowerShell run:
 
 ## Set Environment Variable
 
-![](https://imgur.com/OrsHtAd.png)
+![](/pics/OrsHtAd.png)
 
 
 ## Create a Module

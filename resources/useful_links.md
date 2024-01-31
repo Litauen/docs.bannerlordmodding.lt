@@ -27,4 +27,3 @@
 ## Exception Handling
 
 * [ButterLib](https://www.nexusmods.com/mountandblade2bannerlord/mods/2018){target=_blank}
-* [Better Exception Window (With Emergency Save and More)](https://www.nexusmods.com/mountandblade2bannerlord/mods/404){target=_blank}

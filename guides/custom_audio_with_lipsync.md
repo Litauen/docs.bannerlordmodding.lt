@@ -14,9 +14,9 @@ Save your generated audio to the OGG file. I use [Audacity](https://www.audacity
 
 
 ??? "Audacity usage"
-    ![](https://imgur.com/ajka2ev.png)
+    ![](/pics/ajka2ev.png)
 
-    ![](https://imgur.com/bUp5TiZ.png)
+    ![](/pics/bUp5TiZ.png)
 
 
 ## File names
@@ -74,7 +74,7 @@ When you have audio file(s) you need, use [Rhubarb Lip Sync](https://github.com/
     endlocal
     ```
 
-![](https://imgur.com/ztfpJ1n.png)
+![](/pics/ztfpJ1n.png)
 
 XML files should be generated for each OGG file with the same file name. Like this:
 
@@ -166,7 +166,7 @@ AUDIO_ID is from voiced_lines_en.xml <VoiceOver id="AUDIO_ID">. Make your own.
 textLine is some text.
 
 ??? failure "If you leave textLine empty, you will get such error:"
-    ![](https://imgur.com/zvLoWia.png)
+    ![](/pics/zvLoWia.png)
 
 
 Then in AddDialogLine use VOICED_LINE like this:

@@ -202,7 +202,7 @@ But it probably depends on the cost of the item - the higher it is, the greater 
 
 Let's say we want to find ItemID for this item:
 
-![](https://imgur.com/hkirJAc.png)
+![](/pics/hkirJAc.png)
 
 
 Use [ripgrep](/resources/tools/) in the game's folder:
@@ -241,4 +241,4 @@ Then you can use it in your mod. Example:
 
 ??? abstract "Helmet Hair Coverage"
 
-    ![](https://imgur.com/Iq2hAG0.png)
+    ![](/pics/Iq2hAG0.png)

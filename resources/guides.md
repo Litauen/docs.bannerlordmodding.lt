@@ -40,4 +40,3 @@
 
 ## Audio
 
-* [Custom Audio with LipSync](/guides/custom_audio_with_lipsync)
