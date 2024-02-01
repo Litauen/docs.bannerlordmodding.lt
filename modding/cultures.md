@@ -31,13 +31,13 @@ Culture can exist without the female clan member (it was stated somewhere otherw
 
 ## XML
 
-	spcultures.xml
+    spcultures.xml
 
 
 is_main_culture - will this culture show in the new character creation / [culture selection menu](/guides/custom_culture_selection_screen/)?
 
-	color="0xffC0C0C0"
-	color2="0xffFFC5C5"
+    color="0xffC0C0C0"
+    color2="0xffFFC5C5"
 
 Colors define the armor colors for this culture's units in the Encyclopedia:
 
@@ -58,7 +58,10 @@ Traveling Caravan Guard NPCs on the world map are generated from the same cultur
 Occupation.CaravanGuard && character.IsInfantry && character.Level == 26 && character.Culture == mobileParty.Party.Owner.Culture
 ```
 
+These lines determine the equipment rosters for lords that turn 18:
 
+    default_battle_equipment_roster="EquipmentRoster.___"
+    default_civilian_equipment_roster="EquipmentRoster.___"
 
 
 ### module_strings.xml
@@ -93,3 +96,4 @@ Related strings:
 
 New culture requires new town menu sprite, without it it's empty:
 
+![](/pics/NsKHhOg.png)
