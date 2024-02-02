@@ -49,6 +49,14 @@ After crash/restart Texture appears deleted
 
 - Last line in the log: opening ../../Modules/MODULE_NAME/ModuleData/settlements.xml - missing settlements.xml
 
+#### Crash on the interior scene save
+
+!!! quote "[hunharibo:](https://discord.com/channels/411286129317249035/761302555308720148/1202691179896897536)"
+    PSA: for scenes crashing on saves - add a terrain, even if your scene is interior and you would normally not need it<br>
+    can be really small, like 2x2, 16 node dimension<br>
+    and just hide it away in a corner of the map or put entities on top of it<br>
+    terrain present in scene = no crashing on save
+
 #### Crash when deleting the paint layer
 
 No solution yet. Can't delete the layer...

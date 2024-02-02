@@ -8,6 +8,12 @@ Agent - moving entity in the Mission: NPC, Player, horse, etc.
 * All Mission agents: Mission.Current.Agents
 * Active enemy agents: Mission.Current.PlayerEnemyTeam.ActiveAgents
 
+
+!!! quote "hunharibo:"
+    Agent and Character(Object) both exist and mean different things. <br><br>
+    Agent is a "pawn" that moves in a mission (Mission = any scene that is different from the world map, when you walk around town in civilian mode, field battle, siege, arenas, bandit hideouts etc.)<br><br>
+    Whereas character is an object container describing an NPC (civilian or troop) and their characteristics and equipment. Agents get spawned partially based on data from a character.
+
 ## Agent's Hero
 
 ``` cs
