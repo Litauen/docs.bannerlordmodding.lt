@@ -290,6 +290,24 @@ Hero.ChangeState(Hero.CharacterStates.Active);
 * LastMeetingTimeWithPlayer - last time we met him
 * Hero.EncyclopediaText = new TextObject("Alive and kicking!"); - Encyclopedia text
 
+
+## Voice
+
+Can be set in the lords.xml file:
+
+``` xml
+<NPCCharacter id="lord_lit_1_6" name="Parbus" voice="softspoken" age="52"
+```
+
+Voice types:
+
+- curt
+- earnest
+- ironic
+- softspoken
+
+Also depends on the culture.
+
 ## Kill Character
 
 ``` cs

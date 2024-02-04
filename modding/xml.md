@@ -125,6 +125,17 @@
 ??? failure "DefaultPartyWageModel - GetTotalWage - MobileParty - get_TotalWage - get_LimitedPartySize - CalculateGarrisonChangeInternal"
     REASON: ???
 
+### Type: System.IndexOutOfRangeException
+
+    Message: Index was outside the bounds of the array.
+    Source: TaleWorlds.CampaignSystem 
+
+??? failure "DefaultMapWeatherModel - GetWeatherEventInPosition - WeatherAudioTick - TickVisuals"
+
+    REASON: Marked 'Use Dynamic Weather Effects' without the a flowmap. Maybe map is not a square. Maybe flowmap is not 1024x1024.
+
+    ![](/pics/202402032219.png)
+
 ---
 
     Source: TaleWorlds.CampaignSystem
