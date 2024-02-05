@@ -125,6 +125,10 @@
 ??? failure "DefaultPartyWageModel - GetTotalWage - MobileParty - get_TotalWage - get_LimitedPartySize - CalculateGarrisonChangeInternal"
     REASON: ???
 
+??? failure "SetInitialValuesFromCharacter - CreateNewHero - CreateSpecialHero - CreateMinorFactionHeroFromTemplate - SpawnMinorFactionHeroes - OnNewGameCreated"
+    REASON: spclans.xslt and custom_spclans.xml were in a separate folder for spclans, but missing empty spclans.xml file
+
+
 ### Type: System.IndexOutOfRangeException
 
     Message: Index was outside the bounds of the array.
