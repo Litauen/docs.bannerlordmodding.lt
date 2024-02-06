@@ -9,6 +9,7 @@
 <br>
 ## Notes
 
+- Editor needs to be on the same disk as the Game, as the modding tools use the base games files - they both install to the same folder, and that only works if they are on the same disk
 - On map save overwrites settlements.xml (crashes if this file is not present or has errors)
 - On map save Editor does not write/update/generate settlements_distance_cache.bin
 
