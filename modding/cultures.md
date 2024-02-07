@@ -64,6 +64,10 @@ These lines determine the equipment rosters for lords that turn 18:
     default_civilian_equipment_roster="EquipmentRoster.___"
 
 
+encounter_background_mesh - menu pic for encounter with the troops of this culture
+
+
+
 ### module_strings.xml
 
 Related strings:
@@ -92,8 +96,3 @@ Related strings:
 
 
 
-### Town menu picture
-
-New culture requires new town menu sprite, without it it's empty:
-
-![](/pics/NsKHhOg.png)

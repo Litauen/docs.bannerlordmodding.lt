@@ -57,7 +57,7 @@ public void AddGameMenu(
     object relatedObject = null)
 ```
 
-### Background Image
+## Background Image
 
 ``` cs
 args.MenuContext.SetBackgroundMeshName("wait_raiding_village");
@@ -67,6 +67,10 @@ args.MenuContext.SetBackgroundMeshName("wait_raiding_village");
 Defined in Modules\Native\GUI\NativeSpriteData.xml
 
 Can use custom 445x805 sprite there.
+
+
+- [Settlements Menu Image](/modding/settlements/#wait_mesh)
+- [Encounters](/modding/cultures/#xml) (encounter_background_mesh in cultures.xml)
 
 
 

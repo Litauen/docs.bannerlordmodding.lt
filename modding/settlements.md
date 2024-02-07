@@ -128,6 +128,73 @@ What is interesting/weird - if you change name in the settlements.xml - the name
     Otherwise files will be different and Editor uses settlemens.xml and if you change something on the map, changes will go to settlements.xml, it's get deleted with xslt and your CUSTOM file will be used with mismatching map and you will get a crash.
 
 
+### background_mesh
+
+    Size: 100x100
+    SpriteCategory Name="ui_fullbackgrounds"
+
+Note: name of the sprite is with the '_t' at the end: PNG file gui_bg_village_baltic_t.png but in the settlements.xml it's gui_bg_village_baltic
+
+??? example "Image for the settlement small icon in the Encyclopedia:"
+    ![](/pics/2402061356.png)
+
+
+### wait_mesh
+
+    Size: 445x805
+    SpriteCategory Name="ui_fullbackgrounds"
+
+??? example "Image for the settlement menu and in the Encyclopedia:"
+    ![](/pics/2402061353.png)
+
+
+
+### background_crop_position
+
+??? note "Not used"
+    ``` cs
+    SettlementComponent
+    public float BackgroundCropPosition { get; protected set; }
+
+    Village
+    public override void Deserialize(MBObjectManager objectManager, XmlNode node)
+    base.BackgroundCropPosition = float.Parse(node.Attributes["background_crop_position"].Value);
+
+    EmcyclopediaSettlementPageVM
+    [DataSourceProperty]
+    public double SettlementCropPosition
+    {
+        get
+        {
+            return this._settlementCropPosition;
+        }
+        set
+        {
+            if (value != this._settlementCropPosition)
+            {
+                this._settlementCropPosition = value;
+                base.OnPropertyChangedWithValue(value, "SettlementCropPosition");
+            }
+        }
+    }
+
+    ```
+    no reference in SandBox\GUI\Prefabs\Encyclopedia\EncyclopediaSubPages\EncyclopediaSettlementPage.xml or anywhere else.
+
+
+### castle_background_mesh
+
+??? note "Not used"
+
+    ``` cs
+    Village
+    public string CastleBackgroundMeshName { get; protected set; }
+
+    base.CastleBackgroundMeshName = node.Attributes["castle_background_mesh"].Value;
+    ```
+    and CastleBackgroundMeshName is not used anywhere else.
+
+
 ## Settlements Distance Cache
 
 !!! quote "If you add new settlements, or relocate existing ones, you will need to recalculate settlements_distance_cache.bin which the game uses to optimise AI path finding between different settlements."

@@ -7,6 +7,7 @@
 * settlements.xml - [Settlements](/modding/settlements/#xml)
 * spclans.xml - [Clans](/modding/clans/)
 * spkingdoms.xml - [Kingdoms](/modding/kingdoms/)
+* npc/characters/templates - [NPC Character](/modding/npc_character)
 
 ## Notes
 
