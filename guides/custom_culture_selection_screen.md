@@ -76,7 +76,7 @@ Leave some transparent space at the top/bottom for a better look. The full image
 
 These sprites should be imported from the same folder: 
 
-    \MODULE_NAME\GUI\SpriteParts\ui_charactercreation\CharacterCreation/Culture\
+    \MODULE_NAME\GUI\SpriteParts\ui_charactercreation\CharacterCreation\Culture\
 
 Then we must create custom brushes to allow the game to use our newly created sprites.
 
