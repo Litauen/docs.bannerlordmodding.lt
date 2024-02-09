@@ -204,8 +204,9 @@ Let's say we want to find ItemID for this item:
 
 ![](/pics/hkirJAc.png)
 
+Easy way: use this [mod](https://www.nexusmods.com/mountandblade2bannerlord/mods/4030)
 
-Use [ripgrep](/resources/tools/) in the game's folder:
+Hard way: Use [ripgrep](/resources/tools/) in the game's folder:
 
     rg -C 5 "Thinhide Coif"
 

@@ -26,5 +26,5 @@ Happy modding!
 
 Sincerely,
 
-Litauen#7731 @ [Modding Discord](https://discord.gg/ykFVJGQ){target=_blank}
+Litauen @ [Discord](https://discord.gg/JtkSudzAjw){target=_blank}
 

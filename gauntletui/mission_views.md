@@ -1,6 +1,11 @@
 # MissionViews
 
+- [Missions](/modding/missions/)
+
 ## Changes in 1.2.9
+
+!!! danger "MissionView.OnMissionScreenInitialize() does not have access to the MissionScreen anymore. (Crash on base.MissionScreen.AddLayer(layer);)"
+
 
 !!! quote "[Dejan](https://discord.com/channels/411286129317249035/677511186295685150/1204033796513595432) commenting on 1.2.9 change:"
 
@@ -12,11 +17,10 @@
     This was done to prevent leaks and inconsistent behaviors.
 
 
-MissionView.OnMissionScreenInitialize() does not have access to the MissionScreen anymore. (Crash on base.MissionScreen.AddLayer(layer);)
 
 Create your screen in the OnBehaviorInitialize(), it is possible to access base.MissionScreen there.
 
-Add [DefaultView] to you CustomMissionView:
+Add [DefaultView] tag to your CustomMissionView:
 
 ``` cs
 [DefaultView]

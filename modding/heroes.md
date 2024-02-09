@@ -476,7 +476,7 @@ Add entry into heroes.xml
 <Hero id="lord_lit_1_1" spouse="Hero.lord_lit_1_2" father="Hero.lit_1_0" mother="Hero.lit_1_00" alive="false" faction="Faction.clan_lit_1" />
 ```
 
-Add entry into lords.xml
+Add entry into [lords.xml](/modding/npc_character/)
 
 ``` xml
 

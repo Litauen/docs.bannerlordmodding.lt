@@ -8,6 +8,7 @@
 * spclans.xml - [Clans](/modding/clans/)
 * spkingdoms.xml - [Kingdoms](/modding/kingdoms/)
 * npc/characters/templates - [NPC Character](/modding/npc_character)
+* items - [Items](/modding/items/#xml)
 
 ## Notes
 

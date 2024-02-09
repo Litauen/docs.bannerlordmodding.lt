@@ -43,9 +43,9 @@ These images should be named the same as culture ID:
 
 Image name: baltic.png
 
-Sprites should be [imported](/gauntletui/sprites/#import) from: 
+Sprites should be [imported](/gauntletui/sprites/#import) from:
 
-    \MODULE_NAME\GUI\SpriteParts\ui_charactercreation\CharacterCreation/Culture\
+    \MODULE_NAME\GUI\SpriteParts\ui_charactercreation\CharacterCreation\Culture\
 
 That means that we are overwriting the native sprite category: ui_charactercreation
 

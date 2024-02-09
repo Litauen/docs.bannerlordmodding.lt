@@ -1,6 +1,7 @@
 # Missions
 
-[TaleWorlds.MountAndBlade.Mission Class Reference](https://apidoc.bannerlord.com/v/1.1.0/class_tale_worlds_1_1_mount_and_blade_1_1_mission.html){target=_blank}
+- [TaleWorlds.MountAndBlade.Mission Class Reference](https://apidoc.bannerlord.com/v/1.1.0/class_tale_worlds_1_1_mount_and_blade_1_1_mission.html){target=_blank}
+- [MissionViews](/gauntletui/mission_views/)
 
 Where you control your character in 3D environment. Not a global map. Examples: Town, village, siege, battles, hideouts, prison break
 
