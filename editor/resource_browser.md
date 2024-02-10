@@ -15,3 +15,4 @@ RMB on it on the Taskbar and then Maximize:
 
 ![](/pics/ZBHba7T.png)
 
+Solution ?
