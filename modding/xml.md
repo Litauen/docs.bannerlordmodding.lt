@@ -131,6 +131,18 @@
     REASON: spclans.xslt and custom_spclans.xml were in a separate folder for spclans, but missing empty spclans.xml file
 
 
+??? failure "SiegeTowerSpawner - AssignParameters - SpawnerEntityMissionHelper - OnPreInit"
+    On starting the scene. <br>
+    REASON: name property for siege_tower entity:
+    ``` xml
+    <game_entity name="siege_tower_5m_spawner_right" prefab="siege_tower_5m_spawner">
+    ```
+    removed name=... solved the crash:
+    ``` xml
+    <game_entity prefab="siege_tower_5m_spawner">
+    ```
+
+
 ### Type: System.IndexOutOfRangeException
 
     Message: Index was outside the bounds of the array.
