@@ -1,5 +1,6 @@
 # World Map Settlements
 
+Settlement icons added without definitions are just meshes no different from rocks. To function as settlements they need all the features required by BL game code. For example towns require a town_gate, bo_town physics sphere, town decal circle, two banner_pos entities per level, two breach wall sets per upgrade level a full siege set with an icon for all levels or icons for each level. Best to copy an existing settlement in total, give it a unique id, delete unnecessary/cosmetic icons and add replacement icons. As well as the settlement id you need a unique town id in components. Other than that the settlement needs to be recomputed into the settlement distance cache for AI pathing.
 
 ## Entity limit in the scene
 

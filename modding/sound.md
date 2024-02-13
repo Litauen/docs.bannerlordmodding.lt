@@ -263,6 +263,61 @@ agent.MakeVoice(SkinVoiceManager.VoiceType.Grunt, SkinVoiceManager.CombatVoiceNe
     - Debacle - aaaaaaah, shriek/screech
     - and many others...
 
+
+## Custom Music
+
+Create your own soundtrack.xml in YOURMOD/music/soundtrack.xml
+
+``` cs
+using System;
+using HarmonyLib;
+using psai.net;
+using TaleWorlds.Engine;
+using TaleWorlds.MountAndBlade;
+using TaleWorlds.ModuleManager;
+
+namespace Patches
+{
+    public static class YOURMODModulePath
+    {
+        public static string YOURMODROOTPath
+        {
+            get
+            {
+                return ModuleHelper.GetModuleFullPath("YOURMOD");
+            }
+        }
+    }
+
+    [HarmonyPatch]
+    public static class MBMusicManagerPatches
+    {
+        [HarmonyPrefix]
+        [HarmonyPatch(typeof(MBMusicManager), "Initialize")]
+        public static void OverrideCreation()
+        {
+            if (!NativeConfig.DisableSound)
+            {
+                string corePath = YOURMODModulePath.YOURMODROOTPath + "music/soundtrack.xml";
+                PsaiCore.Instance.LoadSoundtrackFromProjectFile(corePath);
+            }
+        }
+
+        [HarmonyPrefix]
+        [HarmonyPatch(typeof(MBMusicManager), "ActivateMenuMode")]
+        public static bool UseTowMenuMusicId(ref MBMusicManager __instance)
+        {
+            Random rnd = new Random();
+            int index = rnd.Next(401, 401);
+            typeof(MBMusicManager).GetProperty("CurrentMode").SetValue(__instance, MusicMode.Menu);
+            PsaiCore.Instance.MenuModeEnter(index, 0.5f);
+            return false;
+        }
+    }
+}
+```
+
+
 ## NAudio
 
 !!! quote

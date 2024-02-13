@@ -6,9 +6,7 @@
     Message: Value cannot be null. Parameter name: source
     Source: System.Core
 
-??? failure " Value cannot be null. Parameter name: source"
-    **CreateHeroAtOccupation**
-    <br><br>
+??? failure "CreateHeroAtOccupation"
     REASON: in CUSTOM_culture.xml commented out one name:
     ``` xml
     <male_names>
@@ -26,8 +24,8 @@
 
 
 
-??? failure "An entry with the same key already exists"
-    **SortedList.Add - AiVisitSettlementBehavior - FindSettlementsToVisitWithDistances - AiHourlyTick**
+??? failure "SortedList.Add - AiVisitSettlementBehavior - FindSettlementsToVisitWithDistances - AiHourlyTick"
+    An entry with the same key already exists
     <br>
     REASON: had &lt;Village> with the same id in the settlements.xml
 
@@ -184,12 +182,15 @@
 <br><br>
 ## Type: System.AccessViolationException
 
-??? failure "MapScene - GetNavigationMeshCenterPosition - DefaultMapDistanceModel - GetClosestSettlementForNavigationMesh"
-    REASON: CUSTOM_settlements.xml does not match settlements.xml
-</p>
-
     Message: Attempted to read or write protected memory. This is often an indication that other memory is corrupt.
     Source: TaleWorlds.MountAndBlade
+
+
+??? failure "MapScene - GetNavigationMeshCenterPosition - DefaultMapDistanceModel - GetClosestSettlementForNavigationMesh - GetDistance - CalculatePartyInfluenceCost - CalculateTotalInfluenceCost"
+    REASON: CUSTOM_settlements.xml does not match settlements.xml<br>
+
+</p>
+
 
 ??? failure "FinalizeMission - EndMissionInternal - CheckMissionEnd - OnTick"
     Crash was on the exit out from the mission. <br>
