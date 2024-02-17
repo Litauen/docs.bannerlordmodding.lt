@@ -44,7 +44,7 @@ How many grain settlement has:
 Settlement.ItemRoster.GetItemNumber(MBObjectManager.Instance.GetObject<ItemObject>("grain"));
 ```
 
-## Item Price
+## Price
 
 Returns weird price, not the same as in the Trade screen.
 
@@ -71,9 +71,13 @@ int itemPrice = village.MarketData.GetPrice(item, MobileParty.MainParty, false, 
 <br>
 item.value - returns default item's value (from XML?)
 
-## Item Tier
+## Tier
 
 For a head armor Tier is set automatically based on the &lt;ItemComponent>&lt;Armor head_armor value
+
+By price for other types of armors also:
+
+![](/pics/2402160845.png)
 
 ## InventoryManager
 
@@ -100,16 +104,6 @@ InventoryManager.OpenScreenAsReceiveItems(itemRoster, new TextObject("Top Left N
 
 
 
-## Item XML folder
-
-    \Modules\SandBoxCore\ModuleData\items
-
-    Basic trade goods described in this file:
-    \Modules\SandBoxCore\ModuleData\items\horses_and_others.xml
-
-For mods:
-
-    \MODFolder\ModuleData
 
 ## Get Items in-game
 
@@ -128,6 +122,19 @@ foreach (ItemObject item in orderedItems) { // do something with the items }
 ```
 
 ## XML
+
+
+### Folder
+
+    \Modules\SandBoxCore\ModuleData\items
+
+    Basic trade goods described in this file:
+    \Modules\SandBoxCore\ModuleData\items\horses_and_others.xml
+
+For mods:
+
+    \MODFolder\ModuleData
+
 
 ??? tip "PROBLEM: Items are not loaded from XML"
     Check your engine logs for item read errors/warning. As I said before a new behavior that I experienced with 1.2++ versions of the game that if you have a faulty item, all the item definitions coming after it will not load either, not just the one that is bad. So maybe there has always been one that was bad, you just didnt notice it among the hundreds of items. ([hunharibo](https://discord.com/channels/411286129317249035/677511186295685150/1187684885457010690))
