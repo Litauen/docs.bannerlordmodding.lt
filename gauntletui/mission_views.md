@@ -20,6 +20,8 @@
 
 Create your screen in the OnBehaviorInitialize(), it is possible to access base.MissionScreen there.
 
+Make sure you add your MissionView in OnMissionBehaviorInitialize (not in OnBeforeMissionBehaviorInitialize).
+
 Add [DefaultView] tag to your CustomMissionView:
 
 ``` cs

@@ -24,12 +24,6 @@
 * [Custom Kingdom Creation Guide](https://www.nexusmods.com/mountandblade2bannerlord/mods/3185){target=_blank} by TheREALHayster [Backup](https://drive.google.com/file/d/1ZcaMPq4TJcimiF80m5cBXWmxj28nDmuF/view?usp=drive_link)
 * [NPCEditor](https://www.nexusmods.com/mountandblade2bannerlord/mods/5705){target=_blank} by KingOfTheN0rth - A few simple xml files that change the NPC in game along with a video guide. (Troops, Caravans Ect.)
 
-## XSLT
-
-* [XSLT Usage Tutorial](https://moddocs.bannerlord.com/bestpractices/xslt_usage_tutorial/){target=_blank}
-* [Validation](https://www.freeformatter.com/xsl-transformer.html){target=_blank}
-* [Update Attribute in Elements](https://gist.github.com/cpburnz/e11fa0b792e81ee071d443b64e06516f){target=_blank}
-* [Remove Attribute from Elements](https://gist.github.com/cpburnz/6cc05c4a0ea4d66e875ccbebbd6eda4a){target=_blank}
 
 ## Multi Player
 

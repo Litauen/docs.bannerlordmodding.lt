@@ -31,7 +31,44 @@ Online tools:
 
 
 
+## XSLT
+
+Use XSLT files to remove or modify the elements of XML files that are loaded from other modules. You don’t have to use the XSLT system for adding new elements to the XML files.
+
+You simply create an XSLT file with the same name as the XML file and place it to the same path with your XML file. This added XSLT file is going to make the changes to the XML files of the same type located in modules that were loaded before your module. 
+
+??? warning "In order XSLT to be applied, there should be a XML file with the same name in the same folder.<br>XML could be empty."
+    ![](/pics/2402171157.png)
+
+The system applies your module’s XSLT files just before applying your module’s own XML files. So the XSLT files are not going to affect the same module’s own XML files.
+
+* [XSLT Usage Tutorial](https://moddocs.bannerlord.com/bestpractices/xslt_usage_tutorial/){target=_blank}
+* [Validation](https://www.freeformatter.com/xsl-transformer.html){target=_blank}
+* [Update Attribute in Elements](https://gist.github.com/cpburnz/e11fa0b792e81ee071d443b64e06516f){target=_blank}
+* [Remove Attribute from Elements](https://gist.github.com/cpburnz/6cc05c4a0ea4d66e875ccbebbd6eda4a){target=_blank}
 
 
+### Delete an entry
 
+``` xml
+<xsl:template match="Faction[@id='clan_vlandia_11']"/>
+```
 
+### Change an attribute
+
+``` xml
+<xsl:template match="Faction[@id='clan_sturgia_2']/@tier">
+    <xsl:attribute name="tier">5</xsl:attribute>
+</xsl:template>
+
+```
+
+### Change a section
+
+``` xml
+<xsl:template match="Kingdom[@id='aserai']/relationships">
+    <relationships>
+        <relationship kingdom="Kingdom.empire_s" value="-1" isAtWar="true" />
+    </relationships>
+</xsl:template>
+```

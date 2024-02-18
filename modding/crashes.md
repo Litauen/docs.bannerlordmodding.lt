@@ -1,70 +1,9 @@
 # 🗲 Crashes 🗲
 
 
-## Type: System.ArgumentNullException
-
-    Message: Value cannot be null. Parameter name: source
-    Source: System.Core
-
-??? failure "CreateHeroAtOccupation"
-    REASON: in CUSTOM_culture.xml commented out one name:
-    ``` xml
-    <male_names>
-        <!-- <name name="Adalbert" /> -->
-        <name name="Adalbern" />
-    ```
-    also commented out one basic_mercenary_troops:
-    ``` xml
-    <basic_mercenary_troops>
-        <template name="NPCCharacter.eastern_mercenary" />
-        <template name="NPCCharacter.western_mercenary" />
-        <!--<template name="NPCCharacter.sword_sisters_sister_t3" /> -->
-    </basic_mercenary_troops>
-    ```
-
-
-
-??? failure "SortedList.Add - AiVisitSettlementBehavior - FindSettlementsToVisitWithDistances - AiHourlyTick"
-    An entry with the same key already exists
-    <br>
-    REASON: had &lt;Village> with the same id in the settlements.xml
-
-
-<br><br>
-## Type: System.InvalidOperationException
-
-    Message: The XmlReader state should be Interactive.
-    Source: System.Xml.Linq
-
-??? failure "ReadContentFrom - Load - ToXDocument - MergeTwoXmls - CreateMergedXmlFile"
-    REASON: error in the XML file, example:<br>
-    - missing opening tag &lt;Items><br>
-    - wrong closing tag &lt;Items/> vs &lt;/Items><br>
-    - CUSTOM_settlements.xml completely empty<br>
-    - etc
-
-</p>
-
-    Message: Sequence contains no matching element
-    Source: System.Core
-
-??? failure "Enumerable.First - InitializeCaravanOnCreation - CreateCaravanParty - CreateParty - CreateCaravanParty"
-
-    REASON: CUSTOM_culture notable Merchant was expecting CaravanGuard with the same culture: character.Culture == mobileParty.Party.Owner.Culture
-    <br>
-    ``` xml
-    InitializeCaravanOnCreation
-    CharacterObject characterObject = CharacterObject.All.First((CharacterObject character) => character.Occupation == Occupation.CaravanGuard && character.IsInfantry && character.Level == 26 && character.Culture == mobileParty.Party.Owner.Culture);
-    ```
-
-<br><br>
 ## Type: System.NullReferenceException
 
     Message: Object reference not set to an instance of an object.
-
-??? failure "InitializeCachedData - InitializeOnNewGame - OnInitialize - DoLoadingForGameType"
-    REASON: Settlement bound="Settlement.town_CR4" pointed to the non-existing settlement in settlements.xml
-</p>
 
     Source: SandBox
 
@@ -76,6 +15,13 @@
 </p>
 
     Source: TaleWorlds.CampaignSystem
+
+
+
+??? failure "CampaignObjectManager - InitializeCachedData - InitializeOnNewGame - OnInitialize - DoLoadingForGameType"
+    REASON: Settlement bound="Settlement.town_CR4" pointed to the non-existing settlement in settlements.xml
+</p>
+
 
 ??? failure "GetHeroesForEffectiveRelation - ApplyInternal - CreateRebelPartyAndClan - StartRebellionEvent - DailyTickSettlement"
     REASON: ?
@@ -147,6 +93,93 @@
     <game_entity name="debris_holder" old_prefab_name="" mobility="1"> <!-- NO CRASH -->
     ```
 
+??? failure "BackstoryCampaignBehavior - OnNewGameCreated"
+    REASON: commented out some native hard-coded lord/settlement <br>
+    Check in BackstoryCampaignBehavior.OnNewGameCreated <br>
+    Fix with Harmony to skip this native code:
+
+    ``` cs
+    [HarmonyPatch(typeof(BackstoryCampaignBehavior))]
+    [HarmonyPatch("OnNewGameCreated")]
+    public class BackstoryCampaignBehavior_OnNewGameCreated_Patch
+    {
+        public static bool Prefix()
+        {
+            return false;
+        }
+    }
+    ```
+
+
+??? failure "CreateNewHero - CreateSpecialHero -  OnNewGameCreatedPartialFollowUp - InitialChildGenerationCampaignBehavior"
+    REASON: Hero present, lord not present, lord used in a clan definition as owner
+
+??? failure "DefaultMapDistanceModel - GetDistance - UpdateFriendshipAndEnemies"
+    REASON: Lord/hero without a proper clan (clan not created/deleted)
+
+??? failure "Kingdom - OnNewGameCreated - InvokeList - OnNewGameCreated"
+    REASON: Deleted hero/lord, the 'owner' of the Kingdom
+
+
+
+
+<br><br>
+## Type: System.ArgumentNullException
+
+    Message: Value cannot be null. Parameter name: source
+    Source: System.Core
+
+??? failure "CreateHeroAtOccupation"
+    REASON: in CUSTOM_culture.xml commented out one name:
+    ``` xml
+    <male_names>
+        <!-- <name name="Adalbert" /> -->
+        <name name="Adalbern" />
+    ```
+    also commented out one basic_mercenary_troops:
+    ``` xml
+    <basic_mercenary_troops>
+        <template name="NPCCharacter.eastern_mercenary" />
+        <template name="NPCCharacter.western_mercenary" />
+        <!--<template name="NPCCharacter.sword_sisters_sister_t3" /> -->
+    </basic_mercenary_troops>
+    ```
+
+
+
+??? failure "SortedList.Add - AiVisitSettlementBehavior - FindSettlementsToVisitWithDistances - AiHourlyTick"
+    An entry with the same key already exists
+    <br>
+    REASON: had &lt;Village> with the same id in the settlements.xml
+
+
+<br><br>
+## Type: System.InvalidOperationException
+
+    Message: The XmlReader state should be Interactive.
+    Source: System.Xml.Linq
+
+??? failure "ReadContentFrom - Load - ToXDocument - MergeTwoXmls - CreateMergedXmlFile"
+    REASON: error in the XML file, example:<br>
+    - missing opening tag &lt;Items><br>
+    - wrong closing tag &lt;Items/> vs &lt;/Items><br>
+    - CUSTOM_settlements.xml completely empty<br>
+    - etc
+
+</p>
+
+    Message: Sequence contains no matching element
+    Source: System.Core
+
+??? failure "Enumerable.First - InitializeCaravanOnCreation - CreateCaravanParty - CreateParty - CreateCaravanParty"
+
+    REASON: CUSTOM_culture notable Merchant was expecting CaravanGuard with the same culture: character.Culture == mobileParty.Party.Owner.Culture
+    <br>
+    ``` xml
+    InitializeCaravanOnCreation
+    CharacterObject characterObject = CharacterObject.All.First((CharacterObject character) => character.Occupation == Occupation.CaravanGuard && character.IsInfantry && character.Level == 26 && character.Culture == mobileParty.Party.Owner.Culture);
+    ```
+
 
 
 <br><br>
@@ -192,6 +225,7 @@
 </p>
 
 
+
 ??? failure "FinalizeMission - EndMissionInternal - CheckMissionEnd - OnTick"
     Crash was on the exit out from the mission. <br>
     REASON: xscene contained one entity, and commenting it out stopped the crash, no idea why/how, there are more similar entities in the scene:
@@ -217,6 +251,9 @@
 ??? failure "InvokeMethod - Invoke - CreateInstanceImpl - CreateInstance - CreateScreen"
     REASON: map xscene settlement ID mismatch with settlements.xml settlement ID. settlements.xml has a settlement with ID, which is not present in the xscene file
 
+??? failure "... GetEncyclopediaPageInstance - SetEncyclopediaPage - GauntletMapEncyclopediaView - ExecuteLink"
+    Crash by pressing on the lord's image in the Encyclopedia. <br>
+    REASON: Lord's spause is deleted, but reference to it in the heroes.xml remains for the main lord. Eg: spouse="Hero.lord_4_2"
 
 
 <br><br>
@@ -233,11 +270,7 @@ REASON: this entity was commented out in the xscene:
 <br><br>
 ## Others
 
-??? failure "UpdateFriendshipAndEnemies"
-    Lord/hero without the proper clan (clan not created)
 
-??? failure "InitialChildGenerationCampaignBehavior - OnNewGameCreatedPartialFollowUp - CreateSpecialHero - CreateNewHero"
-    Hero present, lord not present, lord used in a clan definition (owner)
 
 
 ??? failure "GetBodyProperties - LocationCharacter - CreateMercenary - AddLocationCharacters - AddMercenaryCharacterToTavern"
