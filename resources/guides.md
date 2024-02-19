@@ -32,5 +32,3 @@
 * [Dedicated Server On Linux](https://forums.taleworlds.com/index.php?threads/guide-dedicated-server-on-linux.454799/){target=_blank}
 * [Shockbyte Bannerlord Knowledgebase](https://shockbyte.com/billing/knowledgebase/56/Mount-and-Blade-2-Bannerlord){target=_blank}
 
-## Audio
-

@@ -22,10 +22,6 @@
 * [BannerEdge](https://github.com/hunharibo/BannerEdge){_target=blank} Its purpose is to provide ease of access to native game UI files by splitting the spritesheet atlas images into its individual sprite parts.
 * [Fmod Bank Tools](https://www.nexusmods.com/rugbyleaguelive3/mods/2){target=_blank} - Extracts and Rebuilds Fmod .bank files, for example: Mount & Blade II Bannerlord\Sounds\PC\voice.assets.bank
 
-### 3D Models
-
-- [Female body](https://drive.google.com/open?id=13oq_ni-a2eXTBlLF-8I7tI7s8tyfPvfk) / [Backup](https://drive.google.com/file/d/1jnBoOYNqH1jNcGofVRDYUIJEvfxm4_b4/view?usp=drive_link)
-
 
 ## Various
 

@@ -61,6 +61,9 @@
     REASON: spclans.xslt and custom_spclans.xml were in a separate folder for spclans, but missing empty spclans.xml file
 
 
+??? failure "HeroCreator - CreateNewHero - FindRandomInternal - CreateNewHero - CreateSpecialHero"
+    REASON: error in XSLT by assigning a culture to a hero
+
 ??? failure "SiegeTowerSpawner - AssignParameters - SpawnerEntityMissionHelper - OnPreInit"
     On starting the scene. <br>
     REASON: name property for siege_tower entity:
@@ -120,6 +123,12 @@
 ??? failure "Kingdom - OnNewGameCreated - InvokeList - OnNewGameCreated"
     REASON: Deleted hero/lord, the 'owner' of the Kingdom
 
+
+??? failure "CalculateDailyProductionAmount - GetWerehouseCapacity - TickProductions - OnNewGameCreatedPartialFollowUp"
+    REASON: assigned a settlement to non-existant clan
+
+??? failure "NameGenerator - CalculateNameScore - SelectNameIndex - GenerateHeroFirstName - CreateSpecialHero - InitialChildGenerationCampaignBehavior - OnNewGameCreatedPartialFollowUp"
+    REASON: Clan's owner was non-existant Lord
 
 
 

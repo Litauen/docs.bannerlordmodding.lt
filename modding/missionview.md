@@ -1,4 +1,4 @@
-# MissionViews
+# MissionView
 
 - [Missions](/modding/missions/)
 

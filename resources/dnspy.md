@@ -24,3 +24,22 @@
 * You will see an error message on the screen
 
 [Source with pictures here by LogRaam](https://www.nexusmods.com/mountandblade2bannerlord/mods/2667)
+
+
+## Not working breakpoints
+
+![](/pics/2402181413.png)
+
+In the module's .csproj file make sure you have
+
+``` xml
+<TargetFramework>net472</TargetFramework>
+```
+
+and not
+
+``` xml
+<TargetFramework>net472,netstandard2.0</TargetFramework>
+```
+
+or anything else. Recompile and should be ok.
