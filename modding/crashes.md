@@ -130,6 +130,11 @@
 ??? failure "NameGenerator - CalculateNameScore - SelectNameIndex - GenerateHeroFirstName - CreateSpecialHero - InitialChildGenerationCampaignBehavior - OnNewGameCreatedPartialFollowUp"
     REASON: Clan's owner was non-existant Lord
 
+??? failure "DefaultMapDistanceModel - GetClosestSettlementForNavigationMesh - GetDistance - FindNearestSettlement - TryToAssignTradeBoundForVillage - UpdateTradeBounds"
+    REASON: saved a Main_map when game was open, xscene file gone, map gone. Game started with vanilla Main_map with custom settlements.xml
+
+
+
 
 
 <br><br>
