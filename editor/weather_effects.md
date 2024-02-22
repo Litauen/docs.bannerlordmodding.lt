@@ -12,6 +12,8 @@ Set in the Terrain Properties (Alt+7):
 
 If you need - download vanilla main_map_snow_flowmap.png [here](/pics/main_map_snow_flowmap.png)
 
+Make changes for your map, import and use your image.
+
 This image encodes different information in Red, Green and Blue channels:
 
 - <span style="color:red">**Red**</span> is for snow
