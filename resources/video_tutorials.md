@@ -177,7 +177,8 @@ Mod setup, dialogs, game menu, GauntletUI, etc.
 
 ## The Lone Warrior
 
-* [Substance Painter Workflow for importing armors and textures](https://www.youtube.com/watch?v=hTCutq0kPJk){target=_blank}
+* [Bannerlord + Substance Painter Workflow for importing armors and textures](https://www.youtube.com/watch?v=hTCutq0kPJk){target=_blank}
+* [Quick armor modding guide Blender + Bannerlord](https://www.youtube.com/watch?v=WueD_-nPQ-4)
 
 ## That Horns Guy
 
