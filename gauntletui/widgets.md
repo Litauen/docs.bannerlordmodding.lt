@@ -159,6 +159,9 @@ IsHidden: This attribute also controls the visibility of an element, similar to 
 
 ## AlphaFactor
 
+    AlphaFactor="0.7"
+
+
 This attribute is used to control the transparency or opacity of a UI element. The AlphaFactor specifies a value between 0 and 1, where 0 represents complete transparency (invisible) and 1 represents full opacity (completely visible).
 
 When applied to a UI element, the AlphaFactor attribute determines the overall transparency level of that element and its children (if any). By adjusting the AlphaFactor value, you can make the UI element partially or completely transparent.

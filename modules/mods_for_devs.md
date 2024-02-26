@@ -1,4 +1,4 @@
-# Useful mods for development
+# Useful mods/tools for development
 
 ## Debug
 
@@ -8,6 +8,7 @@
 
 - [Useful Skips](https://www.nexusmods.com/mountandblade2bannerlord/mods/4896) - start game fast, skip splash screens/intro/char creation/tutorial
 - [Better Time](https://www.nexusmods.com/mountandblade2bannerlord/mods/2849) - more options to speedup game time, good for testing
+- [AssertAutoIgnore](https://github.com/poheniks/AssertAutoIgnore/releases/tag/v1.3) - to fight back the Editor's Assert popups
 
 ## Equipment
 
