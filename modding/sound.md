@@ -317,6 +317,22 @@ namespace Patches
 }
 ```
 
+## Custom Music in Main Menu
+
+Source [here](https://www.nexusmods.com/mountandblade2bannerlord/mods/5233)
+
+1. Find the music
+2. Convert to OGG
+3. In \Mount & Blade II Bannerlord\music\Soundtrack.XML find Maintheme and under it: &lt;TotalLengthInSamples>
+4. Change the number to your sample length using:
+
+    ![](/pics/2402262117.png)
+
+    or multiply 44305 X {Your song length in seconds}
+
+5. Backup \Mount & Blade II Bannerlord\music\PC\Maintheme.ogg
+6. Rename your music ogg file to Maintheme.ogg and place it in \Mount & Blade II Bannerlord\music\PC\
+
 
 ## NAudio
 
