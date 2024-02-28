@@ -6,7 +6,11 @@
 - Works (with problems) - 1.2.5beta/1.2.7
 
 
-<br>
+## Bugs
+
+* ["Start Mission" does not work](https://forums.taleworlds.com/index.php?threads/v1-2-7-test-function-in-scene-creator-start-mission-dont-work.460937/)
+
+
 ## Notes
 
 - Editor needs to be on the same disk as the Game, as the modding tools use the base games files - they both install to the same folder, and that only works if they are on the same disk

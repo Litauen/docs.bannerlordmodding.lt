@@ -88,9 +88,11 @@ Import texture files with the same names, and new textures will be applied autom
 
 Save as a new scene with the same name main_menu_a in your mod's folder. It will be used on the next game start.
 
-In 1.2.9 if you try to save (Save as...) this scene, the Editor will crash. You need to add a terrain to avoid this:
+!!! bug "In 1.2.9 if you try to save (Save as...) this scene, the Editor will crash."
 
-![](/pics/2402262011.png)
+    Add a terrain to avoid this:
+
+    ![](/pics/2402262011.png)
 
 
 ## Window view tuning
