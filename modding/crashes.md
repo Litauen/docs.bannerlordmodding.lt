@@ -133,6 +133,8 @@
 ??? failure "DefaultMapDistanceModel - GetClosestSettlementForNavigationMesh - GetDistance - FindNearestSettlement - TryToAssignTradeBoundForVillage - UpdateTradeBounds"
     REASON: saved a Main_map when game was open, xscene file gone, map gone. Game started with vanilla Main_map with custom settlements.xml
 
+??? failure "AgingCampaignBehavior - OnHeroComesOfAge - InvokeList - DailyTickHero"
+    REASON: error/missing sandboxcore_equipment_sets.xml for the hero's culture. Hero turned 18
 
 
 
@@ -194,6 +196,8 @@
     CharacterObject characterObject = CharacterObject.All.First((CharacterObject character) => character.Occupation == Occupation.CaravanGuard && character.IsInfantry && character.Level == 26 && character.Culture == mobileParty.Party.Owner.Culture);
     ```
 
+??? failure "Single - CharacterCreationCultureStageVM - SortCultureList - CharacterCreationCultureStageView"
+    REASON: Native culture is removed or is made is_main_culture=true
 
 
 <br><br>
@@ -222,8 +226,6 @@
     <br><br>
     REASON4: NPCCharacter age="9.9" (not int) in lords.xml
 
-??? failure "OnHeroComesOfAge"
-    REASON: error/missing sandboxcore_equipment_sets.xml for the hero's culture. Hero turned 18
 
 
 <br><br>

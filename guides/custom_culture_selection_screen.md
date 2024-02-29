@@ -12,7 +12,7 @@ On new game start character culture can be selected if it's marked in the cultur
     is_main_culture="true"
 ```
 
-##Culture's Selection Cards
+## Culture's Selection Cards
 
 ![](/pics/dAbzEt7.png)
 
@@ -54,6 +54,56 @@ and vanilla culture images will be gone. If we want them back - export them with
 The game uses these sprites for your new cultures automatically - nothing to be done here anymore.
 
 
+### Remove Native Cultures
+
+To get rid of native cultures from this selection:
+
+![](/pics/2402281143.png)
+
+It is necessary do remove them completely from the game (quite hard with all the relations/units/etc) or make: is_main_culture=false in their XMLs using [XSLT](/modding/xml/#xslt):
+
+``` xml
+<xsl:template match="Culture[@id='vlandia']/@is_main_culture">
+    <xsl:attribute name="is_main_culture">false</xsl:attribute>
+</xsl:template>
+
+<xsl:template match="Culture[@id='empire']/@is_main_culture">
+    <xsl:attribute name="is_main_culture">false</xsl:attribute>
+</xsl:template>
+
+<xsl:template match="Culture[@id='aserai']/@is_main_culture">
+    <xsl:attribute name="is_main_culture">false</xsl:attribute>
+</xsl:template>
+
+<xsl:template match="Culture[@id='sturgia']/@is_main_culture">
+    <xsl:attribute name="is_main_culture">false</xsl:attribute>
+</xsl:template>
+
+<xsl:template match="Culture[@id='battania']/@is_main_culture">
+    <xsl:attribute name="is_main_culture">false</xsl:attribute>
+</xsl:template>
+
+<xsl:template match="Culture[@id='khuzait']/@is_main_culture">
+    <xsl:attribute name="is_main_culture">false</xsl:attribute>
+</xsl:template>
+```
+
+Also it's necessary to disable one method in the code using Harmony:
+
+``` cs
+// No sorting/expecting of native cultures
+[HarmonyPatch(typeof(CharacterCreationCultureStageVM))]
+[HarmonyPatch("SortCultureList")]
+public class CharacterCreationCultureStageVM_SortCultureList_Patch
+{
+    public static bool Prefix()
+    {
+        return false;
+    }
+}
+```
+
+<br>
 ## Culture's Description
 
 ![](/pics/SYqApNY.png)

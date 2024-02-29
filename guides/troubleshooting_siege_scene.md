@@ -2,7 +2,7 @@
 
 I got a siege scene that was working on level 1 but crashing on level 2/3.
 
-Before troubleshooting, I name the map in a way that it's always first because I will need to test a lot - this saves a lot of time avoiding clicking and searching for the map:
+HINT: Before troubleshooting, I name the map in a way that it's always first because I will need to test a lot - this saves a lot of time avoiding clicking and searching for the map:
 
 ![](/pics/2402271318.png)
 
@@ -33,6 +33,9 @@ Ok, how weapons are assigned to the deployment point? Official documentation ans
 dnSpy tells which entity is causing the problem:
 
 ![](/pics/2402271330.png)
+
+??? info "Example with another entity"
+    ![](/pics/2402281753.png)
 
 In the scene, there are 7 such entities with the same name:
 

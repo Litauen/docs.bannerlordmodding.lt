@@ -84,3 +84,9 @@ Define arguments for Harmony to properly match the method:
 [HarmonyPatch("CalculateLearningRate", typeof(int), typeof(int), typeof(int), typeof(int), typeof(TextObject), typeof(bool))]
 ```
 
+## Debug
+
+Available via CTRL+ALT+H:
+
+![](/pics/2402281257.png)
+

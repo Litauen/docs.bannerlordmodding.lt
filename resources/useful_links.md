@@ -28,3 +28,9 @@
 ## Exception Handling
 
 * [ButterLib](https://www.nexusmods.com/mountandblade2bannerlord/mods/2018){target=_blank}
+
+## GitHub for mods
+
+* [Banner Kings](https://github.com/R-Vaccari/bannerlord-banner-kings)
+* [The Old Realms](https://github.com/TheOldRealms)
+
