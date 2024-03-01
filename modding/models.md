@@ -1,5 +1,7 @@
 # Models
 
+* [Patching game models with Harmony](/modding/harmony/#patching-game-models)
+
 !!! quote "Windwhistle:"
 
 Models are used for specific calculations/outcomes related to the game.

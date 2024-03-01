@@ -33,4 +33,4 @@
 
 * [Banner Kings](https://github.com/R-Vaccari/bannerlord-banner-kings)
 * [The Old Realms](https://github.com/TheOldRealms)
-
+* [BannerlordCoop](https://github.com/Bannerlord-Coop-Team/BannerlordCoop)

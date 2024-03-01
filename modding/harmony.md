@@ -84,6 +84,57 @@ Define arguments for Harmony to properly match the method:
 [HarmonyPatch("CalculateLearningRate", typeof(int), typeof(int), typeof(int), typeof(int), typeof(TextObject), typeof(bool))]
 ```
 
+## Patching game Models
+
+Usually when game Model is patched, that leads to an error: TypeInitializationException
+
+!!! quote "Explanation from [BannerlordCoop github:](https://github.com/Bannerlord-Coop-Team/BannerlordCoop/blob/development/source/GameInterface/Services/MobileParties/Patches/CalculateBaseSpeedPatch.cs#L34C1-L36C96)"
+
+    /// Fixes issue with DefaultPartySpeedCalculatingModel._culture statically calls GameTexts.FindText<br>
+    /// and when harmony patches, it calls the static constructor for DefaultPartySpeedCalculatingModel<br>
+    /// and results in a null reference exception because _gameTextManager has not been initialized
+
+It can be solved the same way as BannerlordCoop solved it - initializing _gameTextManager if it's null before Harmony patches. More info [here](https://discord.com/channels/411286129317249035/677511186295685150/1205604280602460161).
+
+Another way is to run Model's patch in the OnGameStart, and the rest of harmony patches in the OnSubModuleLoad.
+
+For that this model's patch should not have [Harmony] tags and it should be executed separately. Example:
+
+
+``` cs
+public class DefaultPartySpeedCalculatingModel_CalculateFinalSpeed_Patch
+{
+    public static void Postfix(ref ExplainedNumber __result)
+    {
+        TextObject text = new TextObject("{=}Slow down", null);
+        __result.AddFactor(-0.5f, text);
+        __result.LimitMin(1f);
+    }
+}
+
+
+bool _lateHarmonyPatchApplied = false;
+
+protected override void OnGameStart(Game game, IGameStarter gameStarter)
+{
+    base.OnGameStart(game, gameStarter);
+
+    if (_lateHarmonyPatchApplied) return; 
+
+    Harmony harmony = new Harmony("my_mod_harmony_late");
+    var original = typeof(DefaultPartySpeedCalculatingModel).GetMethod("CalculateFinalSpeed");
+    var postfix = typeof(DefaultPartySpeedCalculatingModel_CalculateFinalSpeed_Patch).GetMethod("Postfix");
+    if (original != null && postfix != null) {
+        harmony.Patch(original, postfix: new HarmonyMethod(postfix));
+        _lateHarmonyPatchApplied = true;
+    }
+}
+```
+
+!!! tip "Without _lateHarmonyPatchApplied patch will be applied several times on new game start from menu"
+
+More info about Manual Harmony Patching [here](https://harmony.pardeike.net/articles/basics.html#manual-patching)
+
 ## Debug
 
 Available via CTRL+ALT+H:

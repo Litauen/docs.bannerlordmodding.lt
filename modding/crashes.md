@@ -1,7 +1,7 @@
 # 🗲 Crashes 🗲
 
 
-## Type: System.NullReferenceException
+## NullReferenceException
 
     Message: Object reference not set to an instance of an object.
 
@@ -140,7 +140,7 @@
 
 
 <br><br>
-## Type: System.ArgumentNullException
+## ArgumentNullException
 
     Message: Value cannot be null. Parameter name: source
     Source: System.Core
@@ -170,7 +170,7 @@
 
 
 <br><br>
-## Type: System.InvalidOperationException
+## InvalidOperationException
 
     Message: The XmlReader state should be Interactive.
     Source: System.Xml.Linq
@@ -201,7 +201,7 @@
 
 
 <br><br>
-## Type: System.IndexOutOfRangeException
+## IndexOutOfRangeException
 
     Message: Index was outside the bounds of the array.
     Source: TaleWorlds.CampaignSystem 
@@ -229,7 +229,7 @@
 
 
 <br><br>
-## Type: System.AccessViolationException
+## AccessViolationException
 
     Message: Attempted to read or write protected memory. This is often an indication that other memory is corrupt.
     Source: TaleWorlds.MountAndBlade
@@ -259,7 +259,7 @@
 
 
 <br><br>
-## Type: System.Reflection.TargetInvocationException
+## Reflection.TargetInvocationException
 
     Message: Exception has been thrown by the target of an invocation.
     Source: mscorlib
@@ -272,6 +272,23 @@
     REASON: Lord's spause is deleted, but reference to it in the heroes.xml remains for the main lord. Eg: spouse="Hero.lord_4_2"
 
 
+
+
+
+
+
+
+
+
+<br>
+## TypeInitializationException
+
+    Source: TaleWorlds.CampaignSystem
+
+??? failure "CalculateBaseSpeed - CalculateSpeedForPartyUnified"
+    More info [here](/modding/harmony/#patching-game-models)
+
+
 <br><br>
 ## CTD without any message
 
@@ -281,6 +298,9 @@ REASON: this entity was commented out in the xscene:
 ``` xml
 <game_entity name="icon_camera" old_prefab_name="icon_camera" mobility="1">
 ```
+
+
+--------
 
 
 <br><br>
