@@ -3,6 +3,7 @@
 ## Tutorials
 
 * [Harmony documentation](https://harmony.pardeike.net/articles/intro.html){target=_blank}
+    * [Transpiler](https://harmony.pardeike.net/articles/patching-transpiler.html)
 * [Reading](https://docs.greenhellmodding.com/client-code-examples/reading-private-variables) / [Modifying](https://docs.greenhellmodding.com/client-code-examples/modifying-private-variables) private variables
 * [Changing the Return Value of a Method with Harmony](https://forums.taleworlds.com/index.php?threads/changing-the-return-value-of-a-method-with-harmony.412797/){target=_blank}
 * [Lesser Scholar Youtube - Using Harmony. Prefix, Postfix, Transpiler](https://www.youtube.com/watch?v=WmuOjlhulyo)
