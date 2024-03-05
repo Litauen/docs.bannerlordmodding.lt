@@ -62,16 +62,41 @@ gameStarter.AddModel(new BModel(existingModel));
 
 ### Tradeoffs
 
-!!! quote "Eagle"
+!!! quote "Eagle:"
     Everything has trade-offs. Using the decorator pattern improves mod compatibility but it also generates lots of boilerplate code. It can harm code readability.
-!!! quote "Windwhistle"
+!!! quote "Windwhistle:"
     Not much imo, and the alternative is your mod being incompatible with anything else using the same game model. I would say the boilerplate code is very worth it.<br>
     Unless, there is another method that can be used without requiring the other mod to be a dependency<br>
     The only scenario I could see where it's not worth it to use this method would be for the big overhaul mods that override everything anyway.<br>
     For smaller mods, I would say this method is a complete must.
-!!! quote "carbon"
+!!! quote "carbon:"
     There's definitely a tradeoff. The major pro is you can be compatible with overhaul mods that use most of the game models, but don't necessarily call their base methods. This means patching the default model methods will do nothing.
-!!! quote "Eagle"
+!!! quote "Eagle:"
     At any given time, a bannerlord update could change the model API. This could break a given mod relying on them. Mods relying on Harmony postfixes might not and also be mod compatible.<br>
     It's far-fetched. I'm just playing the devil's advocate to point that all solutions have trade-offs. We should not mindlessly go for a given solution because someone said it's better. They should analyse their problem and use a solution which fits their needs.<br>
     But I agree with all your points.
+
+
+## Validation
+
+!!! quote "carbon:"
+
+I made a little validator you can put in OnGameInitializationFinished() or really anywhere after the models are added to check whether another model overrode yours. It checks to see if they are using the decorator pattern, and doesn't give an error if they are. It's not perfect, but should work in most [cases](https://gist.github.com/carbon198/d15c8299c389ac6c0f9fd241e7216652):
+
+``` cs
+private void ValidateGameModel(GameModel model)
+{
+  if (model.GetType().Assembly == GetType().Assembly) { return; }
+  if (!model.GetType().BaseType.IsAbstract)
+  {
+    TextObject error = new("{=I2LlBDKr}Game Model Error: Please move "+GetType().Assembly.GetName().Name+" below "+model.GetType().Assembly.GetName().Name+ " in your load order to ensure mod compatibility");
+    InformationManager.DisplayMessage(new InformationMessage(error.ToString(),Colors.Red));
+  }
+}
+```
+
+Usage:
+
+``` cs
+ValidateGameModel(Campaign.Current.Models.SettlementGarrisonModel);
+```

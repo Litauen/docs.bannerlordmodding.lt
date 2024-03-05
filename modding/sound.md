@@ -317,6 +317,14 @@ namespace Patches
 }
 ```
 
+## Custom Music in Taverns
+
+By culture:
+
+    Sandbox\ModuleData\settlement_tracks.xml
+
+
+
 ## Custom Music in Main Menu
 
 Source [here](https://www.nexusmods.com/mountandblade2bannerlord/mods/5233)
