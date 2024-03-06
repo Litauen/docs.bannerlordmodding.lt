@@ -214,3 +214,4 @@ This will ensure you use a base id unique to your mod... people need to do this 
 
 ``` cs
 base.AddStructDefinition(typeof(YOUR_STRUCT), 1);
+```

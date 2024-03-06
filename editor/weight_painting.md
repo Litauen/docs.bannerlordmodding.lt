@@ -10,7 +10,7 @@ Weight painting is a technique used in rigging to assign influence to specific p
 
 ## Weight Transfer
 
-!!! quote "Ragnar Hrodgarson"
+!!! quote "Ragnar Hrodgarson:"
 
 When it is a simple Armor, for example only cloth or leather and if it is plate not much overlapping parts you could just transfer weights and then make small fixes here and there, mostly in the armpits, or depending if there are belts or other stuff in the hip area.
 
