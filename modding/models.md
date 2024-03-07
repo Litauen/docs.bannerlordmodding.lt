@@ -47,17 +47,42 @@ public class BModel : Model
 }
 
 // Somewhere
-var existingModel = gameStarter.GetModel(); //AModel
+var existingModel = gameStarter.GetGameModel(); //AModel
 gameStarter.AddModel(new BModel(existingModel));
 ```
 
-[Windwhistle](https://discord.com/channels/411286129317249035/677511186295685150/1208679299729858581): So the key to it is gameStarter.GetModel() it seems which means that you don't need to depend on anything.
+[Windwhistle](https://discord.com/channels/411286129317249035/677511186295685150/1208679299729858581): So the key to it is gameStarter.GetGameModel() it seems which means that you don't need to depend on anything.
 
-[Spinozart](https://discord.com/channels/411286129317249035/677511186295685150/1208732219380736051): It would be nice to precise that the GetModel() doesn't exist. We have to create this Array method to look for the required Model through IGameStarter.Models. carbon shared the GitHub of Diplomacy, and we can find how it is all settled in the [SubModule.cs](https://github.com/DiplomacyTeam/Bannerlord.Diplomacy/blob/main/src/Bannerlord.Diplomacy/SubModule.cs)
+??? example "[Spinozart](https://discord.com/channels/411286129317249035/677511186295685150/1208732219380736051): It would be nice to precise that the GetGameModel() doesn't exist. We have to create this Array method to look for the required Model through IGameStarter.Models. carbon shared the GitHub of Diplomacy, and we can find how it is all settled in the [SubModule.cs](https://github.com/DiplomacyTeam/Bannerlord.Diplomacy/blob/main/src/Bannerlord.Diplomacy/SubModule.cs):"
 
-[carbon](https://discord.com/channels/411286129317249035/677511186295685150/1208733697793331240): if you write out a stub of the model class, inheriting from abstract base class and with a constructor that takes previousModel, visual studio will create the rest of the class for you:
+    ``` cs
+    protected override void OnGameStart(Game game, IGameStarter gameStarter)
+    {
+        base.OnGameStart(game, gameStarter);
 
-![](/pics/2402181333.png)
+        var currentKingdomDecisionPermissionModel = GetGameModel<KingdomDecisionPermissionModel>(gameStarter);
+        if (currentKingdomDecisionPermissionModel is null)
+            Log.LogWarning("No default KingdomDecisionPermissionModel found!");     // custom Log implementatino here. Use your own
+
+        gameStarter.AddModel(new DiplomacyKingdomDecisionPermissionModel(currentKingdomDecisionPermissionModel));
+    }
+
+    private T? GetGameModel<T>(IGameStarter gameStarterObject) where T : GameModel
+    {
+        var models = gameStarterObject.Models.ToArray();
+
+        for (int index = models.Length - 1; index >= 0; --index)
+        {
+            if (models[index] is T gameModel1)
+                return gameModel1;
+        }
+        return default;
+    }
+    ```
+
+
+??? example "[carbon](https://discord.com/channels/411286129317249035/677511186295685150/1208733697793331240): if you write out a stub of the model class, inheriting from abstract base class and with a constructor that takes previousModel, visual studio will create the rest of the class for you:"
+    ![](/pics/model_implement_demo.gif)
 
 
 ### Tradeoffs
@@ -65,7 +90,8 @@ gameStarter.AddModel(new BModel(existingModel));
 !!! quote "Eagle:"
     Everything has trade-offs. Using the decorator pattern improves mod compatibility but it also generates lots of boilerplate code. It can harm code readability.
 !!! quote "Windwhistle:"
-    Not much imo, and the alternative is your mod being incompatible with anything else using the same game model. I would say the boilerplate code is very worth it.<br>
+    Not much imo, and the alternative is your mod being incompatible with anything else using the same game model. <br>
+    I would say the boilerplate code is very worth it.<br>
     Unless, there is another method that can be used without requiring the other mod to be a dependency<br>
     The only scenario I could see where it's not worth it to use this method would be for the big overhaul mods that override everything anyway.<br>
     For smaller mods, I would say this method is a complete must.
@@ -89,7 +115,7 @@ private void ValidateGameModel(GameModel model)
   if (model.GetType().Assembly == GetType().Assembly) { return; }
   if (!model.GetType().BaseType.IsAbstract)
   {
-    TextObject error = new("{=I2LlBDKr}Game Model Error: Please move "+GetType().Assembly.GetName().Name+" below "+model.GetType().Assembly.GetName().Name+ " in your load order to ensure mod compatibility");
+    TextObject error = new("Game Model Error: Please move " + GetType().Assembly.GetName().Name + " below " + model.GetType().Assembly.GetName().Name + " in your load order to ensure mod compatibility");
     InformationManager.DisplayMessage(new InformationMessage(error.ToString(),Colors.Red));
   }
 }
@@ -98,5 +124,13 @@ private void ValidateGameModel(GameModel model)
 Usage:
 
 ``` cs
-ValidateGameModel(Campaign.Current.Models.SettlementGarrisonModel);
+public override void OnGameInitializationFinished(Game game)
+{
+    base.OnGameInitializationFinished(game);
+
+    ValidateGameModel(Campaign.Current.Models.VolunteerModel);
+}
 ```
+
+
+* Check for other mods [example](/modules/check_for_other_mods/)

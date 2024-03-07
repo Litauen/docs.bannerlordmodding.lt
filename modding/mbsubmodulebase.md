@@ -12,7 +12,7 @@ BeginGameStart|(Fourth) Starts when the game starts loading. Called immediately 
 OnGameLoaded|(Fifth) Starts when the game finishes loading. Called only after loading a save
 OnNewGameCreated|Starts when a new Campaign or Sandbox game is created.
 OnCampaignStart|Starts when you press the Campaign Button on the main screen. Called once any game mode is started
-OnGameInitializationFinished|(Last) Starts after the game finishes initializing. Called once the initialization for a game mode has finished
+OnGameInitializationFinished|(Last) Starts after the game finishes initializing. Called once the initialization for a game mode has finished. Called on new game and loaded game.
 OnAfterGameInitializationFinished|
 DoLoading|Called seemingly as loading is ending, not entirely sure of this one
 OnGameEnd|Called on exiting out of a mission/campaign
