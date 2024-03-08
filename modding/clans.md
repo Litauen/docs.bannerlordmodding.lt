@@ -1,6 +1,6 @@
 # Clans
 
-[Clan Class Reference](https://apidoc.bannerlord.com/v/1.1.0/class_tale_worlds_1_1_campaign_system_1_1_clan.html){target=_blank}
+[API 1.2.7](https://apidoc.bannerlord.com/v/1.2.7/class_tale_worlds_1_1_campaign_system_1_1_clan.html){target=_blank}
 
     Clan.PlayerClan
 
@@ -25,3 +25,23 @@ Can be set in XML as 'is_nomad'
 
     ![](/pics/m8aHPFU.png)
 
+
+## Gold
+
+Clan leader's gold
+
+??? example "int         Gold [get]"
+    ``` cs
+    public int Gold
+    {
+        get
+        {
+            Hero leader = this.Leader;
+            if (leader == null)
+            {
+                return 0;
+            }
+            return leader.Gold;
+        }
+    }
+    ```

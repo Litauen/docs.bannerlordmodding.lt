@@ -82,6 +82,27 @@ Close the resource browser and the Editor(game). You should now see a new file n
 ![](/pics/b3kmMwv.png)
 
 
+## NineRegionSprites
+
+![](/pics/Nine_Slice_1_Guides.png)
+
+Quite an interesting way to have strething sprites. Top/bottom/left/right margins can be fixed and what's between - stretched.
+
+Good explanation [here](https://manual.gamemaker.io/monthly/en/The_Asset_Editors/Sprite_Properties/Nine_Slices.htm).
+
+Defined in the sprite file as:
+
+``` xml
+<NineRegionSprite>
+    <Name>troop_tree_side_9</Name>
+    <SpritePartName>Encyclopedia\troop_tree_side</SpritePartName>
+    <LeftWidth>8</LeftWidth>
+    <RightWidth>8</RightWidth>
+    <TopHeight>0</TopHeight>
+    <BottomHeight>0</BottomHeight>
+</NineRegionSprite>
+```
+
 
 ## Possible problems
 

@@ -1,5 +1,7 @@
 # Kingdoms
 
+* [API 1.2.7](https://apidoc.bannerlord.com/v/1.2.7/class_tale_worlds_1_1_campaign_system_1_1_kingdom.html)
+
 ## Notes
 
 Kingdom can exist without owning a Town. Castle is enough. (It was stated somewhere otherwise)
@@ -16,3 +18,15 @@ Not necessary:
 
 - Spouse
 - Dead lords
+
+
+## All Kingdoms
+
+``` cs
+foreach (Kingdom kingdom in Kingdom.All) { // do smthg }
+```
+
+## Strength
+
+    float       TotalStrength [get]
+
