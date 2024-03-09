@@ -19,6 +19,8 @@
 * [Source code for Bannerlord Mods](https://forums.taleworlds.com/index.php?threads/source-code-for-bannerlord-mods.448829/){target=_blank}
 * [Bannerlord Modding CN](https://yigu-studio.gitbook.io/bannerlord-modding-cn/_csharp-api){target=_blank}
 * [3D Models](https://drive.google.com/drive/folders/1mi2y_sO-ctpqScMlT5zvU1r01L2810_V?usp=sharing){target=_blank}
+* [Bannerlord Perks](https://www.bannerlordperks.com) OUTDATED
+* [Моддинг Bannerlord](https://commando.com.ua/commando/gmpr/modding-bannerlord/)
 
 ## MOD Launchers
 

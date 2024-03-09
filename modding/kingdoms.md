@@ -1,6 +1,8 @@
 # Kingdoms
 
 * [API 1.2.7](https://apidoc.bannerlord.com/v/1.2.7/class_tale_worlds_1_1_campaign_system_1_1_kingdom.html)
+* [Kingdom Policies](https://mountandblade2bannerlord.wiki.fextralife.com/Kingdom+Management)
+
 
 ## Notes
 

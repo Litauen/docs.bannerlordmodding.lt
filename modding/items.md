@@ -203,6 +203,18 @@ It appears that items that are not for sale (is_merchandise="false") may appear 
 But it probably depends on the cost of the item - the higher it is, the greater the likelihood.
 
 
+### Broken Item
+
+!!! quote "[PlebeianKilo [ER]](https://discord.com/channels/411286129317249035/697071240015380500/1215514757331943424):"
+
+Since 1.2.x, if a single item is broken, everything past that won't get loaded 
+
+So lets say you have a list of 100 items. If item 32 is broken, everything after doesn't appear in game.
+
+If you want to more easily find out which it is check your logs in programdata (its a hidden folder so you gotta make hidden folders visible) and search for null or invalid.
+
+![](/pics/2403080814.png)
+
 
 <br>
 ## How to find ItemID
