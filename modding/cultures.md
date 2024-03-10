@@ -116,6 +116,14 @@ encounter_background_mesh - menu pic for encounter with the troops of this cultu
     }
     ```
 
+### &lt;possible_clan_banner_icon_ids>
+
+These are the banner icons that the game will use when creating a banner for new clans or rebels.
+
+![](/pics/banner_icons.png)
+
+
+* [Creating Custom Banner Icons & Colors](https://moddocs.bannerlord.com/asset-management/creating_custom_banner_icons/)
 
 ### module_strings.xml
 
