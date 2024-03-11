@@ -43,6 +43,9 @@
     <br><br>
     REASON: settlements.xml error - I accidently deleted one settlement and village had no bounded castle (crash on settlement.OwnerClan.OnBoundVillageAdded(settlement.Village);). This was on new game start.
 
+??? failure "DefaultMapDistanceModel - GetDistance - VillageGoodProductionCampaignBehavior - DistributeInitialItemsToTowns - OnNewGameCreatedPartialFollowUp"
+    REASON: ??
+
 ??? failure "SpawnNotablesIfNeeded - NotablesCampaignBehavior - DailyTickSettlement"
     REASON: Some type of notable is missing for some culture. I was missing RuralNotable<br>
     Set in &lt;notable_and_wanderer_templates> in culture XML
@@ -135,8 +138,12 @@
 
 ??? failure "AgingCampaignBehavior - OnHeroComesOfAge - InvokeList - DailyTickHero"
     REASON: error/missing sandboxcore_equipment_sets.xml for the hero's culture. Hero turned 18
+</p>
 
+    Source: MonoMod.Utils
 
+??? failure "GauntletMovie - LoadMovie_Patch0 - Load - LoadMovie"
+    REASON: Movie XML file not present. (deleted/wrong name/path?)
 
 
 <br><br>

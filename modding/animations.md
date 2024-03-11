@@ -15,3 +15,5 @@ for agent.SetActionChannel(0, _actionIndexCache);, what's the difference between
 
 channel 0 is for movement, channel 1 is for combat anims (like swings and stuff)
 
+
+When agent plays a looping animation set with SetActionChannel to stop it set it to act_none action.
