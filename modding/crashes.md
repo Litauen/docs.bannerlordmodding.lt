@@ -146,6 +146,10 @@
     REASON: Movie XML file not present. (deleted/wrong name/path?)
 
 
+??? failure "LordConversationsCampaignBehavior - conversation_wanderer_introduction_on_condition - RunCondition"
+    REASON: No native settlement town_ES4 in the game.
+
+
 <br><br>
 ## ArgumentNullException
 

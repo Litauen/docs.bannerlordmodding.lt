@@ -43,3 +43,12 @@ and not
 ```
 
 or anything else. Recompile and should be ok.
+
+
+## Crash on the game start
+
+Crash only when attached to the dnSpy.
+
+![](/pics/2403121926.png)
+
+The cause is RTS Camera mod. Disable it and game will start.

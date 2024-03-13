@@ -468,21 +468,33 @@ List<Hero> heroList = (from characterObject in Hero.MainHero.PartyBelongedTo.Mem
     * WaryTag
 
 
-## Hero/Lord XML
+## Hero XML
 
-Add entry into heroes.xml
+Add an entry into heroes.xml
 
 ``` xml
-<Hero id="lord_lit_1_1" spouse="Hero.lord_lit_1_2" father="Hero.lit_1_0" mother="Hero.lit_1_00" alive="false" faction="Faction.clan_lit_1" />
+<Hero id="lord_lit_1_1" faction="Faction.clan_lit_1" spouse="Hero.lord_lit_1_2" father="Hero.lit_1_0" mother="Hero.lit_1_00" alive="false" text="Encyclopedia text for the hero" />
 ```
 
-Add entry into [lords.xml](/modding/npc_character/)
+- id - heroe's ID by which it will be referenced in other files
+- faction - clan, in a format: Faction.CLAN_ID
+- spouse - Hero.SPOUSE_HERO_ID
+- father - Hero.FATHER_HERO_ID
+- mother - Hero.MOTHER_HERO_ID
+- alive - default true, set to false for dead hero
+- text - Encyclopedia text
+
+??? question "How to properly make a lord dead in XML?"
+    alive="false" makes him dead, but in description it writes: HERO_NAME is  member of ...
+
+
+## Lord XML
+
+Add an entry into [lords.xml](/modding/npc_character/)
 
 ``` xml
 
     <NPCCharacter ...
 ```
 
-??? question "How to properly make a lord dead in XML?"
-    alive="false" makes him dead, but in description it writes: HERO_NAME is  member of ...
 

@@ -17,3 +17,11 @@ channel 0 is for movement, channel 1 is for combat anims (like swings and stuff)
 
 
 When agent plays a looping animation set with SetActionChannel to stop it set it to act_none action.
+
+## Workflow
+
+!!! quote "Artem:"
+
+export with 24 fps and import into blender with proper orientation x and - y
+
+Do my editing, export work proper values and import into bannerlord
