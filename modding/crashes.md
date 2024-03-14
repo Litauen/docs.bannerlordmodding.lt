@@ -150,6 +150,11 @@
     REASON: No native settlement town_ES4 in the game.
 
 
+
+
+
+
+
 <br><br>
 ## ArgumentNullException
 
@@ -172,12 +177,18 @@
     </basic_mercenary_troops>
     ```
 
-
-
 ??? failure "SortedList.Add - AiVisitSettlementBehavior - FindSettlementsToVisitWithDistances - AiHourlyTick"
     An entry with the same key already exists
     <br>
     REASON: had &lt;Village> with the same id in the settlements.xml
+
+??? failure "Linq.Enumerable.Any - Extensions.IsEmpty - NameGenerator - GetNameListForCulture - GenerateHeroFirstName"
+    REASON: error in the culture xml file
+
+
+
+
+
 
 
 <br><br>
