@@ -43,3 +43,12 @@ Metres are the game equivalent in a normal mission scene. A world map is a third
 
 - [Official Guide - Resizing Terrain](https://moddocs.bannerlord.com/editor/scene-editor/terrain_resize/)
 
+
+
+## Dark new terrain
+
+!!! quote "TurqoiseTurtle: I deleted the main map terrain and just generated a new terrain and this happens, its completely dark and no paint layer is visible"
+
+![](/pics/2403140806.png)
+
+!!! quote "Swan [ADOD/IAF]: go to your vista texture and rename the tileset to 'none' then add a basic white albedo texture in the vista category"
