@@ -74,6 +74,12 @@ Delete non-active groups, that do not impact the mesh (all blue):
 
 ![](/pics/2403202152.gif)
 
+## Delete Empty Vertex Groups
+
+Press on "Delete Empty Vertex Groups" to remove empty groups.
+
+![](/pics/delete_empty_vertex_groups.gif)
+
 
 ## LODs
 
