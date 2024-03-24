@@ -13,6 +13,11 @@
 * [Read the Game Code with dnSpy](https://www.youtube.com/watch?v=SUBcBx9WWgA&list=PLzebdAxJeltRwfJ8jzsNolgHkRvLjoCRC&index=8)
 
 
+## Setup
+
+* [Setup video](https://youtu.be/SUBcBx9WWgA?list=PLzebdAxJeltRwfJ8jzsNolgHkRvLjoCRC)
+
+
 ## How to attach dnSpy to Bannerlord and catch the exception
 
 * Launch the Bannerlord launcher (not the game itself!)

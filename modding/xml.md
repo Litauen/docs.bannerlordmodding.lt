@@ -63,6 +63,21 @@ The system applies your moduleâ€™s XSLT files just before applying your moduleâ€
 
 ```
 
+### Add new attribute
+
+``` xml
+<xsl:template match="NPCCharacter[@id='aserai_recruit']">
+    <xsl:copy>
+        <!-- Copy existing attributes -->
+        <xsl:apply-templates select="@*"/>
+        <!-- Add the new attribute -->
+        <xsl:attribute name="is_hidden_encyclopedia">true</xsl:attribute>
+        <!-- Process child nodes -->
+        <xsl:apply-templates select="node()"/>
+    </xsl:copy>
+</xsl:template>
+```
+
 ### Change a section
 
 ``` xml
@@ -71,4 +86,20 @@ The system applies your moduleâ€™s XSLT files just before applying your moduleâ€
         <relationship kingdom="Kingdom.empire_s" value="-1" isAtWar="true" />
     </relationships>
 </xsl:template>
+```
+
+### Match several elements at once
+
+``` xml
+<xsl:template match="NPCCharacter[
+    @id='caravan_master_aserai' or
+    @id='caravan_master_battania' or
+    @id='khuzait_militia_veteran_spearman']">
+    <xsl:copy>
+        <xsl:apply-templates select="@*"/>
+        <xsl:attribute name="is_hidden_encyclopedia">true</xsl:attribute>
+        <xsl:apply-templates select="node()"/>
+    </xsl:copy>
+</xsl:template>
+
 ```

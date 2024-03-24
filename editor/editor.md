@@ -39,6 +39,14 @@ Looking down to the ground also helps, so no entities will be visible.
 - Version mismatch with the base game - does not start at all, no process - install same version
 - Hanged previous process - Close on Steam or check the Task Manager, kill the old process
 
+### Closes when Play button is clicked
+
+![](/pics/2403231933.png)
+
+[slelukh](https://discord.com/channels/411286129317249035/677511186295685150/1217918112524140614): Install [Visual C++ Redistributable Packages for Visual Studio 2013](https://www.microsoft.com/en-us/download/details.aspx?id=40784)
+
+
+
 ### Editor Crashes
 
 #### Crash when deleting used texture
