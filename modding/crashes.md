@@ -311,6 +311,16 @@
     More info [here](/modding/harmony/#patching-game-models)
 
 
+<br>
+## System.Xml.Xsl.XslTransformException
+
+    Message: Attribute and namespace nodes cannot be added to the parent element after a text, comment, pi, or sub-element node has already been added.
+    Source: System.Data.SqlXml
+
+??? failure "XmlQueryOutput - ThrowInvalidStateError"
+    REASON: tried to change non-existant attribute with XSLT
+
+
 <br><br>
 ## CTD without any message
 
@@ -320,6 +330,9 @@ REASON: this entity was commented out in the xscene:
 ``` xml
 <game_entity name="icon_camera" old_prefab_name="icon_camera" mobility="1">
 ```
+
+
+
 
 
 --------

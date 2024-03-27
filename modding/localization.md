@@ -1,9 +1,10 @@
-# Localization
+# Localization / Translations
 
-## Guides/Tutorials
+## Guides/Tutorials/Tools
 
 * [Community doc - Localization](https://docs.bannerlordmodding.com/_csharp-api/localization/){target=_blank}
 * [Translation Support - Lesser Scholar video](https://www.youtube.com/watch?v=46qr2yCo4lg&list=PLzebdAxJeltRwfJ8jzsNolgHkRvLjoCRC&index=19){target=_blank}
+* [Localization Parser](https://forums.taleworlds.com/index.php?threads/tool-localization-parser.444549/) from the game's libraries or from a module's libraries to a .csv file
 
 
 ## Folder structure

@@ -23,3 +23,9 @@ Turn ON Helpers in the Visibility tab:
 
 ![](/pics/nZJiVRD.png)
 
+
+### Edit mode does not change visuals
+
+Changing Mesh Edit Mode does not change visuals of the Navmesh
+
+Click on navmesh icon at the top menu several times
