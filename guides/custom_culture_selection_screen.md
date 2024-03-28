@@ -60,7 +60,7 @@ To get rid of native cultures from this selection:
 
 ![](/pics/2402281143.png)
 
-It is necessary do remove them completely from the game (quite hard with all the relations/units/etc) or make: is_main_culture=false in their XMLs using [XSLT](/modding/xml/#xslt):
+It is necessary to remove them completely from the game (quite hard with all the relations/units/etc) or make: is_main_culture=false in their XMLs using [XSLT](/modding/xml/#xslt):
 
 ``` xml
 <xsl:template match="Culture[@id='vlandia']/@is_main_culture">

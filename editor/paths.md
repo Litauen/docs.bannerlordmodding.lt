@@ -172,7 +172,7 @@ Align road to terrain: drops your path on the terrain. Not sure if it's suitable
 
     * one road_instance script per river
 
-    * you can place prt_shore_foam prefax along your river to simulate flow, which here is normally handled by the water_flowmap
+    * you can place prt_shore_foam prefab along your river to simulate flow, which here is normally handled by the water_flowmap
 
     * nothing prevents you from creating waterfalls with your path and a little time
 
