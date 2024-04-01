@@ -121,7 +121,9 @@
     REASON: Hero present, lord not present, lord used in a clan definition as owner
 
 ??? failure "DefaultMapDistanceModel - GetDistance - UpdateFriendshipAndEnemies"
-    REASON: Lord/hero without a proper clan (clan not created/deleted)
+    REASON 1: Lord/hero without a proper clan (clan not created/deleted)
+    <br><br>
+    REASON 2: Incorrect load order when launching game, e.g. Lemmy's map was loaded after a mod using it.
 
 ??? failure "Kingdom - OnNewGameCreated - InvokeList - OnNewGameCreated"
     REASON: Deleted hero/lord, the 'owner' of the Kingdom
@@ -353,3 +355,6 @@ REASON: this entity was commented out in the xscene:
     veteran_caravan_guard="NPCCharacter.veteran_caravan_guard_sturgia"
 
     ```
+
+??? failure "HarmonyLib.PatchClassProcessor.ReportException() - Patch()"
+    When loading the game with DnSpy attached, make sure to disable the BannerColorPersistence in the load order.
