@@ -183,3 +183,76 @@ starter.AddDialogLine("bookvendor_talk", "bookvendor_yes", "bookvendor_yes_resp"
 If everything is set correctly, your character will start moving his mouth based on the played audio.
 
 <br><br><br>
+
+
+## Custom Voice Lines
+
+[Code provided](https://discord.com/channels/411286129317249035/677511186295685150/1225847936827654186) by Noxix [ADOD, KOA, ER, EL, IAF]:
+
+
+``` cs
+using HarmonyLib;
+using TaleWorlds.CampaignSystem;
+using TaleWorlds.CampaignSystem.CampaignBehaviors;
+using TaleWorlds.Localization;
+
+[HarmonyPatch(typeof(LordConversationsCampaignBehavior))]
+public class CustomDialoguePatch
+{
+    [HarmonyPatch("AddDialogs")]
+    [HarmonyPrefix]
+    public static bool Prefix(CampaignGameStarter starter)
+    {
+        // Custom introduction for ADODLord_3
+        starter.AddDialogLine("custom_adodlord_3_intro", "lord_introduction", "lord_start",
+            "My unique introduction text for ADODLord_3.",
+            () => Hero.OneToOneConversationHero.StringId == "ADODLord_3" && !Hero.OneToOneConversationHero.HasMet, null, 1000); // Higher priority and first meeting check
+
+        // Custom voiced line for ADODLord_3
+        starter.AddDialogLine("custom_adodlord_3_voiced", "start", "lord_meet_player_response",
+            "My custom voiced line for ADODLord_3.",
+            () => Hero.OneToOneConversationHero.StringId == "ADODLord_3" && !Hero.OneToOneConversationHero.HasMet, null, 1000); // Higher priority and first meeting check
+
+        // Continue with the original AddDialogs logic
+        return true;
+    }
+}
+```
+
+``` cs
+
+using TaleWorlds.CampaignSystem;
+using TaleWorlds.CampaignSystem.ComponentInterfaces;
+using TaleWorlds.CampaignSystem.GameComponents;
+using TaleWorlds.Localization;
+
+namespace Models
+{
+    internal class CustomVoiceOverModel : VoiceOverModel
+    {
+        VoiceOverModel DefaultModel = new DefaultVoiceOverModel();
+
+        public override string GetAccentClass(CultureObject culture, bool isHighClass)
+        {
+            return DefaultModel.GetAccentClass(culture, isHighClass);
+        }
+
+        public override string GetSoundPathForCharacter(CharacterObject character, VoiceObject voiceObject)
+        {
+            if (voiceObject == null) { return string.Empty; }
+
+            foreach (string path in voiceObject.VoicePaths)
+            {
+                if (!string.IsNullOrEmpty(path) && path.Contains("custom_voice"))
+                {
+                    string vp = path.Replace("$PLATFORM", "PC");
+                    return vp;
+                }
+            }
+
+            // If no custom voice line is found, return an empty string to prevent vanilla voice lines from playing
+            return string.Empty;
+        }
+    }
+}
+```
