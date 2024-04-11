@@ -118,6 +118,7 @@ in the MODULE_NAMESpriteData.xml under your category.
 
 If it's not, make sure you configured it into Config.xml and category name starts with ui_
 
+Config.xml should be in the SpriteParts folder.
 
 ### Sprite resized in a weird way
 
