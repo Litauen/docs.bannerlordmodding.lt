@@ -58,7 +58,7 @@
     HINT: Check Encyclopedia-Troops if necessary troop is actually in the game.
 
 ??? failure "DefaultPartyWageModel - GetTotalWage - MobileParty - get_TotalWage - get_LimitedPartySize - CalculateGarrisonChangeInternal"
-    REASON: ???
+    REASON: Troop ID used in partyTemplates.xml refers to a non-existing troop ID in the trooptree. 
 
 ??? failure "SetInitialValuesFromCharacter - CreateNewHero - CreateSpecialHero - CreateMinorFactionHeroFromTemplate - SpawnMinorFactionHeroes - OnNewGameCreated"
     REASON: spclans.xslt and custom_spclans.xml were in a separate folder for spclans, but missing empty spclans.xml file
