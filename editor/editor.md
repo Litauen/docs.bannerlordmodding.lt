@@ -110,5 +110,31 @@ NOTE: after the save Editor often crashes. (At least you saved your last changes
 Reload/Restart?
 
 
+## Assert Spam
 
+Spams ASSERT windows on start.
+
+### FairyTale assert
+
+![](/pics/2404120847.jpg)
+
+This one because in file project.mbproj <file> entry was above <Module> entry:
+
+Good:
+
+``` xml
+<base type="solution">
+    <Module id="soln_physics_materials" name="ModuleData/physics_materials.xml" type="physics_material"/>
+    <file id="soln_face_animation_records" name="ModuleData/NoBigSmiles.xml" type="face_animation_record" />
+</base>
+```
+
+Bad (with assert spam):
+
+``` xml
+<base type="solution">
+    <file id="soln_face_animation_records" name="ModuleData/NoBigSmiles.xml" type="face_animation_record" />
+    <Module id="soln_physics_materials" name="ModuleData/physics_materials.xml" type="physics_material"/>
+</base>
+```
 

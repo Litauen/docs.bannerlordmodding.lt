@@ -342,7 +342,43 @@ Source [here](https://www.nexusmods.com/mountandblade2bannerlord/mods/5233)
 6. Rename your music ogg file to Maintheme.ogg and place it in \Mount & Blade II Bannerlord\music\PC\
 
 
+## Game Sound Settings
+
+Get/set Sound/Music Volume:
+
+``` cs
+NativeOptions.GetConfig(NativeOptions.NativeOptionsType.SoundVolume)
+NativeOptions.GetConfig(NativeOptions.NativeOptionsType.MusicVolume)
+NativeOptions.SetConfig(NativeOptions.NativeOptionsType.SoundVolume, _soundVolume);
+NativeOptions.SetConfig(NativeOptions.NativeOptionsType.MusicVolume, _musicVolume);
+```
+
+## Manage Game Music
+
+Stop the music with fade-out:
+
+``` cs
+PsaiCore.Instance.StopMusic(true, 1.5f);
+```
+
+Continue playing the music:
+
+``` cs
+PsaiCore.Instance.ReturnToLastBasicMood(true);
+```
+
 ## NAudio
+
+??? tip "Install NAudio"
+
+    RMB on your project:<br>
+    ![](/pics/2404110856a.jpg)
+
+    ![](/pics/2404110856b.jpg)
+
+    ![](/pics/2404110856c.jpg)
+
+    ![](/pics/2404110856d.jpg)
 
 !!! quote
     Artem: For everyone that tries to add sounds to the game and is annoyed by the games restrictions, like sounds being too short, too quiet etc.
@@ -354,24 +390,34 @@ using NAudio.Wave;
 
 private AudioFileReader audioFile;
 
-if (this.outputDevice == null)
+public static async void PlayCustomSound()
 {
-    this.outputDevice = new WaveOutEvent();
+
+    if (this.outputDevice == null) this.outputDevice = new WaveOutEvent();
+
+    try
+    {
+        //string assemblyFolder = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+        string fullName = Directory.GetParent(Directory.GetParent(Directory.GetParent(Assembly.GetExecutingAssembly().Location).FullName).FullName).FullName;
+        this.audioLocation = System.IO.Path.Combine(fullName, "ModuleSounds\\");
+        this.audioFile = new AudioFileReader(this.audioLocation + "encounter_river_pirates_9.wav");
+        this.audioFile.Volume = NativeOptions.GetConfig(NativeOptions.NativeOptionsType.SoundVolume);
+        this.outputDevice.Init(this.audioFile);
+
+        PsaiCore.Instance.StopMusic(true, 1.5f); // stop native Music with fade-out
+
+        this.audioFile.Seek(0L, SeekOrigin.Begin);
+        this.outputDevice.Play();
+
+        // restore native Music
+        await Task.Delay(4500); // change 4500 to the length of your sound file in ms
+        PsaiCore.Instance.ReturnToLastBasicMood(true);
+
+    }
+    catch {
+        // "ERROR: can't play custom sound. Missing folders/files? "
+    }
 }
-
-if (this.audioFile == null)
-{
-    //string assemblyFolder = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
-    string fullName = Directory.GetParent(Directory.GetParent(Directory.GetParent(Assembly.GetExecutingAssembly().Location).FullName).FullName).FullName;
-    this.audioLocation = System.IO.Path.Combine(fullName, "ModuleSounds\\");
-    this.audioFile = new AudioFileReader(this.audioLocation + "encounter_river_pirates_9.wav");
-    this.audioFile.Volume = NativeOptions.GetConfig(NativeOptions.NativeOptionsType.SoundVolume);
-    this.outputDevice.Init(this.audioFile);
-}
-
-this.audioFile.Seek(0L, SeekOrigin.Begin);
-this.outputDevice.Play();
-
 
 // stop the sound
 if (outputDevice != null)
@@ -383,3 +429,7 @@ if (outputDevice != null)
 ```
 
 Implementation example: [Artem's Assassination Mod](https://www.nexusmods.com/mountandblade2bannerlord/mods/5653){target=_blank}
+
+
+
+!!! quote "hunharibo: I expanded on the NAudio integration idea a lot in TOR. Made a MixingSampleProvider so you can actually play multiple sound sources at the same time if you wanted to. It only takes 48khz stereo vorbis files though. [LINK](https://github.com/TheOldRealms/TOR_Core/tree/development/CSharpSourceCode/Audio). Also has rudimentary 3d spatial sound with stereo panning and distance attenuation"

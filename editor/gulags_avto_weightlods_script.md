@@ -2,11 +2,22 @@
 
 Made by [GulagEnabler🍉](https://discord.com/channels/411286129317249035/697071240015380500/1216758524055519242)
 
-Script simplifies [Weight Transfer](/editor/weight_painting/#weight-transfer) and LOD generation for the models in Blender.
+## Functions
+
+* Simplifies [Weight Transfer](/editor/weight_painting/#weight-transfer)
+* Deletes empty Vertex Groups
+* Auto generates LODs
+* Adds Hand-Morphs
+
+
+## Download
+
+* [Version without Hand-Morphs](https://drive.google.com/file/d/1T2-PSjuO_eY_Dgpvq9Mxj13xysPa8f3q/view?usp=drive_link)
+* [Version with Hand-Morps](https://drive.google.com/file/d/1H9DslcyKdt_Ba6sPaKDm0CdhzUMS0n6_/view?usp=drive_link)
+
 
 ## Install
 
-Download from [here](https://drive.google.com/file/d/1T2-PSjuO_eY_Dgpvq9Mxj13xysPa8f3q/view?usp=drive_link)
 
 Install into Blender:
 
@@ -94,3 +105,22 @@ Set how many LODs to generate and press the "Generate LODs" button:
 ### Demo
 
 ![](/pics/2403202153.gif)
+
+
+## Hand Morphs
+
+![](/pics/hand_morphs_script.gif)
+
+Prerequisites: Need rigged hand model :handMRef_Rigged . Need your new hand, Your mesh must be weight painted already.
+
+1. Import the Rigged hand and Your weighted mesh, duplicate your weight painted mesh, , remove the armature and any     vertex groups manually,select imported handMRef_Rigged and your duplicated mesh, and Press the weight paint     button, select duplicated mesh, generate data layers and apply modifier.
+2. You must cycle through the animation frames to see if the weight paint looks okay, if not then fix it , once it      looks good to you then can hide the imported handMRef_Rigged
+2. With duplicated model selected Click button: Generate Morph Targets , it generates 25 morphs 
+4. Select all 25 morphs, and your original weight painted mesh (26 items selected in total)
+5. Click button: Assign Morph Targets, Done.
+
+Youtube guide:
+
+<center>
+    <iframe width="640" height="360" src="https://www.youtube.com/embed/5pGisUTlgUc" frameborder="0" allowfullscreen></iframe>
+</center>
