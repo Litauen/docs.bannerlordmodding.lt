@@ -103,3 +103,89 @@ The system applies your moduleâ€™s XSLT files just before applying your moduleâ€
 </xsl:template>
 
 ```
+
+
+### Example
+
+Will change Caladog
+
+In SubModule.xml:
+
+``` xml
+<XmlNode>
+    <XmlName id="NPCCharacters" path="npc_lords"/>
+    <IncludedGameTypes>
+        <GameType value = "Campaign"/>
+        <GameType value = "CampaignStoryMode"/>
+        <GameType value = "CustomGame"/>
+        <GameType value = "EditorGame"/>
+    </IncludedGameTypes>
+</XmlNode>
+```
+
+In your Module data create folder **npc_lords**
+
+Add lords.xml file there:
+
+``` xml
+<?xml version="1.0" encoding="utf-8"?>
+<NPCCharacters>
+</NPCCharacters>
+```
+
+??? code "Add lords.xslt file"
+
+    ``` xml
+    <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+    <xsl:output omit-xml-declaration="yes"/>
+        <xsl:template match="@*|node()">
+            <xsl:copy>
+                <xsl:apply-templates select="@*|node()"/>
+            </xsl:copy>
+        </xsl:template>
+
+        <xsl:template match="NPCCharacter[@id='lord_5_1']">
+            <NPCCharacter id="lord_5_1" name="Alibaba" voice="earnest" age="42" is_female="false" is_hero="true" culture="Culture.aserai" occupation="Lord" default_group="Cavalry">
+                <face>
+                    <!-- custom face -->
+                    <BodyProperties version="4" age="42.27" weight="0.3787" build="0.9598" key="000DA40980001948AF7B0F8C4F65FFE877F685FF6F72FA04C52A54008AF25F986E7006350B469080E60034000040F124000000000000003B0000000005743086"/>
+                </face>
+                <skills>
+                    <skill id="Engineering" value="170"/>
+                    <skill id="Medicine" value="71"/>
+                    <skill id="Leadership" value="250"/>
+                    <skill id="Steward" value="53"/>
+                    <skill id="Trade" value="199"/>
+                    <skill id="Charm" value="150"/>
+                    <skill id="Roguery" value="66"/>
+                    <skill id="Scouting" value="121"/>
+                    <skill id="Tactics" value="200"/>
+                    <skill id="Crafting" value="131"/>
+                    <skill id="Athletics" value="240"/>
+                    <skill id="Riding" value="200"/>
+                    <skill id="Throwing" value="4"/>
+                    <skill id="Crossbow" value="81"/>
+                    <skill id="Bow" value="169"/>
+                    <skill id="Polearm" value="200"/>
+                    <skill id="TwoHanded" value="200"/>
+                    <skill id="OneHanded" value="200"/>
+                </skills>
+                <Traits>
+                    <Trait id="Mercy" value="-1"/>
+                    <Trait id="Valor" value="0"/>
+                    <Trait id="Honor" value="-1"/>
+                    <Trait id="Generosity" value="1"/>
+                    <Trait id="Calculating" value="2"/>
+                    <Trait id="Egalitarian" value="-1"/>
+                    <Trait id="Oligarchic" value="0"/>
+                    <Trait id="Authoritarian" value="0"/>
+                </Traits>
+                <Equipments>
+                    <EquipmentSet id="bat_king_template_bat_m"/>
+                    <EquipmentSet id="bat_king_template_civ_m" civilian="true"/>
+                </Equipments>
+            </NPCCharacter>
+        </xsl:template>
+
+    </xsl:stylesheet>
+    ```
