@@ -189,3 +189,9 @@ Add lords.xml file there:
 
     </xsl:stylesheet>
     ```
+
+### Custom spnpccharacters.xml case
+
+If your spnpccharacters.xml includes edited troops or characters already in ...\SandBoxCore\ModuleData\spnpccharacters.xml it will overwrite all of the SandBoxCore entries <...> making a mess
+
+More info [here](https://forums.taleworlds.com/index.php?threads/xml-vs-xslt-for-troop-override-question.454053/#post-9828306).

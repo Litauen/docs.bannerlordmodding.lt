@@ -4,6 +4,7 @@
 ## Tutorials
 
 * :material-star: [Forum post: Modding Sound & Music](https://forums.taleworlds.com/index.php?threads/modding-sound-music.433302/)
+* :material-star: [Audio Modding Guide for Bannerlord](https://www.nexusmods.com/mountandblade2bannerlord/mods/1223)
 * [Oficial guide - Adding Custom Sounds](https://moddocs.bannerlord.com/playing-sounds/adding-custom-sounds/)
 * [Lesser Scholar Youtube Tutorial  Ep 12: Sound Effects](Link: https://youtu.be/SAONxyzDuic)
 * [Bannerlord Music Modding Tutorial : Pt. 1](https://www.youtube.com/watch?v=nLGbbvoUYCI) by SixxTailsHD
