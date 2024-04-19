@@ -14,11 +14,12 @@ Delete folders:
 * AssetSources
 * RuntimeDataCache
 * GUI/SpriteParts
+* SceneEditData
 <br>
 
-```
-Test in the real game.
-```
+
+!!! danger "Test in the real game!"
+
 
 
 ## SubModule.xml

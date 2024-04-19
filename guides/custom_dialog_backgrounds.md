@@ -233,7 +233,7 @@ Same shitty quality with camera backwards:
 
 ### Texture/DDS format / Gamma
 
-TpacTool that native skyboxe/cubemap's texture format is BC6H_UF16.
+TpacTool shows that native skyboxe/cubemap's texture format is BC6H_UF16.
 
 !!! quote "ChatGPT: The BC6H_UF16 format is a compressed texture format used primarily for high dynamic range (HDR) image data, and it's part of the DirectX and OpenGL graphics APIs. The format is specifically designed to handle HDR images effectively, enabling higher precision in storing and displaying image data with a wide range of luminance levels."
 
