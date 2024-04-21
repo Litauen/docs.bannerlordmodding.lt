@@ -63,6 +63,10 @@
 ??? failure "SetInitialValuesFromCharacter - CreateNewHero - CreateSpecialHero - CreateMinorFactionHeroFromTemplate - SpawnMinorFactionHeroes - OnNewGameCreated"
     REASON: spclans.xslt and custom_spclans.xml were in a separate folder for spclans, but missing empty spclans.xml file
 
+??? failure "HeroCreator - CreateNewHero - CreateSpecialHero - CreateMinorFactionHeroFromTemplate - SpawnMinorFactionHeroes - OnNewGameCreated"
+    REASON: error in &lt;minor_faction_character_templates>, I used name= instead of id=
+
+
 
 ??? failure "HeroCreator - CreateNewHero - FindRandomInternal - CreateNewHero - CreateSpecialHero"
     REASON: error in XSLT by assigning a culture to a hero
@@ -130,7 +134,8 @@
 
 
 ??? failure "CalculateDailyProductionAmount - GetWerehouseCapacity - TickProductions - OnNewGameCreatedPartialFollowUp"
-    REASON: assigned a settlement to non-existant clan
+    REASON: assigned a settlement to non-existant clan<br>
+    REASON2: error in defining minor_clan, I had label_color="FF7264D16" (one digit too much in the color code)
 
 ??? failure "NameGenerator - CalculateNameScore - SelectNameIndex - GenerateHeroFirstName - CreateSpecialHero - InitialChildGenerationCampaignBehavior - OnNewGameCreatedPartialFollowUp"
     REASON: Clan's owner was non-existant Lord
