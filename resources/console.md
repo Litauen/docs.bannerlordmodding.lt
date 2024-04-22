@@ -25,6 +25,7 @@ Alt + `
 |campaign.add_troops aserai_tribesman \| 200 | Adds troops to the player |
 |campaign.print_main_party_position| Print's players coordinates |
 |ui.set_screen_debug_information_enabled true| Debug GUI Layers|
+|campaign.add_prisoner vlandian_sharpshooter \| 10 | Add prisoners to the player's party
 
 ## Some other commands
 

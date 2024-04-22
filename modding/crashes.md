@@ -122,7 +122,9 @@
 
 
 ??? failure "CreateNewHero - CreateSpecialHero -  OnNewGameCreatedPartialFollowUp - InitialChildGenerationCampaignBehavior"
-    REASON: Hero present, lord not present, lord used in a clan definition as owner
+    REASON: Hero present, lord not present, lord used in a clan definition as owner<br>
+    REASON2: wrong id in &lt;xsl:template match="Settlement[@id='village_EN1_3']/@culture">
+
 
 ??? failure "DefaultMapDistanceModel - GetDistance - UpdateFriendshipAndEnemies"
     REASON 1: Lord/hero without a proper clan (clan not created/deleted)

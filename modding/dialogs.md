@@ -94,16 +94,20 @@ Diagram of the example above:
 Disable the PlayerLine with the Explanation like this:
 
 ``` cs
-if (Hero.MainHero.Gold < 5)
+starter.AddPlayerLine("tavernkeeper_book", "tavernkeeper_talk", "tavernkeeper_book_seller_location", "{TAVERN_KEEPER_GREETING}", TavernKeeperOnCondition, () => { GiveGoldAction.ApplyBetweenCharacters(null, Hero.MainHero, -5, false); }, 100, (out TextObject explanation) =>
 {
-    explanation = new TextObject("Not enough gold..."); //hint-explanation
-    return false; // line is disabled
-}
-else
-{
-    explanation = new TextObject("5 {GOLD_ICON}"); // hint-explanation
-    return true;  // line is enabled
-}
+    if (Hero.MainHero.Gold < 5)
+    {
+        explanation = new TextObject("{=LTE01209}Not enough gold...");
+        return false; // lines is disabled
+    }
+    else
+    {
+        explanation = new TextObject("5 {GOLD_ICON}");
+        return true; // line is enabled
+    }
+});
+
 ```
 
 
