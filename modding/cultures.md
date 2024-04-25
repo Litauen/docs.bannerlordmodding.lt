@@ -29,6 +29,8 @@ Culture can exist without the female clan member (it was stated somewhere otherw
 
 !!! danger "Culture XML file is very sensitive to the comments. Commenting out one name or one of basic_mercenary_troops will crash the game."
 
+Arena requires at least one tier 4/5 troop tree for a new culture. ([Iberian Wolf/fedeita](https://discord.com/channels/411286129317249035/411286129317249038/1231437906145443861))
+
 ## XML
 
     spcultures.xml

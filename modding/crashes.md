@@ -37,7 +37,9 @@
 ??? failure "DefaultMapDistanceModel - GetDistance"
     REASON1: Wrongly assigned Settlement, Kingdom without a settlement. Attach dnSpy, it will show faction.FactionMidSettlement == null. Fix your XML.
     <br><br>
-    REASON2: Problems with Navmesh. Inaccessible settlements. Old/mismatching settlements_distance_cache.bin - fix navmesh, regenerate settlements_distance_cache.bin
+    REASON2: Problems with Navmesh. Inaccessible settlements. Old/mismatching settlements_distance_cache.bin - fix navmesh, regenerate settlements_distance_cache.bin 
+    <br><br>
+    Once I loaded Lemmy's map together with mine and got this crash ¯\\\_(ツ)\_/¯
     <br><br>
     **CampaignObjectManager.InitializeCachedData()**
     <br><br>
