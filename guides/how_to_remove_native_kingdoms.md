@@ -28,7 +28,7 @@ public class BackstoryCampaignBehavior_OnNewGameCreated_Patch
 
 Compile this into your module, make sure it's loaded when you test new game.
 
-Without this, game will crash on start.
+Without this, game will crash on start if any of these IDs are removed.
 
 
 
