@@ -53,7 +53,7 @@ gameStarter.AddModel(new BModel(existingModel));
 
 [Windwhistle](https://discord.com/channels/411286129317249035/677511186295685150/1208679299729858581): So the key to it is gameStarter.GetGameModel() it seems which means that you don't need to depend on anything.
 
-??? example "[Spinozart](https://discord.com/channels/411286129317249035/677511186295685150/1208732219380736051): It would be nice to precise that the GetGameModel() doesn't exist. We have to create this Array method to look for the required Model through IGameStarter.Models. carbon shared the GitHub of Diplomacy, and we can find how it is all settled in the [SubModule.cs](https://github.com/DiplomacyTeam/Bannerlord.Diplomacy/blob/main/src/Bannerlord.Diplomacy/SubModule.cs):"
+!!! example "[Spinozart](https://discord.com/channels/411286129317249035/677511186295685150/1208732219380736051): It would be nice to precise that the GetGameModel() doesn't exist. We have to create this Array method to look for the required Model through IGameStarter.Models. carbon shared the GitHub of Diplomacy, and we can find how it is all settled in the [SubModule.cs](https://github.com/DiplomacyTeam/Bannerlord.Diplomacy/blob/main/src/Bannerlord.Diplomacy/SubModule.cs):"
 
     ``` cs
     protected override void OnGameStart(Game game, IGameStarter gameStarter)
@@ -81,7 +81,7 @@ gameStarter.AddModel(new BModel(existingModel));
     ```
 
 
-??? example "[carbon](https://discord.com/channels/411286129317249035/677511186295685150/1208733697793331240): if you write out a stub of the model class, inheriting from abstract base class and with a constructor that takes previousModel, visual studio will create the rest of the class for you:"
+!!! example "[carbon](https://discord.com/channels/411286129317249035/677511186295685150/1208733697793331240): if you write out a stub of the model class, inheriting from abstract base class and with a constructor that takes previousModel, visual studio will create the rest of the class for you:"
     ![](/pics/model_implement_demo.gif)
 
 

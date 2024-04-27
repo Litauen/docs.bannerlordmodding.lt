@@ -44,6 +44,16 @@ How many grain settlement has:
 Settlement.ItemRoster.GetItemNumber(MBObjectManager.Instance.GetObject<ItemObject>("grain"));
 ```
 
+
+Add Item to ItemRoster
+``` cs
+ItemObject butterItemObject = MBObjectManager.Instance.GetObject<ItemObject>("butter");
+if (butterItemObject != null) {
+    ItemRosterElement itemRoster = new ItemRosterElement(butterItemObject, 2, null);
+    MobileParty.MainParty.ItemRoster.Add(itemRoster);
+}
+```
+
 ## Price
 
 Returns weird price, not the same as in the Trade screen.
