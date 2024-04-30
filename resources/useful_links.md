@@ -35,4 +35,5 @@
 
 * [Banner Kings](https://github.com/R-Vaccari/bannerlord-banner-kings)
 * [The Old Realms](https://github.com/TheOldRealms)
+* [RealmsForgotten](https://github.com/actualAnian/RealmsForgotten)
 * [BannerlordCoop](https://github.com/Bannerlord-Coop-Team/BannerlordCoop)

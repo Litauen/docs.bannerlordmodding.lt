@@ -57,3 +57,8 @@ Crash only when attached to the dnSpy.
 ![](/pics/2403121926.png)
 
 The cause is RTS Camera mod. Disable it and game will start.
+
+
+## IL Instructions / OpCodes
+
+![](/pics/2404290840.png)
