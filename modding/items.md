@@ -54,6 +54,12 @@ if (butterItemObject != null) {
 }
 ```
 
+Remove
+``` cs
+ItemRosterElement itemRosterElement = new ItemRosterElement(itemObject, 10, null);
+settlement.Stash.Remove(itemRosterElement);
+```
+
 ## Price
 
 Returns weird price, not the same as in the Trade screen.

@@ -312,7 +312,6 @@
 
 
 
-
 <br>
 ## TypeInitializationException
 
@@ -330,6 +329,15 @@
 
 ??? failure "XmlQueryOutput - ThrowInvalidStateError"
     REASON: tried to change non-existant attribute with XSLT
+
+
+</p>
+
+    Message: Unexpected token '=' in the expression.
+
+??? failure "XslCompiledTransform - LoadInternal - ApplyXslt - CreateMergedXmlFile - GetMergedXmlForManaged - LoadXML - InitializeSandboxXMLs"
+    REASON: Translation line in the xslt, like {=skalvians}Skalvians. Move this to XML
+
 
 
 <br><br>
