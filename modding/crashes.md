@@ -46,7 +46,8 @@
     REASON: settlements.xml error - I accidently deleted one settlement and village had no bounded castle (crash on settlement.OwnerClan.OnBoundVillageAdded(settlement.Village);). This was on new game start.
 
 ??? failure "DefaultMapDistanceModel - GetDistance - VillageGoodProductionCampaignBehavior - DistributeInitialItemsToTowns - OnNewGameCreatedPartialFollowUp"
-    REASON: ??
+    REASON: it happens when a village is too far away from a city (even if the village belongs to a castle) but there is a script to fix that <br>
+    SOLUTION: : The problem solved by having to make a town closer to the castle, and raise the trade bound system to 4000 ([more info](https://discord.com/channels/411286129317249035/761302555308720148/1235320061468868709))
 
 ??? failure "SpawnNotablesIfNeeded - NotablesCampaignBehavior - DailyTickSettlement"
     REASON: Some type of notable is missing for some culture. I was missing RuralNotable<br>
