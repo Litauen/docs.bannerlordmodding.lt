@@ -1,5 +1,14 @@
 # Mod Release
 
+## Prepare
+
+Change version(s) in SubModule.xml
+
+
+## Test
+
+Run several years with Better Time mod to make sure there are no crashes.
+
 ## Assets
 
 !!! danger "Make whole mod folder backup!"

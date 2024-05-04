@@ -1,5 +1,7 @@
 # Parties
 
+* [API 1.2.7](https://apidoc.bannerlord.com/v/1.2.7/class_tale_worlds_1_1_campaign_system_1_1_party_1_1_mobile_party.html)
+
 ## PartyBase
 
 ``` cs
