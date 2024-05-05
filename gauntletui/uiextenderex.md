@@ -33,9 +33,10 @@
           {
               base.OnSubModuleLoad();
 
-              _extender = new UIExtender("ModuleName");
-              _extender.Register(typeof(CustomSubModule).Assembly);
-              _extender.Enable();
+              UIExtender _UIextender = new UIExtender("YOUR_MODULE_NAME");
+              _UIextender.Register(typeof(SubModule).Assembly);
+              _UIextender.Enable();
+
           }
         }
     ```
