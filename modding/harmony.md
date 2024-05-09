@@ -136,6 +136,41 @@ protected override void OnGameStart(Game game, IGameStarter gameStarter)
 
 More info about Manual Harmony Patching [here](https://harmony.pardeike.net/articles/basics.html#manual-patching)
 
+
+## Run before other patch
+
+``` cs
+[HarmonyBefore(new string[] { "other.mod's.id" } )]
+```
+
+## Unpatch other [patches](https://discord.com/channels/411286129317249035/677511186295685150/1237612303097139273)
+
+``` cs
+[HarmonyPatch(typeof(TheType), "TheMethod")]
+public static class MyPatches
+{
+    [HarmonyBefore(new string[] { "other.mod's.id" })]
+    static void Prefix(out bool __state)
+    {
+        if (myCondition)
+        {
+            HarmonyInstance.Unpatch(AccessTools.Method(typeof(TheType), "TheMethod"), HarmonyPatchType.Prefix, "other.mod's.id");
+
+            __state = true;
+        }
+    }
+
+    static void Postfix(bool __state)
+    {
+        if (__state)
+        {
+            HarmomyInstance.Patch(AccessTools.Method(typeof(TheType), "TheMethod"), HarmonyPatchType.Prefix, "other.mod's.id");
+        }
+    }
+}
+```
+
+
 ## Debug
 
 Available via CTRL+ALT+H:

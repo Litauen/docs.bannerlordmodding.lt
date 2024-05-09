@@ -117,6 +117,14 @@ How to get the position of a bone on an agent skeleton?
 boneFrame = TargetAgent.AgentVisuals.GetGlobalFrame().TransformToParent(TargetAgent.AgentVisuals.GetBoneEntitialFrame(i, false));
 ```
 
+## Weapons
+
+What weapon agent is wielding?
+
+``` cs
+Agent.Main?.WieldedWeapon.Item?.StringId
+```
+
 ## Get nearby enemy agents
 
 ``` cs
