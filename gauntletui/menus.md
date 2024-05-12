@@ -133,9 +133,12 @@ args.optionLeaveType = GameMenuOption.LeaveType.ICON_NAME;
     ``` cs
     Basic example:
 
+    private static CampaignTime actionStart = CampaignTime.Now;
+
     campaignGameStarter.AddWaitGameMenu("wait_menu_name", "top text", delegate (MenuCallbackArgs args)
     {
         args.MenuContext.GameMenu.SetTargetedWaitingTimeAndInitialProgress(10f, 0f);
+        actionStart = CampaignTime.Now;
     }, delegate (MenuCallbackArgs args)
     {
         return true;
@@ -144,7 +147,7 @@ args.optionLeaveType = GameMenuOption.LeaveType.ICON_NAME;
         GameMenu.ExitToLast();
     }, delegate (MenuCallbackArgs args, CampaignTime dt)
     {
-        args.MenuContext.GameMenu.SetProgressOfWaitingInMenu((float)this._startTimeOfWaiting.ElapsedHoursUntilNow / 10);
+        args.MenuContext.GameMenu.SetProgressOfWaitingInMenu((float)actionStart.ElapsedHoursUntilNow / 10);
     }, GameMenu.MenuAndOptionType.WaitMenuShowOnlyProgressOption, GameOverlays.MenuOverlayType.None, 0f, GameMenu.MenuFlags.None, null);
 
     campaignGameStarter.AddGameMenuOption("wait_menu_name", "leave", "Leave", delegate (MenuCallbackArgs args)
