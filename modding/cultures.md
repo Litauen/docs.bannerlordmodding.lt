@@ -19,6 +19,17 @@
     if (hero.Culture.StringId == "sturgia") ..
 
 
+## Menu backgrounds
+
+
+* CULTURE_alley.png
+* CULTURE_arena.png
+* CULTURE_keep.png
+* CULTURE_tavern.png
+
+
+More [info](/guides/custom_menu_background/#alleyarenakeeptavern).
+
 ## Notes
 
 Village's culture doesn't affect settlement loyalty. Only castle and town culture does.

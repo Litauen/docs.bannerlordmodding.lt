@@ -162,6 +162,8 @@
     REASON: No native settlement town_ES4 in the game.
 
 
+??? failure "TournamentGames - TournamentMatch - AddParticipant - TournamentBehavior - FillParticipants"
+    REASON: RBM Tournament expects local culture troops in the settlement for the Tournament. Troops were not implemented for that culture.
 
 
 
@@ -350,8 +352,10 @@ REASON: this entity was commented out in the xscene:
 ``` xml
 <game_entity name="icon_camera" old_prefab_name="icon_camera" mobility="1">
 ```
-
-
+<br>
+----
+When entering settlement.<br>
+REASON: Bad troop id: villager_danish vs danish_villager
 
 
 
