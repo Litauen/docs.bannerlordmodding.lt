@@ -150,6 +150,16 @@
 
 ??? failure "AgingCampaignBehavior - OnHeroComesOfAge - InvokeList - DailyTickHero"
     REASON: error/missing sandboxcore_equipment_sets.xml for the hero's culture. Hero turned 18
+
+??? failure "TournamentGames - TournamentMatch - AddParticipant - TournamentBehavior - FillParticipants"
+    REASON: RBM Tournament expects local culture troops in the settlement for the Tournament. Troops were not implemented for that culture.
+
+??? failure "Clan - OnFortificationAdded - PreAfterLoad"
+    REASON: Old save loaded on a new map with new settlements not present in the old save
+
+??? failure "GangLeaderNeedsToOffloadStolenGoodsIssueBehavior - ConditionsHold - OnCheckForIssue - IssuesCampaignBehavior - CreateAnIssueForSettlementNotables"
+    REASON: It's seems it is related to the mission NotableWantsDaughterFound. When it ends the GangLeader is spawned in the village where this mission was originated. This GangLeader then is used for this OffloadStolenGoods mission check and that results in the crash. Seems like native bug. I patched the crashing method with the check if village notable is not GangLeader.
+
 </p>
 
     Source: MonoMod.Utils
@@ -161,9 +171,6 @@
 ??? failure "LordConversationsCampaignBehavior - conversation_wanderer_introduction_on_condition - RunCondition"
     REASON: No native settlement town_ES4 in the game.
 
-
-??? failure "TournamentGames - TournamentMatch - AddParticipant - TournamentBehavior - FillParticipants"
-    REASON: RBM Tournament expects local culture troops in the settlement for the Tournament. Troops were not implemented for that culture.
 
 
 
