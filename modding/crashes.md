@@ -353,15 +353,25 @@
 <br><br>
 ## CTD without any message
 
-On mission start.<br>
+CTD - Crash To Desktop
+
+----
+
+    On mission start
 Error log last line: Selected formations being cleared.<br>
 REASON: this entity was commented out in the xscene:
 ``` xml
 <game_entity name="icon_camera" old_prefab_name="icon_camera" mobility="1">
 ```
-<br>
+
 ----
-When entering settlement.<br>
+
+    On entering scene
+REASON: scene does not exist<br>
+REASON2: error in the scene's xscene file
+
+----
+    When entering settlement
 REASON: Bad troop id: villager_danish vs danish_villager
 
 
