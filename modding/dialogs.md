@@ -125,11 +125,33 @@ InputToken -  "start" on first dialog entry point and it needs a start condition
 The last line should have outputToken "end" if you want the dialog to end:
 
 ``` cs
-starter.AddDialogLine("bookvendor_talk", "bookvendor_talk", "end", "Bye", null, null, 100, null, null);
+starter.AddDialogLine("bookvendor_talk", "bookvendor_talk", "end", "Bye", null, null, 100, null);
 ```
 
 !!! danger "If you will use outputToken "end" with AddPlayerLine - the game will hang"
 
+
+
+<br>
+## Story demo
+
+<center>
+<video width="640" height="360" controls autoplay loop muted>
+    <source src="/pics/dialog_story_demo.webm" type="video/webm">
+    Your browser does not support the video tag.
+</video>
+</center>
+
+
+``` cs
+starter.AddPlayerLine("tavernkeeper_story", "tavernkeeper_talk", "tavernkeeper_story_part1", "Tell me a story", null, null, 100, null, null);
+starter.AddDialogLine("tavernkeeper_story", "tavernkeeper_story_part1", "tavernkeeper_story_part2", "STORY PART 1", null, null, 100, null);
+starter.AddDialogLine("tavernkeeper_story", "tavernkeeper_story_part2", "tavernkeeper_story_part3", "STORY PART 2", null, null, 100, null);
+starter.AddDialogLine("tavernkeeper_story", "tavernkeeper_story_part3", "tavernkeeper_story_part_end", "STORY PART 3", null, null, 100, null);
+starter.AddDialogLine("tavernkeeper_story", "tavernkeeper_story_part_end", "tavernkeeper_story_part_end_player", "THE END", null, null, 100, null);
+starter.AddPlayerLine("tavernkeeper_story", "tavernkeeper_story_part_end_player", "tavernkeeper_story_part_end_teller", "Thank you. That was quite a story", null, null, 100, null, null);
+starter.AddDialogLine("tavernkeeper_story", "tavernkeeper_story_part_end_teller", "tavernkeeper_talk", "I am glad you liked it.", null, null, 100, null);
+```
 
 
 <br>
