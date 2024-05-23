@@ -96,6 +96,9 @@ Press on "Delete Empty Vertex Groups" to remove empty groups.
 
 Select your mesh. Make sure it has correct name (which you will not be able to change in the BL Editor)
 
+??? danger "Select Object Mode"
+    ![](/pics/2405220909.png)
+
 Newly generated LOD starts from 0.8 Decimate Ratio, then 0.4, 0.2, 0.1, 0.05 ...
 
 Set how many LODs to generate and press the "Generate LODs" button:

@@ -23,3 +23,7 @@ For every Armor that is more complex, that could potentially be used as base to 
 - [Demo](https://youtu.be/j8EPTSVhaY8?list=PLjnD9iTZKI9yWnn10FcHImWeYbqbqLIbg&t=503) by Carolina Warlord Gaming
 - [Demo1](https://youtu.be/hTCutq0kPJk?t=236) / [Demo2](https://youtu.be/WueD_-nPQ-4?t=20)  by The Lone Warrior
 
+
+## Check slightly affected areas
+
+![](/pics/2405220825.png)
