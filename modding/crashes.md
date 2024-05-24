@@ -64,7 +64,9 @@
     REASON: Troop ID used in partyTemplates.xml refers to a non-existing troop ID in the trooptree. 
 
 ??? failure "SetInitialValuesFromCharacter - CreateNewHero - CreateSpecialHero - CreateMinorFactionHeroFromTemplate - SpawnMinorFactionHeroes - OnNewGameCreated"
-    REASON: spclans.xslt and custom_spclans.xml were in a separate folder for spclans, but missing empty spclans.xml file
+    REASON1: spclans.xslt and custom_spclans.xml were in a separate folder for spclans, but missing empty spclans.xml file<br>
+    REASON2: for Lord NPCCharacter used EquipmentSet instead of EquipmentRoster
+
 
 ??? failure "HeroCreator - CreateNewHero - CreateSpecialHero - CreateMinorFactionHeroFromTemplate - SpawnMinorFactionHeroes - OnNewGameCreated"
     REASON: error in &lt;minor_faction_character_templates>, I used name= instead of id=

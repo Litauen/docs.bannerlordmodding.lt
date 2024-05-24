@@ -129,6 +129,44 @@ encounter_background_mesh - menu pic for encounter with the troops of this cultu
     }
     ```
 
+### &lt;default_policies>
+
+| Policy | Description |
+| ------------ | --------- |
+| policy_land_tax | 5% of the village income is paid to the ruler clan as tax. 5% less village income for clans |
+| policy_state_monopolies | Ruler clan gains 5% of settlement as tax per town. Workshop production is decreased by 10% |
+| policy_sacred_majesty | Ruler clan earns 3 influence per day. Non-ruler clans lose 0.5 influence per day |
+| policy_magistrates | Town security is increased by 1 per day. Town taxes are reduced by 5% |
+| policy_debasement_of_the_currency | Ruler clan gains 100 denars per day for each town in the kingdom. Settlement loyalty is decreased by 1 per day |
+| policy_precarial_land_tenure | The influence cost of proposing settlement annexation is reduced by 50% for the ruler clan |
+| policy_crown_duty | 5% tax on tariffs is paid to the ruler clan. Higher trade penalty in towns. Settlement prosperity is decreased by 1 per day |
+| policy_imperial_towns | Towns held by the ruler clan gain 1 Loyalty and 1 Prosperity per day. Towns held by non-ruler clans lose 0.3 Loyalty per day |
+| policy_royal_commissions | The influence cost of creating an army is reduced by 30% for the ruler. Armies led by the ruler earn cohesion at 30% less cost. Armies led by non-ruler nobles cost 10% more influence to create |
+| policy_royal_guard | Ruler's party size is increased by 60. Non-ruling clans lose 0.2 influence per day |
+| policy_war_tax | Ruler gains 5% tax from all settlements. Towns lose 1 prosperity per day. The influence cost of declaring war is doubled for the ruler clan |
+| policy_royal_privilege | For kingdom decisions, the influence cost of the ruler overriding the popular decision outcome is reduced by 20% |
+| policy_senate | Tier 3+ clans gain 0.5 influence per day, influence cost of inviting lower tier clans to army are increased by 10% |
+| policy_lords_privy_council | Tier 5+ clans gain 0.5 influence per day, influence cost of inviting lower tier clans to army are increased by 20% |
+| policy_military_coronae | Military achievements grant 20% more influence. Troop wages are increased by 10% |
+| policy_feudal_inheritance | The cost of revoking a fief from a clan is doubled. Clans gain 0.1 influence for each fief they own |
+| policy_serfdom | Villages grant 0.2 influence per day to the owner clan. Towns gain 1 security but lose 1 militia per day |
+| policy_noble_retinues | Tier 5+ clans lose 1 influence per day and the party size of their leaders is increased by 40 |
+| policy_castle_charters | Castle upgrade costs are reduced by 20% |
+| policy_bailiffs | Town security is increased by 1 per day. Towns with a security greater than 60 yield 1 additional influence to the owner clan. Tax from towns are reduced by 5% |
+| policy_hunting_rights | Food production in towns and castles are increased by 2. Town loyalty is decreased by 0.2 |
+| policy_road_tolls | Trade tax paid to the town owner is increased by 3%. Town prosperity is decreased by 0.2 |
+| policy_marshals | Armies led by Tier 5+ nobles require 10% less influence. Influence of the ruler clan is reduced by 1 per day |
+| policy_council_of_the_commons | Each notable yields 0.1 influence per day to the settlement's owner clan. Tax from fortifications 5% decreased |
+| policy_citizenship | Settlement loyalty is increased by 2 per day. Settlement production is reduced by 5% |
+| policy_forgiveness_of_debts | 0.5 Loyalty per day to settlements that have the same culture as their owner clan. Settlement militia production is increased by 1. -0.5 Loyalty per day to settlements with a different culture than its owner clan |
+| policy_tribunes_of_the_people | Town taxes paid to the ruler are reduced by 5%. Town loyalty is increased by 1 per day |
+| policy_grazing_rights | Settlement loyalty is increased by 0.5 per day. Daily hearth production at villages decreases by 0.25 per day |
+| policy_lawspeakers | All clans whose leader has high Charm gain 1 influence per day. All clans whose leader has low Charm lose 1 influence per day |
+| policy_trial_by_jury | Settlement loyalty is increased by 0.5 per day. Settlement security is decreased by 0.2 per day. Clans lose 1 influence per day |
+| policy_cantons | Daily militia production is increased by 1. Recruits replenish 20% faster. Tax income in settlements are reduced by 10% |
+    Extracted by Alkoon
+
+
 ### &lt;possible_clan_banner_icon_ids>
 
 These are the banner icons that the game will use when creating a banner for new clans or rebels.
