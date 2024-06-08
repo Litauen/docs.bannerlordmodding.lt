@@ -12,12 +12,35 @@
 * sturgia
 * vlandia
 
-
+and small other cultures, like looters, etc
 
 ## Check
 
     if (hero.Culture.StringId == "sturgia") ..
 
+
+## Get All Cultures
+
+``` cs
+public class CultureHelper
+{
+    public static List<CultureObject> GetAllCultures()
+    {
+        if (Game.Current != null)
+        {
+            return Game.Current.ObjectManager.GetObjectTypeList<CultureObject>();
+        }
+        return new List<CultureObject>();
+    }
+}
+
+// Usage
+List<CultureObject> allCultures = CultureHelper.GetAllCultures();
+foreach (var culture in allCultures)
+{
+    Console.WriteLine($"Culture ID: {culture.StringId}, Name: {culture.Name}");
+}
+```
 
 ## Menu backgrounds
 
