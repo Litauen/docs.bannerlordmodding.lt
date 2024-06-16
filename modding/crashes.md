@@ -174,6 +174,9 @@
     REASON: No native settlement town_ES4 in the game.
 
 
+??? failure "GetEffectiveDailyExperience - DefaultPartyTrainingModel - OnDailyTickParty"
+    REASON: melee_elite_militia_troop in culture.xml was set to non-existant troop ID
+
 
 
 
