@@ -71,6 +71,8 @@ MBInformationManager.ShowMultiSelectionInquiry(MultiSelectionInquiryData data);
 ![](/pics/zxK9WCD.png)
 
 
+Close with: InformationManager.HideInquiry();
+
 ## AddQuickInformation
 
 ![](/pics/dRrDaYF.png)
