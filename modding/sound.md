@@ -279,17 +279,6 @@ using TaleWorlds.ModuleManager;
 
 namespace Patches
 {
-    public static class YOURMODModulePath
-    {
-        public static string YOURMODROOTPath
-        {
-            get
-            {
-                return ModuleHelper.GetModuleFullPath("YOURMOD");
-            }
-        }
-    }
-
     [HarmonyPatch]
     public static class MBMusicManagerPatches
     {
@@ -299,11 +288,12 @@ namespace Patches
         {
             if (!NativeConfig.DisableSound)
             {
-                string corePath = YOURMODModulePath.YOURMODROOTPath + "music/soundtrack.xml";
+                string corePath = ModuleHelper.GetModuleFullPath("YOURMOD") + "music/soundtrack.xml";
                 PsaiCore.Instance.LoadSoundtrackFromProjectFile(corePath);
             }
         }
 
+        // this will only work if you have custom audio? with ID 401. By default comment this out to play default menu music
         [HarmonyPrefix]
         [HarmonyPatch(typeof(MBMusicManager), "ActivateMenuMode")]
         public static bool UseTowMenuMusicId(ref MBMusicManager __instance)
@@ -317,6 +307,16 @@ namespace Patches
     }
 }
 ```
+
+In your MOD/music/soundtrack.xml you can reference native audio by adding ..\\..\\..\\..\music\PC\ in their &lt;Path>
+
+Original:
+
+    <Path>MBII_Campaign_Maintheme_Variation.wav</Path>
+
+After the patch:
+
+    <Path>..\..\..\..\music\PC\MBII_Campaign_Maintheme_Variation.wav</Path>
 
 ## Custom Music in Taverns
 

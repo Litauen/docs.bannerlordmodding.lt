@@ -16,6 +16,8 @@ Hero.MainHero.HeroDeveloper.AddAttribute(DefaultCharacterAttributes.Vigor, 1, fa
 Hero.MainHero.HeroDeveloper.AddFocus(DefaultSkills.TwoHanded, 1, false);
 Hero.MainHero.HeroDeveloper.ChangeSkillLevel(DefaultSkills.OneHanded, 10, true);
 Hero.MainHero.HeroDeveloper.AddSkillXp(DefaultSkills.OneHanded, 100, true, true);
+
+Hero.MainHero.AddSkillXp(DefaultSkills.Charm, MBRandom.RandomFloatRanged(10, 50)); // no learning rate applied
 ```
 
 ### Get
@@ -54,6 +56,12 @@ int intelligence = Hero.MainHero.GetAttributeValue(DefaultCharacterAttributes.In
     * Medicine
     * Engineering
 
+
+## Renown
+
+[Clan.Renown](/modding/clans/#renown)
+
+    GainRenownAction.Apply(Hero.MainHero, MBRandom.RandomFloatRanged(1f, 3f), false);
 
 ## Traits
 

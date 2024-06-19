@@ -9,6 +9,14 @@
 
     int Tier [get]
 
+## Renown
+
+    Clan.Renown
+
+    AddRenown(float value, bool shouldNotify = true)
+    ResetClanRenown()
+
+By [hero](/modding/heroes/#renown)
 
 ## Gold
 

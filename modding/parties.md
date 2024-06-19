@@ -38,6 +38,34 @@ PartyBase MobileParty.Party
 .MemberRoster
 ```
 
+## Count members
+
+TroopRoster
+
+``` cs
+MobileParty.MainParty.MemberRoster.TotalManCount
+
+.TotalRegulars
+.TotalWoundedRegulars
+.TotalWoundedHeroes
+.TotalHeroes
+.TotalWounded
+.TotalManCount
+.TotalHealthyCount
+.TotalHealthyCount
+```
+
+## Morale
+
+Get:
+
+    MobileParty.MainParty.Morale
+    MobileParty.MainParty.RecentEventsMorale
+
+Set:
+
+    MobileParty.MainParty.RecentEventsMorale += 10;
+
 
 ## Scouting
 
@@ -48,8 +76,4 @@ PartyBase MobileParty.Party
 
     AddCompanionAction.Apply()
 
-
-## Examples
-
-Player's clan parties count:
 
