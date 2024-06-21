@@ -89,6 +89,19 @@ item.value - returns default item's value (from XML?)
 
 ## Tier
 
+    Public enum ItemTiers
+    {
+        Tier1,
+        Tier2,
+        Tier3,
+        Tier4,
+        Tier5,
+        Tier6,
+        NumTiers
+    }
+
+Tier 0 (in GUI) == -1 when comparing with ItemTier.
+
 For a head armor Tier is set automatically based on the &lt;ItemComponent>&lt;Armor head_armor value
 
 By price for other types of armors also:
