@@ -89,6 +89,7 @@ Mount(Agent mountAgent)
 SetCrouchMode(bool set)
 SetAlwaysAttackInMelee(bool attack)
 bool CheckSkillForMounting(Agent mountAgent) - can mount that mountAgent?
+agent.SetMaximumSpeedLimit - change speed
 ```
 
 ## [MissionEquipment](/modding/equipment/#missionequipment)
