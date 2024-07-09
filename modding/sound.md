@@ -343,6 +343,51 @@ Source [here](https://www.nexusmods.com/mountandblade2bannerlord/mods/5233)
 6. Rename your music ogg file to Maintheme.ogg and place it in \Mount & Blade II Bannerlord\music\PC\
 
 
+## Custom Music in Culture selection menu
+
+Requires patching:
+
+``` cs
+public class CharacterCreationCultureStageView : CharacterCreationStageViewBase
+{
+.....
+  private void OnCultureSelected(CultureObject culture)
+  {
+      MissionSoundParametersView.SoundParameterMissionCulture soundParameterMissionCulture = MissionSoundParametersView.SoundParameterMissionCulture.None;
+      if (culture.StringId == "aserai")
+      {
+          soundParameterMissionCulture = MissionSoundParametersView.SoundParameterMissionCulture.Aserai;
+      }
+      else if (culture.StringId == "khuzait")
+      {
+          soundParameterMissionCulture = MissionSoundParametersView.SoundParameterMissionCulture.Khuzait;
+      }
+      else if (culture.StringId == "vlandia")
+      {
+          soundParameterMissionCulture = MissionSoundParametersView.SoundParameterMissionCulture.Vlandia;
+      }
+      else if (culture.StringId == "sturgia")
+      {
+          soundParameterMissionCulture = MissionSoundParametersView.SoundParameterMissionCulture.Sturgia;
+      }
+      else if (culture.StringId == "battania")
+      {
+          soundParameterMissionCulture = MissionSoundParametersView.SoundParameterMissionCulture.Battania;
+      }
+      else if (culture.StringId == "empire")
+      {
+          soundParameterMissionCulture = MissionSoundParametersView.SoundParameterMissionCulture.Empire;
+      }
+
+      SoundManager.SetGlobalParameter("MissionCulture",(float)soundParameterMissionCulture);
+  }
+...
+}
+```
+
+More info by [-Mr. E-](https://discord.com/channels/411286129317249035/677511186295685150/1259676285756641401)
+
+
 ## Game Sound Settings
 
 Get/set Sound/Music Volume:

@@ -103,6 +103,10 @@ public class CharacterCreationCultureStageVM_SortCultureList_Patch
 }
 ```
 
+### Custom Music
+
+When selecting different culture's card. Details [here](/modding/sound/#custom-music-in-culture-selection-menu)
+
 <br>
 ## Culture's Description
 

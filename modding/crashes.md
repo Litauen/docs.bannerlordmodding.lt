@@ -126,6 +126,9 @@
     ```
 
 
+??? failure "InitialChildGenerationCampaignBehavior - OnNewGameCreatedPartialFollowUp - InvokeList - OnNewGameCreated"
+    REASON: Missing male or female lord of one of the cultures. Both male and female lords should be present for each culture to pass this function at the game creation.
+
 ??? failure "CreateNewHero - CreateSpecialHero -  OnNewGameCreatedPartialFollowUp - InitialChildGenerationCampaignBehavior"
     REASON: Hero present, lord not present, lord used in a clan definition as owner<br>
     REASON2: wrong id in &lt;xsl:template match="Settlement[@id='village_EN1_3']/@culture">
@@ -142,7 +145,8 @@
 
 ??? failure "CalculateDailyProductionAmount - GetWerehouseCapacity - TickProductions - OnNewGameCreatedPartialFollowUp"
     REASON: assigned a settlement to non-existant clan<br>
-    REASON2: error in defining minor_clan, I had label_color="FF7264D16" (one digit too much in the color code)
+    REASON2: error in defining minor_clan, I had label_color="FF7264D16" (one digit too much in the color code)<br>
+    REASON3: error in defining a clan, had NaN in banner_key="11.141.19.1836.1836.768.788.1.0.NaN.510....
 
 ??? failure "NameGenerator - CalculateNameScore - SelectNameIndex - GenerateHeroFirstName - CreateSpecialHero - InitialChildGenerationCampaignBehavior - OnNewGameCreatedPartialFollowUp"
     REASON: Clan's owner was non-existant Lord
