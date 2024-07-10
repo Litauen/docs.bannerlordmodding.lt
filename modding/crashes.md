@@ -146,7 +146,7 @@
 ??? failure "CalculateDailyProductionAmount - GetWerehouseCapacity - TickProductions - OnNewGameCreatedPartialFollowUp"
     REASON: assigned a settlement to non-existant clan<br>
     REASON2: error in defining minor_clan, I had label_color="FF7264D16" (one digit too much in the color code)<br>
-    REASON3: error in defining a clan, had NaN in banner_key="11.141.19.1836.1836.768.788.1.0.NaN.510....
+    REASON3: error in defining a clan, had NaN in banner_key="11.141.19.1836.1836.768.788.1.0.NaN.510...., wrong/duplicate Faction id=
 
 ??? failure "NameGenerator - CalculateNameScore - SelectNameIndex - GenerateHeroFirstName - CreateSpecialHero - InitialChildGenerationCampaignBehavior - OnNewGameCreatedPartialFollowUp"
     REASON: Clan's owner was non-existant Lord
