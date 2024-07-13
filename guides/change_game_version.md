@@ -1,6 +1,25 @@
 # How to change game version
 
-## Backup current version
+## Update the game, leave old mods
+
+!!! danger "This simple method changes game version but does not change your installed mods, so big chance game will crash because not all mods will be compatible with the new game version."
+
+
+
+![](/pics/2407121447.png)
+
+
+![](/pics/2407121448.png)
+
+
+!!! danger "If (when) game crashes after the version change - remove all installed mods, try to run it without the mods, then add mods one by one making sure game works. If not - check if crashing mod is updated to your game version."
+
+
+## Advanced Method
+
+This method allows to save all the mods you were using with the old version, so you know they are compatible so you could go back to this version later with all working mods.
+
+### Backup current version
 
 1) Exit from the Steam. DO NOT CLOSE IT with top-right X. Exit from the menu: Steam - Exit:
 
@@ -27,8 +46,8 @@ I put version number at the end of the backup file.
 
 CONGRATS! Now you have new(old/different) Bannerlord version.
 
-<br><br>
-## How to go back to the previous version
+<br>
+### How to go back to the previous version
 
 1) Exit Steam
 
