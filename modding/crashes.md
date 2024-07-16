@@ -44,6 +44,26 @@
     **CampaignObjectManager.InitializeCachedData()**
     <br><br>
     REASON: settlements.xml error - I accidently deleted one settlement and village had no bounded castle (crash on settlement.OwnerClan.OnBoundVillageAdded(settlement.Village);). This was on new game start.
+    <br>
+    ??? example "If nothing helps, use this patch:"
+        ``` cs
+        [HarmonyPatch(typeof(DefaultMapDistanceModel))]
+        [HarmonyPatch("GetDistance")]
+        [HarmonyPatch(new Type[] { typeof(Settlement), typeof(Settlement) })]
+        public class DefaultMapDistanceModel_GetDistance_Patch
+        {
+            static bool Prefix(Settlement fromSettlement, Settlement toSettlement, ref float __result)
+            {
+                if (fromSettlement == null || toSettlement == null)
+                {
+                    __result = 0f;
+                    return false;
+                }
+                return true;
+            }
+        }
+        ```
+
 
 ??? failure "DefaultMapDistanceModel - GetDistance - VillageGoodProductionCampaignBehavior - DistributeInitialItemsToTowns - OnNewGameCreatedPartialFollowUp"
     REASON: it happens when a village is too far away from a city (even if the village belongs to a castle) but there is a script to fix that <br>
