@@ -77,3 +77,8 @@ Set:
     AddCompanionAction.Apply()
 
 
+## Destroy
+
+    DestroyPartyAction
+
+[Don't use](https://discord.com/channels/411286129317249035/677511186295685150/1263112214873772043) MobileParty.RemoveParty()
