@@ -219,3 +219,8 @@ Mod setup, dialogs, game menu, GauntletUI, etc.
 ## Sheepbitter
 
 * [Native Bannerlord Teleporter for Sceners](https://www.youtube.com/watch?v=nhRqBIrcalo)
+
+
+## Capt Cole
+
+* [Scene Editor Tutorial - Envmap_prop and local_envmap_prop](https://www.youtube.com/watch?v=iz-4XXyZl6I)
