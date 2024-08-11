@@ -423,6 +423,13 @@
 
 CTD - Crash To Desktop
 
+
+----
+
+    On new game start
+
+REASON: non-existant troop refferenced in party_templates.xml &lt;PartyTemplateStack ... />
+
 ----
 
     On mission start

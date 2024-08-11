@@ -95,3 +95,19 @@ NOTE: faction1/faction2 can be your clan's name
 
 ```
 
+## Disable cheat mode
+
+Code by [hunharibo](https://discord.com/channels/411286129317249035/677511186295685150/1271767725487947857)
+
+```cs
+
+[HarmonyPatch("ScriptingInterfaceOfIConfig", "GetCheatMode")]
+public static class GetCheatMode_Patch
+{
+    public static bool Prefix(ref bool __result)
+    {
+        __result = false; // Always return false
+        return false; // Skip the original method
+    }
+}
+```
