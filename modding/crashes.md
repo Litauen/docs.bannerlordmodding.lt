@@ -347,7 +347,8 @@
 
 ??? failure "MapScene - GetNavigationMeshCenterPosition - DefaultMapDistanceModel - GetClosestSettlementForNavigationMesh - GetDistance - CalculatePartyInfluenceCost - CalculateTotalInfluenceCost"
     REASON: settlement not covered by Navmesh<br>
-    REASON2: CUSTOM_settlements.xml does not match settlements.xml<br>
+    REASON2: [hole](https://discord.com/channels/411286129317249035/677511186295685150/1272497615140945991) in the mesh<br>
+    REASON3: CUSTOM_settlements.xml does not match settlements.xml<br>
 
 </p>
 
