@@ -25,6 +25,7 @@ private void AddGameMenus(CampaignGameStarter starter)
     starter.AddGameMenuOption("village", "test_menu", "My test menu",
     (MenuCallbackArgs args) => {
         args.optionLeaveType = GameMenuOption.LeaveType.HostileAction;
+        args.Tooltip = new TextObject("{GOLD_ICON} Tooltip! {GOLD_ICON}", null);
         return true;
     },
     delegate (MenuCallbackArgs args)
