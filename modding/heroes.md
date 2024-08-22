@@ -23,8 +23,9 @@ Hero.MainHero.AddSkillXp(DefaultSkills.Charm, MBRandom.RandomFloatRanged(10, 50)
 ### Get
 
 ``` cs
-int skillValue = Hero.MainHero.GetSkillValue(DefaultSkills.Roguery);
-int intelligence = Hero.MainHero.GetAttributeValue(DefaultCharacterAttributes.Intelligence);
+int skillXP = hero.HeroDeveloper.GetSkillXpProgress(DefaultSkills.Athletics);  // skill XP
+int skillValue = hero.GetSkillValue(DefaultSkills.Roguery);    // skill level
+int intelligence = hero.GetAttributeValue(DefaultCharacterAttributes.Intelligence);  // skill attribute
 ```
 
 ??? info "DefaultCharacterAttributes"

@@ -73,6 +73,53 @@ MBInformationManager.ShowMultiSelectionInquiry(MultiSelectionInquiryData data);
 
 Close with: InformationManager.HideInquiry();
 
+??? example "Example with companions:"
+
+    ![](/pics/2408211012.png)
+
+    ```cs
+    List<InquiryElement> list = new();
+
+    for (int i = 0; i < Hero.MainHero.PartyBelongedTo.MemberRoster.Count; i++)
+    {
+        CharacterObject characterAtIndex = Hero.MainHero.PartyBelongedTo.MemberRoster.GetCharacterAtIndex(i);
+        if (characterAtIndex.HeroObject != null && characterAtIndex.HeroObject != Hero.MainHero)
+        {
+            Hero hero = characterAtIndex.HeroObject;
+
+            bool activeItem = true;
+            TextObject hint = new("Ready to be selected!");
+
+            if (hero.IsWounded)
+            {
+                activeItem = false;
+                hint = new TextObject("Wounded, can't be selected...", null);
+            }
+
+            list.Add(new InquiryElement(hero, hero.Name.ToString(), new ImageIdentifier(CharacterCode.CreateFrom(characterAtIndex)), activeItem, hint.ToString()));
+        }
+    }
+
+    MultiSelectionInquiryData data = new(new TextObject("Select the companion:").ToString(), "",
+        list, true, 0, 1, new TextObject("Select").ToString(), new TextObject("Leave").ToString(), (List<InquiryElement> list) =>
+    {
+        foreach (InquiryElement inquiryElement in list)
+        {
+            if (inquiryElement != null && inquiryElement.Identifier != null)
+            {
+                Hero? hero = inquiryElement.Identifier as Hero;
+                if (hero != null)
+                {
+                    InformationManager.DisplayMessage(new InformationMessage($"Companion selected: {hero.Name}", TaleWorlds.Library.Color.ConvertStringToColor("#FF0042FF")));
+                    //GameMenu.SwitchToMenu("town");
+                }
+            }
+        }
+    }, (List<InquiryElement> list) => { }, "");
+
+    MBInformationManager.ShowMultiSelectionInquiry(data);
+    ```
+
 ## AddQuickInformation
 
 ![](/pics/dRrDaYF.png)
