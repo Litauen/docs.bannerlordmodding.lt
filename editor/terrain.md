@@ -18,7 +18,7 @@ When creating new terrain you will see:
 
 All scenes are created on a grid of nodes, allowing different levels of detail (LODs) to be generated in surrounding nodes, optimising performance. 
 
-X and Y are the number of nodes to be generated on each 2D axis. 
+X and Y are the number of nodes to be generated on each 2D axis.
 
 
 **Node Size**
@@ -38,6 +38,7 @@ So, its mesh was generated using 4,096x4,096 vertices (16 x 256 = 4,096), allowi
 
 Metres are the game equivalent in a normal mission scene. A world map is a third of that size (i.e the player’s world-map icon will be a third the size of his character in a scene). So horizontally, in human terms Calradia is really only 2.5Kms x 2.5Kms (848x3 = 2,544), but symbolically represents a continent. This makes satellite heightmaps awkward in world-maps as any mountain range must be several miles high to match the player icon and symbolic map.
 
+!!! danger "[Swan [IAF]](https://discord.com/channels/411286129317249035/761302555308720148/1276198457408753755) just be sure not to exceed 256x256 for single node dim otherwise the chances for the scene to get corrupted will skyrocket"
 
 ## Resize
 

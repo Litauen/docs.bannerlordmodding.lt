@@ -1,7 +1,7 @@
 # Weapons
 
 * [Official doc](https://moddocs.bannerlord.com/asset-management/weapon_smithing/){target=_blank}
-
+* [What is weapon handling?](https://www.gurugameguides.com/post/understanding-weapon-handling-in-mount-blade-ii-bannerlord)
 
 ## Check active weapon
 
