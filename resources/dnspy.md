@@ -52,7 +52,25 @@ or anything else. Recompile and should be ok.
 
 ## Crash on the game start
 
+
+![](/pics/2408271435.png)
+
+Bad prefix/postfix argument:
+
+``` cs
+    public static void Postfix(MenuCallbackArgs args)
+
+    //should be:
+
+    public static void Postfix()
+```
+
+What is interesting, game runs fine if not dnSpy attached.
+
+----
+
 Crash only when attached to the dnSpy.
+
 
 ![](/pics/2403121926.png)
 

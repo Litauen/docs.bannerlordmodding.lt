@@ -347,9 +347,11 @@
 
 ??? failure "MapScene - GetNavigationMeshCenterPosition - DefaultMapDistanceModel - GetClosestSettlementForNavigationMesh - GetDistance - CalculatePartyInfluenceCost - CalculateTotalInfluenceCost"
     REASON: settlement not covered by Navmesh<br>
-    REASON2: [hole](https://discord.com/channels/411286129317249035/677511186295685150/1272497615140945991) in the mesh<br>
+    REASON2: [hole](https://discord.com/channels/411286129317249035/677511186295685150/1272497615140945991) in the Navmesh<br>
+    REASON3: outdated Settlements Distance Cache. [Delete/regenerate it](/modding/settlements/#settlements-distance-cache)<br>
     <br>
     [hunharibo](https://discord.com/channels/411286129317249035/677511186295685150/1274288069528256608): looks like a navmesh issue. Either a face with inverted normals or a concave quad or a face that is not connected to anything
+
 
 </p>
 

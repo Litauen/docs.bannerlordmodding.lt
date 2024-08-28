@@ -28,6 +28,7 @@ Screen elements, main building blocks of [Prefabs](/gauntletui/prefabs)
 * [ScaledPositionXOffset / ScaledPositionYOffset](/gauntletui/widgets/#scaledpositionxoffset-scaledpositionyoffset)
 * [Brush](/gauntletui/brushes)
 * [IsVisible / IsHidden](/gauntletui/widgets/#isvisible-ishidden)
+* [Color](/gauntletui/widgets/#color)
 * [AlphaFactor](/gauntletui/widgets/#alphafactor)
 * Command.Click (Command.YourKeyHere)
 * DataSource (Properties with DataSourceProperty Attribute in C#)
@@ -155,6 +156,15 @@ The attributes IsVisible and IsHidden are used to control the visibility of UI e
 IsVisible: This attribute determines whether an element is visible on the screen. When set to true, the element will be displayed, and when set to false, the element will be hidden. It affects the visibility of the element itself as well as any child elements it may contain.
 
 IsHidden: This attribute also controls the visibility of an element, similar to IsVisible. However, it is usually used in conjunction with conditions or triggers. The IsHidden attribute allows you to dynamically control the visibility of an element based on certain conditions or events. It can be bound to a script or other mechanisms to determine when the element should be hidden.
+
+
+## Color
+
+    Color="#D64646FF"
+
+D64646 - Color code
+
+FF - Alpha
 
 
 ## AlphaFactor

@@ -67,9 +67,12 @@ Set:
     MobileParty.MainParty.RecentEventsMorale += 10;
 
 
-## Scouting
+## Get effective party role heroes
 
-    mobileParty.EffectiveScout
+    party.EffectiveEngineer
+    party.EffectiveQuartermaster
+    party.EffectiveScout
+    party.EffectiveSurgeon
 
 
 ## Add hero to a party

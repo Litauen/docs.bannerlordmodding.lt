@@ -201,9 +201,10 @@ Note: name of the sprite is with the '_t' at the end: PNG file gui_bg_village_ba
 
 !!! info "From my observation: when adding new settlements it's not necessary to recalculate it, game works as it is. It is necessary to recalculate at the end (when all settlements are added) for performance."
 
-The game crashes if settlements.xml and settlements_distance_cache.bin are incompatible.
+!!! danger "The game crashes if settlements.xml and settlements_distance_cache.bin are incompatible."
 
-    settlements_distance_cache.bin
+
+settlements_distance_cache.bin
 
 Editor does not generate it by default on map save.
 
