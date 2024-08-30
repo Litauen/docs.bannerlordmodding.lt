@@ -98,6 +98,10 @@ int soundIndex = SoundEvent.GetEventIdFromString("YOUR_SOUND_ID");
 
 ### Several ways to play a sound
 
+``` cs
+UISoundsHelper.PlayUISound("event:/ui/inventory/take_all");
+```
+
 Worked ok:
 
 ``` cs
