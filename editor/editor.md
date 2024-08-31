@@ -49,6 +49,15 @@ Looking down to the ground also helps, so no entities will be visible.
 
 ### Editor Crashes
 
+#### Crash when trying to import PNG texture
+
+Sometimes shows this before crashing:
+
+![](/pics/2408301318.png)
+
+Reason: non-latin letter(s) in the folder's name from which PNG is imported
+
+
 #### Crash when deleting used texture
 
 After crash/restart Texture appears deleted

@@ -186,7 +186,13 @@
 ??? failure "GangLeaderNeedsToOffloadStolenGoodsIssueBehavior - ConditionsHold - OnCheckForIssue - IssuesCampaignBehavior - CreateAnIssueForSettlementNotables"
     REASON: It's seems it is related to the mission NotableWantsDaughterFound. When it ends the GangLeader is spawned in the village where this mission was originated. This GangLeader then is used for this OffloadStolenGoods mission check and that results in the crash. Seems like native bug. I patched the crashing method with the check if village notable is not GangLeader.
 
+??? failure "ApplySimulatedHitRewardToSelectedTroop - SimulateSingleHit - SimulateBattleForRound"
+    Crash in CharacterObject.get_FirstBattleEquipment<br>
+    REASON: troop with all &lt;EquipmentRoster civilian="true">, without &lt;EquipmentRoster>
+
+
 </p>
+
 
     Source: MonoMod.Utils
 
@@ -200,8 +206,6 @@
 
 ??? failure "GetEffectiveDailyExperience - DefaultPartyTrainingModel - OnDailyTickParty"
     REASON: melee_elite_militia_troop in culture.xml was set to non-existant troop ID
-
-
 
 
 

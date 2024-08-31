@@ -27,3 +27,17 @@ For every Armor that is more complex, that could potentially be used as base to 
 ## Check slightly affected areas
 
 ![](/pics/2405220825.png)
+
+## Examples
+
+### Helmet with Aventail
+
+![](/pics/2408301900.png)
+
+### Shoes with 4 bones
+
+![](/pics/2408301902.png)
+
+### Gloves with 3 bones
+
+![](/pics/2408301906.png)
