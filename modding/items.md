@@ -14,6 +14,54 @@
 ItemObject grain = MBObjectManager.Instance.GetObject<ItemObject>("grain");
 ```
 
+??? example "Trade Items:"
+    beer<br>
+    butter<br>
+    cheese<br>
+    date_fruit<br>
+    fish<br>
+    grape<br>
+    grain<br>
+    meat<br>
+    olives<br>
+
+    charcoal<br>
+    ironingot1      (Crude Iron)<br>
+    ironingot2      (Wrought Iron)<br>
+    ironingot3      (Iron)<br>
+    ironingot4      (Steel)<br>
+    ironingot5      (Fine Steel)<br>
+    ironingot6      (Thamaskene Steel)<br>
+
+    clay<br>
+    cotton  (Raw Silk)<br>
+    flax<br>
+    fur<br>
+    hardwood<br>
+    hides<br>
+    jewelry<br>
+    leather<br>
+    linen<br>
+    oil<br>
+    pottery<br>
+    salt<br>
+    silver<br>
+    spice<br>
+    tools<br>
+    velvet<br>
+    wine<br>
+    wool<br>
+
+    cat<br>
+    dog<br>
+    chicken<br>
+    goose<br>
+    hog<br>
+    sheep<br>
+    cow<br>
+
+    stolen_goods
+
 ## ItemRoster
 
 Class to describe all items the Party/Town/Hero has.

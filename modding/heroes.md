@@ -267,6 +267,12 @@ int relation = notable.GetRelation(clan.Leader);
 ChangeRelationAction.ApplyRelationChangeBetweenHeroes(notable, clan.Leader, -20, true);
 ```
 
+Are we at war?
+
+``` cs
+if (hero?.Clan?.MapFaction?.IsAtWarWith(Hero.MainHero.MapFaction) == true) { // Your code here }
+```
+
 ## Culture
 
 Hero.Culture
