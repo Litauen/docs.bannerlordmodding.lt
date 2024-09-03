@@ -28,6 +28,25 @@ For every Armor that is more complex, that could potentially be used as base to 
 
 ![](/pics/2405220825.png)
 
+
+## Weight Paint whole mesh at once
+
+1. Select your mesh
+2. Select 'Edit Mode'
+3. Select whole mesh with Select - All (A)
+4. Go to Object Data properties
+5. Select the Bone
+6. Enter the desired weight
+7. Assign
+8. Check with 'Weight Paint' mode
+
+<center>
+<video width="843" height="654" controls autoplay loop muted>
+    <source src="/pics/weight_paint_whole_mesh_at_once.webm" type="video/webm">
+    Your browser does not support the video tag.
+</video>
+</center>
+
 ## Examples
 
 ### Helmet with Aventail

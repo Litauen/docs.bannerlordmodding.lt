@@ -130,6 +130,10 @@ starter.AddDialogLine("bookvendor_talk", "bookvendor_talk", "end", "Bye", null, 
 
 !!! danger "If you will use outputToken "end" with AddPlayerLine - the game will hang"
 
+Also it can be ''close_window'' (for notables at least)
+``` cs
+starter.AddDialogLine("village_build_job", "village_build_job_options_selected", "close_window", "Great, let's start.", null, null);
+```
 
 
 <br>
