@@ -154,6 +154,8 @@ encounter_background_mesh - menu pic for encounter with the troops of this cultu
 
 ### &lt;default_policies>
 
+Can be set as &lt;policies> for [Kingdoms](/modding/kingdoms/#policies)
+
 | Policy | Description |
 | ------------ | --------- |
 | policy_land_tax | 5% of the village income is paid to the ruler clan as tax. 5% less village income for clans |

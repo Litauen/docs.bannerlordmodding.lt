@@ -131,11 +131,16 @@ is_2d="true" in XML
 ## Sound in menus
 
 ```cs
-args.MenuContext.SetPanelSound("event:/ui/panels/settlement_village");
+args.MenuContext.SetPanelSound("event:/ui/panels/settlement_village");  // one-time sound on opening
 args.MenuContext.SetAmbientSound("event:/map/ambient/node/settlements/2d/village");
 ```
 
+!!! question "Why does not work on wait-type menus?"
+
+
 ## Sound Events
+
+!!! quote "hunharibo: You don't need the event prefix. Only vanilla sounds use 'event:' to identify sounds in the fmod middleware. Since fmod is a licensed proprietary library, modders cant use that"
 
 Possible to play sound (events) with InformationManager.AddQuickInformation(text, 0, null, <span style="color:green">string SoundEventPath</style>)
 
@@ -417,7 +422,19 @@ Continue playing the music:
 PsaiCore.Instance.ReturnToLastBasicMood(true);
 ```
 
+## Extract native sounds
+
+Use [Fmod Bank Tools](https://www.nexusmods.com/rugbyleaguelive3/mods/2?tab=docs)
+
+![](/pics/2409030815.png)
+
 ## NAudio
+
+!!! quote "Artem:"
+    This is for everyone who tries to add sounds to the game and is annoyed by the game restrictions, like sounds being too short, too quiet, etc.
+
+[https://github.com/naudio/NAudio](https://github.com/naudio/NAudio){target=_blank}
+
 
 ??? tip "Install NAudio"
 
@@ -430,53 +447,72 @@ PsaiCore.Instance.ReturnToLastBasicMood(true);
 
     ![](/pics/2404110856d.jpg)
 
-!!! quote
-    Artem: For everyone that tries to add sounds to the game and is annoyed by the games restrictions, like sounds being too short, too quiet etc.
 
-[https://github.com/naudio/NAudio](https://github.com/naudio/NAudio){target=_blank}
 
-``` cs
-using NAudio.Wave;
 
-private AudioFileReader audioFile;
+??? example "Example Play Audio method"
+    ``` cs
 
-public static async void PlayCustomSound()
-{
+    using NAudio.Wave;
 
-    if (this.outputDevice == null) this.outputDevice = new WaveOutEvent();
-
-    try
+    public static async void PlayNAudioSound(string audioFileName, double soundLevel = 1.0, double musicLevel = 1.0, bool soundLevelByNativeMusic = false, bool fadeOutNativeMusic = false)
     {
-        //string assemblyFolder = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
-        string fullName = Directory.GetParent(Directory.GetParent(Directory.GetParent(Assembly.GetExecutingAssembly().Location).FullName).FullName).FullName;
-        this.audioLocation = System.IO.Path.Combine(fullName, "ModuleSounds\\");
-        this.audioFile = new AudioFileReader(this.audioLocation + "encounter_river_pirates_9.wav");
-        this.audioFile.Volume = NativeOptions.GetConfig(NativeOptions.NativeOptionsType.SoundVolume);
-        this.outputDevice.Init(this.audioFile);
 
-        PsaiCore.Instance.StopMusic(true, 1.5f); // stop native Music with fade-out
+        if (audioFileName.Length == 0) return;
 
-        this.audioFile.Seek(0L, SeekOrigin.Begin);
-        this.outputDevice.Play();
+        string _audioLocation;
+        AudioFileReader _audioFile;
+        WaveOutEvent _outputDevice = _outputDevice = new WaveOutEvent();
 
-        // restore native Music
-        await Task.Delay(4500); // change 4500 to the length of your sound file in ms
-        PsaiCore.Instance.ReturnToLastBasicMood(true);
+        string fullName = Directory.GetParent(Directory.GetParent(Directory.GetParent("YOUR_MODULE").FullName).FullName).FullName;
+        _audioLocation = System.IO.Path.Combine(fullName, "Modules\\YOUR_MODULE\\ModuleSounds\\General\\");
+        try
+        {
+
+            _audioFile = new AudioFileReader(_audioLocation + audioFileName + ".wav");
+
+            // set sound level by native sound or music level
+            if (soundLevelByNativeMusic)
+            {
+                _audioFile.Volume = NativeOptions.GetConfig(NativeOptions.NativeOptionsType.MusicVolume) * (float)musicLevel;
+            }
+            else
+            {
+                _audioFile.Volume = NativeOptions.GetConfig(NativeOptions.NativeOptionsType.SoundVolume) * (float)soundLevel;
+            }
+            _outputDevice.Init(_audioFile);
+
+            if (fadeOutNativeMusic) PsaiCore.Instance.StopMusic(true, 1.5f); // stop native Music with fade-out
+
+            _audioFile.Seek(0L, SeekOrigin.Begin);
+            _outputDevice.Play();
+
+            // calculate the duration of the audio
+            // Get the total number of samples in the file
+            long totalSamples = _audioFile.Length / (_audioFile.WaveFormat.BitsPerSample / 8 * _audioFile.WaveFormat.Channels);
+            // Calculate the total duration in milliseconds
+            double durationMs = (double)totalSamples / _audioFile.WaveFormat.SampleRate * 1000;
+
+
+            await Task.Delay((int)durationMs);  // wait till audio stops playing
+
+            if (fadeOutNativeMusic) PsaiCore.Instance.ReturnToLastBasicMood(true); // restore native Music
+
+            // cleanup
+            if (_outputDevice != null)
+            {
+                _outputDevice.Stop();
+                _outputDevice.Dispose();
+            }
+
+        }
+        catch
+        {
+                // ERROR   ($"ERROR: can't play NAudio sound: {audioFileName}. Missing folders/files? " + _audioLocation);
+        }
 
     }
-    catch {
-        // "ERROR: can't play custom sound. Missing folders/files? "
-    }
-}
-
-// stop the sound
-if (outputDevice != null)
-{
-    outputDevice.Stop();
-    outputDevice.Dispose();
-}
-
-```
+    ```
 
 Implementation example: [Artem's Assassination Mod](https://www.nexusmods.com/mountandblade2bannerlord/mods/5653){target=_blank}
 

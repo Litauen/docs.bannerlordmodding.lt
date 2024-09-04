@@ -181,6 +181,8 @@ Align road to terrain: drops your path on the terrain. Not sure if it's suitable
 
 #### Materials
 
+!!! tip "If water is not visible, try to recreate the river without any transformations. Example [here](https://discord.com/channels/411286129317249035/761302555308720148/1280333212266004595)."
+
 *water_main_map*
 
 Nice blue with nice water like waves:
