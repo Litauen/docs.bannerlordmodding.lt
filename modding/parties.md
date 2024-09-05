@@ -67,6 +67,20 @@ Set:
     MobileParty.MainParty.RecentEventsMorale += 10;
 
 
+## Get party Companions
+
+``` cs
+for (int i = 0; i < MobileParty.MainParty.MemberRoster.Count; i++)
+{
+    CharacterObject characterAtIndex = Hero.MainHero.PartyBelongedTo.MemberRoster.GetCharacterAtIndex(i);
+    if (characterAtIndex.HeroObject != null && characterAtIndex.HeroObject != Hero.MainHero)
+    {
+        Hero hero = characterAtIndex.HeroObject;
+        // do smthg with the hero (companion)
+    }
+}
+```
+
 ## Get effective party role heroes
 
     party.EffectiveEngineer

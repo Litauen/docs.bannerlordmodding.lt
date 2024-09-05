@@ -162,24 +162,221 @@ soundEventPath looks like:
 
 Defined in [GAME_FOLDER]\Sounds\GUIDs.txt
 
-??? example "soundEventPath examples"
+??? example "event:/ui list"
 
+    event:/ui/campaign/autobattle_defeat<br>
+    event:/ui/campaign/autobattle_large<br>
+    event:/ui/campaign/autobattle_small<br>
+    event:/ui/campaign/click_party<br>
+    event:/ui/campaign/click_party_enemy<br>
+    event:/ui/campaign/click_settlement<br>
+    event:/ui/campaign/click_settlement_enemy<br>
+    event:/ui/campaign/focus<br>
+    event:/ui/checkbox<br>
+    event:/ui/choice<br>
+    event:/ui/conversation<br>
+    event:/ui/crafting/craft_success<br>
+    event:/ui/crafting/craft_tab<br>
+    event:/ui/crafting/randomize<br>
+    event:/ui/crafting/refine_success<br>
+    event:/ui/crafting/refine_tab<br>
+    event:/ui/crafting/smelt_success<br>
+    event:/ui/crafting/smelt_tab<br>
+    event:/ui/cutscenes/child_coming_of_age<br>
+    event:/ui/cutscenes/child_newborn<br>
+    event:/ui/cutscenes/child_newborn_mother<br>
+    event:/ui/cutscenes/child_newborn_orphan<br>
+    event:/ui/cutscenes/death_clan<br>
+    event:/ui/cutscenes/death_clan_war<br>
+    event:/ui/cutscenes/death_old_age<br>
+    event:/ui/cutscenes/death_war_defeat<br>
+    event:/ui/cutscenes/death_war_victory<br>
+    event:/ui/cutscenes/execution<br>
+    event:/ui/cutscenes/execution_female<br>
+    event:/ui/cutscenes/kingdom_created<br>
+    event:/ui/cutscenes/kingdom_destroyed<br>
+    event:/ui/cutscenes/kingdom_join<br>
+    event:/ui/cutscenes/marriage<br>
+    event:/ui/cutscenes/story_banner_assemble_part_01<br>
+    event:/ui/cutscenes/story_banner_assemble_part_02<br>
+    event:/ui/cutscenes/story_banner_find_01<br>
+    event:/ui/cutscenes/story_banner_find_02<br>
+    event:/ui/cutscenes/story_become_king<br>
+    event:/ui/cutscenes/story_claim<br>
+    event:/ui/cutscenes/story_conspiracy_activate<br>
+    event:/ui/cutscenes/story_conspiracy_start<br>
+    event:/ui/cutscenes/story_defeat<br>
+    event:/ui/cutscenes/story_empire_destroyed<br>
+    event:/ui/cutscenes/story_empire_united<br>
+    event:/ui/cutscenes/story_pledge_support<br>
+    event:/ui/cutscenes/story_pledge_support_nonempire<br>
+    event:/ui/default<br>
+    event:/ui/dropdown<br>
+    event:/ui/empty<br>
+    event:/ui/endgame/end_clan_destroyed<br>
+    event:/ui/endgame/end_retirement<br>
+    event:/ui/endgame/end_victory<br>
+    event:/ui/endgame/tab_battles<br>
+    event:/ui/endgame/tab_companions<br>
+    event:/ui/endgame/tab_crafting<br>
+    event:/ui/endgame/tab_finances<br>
+    event:/ui/endgame/tab_general<br>
+    event:/ui/filter<br>
+    event:/ui/inspect<br>
+    event:/ui/inventory/animal<br>
+    event:/ui/inventory/animal_butcher<br>
+    event:/ui/inventory/bow<br>
+    event:/ui/inventory/crossbow<br>
+    event:/ui/inventory/helmet<br>
+    event:/ui/inventory/horse<br>
+    event:/ui/inventory/horsearmor<br>
+    event:/ui/inventory/leather<br>
+    event:/ui/inventory/leather_lite<br>
+    event:/ui/inventory/onehanded<br>
+    event:/ui/inventory/perk<br>
+    event:/ui/inventory/pickup<br>
+    event:/ui/inventory/polearm<br>
+    event:/ui/inventory/quiver<br>
+    event:/ui/inventory/sack<br>
+    event:/ui/inventory/shield<br>
+    event:/ui/inventory/take_all<br>
+    event:/ui/inventory/throwing<br>
+    event:/ui/inventory/twohanded<br>
+    event:/ui/inventory/unit<br>
+    event:/ui/item_close<br>
+    event:/ui/item_open<br>
+    event:/ui/mini_popup<br>
+    event:/ui/mission/arena_victory<br>
+    event:/ui/mission/ballista<br>
+    event:/ui/mission/batteringram<br>
+    event:/ui/mission/catapult<br>
+    event:/ui/mission/deploy<br>
+    event:/ui/mission/drinks<br>
+    event:/ui/mission/emptyslot<br>
+    event:/ui/mission/horns/attack<br>
+    event:/ui/mission/horns/move<br>
+    event:/ui/mission/horns/retreat<br>
+    event:/ui/mission/multiplayer/changeclass<br>
+    event:/ui/mission/multiplayer/defeat<br>
+    event:/ui/mission/multiplayer/gamestart<br>
+    event:/ui/mission/multiplayer/lastmanstanding<br>
+    event:/ui/mission/multiplayer/pointcapture<br>
+    event:/ui/mission/multiplayer/pointlost<br>
+    event:/ui/mission/multiplayer/pointsremoved<br>
+    event:/ui/mission/multiplayer/pointwarning<br>
+    event:/ui/mission/multiplayer/roundstart<br>
+    event:/ui/mission/multiplayer/victory<br>
+    event:/ui/mission/siege_engine<br>
+    event:/ui/mission/siegetower<br>
+    event:/ui/multiplayer/click_class<br>
+    event:/ui/multiplayer/click_culture<br>
+    event:/ui/multiplayer/click_item<br>
+    event:/ui/multiplayer/click_purchase<br>
+    event:/ui/multiplayer/coin_add<br>
+    event:/ui/multiplayer/levelup<br>
+    event:/ui/multiplayer/match_ready<br>
+    event:/ui/multiplayer/pick_sigil<br>
+    event:/ui/multiplayer/shop_purchase<br>
+    event:/ui/multiplayer/shop_purchase_complete<br>
+    event:/ui/multiplayer/shop_purchase_proceed<br>
+    event:/ui/multiplayer/wear_armor_big<br>
+    event:/ui/multiplayer/wear_armor_small<br>
+    event:/ui/multiplayer/wear_generic<br>
+    event:/ui/multiplayer/wear_helmet<br>
+    event:/ui/multiplayer/xpbar<br>
+    event:/ui/multiplayer/xpbar_stop<br>
+    event:/ui/notification/alert<br>
     event:/ui/notification/army_created<br>
     event:/ui/notification/army_dispersion<br>
     event:/ui/notification/child_born<br>
     event:/ui/notification/coins_negative<br>
     event:/ui/notification/coins_positive<br>
     event:/ui/notification/death<br>
+    event:/ui/notification/education<br>
     event:/ui/notification/hideout_found<br>
     event:/ui/notification/kingdom_decision<br>
     event:/ui/notification/levelup<br>
     event:/ui/notification/marriage<br>
     event:/ui/notification/peace<br>
+    event:/ui/notification/peace_offer<br>
     event:/ui/notification/quest_fail<br>
     event:/ui/notification/quest_finished<br>
     event:/ui/notification/quest_start<br>
     event:/ui/notification/quest_update<br>
+    event:/ui/notification/ransom_offer<br>
     event:/ui/notification/relation<br>
+    event:/ui/notification/settlement_owner_change<br>
+    event:/ui/notification/settlement_rebellion<br>
+    event:/ui/notification/settlement_under_siege<br>
+    event:/ui/notification/tournament_end<br>
+    event:/ui/notification/trait_change<br>
+    event:/ui/notification/truce<br>
+    event:/ui/notification/unlock<br>
+    event:/ui/notification/war_declared<br>
+    event:/ui/oob/dropdown<br>
+    event:/ui/oob/formation_archers<br>
+    event:/ui/oob/formation_cavalry<br>
+    event:/ui/oob/formation_cavalry_horse_archers<br>
+    event:/ui/oob/formation_horse_archers<br>
+    event:/ui/oob/formation_infantry<br>
+    event:/ui/oob/formation_infantry_archers<br>
+    event:/ui/oob/officer_drag<br>
+    event:/ui/oob/officer_pick<br>
+    event:/ui/panels/battle/attack_large<br>
+    event:/ui/panels/battle/attack_medium<br>
+    event:/ui/panels/battle/attack_small<br>
+    event:/ui/panels/battle/encounter_attacker<br>
+    event:/ui/panels/battle/encounter_defender<br>
+    event:/ui/panels/battle/retreat<br>
+    event:/ui/panels/battle/slide_in<br>
+    event:/ui/panels/encyclopedia_open<br>
+    event:/ui/panels/encyclopedia_page<br>
+    event:/ui/panels/next<br>
+    event:/ui/panels/panel_character_open<br>
+    event:/ui/panels/panel_clan_open<br>
+    event:/ui/panels/panel_inventory_open<br>
+    event:/ui/panels/panel_kingdom_open<br>
+    event:/ui/panels/panel_party_open<br>
+    event:/ui/panels/panel_quest_open<br>
+    event:/ui/panels/panel_trading_loop<br>
+    event:/ui/panels/perk<br>
+    event:/ui/panels/previous<br>
+    event:/ui/panels/recruit<br>
+    event:/ui/panels/scoreboard_flags<br>
+    event:/ui/panels/scoreboard_skill<br>
+    event:/ui/panels/scoreboard_tournament<br>
+    event:/ui/panels/settlement_city<br>
+    event:/ui/panels/settlement_hideout<br>
+    event:/ui/panels/settlement_keep<br>
+    event:/ui/panels/settlement_village<br>
+    event:/ui/panels/siege/besiege<br>
+    event:/ui/panels/siege/engine_build<br>
+    event:/ui/panels/siege/engine_build_complete<br>
+    event:/ui/panels/siege/engine_click<br>
+    event:/ui/panels/siege/lead_assault<br>
+    event:/ui/panels/siege/raid<br>
+    event:/ui/panels/siege/sally_out<br>
+    event:/ui/panels/skill_add<br>
+    event:/ui/panels/skill_new<br>
+    event:/ui/panels/tutorial<br>
+    event:/ui/panels/twopanel_open<br>
+    event:/ui/panels/upgrade<br>
+    event:/ui/party/recruit prisoner<br>
+    event:/ui/party/recruit_all<br>
+    event:/ui/party/upgrade<br>
+    event:/ui/persuasion/critical_fail<br>
+    event:/ui/persuasion/critical_success<br>
+    event:/ui/persuasion/ineffective<br>
+    event:/ui/persuasion/success<br>
+    event:/ui/popup<br>
+    event:/ui/reign/decision<br>
+    event:/ui/reign/vote<br>
+    event:/ui/sort<br>
+    event:/ui/stealth/stealth_notification<br>
+    event:/ui/tab<br>
+    event:/ui/transfer<br>
+
+
 
 ??? info "Some [info](https://discord.com/channels/411286129317249035/697071354603765791/1096586744301887629) about events"
     * the event:/ derives from the FMOD event paths that the game uses to play sound events

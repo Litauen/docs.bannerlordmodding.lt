@@ -2,7 +2,9 @@
 
 [TaleWorlds.CampaignSystem.Hero Class Reference](https://apidoc.bannerlord.com/v/1.1.0/class_tale_worlds_1_1_campaign_system_1_1_hero.html){target=_blank} [1.2.7](https://apidoc.bannerlord.com/v/1.2.7/class_tale_worlds_1_1_campaign_system_1_1_hero.html)
 
-    Hero.MainHero
+    Hero.MainHero                           // player
+    Hero.OneToOneConversationHero           // Hero you are talking to in the dialog
+
 
 ## Skills/Attributes/Focus/Xp
 

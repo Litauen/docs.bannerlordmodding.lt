@@ -8,6 +8,10 @@
 - [Village Scenes](https://docs.google.com/presentation/d/1t6DQuyzKwazqfxxs1_NIQDJk8Pxaj513uT8-T5pVvpg/edit?usp=sharing){target=_blank} by d&h
 - [Hideout Scenes](https://docs.google.com/presentation/d/1bhTmkf9ti--o-Jc_qvikNLkVMQw0k5YO-UwtFX_eXaM/edit?usp=drive_link){target=_blank} by d&h
 
+## Gold
+
+    Settlement.SetttlementComponent.Gold
+
 ## Current Settlement we are at
 
 ``` cs
@@ -46,6 +50,54 @@ Max granary amount:
 Settlement.CurrentSettlement.Town.FoodStocksUpperLimit()
 ```
 
+## Build projects
+
+Current build project:
+
+``` cs
+Building building = Hero.MainHero.CurrentSettlement.Town.CurrentBuilding;
+```
+
+Progress percent:
+
+``` cs
+float perc = BuildingHelper.GetProgressOfBuilding(building, ettlements.Town) * 100;
+```
+
+Days to complete:
+
+``` cs
+int days = BuildingHelper.GetDaysToComplete(building, settlement.Town);
+```
+
+Building tier:
+
+``` cs
+int tier = BuildingHelper.GetTierOfBuilding(building.BuildingType, settlement.Town)
+```
+
+Buildings in the queue:
+
+``` cs
+Queue<Building> settlement.Town.BuildingsInProgress
+```
+
+Gold in Reserve:
+
+![](/pics/2409042141.jpg)
+
+``` cs
+int settlement.Town.BoostBuildingProcess
+```
+
+Construction / "Bricks"
+
+![](/pics/2409042140.jpg)
+
+``` cs
+int bricks = settlement.Town.Construction
+```
+
 ## Town
 
 ### TradeBoundVillages
@@ -75,11 +127,26 @@ Returns Town to which the Village is trade bound.
 
 ### Levels
 
+![](/pics/2409041125.jpg)
+
 Village has 3 visual levels. Level depends on hearths: 
 
 * Lvl 1 - hearths 1..199
 * Lvl 2 - 200-599
 * Lvl 3 - 600+
+
+``` cs
+settlement.Village.Hearth
+```
+
+??? example "Change village hearths method example"
+    ``` cs
+    public static void ChangeVillageHearths(Settlement settlement, float hearthsChange)
+    {
+        if (hearthsChange == 0.0 || settlement == null || settlement.Village == null || !settlement.IsVillage || settlement.IsUnderRaid || settlement.IsRaided) return;
+        settlement.Village.Hearth += hearthsChange;
+    }
+    ```
 
 
 ## XML

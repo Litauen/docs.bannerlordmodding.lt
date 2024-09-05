@@ -1,9 +1,9 @@
 # Gold
 
-## Hero's gold
-
 ``` cs
-Hero.MainHero.Gold
+Hero.Gold                               // heroe's gold
+Hero.MainHero.Gold                      // player's gold
+Settlement.SetttlementComponent.Gold    // settlement's gold
 ```
 
 ## Change gold with notification + sound

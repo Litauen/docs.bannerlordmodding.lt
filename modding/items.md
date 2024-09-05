@@ -26,12 +26,12 @@ ItemObject grain = MBObjectManager.Instance.GetObject<ItemObject>("grain");
     olives<br>
 
     charcoal<br>
-    ironingot1      (Crude Iron)<br>
-    ironingot2      (Wrought Iron)<br>
-    ironingot3      (Iron)<br>
-    ironingot4      (Steel)<br>
-    ironingot5      (Fine Steel)<br>
-    ironingot6      (Thamaskene Steel)<br>
+    ironIngot1      (Crude Iron)<br>
+    ironIngot2      (Wrought Iron)<br>
+    ironIngot3      (Iron)<br>
+    ironIngot4      (Steel)<br>
+    ironIngot5      (Fine Steel)<br>
+    ironIngot6      (Thamaskene Steel)<br>
 
     clay<br>
     cotton  (Raw Silk)<br>
@@ -92,6 +92,38 @@ How many grain settlement has:
 Settlement.ItemRoster.GetItemNumber(MBObjectManager.Instance.GetObject<ItemObject>("grain"));
 ```
 
+??? example "Check how much of item X the party has example method"
+    ``` cs
+    public static int GetPartyItemCount(MobileParty party, string itemID)
+    {
+        if (party == null || party.ItemRoster == null) return 0;
+        if (itemID.Length == 0) return 0;
+
+        ItemObject item = MBObjectManager.Instance.GetObject<ItemObject>(itemID);
+        if (item == null) return 0;
+
+        return party.ItemRoster.GetItemNumber(item);
+    }
+    ```
+
+
+??? example "Check if party has X items example method"
+    ``` cs
+    public static bool PartyHasItemCount(MobileParty party, string itemID, int count)
+    {
+        if (party == null || party.ItemRoster == null) return false;
+        if (itemID.Length == 0) return false;
+        if (count < 0) return false;
+
+        ItemObject item = MBObjectManager.Instance.GetObject<ItemObject>(itemID);
+        if (item == null) return false;
+
+        if (party.ItemRoster.GetItemNumber(item) >= count) return true;
+
+        return false;
+    }
+    ```
+
 
 Add Item to ItemRoster
 ``` cs
@@ -102,11 +134,44 @@ if (butterItemObject != null) {
 }
 ```
 
+??? example "Add X items to the party method example"
+
+    ``` cs
+    public static void AddItemsToParty(MobileParty party, string itemID, int count)
+    {
+        if (party == null || party.ItemRoster == null) return;
+        if (itemID.Length == 0) return;
+        if (count < 0) return;
+
+        ItemObject item = MBObjectManager.Instance.GetObject<ItemObject>(itemID);
+        if (item == null) return;
+
+        party.ItemRoster.Add(new ItemRosterElement(item, count, null));
+    }
+    ```
+
+
 Remove
 ``` cs
 ItemRosterElement itemRosterElement = new ItemRosterElement(itemObject, 10, null);
-settlement.Stash.Remove(itemRosterElement);
+settlement.Stash.Remove(itemRosterElement);     // from settlement's stash
+party.ItemRoster.Remove(itemRosterElement);     // from party
 ```
+
+??? example "Remove X items from the party example method"
+    ``` cs
+    public static void RemoveItemsFromParty(MobileParty party, string itemID, int count)
+    {
+        if (party == null || party.ItemRoster == null) return;
+        if (itemID.Length == 0) return;
+        if (count < 0) return;
+
+        ItemObject item = MBObjectManager.Instance.GetObject<ItemObject>(itemID);
+        if (item == null) return;
+
+        party.ItemRoster.Remove(new ItemRosterElement(item, count, null));
+    }
+    ```
 
 ## Price
 
