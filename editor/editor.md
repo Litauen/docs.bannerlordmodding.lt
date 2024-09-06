@@ -36,7 +36,8 @@ Looking down to the ground also helps, so no entities will be visible.
 
 ### Does not start
 
-- Version mismatch with the base game - does not start at all, no process - install same version
+- If installeds on another drive than the main game it will not start
+- Version mismatch with the base game - does not start at all, no process - install same version (not always true)
 - Hanged previous process - Close on Steam or check the Task Manager, kill the old process
 
 ### Closes when Play button is clicked

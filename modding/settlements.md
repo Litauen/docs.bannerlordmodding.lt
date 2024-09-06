@@ -98,6 +98,30 @@ Construction / "Bricks"
 int bricks = settlement.Town.Construction
 ```
 
+Construction Cost
+
+![](/pics/2409050808.jpg)
+
+```cs
+int Building.GetConstructionCost()
+```
+
+Building progress - how much is built
+
+![](/pics/2409050819.jpg)
+
+```cs
+float Building.BuildingProgress
+```
+
+Is building default project?
+
+![](/pics/2409050823.jpg)
+
+```cs
+bool building.BuildingType.IsDefaultProject
+```
+
 ## Town
 
 ### TradeBoundVillages

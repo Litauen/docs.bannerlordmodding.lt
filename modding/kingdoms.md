@@ -96,6 +96,7 @@ kingdom.RemovePolicy(DefaultPolicies.RoyalGuard);
 Check if kingdom has policy
 ```
 if (kingdom.HasPolicy((DefaultPolicies.RoyalGuard) {}
+if (Kingdom.ActivePolicies.Contains(DefaultPolicies.CastleCharters))) {}
 ```
 
 ## Find a Kingdom
