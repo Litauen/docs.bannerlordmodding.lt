@@ -91,6 +91,40 @@ SetAlwaysAttackInMelee(bool attack)
 bool CheckSkillForMounting(Agent mountAgent) - can mount that mountAgent?
 agent.SetMaximumSpeedLimit - change speed
 ```
+??? example "Cheer example"
+    ``` cs
+    private readonly ActionIndexCache[] _CheerActions = new ActionIndexCache[]
+    {
+        ActionIndexCache.Create("act_cheering_low_01"),
+        ActionIndexCache.Create("act_cheering_low_02"),
+        ActionIndexCache.Create("act_cheering_low_03"),
+        ActionIndexCache.Create("act_cheering_low_04"),
+        ActionIndexCache.Create("act_cheering_low_05"),
+        ActionIndexCache.Create("act_cheering_low_06"),
+        ActionIndexCache.Create("act_cheering_low_07"),
+        ActionIndexCache.Create("act_cheering_low_08"),
+        ActionIndexCache.Create("act_cheering_low_09"),
+        ActionIndexCache.Create("act_cheering_low_10"),
+        ActionIndexCache.Create("act_cheer_1"),
+        ActionIndexCache.Create("act_cheer_2"),
+        ActionIndexCache.Create("act_cheer_3"),
+        ActionIndexCache.Create("act_cheer_4"),
+        ActionIndexCache.Create("act_cheering_high_01"),
+        ActionIndexCache.Create("act_cheering_high_02"),
+        ActionIndexCache.Create("act_cheering_high_03"),
+        ActionIndexCache.Create("act_cheering_high_04"),
+        ActionIndexCache.Create("act_cheering_high_05"),
+        ActionIndexCache.Create("act_cheering_high_06"),
+        ActionIndexCache.Create("act_cheering_high_07"),
+        ActionIndexCache.Create("act_cheering_high_08")
+    };
+
+    agent.SetActionChannel(1, _CheerActions[MBRandom.RandomInt(_CheerActions.Length)], false, 0UL, 0f, 1f, -0.2f, 0.4f, 0f, false, -0.2f, 0, true);
+    agent.MakeVoice(SkinVoiceManager.VoiceType.Victory, SkinVoiceManager.CombatVoiceNetworkPredictionType.NoPrediction);
+
+    // stop cheering
+    affectorAgent.SetActionChannel(1, ActionIndexCache.act_none, false, (ulong)agent.GetCurrentActionPriority(1), 0f, 1f, -0.2f, 0.4f, 0f, false, -0.2f, 0, true);
+    ```
 
 ## [MissionEquipment](/modding/equipment/#missionequipment)
 
