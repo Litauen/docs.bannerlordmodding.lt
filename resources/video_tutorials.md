@@ -81,7 +81,7 @@ Mod setup, dialogs, game menu, GauntletUI, etc.
 * [Overriding original file](https://www.youtube.com/watch?v=vJJJowlMomg&list=PLxhni8XI_dRDjRRDsCzEBZg4eUInzkzQT&index=7){target=_blank}
 * [Creating New settlements](https://www.youtube.com/watch?v=XoUiYBfvHew)
 
-### [Modding Tools](https://www.youtube.com/playlist?list=PLxhni8XI_dRALYs8R9NHpMLxpMI2wSGxA){target=_blank}
+### [Editor](https://www.youtube.com/playlist?list=PLxhni8XI_dRALYs8R9NHpMLxpMI2wSGxA){target=_blank}
 
 * [Cloth Physics (Part 1)](https://www.youtube.com/watch?v=atJGwDkzfok&list=PLxhni8XI_dRALYs8R9NHpMLxpMI2wSGxA&index=2){target=_blank}
 * [Importing Weapons from internet](https://www.youtube.com/watch?v=oq3rWsbKxOQ&list=PLxhni8XI_dRALYs8R9NHpMLxpMI2wSGxA&index=3){target=_blank}

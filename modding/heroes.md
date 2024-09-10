@@ -514,4 +514,9 @@ Add an entry into [lords.xml](/modding/npc_character/)
     <NPCCharacter ...
 ```
 
+## Player start
+
+    SandboxCharacterCreationContent
+
+How to change starting gear info [here](https://discord.com/channels/411286129317249035/411286129317249038/1282512554656272459).
 
