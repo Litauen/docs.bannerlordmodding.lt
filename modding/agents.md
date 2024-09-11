@@ -119,11 +119,11 @@ agent.SetMaximumSpeedLimit - change speed
         ActionIndexCache.Create("act_cheering_high_08")
     };
 
-    agent.SetActionChannel(1, _CheerActions[MBRandom.RandomInt(_CheerActions.Length)], false, 0UL, 0f, 1f, -0.2f, 0.4f, 0f, false, -0.2f, 0, true);
+    agent.SetActionChannel(1, _CheerActions[MBRandom.RandomInt(_CheerActions.Length)], false, 0UL, 0f, 1f, 1f, 0.4f, 0f, false, -0.2f, 0, true);
     agent.MakeVoice(SkinVoiceManager.VoiceType.Victory, SkinVoiceManager.CombatVoiceNetworkPredictionType.NoPrediction);
 
     // stop cheering
-    affectorAgent.SetActionChannel(1, ActionIndexCache.act_none, false, (ulong)agent.GetCurrentActionPriority(1), 0f, 1f, -0.2f, 0.4f, 0f, false, -0.2f, 0, true);
+    affectorAgent.SetActionChannel(1, ActionIndexCache.act_none, false, (ulong)agent.GetCurrentActionPriority(1), 0f, 1f, 2f, 0.4f, 0f, false, -0.2f, 0, true);
     ```
 
 ## [MissionEquipment](/modding/equipment/#missionequipment)

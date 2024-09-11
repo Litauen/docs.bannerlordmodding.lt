@@ -47,6 +47,9 @@ The problem with the new helmet is that it's static. Other meshes are using 150 
 
 ![](/pics/2402261859.png)
 
+??? tip "Theory how to fix"
+    During testing I noticed that helmet's material has Vertex Layout - Skinning Precise enabled. When I disabled it, helmet started to move. Needs more testing.
+
 !!! quote "Le Profyteur: after you can make a animation on blender and export with your mesh, after you can add a play anim script to play the clip"
 
 When happy with the changes, export FBX and import it into the Editor.
@@ -55,7 +58,7 @@ Open
 
     \Modules\Native\SceneObj\main_menu_a
 
-and place your model there. 
+and place your model there.
 
 ??? danger "MAJOR PROBLEM: Editor fails to start"
 

@@ -677,6 +677,10 @@ Use [Fmod Bank Tools](https://www.nexusmods.com/rugbyleaguelive3/mods/2?tab=docs
             {
                 _audioFile.Volume = NativeOptions.GetConfig(NativeOptions.NativeOptionsType.SoundVolume) * (float)soundLevel;
             }
+
+            // take into account Master Volume level
+            _audioFile.Volume = _audioFile.Volume * NativeOptions.GetConfig(NativeOptions.NativeOptionsType.MasterVolume);
+
             _outputDevice.Init(_audioFile);
 
             if (fadeOutNativeMusic) PsaiCore.Instance.StopMusic(true, 1.5f); // stop native Music with fade-out
