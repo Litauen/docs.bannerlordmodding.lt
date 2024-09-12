@@ -91,6 +91,22 @@ SetAlwaysAttackInMelee(bool attack)
 bool CheckSkillForMounting(Agent mountAgent) - can mount that mountAgent?
 agent.SetMaximumSpeedLimit - change speed
 ```
+
+### SetActionChannel
+
+Activates animation on the agent
+
+``` cs
+Agent.SetActionChannel(1, ActionIndexCache.act_none, false, (ulong)agent.GetCurrentActionPriority(1), 0f, 1f, 2f, 0.4f, 0f, false, -0.2f, 0, true);
+
+public bool SetActionChannel(int channelNo, ActionIndexCache actionIndexCache, bool ignorePriority = false, ulong additionalFlags = 0UL, float blendWithNextActionFactor = 0f, float actionSpeed = 1f, float blendInPeriod = -0.2f, float blendOutPeriodToNoAnim = 0.4f, float startProgress = 0f, bool useLinearSmoothing = false, float blendOutPeriod = -0.2f, int actionShift = 0, bool forceFaceMorphRestart = true)
+```
+
+float blendInPeriod - sets how fast animation should blend-in from the previous animation. Sometimes the best looking results to go to the .act_none state are achieved with 1f or 2f values
+
+default -0.2f is too fast ant looks unnatural
+
+
 ??? example "Cheer example"
     ``` cs
     private readonly ActionIndexCache[] _CheerActions = new ActionIndexCache[]
@@ -122,7 +138,7 @@ agent.SetMaximumSpeedLimit - change speed
     agent.SetActionChannel(1, _CheerActions[MBRandom.RandomInt(_CheerActions.Length)], false, 0UL, 0f, 1f, 1f, 0.4f, 0f, false, -0.2f, 0, true);
     agent.MakeVoice(SkinVoiceManager.VoiceType.Victory, SkinVoiceManager.CombatVoiceNetworkPredictionType.NoPrediction);
 
-    // stop cheering
+    // stop cheering (after some time)
     affectorAgent.SetActionChannel(1, ActionIndexCache.act_none, false, (ulong)agent.GetCurrentActionPriority(1), 0f, 1f, 2f, 0.4f, 0f, false, -0.2f, 0, true);
     ```
 

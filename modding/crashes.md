@@ -322,9 +322,61 @@
 
 ??? failure "DefaultMapWeatherModel - GetWeatherEventInPosition - WeatherAudioTick - TickVisuals"
 
-    REASON: Marked 'Use Dynamic Weather Effects' without the a flowmap. Maybe map is not a square. Maybe flowmap is not 1024x1024.
+    Usually crash when going to the very edge of the map.
+
+    REASON: Marked 'Use Dynamic Weather Effects' without the a flowmap.<br>
+    OTHER REASONS: Maybe map is not a square. Maybe flowmap is not 1024x1024.
 
     ![](/pics/202402032219.png)
+
+    ??? abstract "If nothing helps, use this patch:"
+        ``` cs
+        [HarmonyPatch(typeof(DefaultMapWeatherModel), "GetWeatherEventInPosition")]
+        public class DefaultMapWeatherModel_GetWeatherEventInPosition_Patch
+        {
+            // Create a field reference for accessing the private _weatherDataCache field in DefaultMapWeatherModel
+            private static readonly AccessTools.FieldRef<DefaultMapWeatherModel, MapWeatherModel.WeatherEvent[]> _weatherDataCacheRef =
+                AccessTools.FieldRefAccess<DefaultMapWeatherModel, MapWeatherModel.WeatherEvent[]>("_weatherDataCache");
+
+            static bool Prefix(Vec2 pos, ref MapWeatherModel.WeatherEvent __result, DefaultMapWeatherModel __instance)
+            {
+                // Define the variables that will be passed as out parameters
+                int num, num2;
+
+                // Use AccessTools to get the private method GetNodePositionForWeather
+                MethodInfo getNodePositionMethod = AccessTools.Method(typeof(DefaultMapWeatherModel), "GetNodePositionForWeather");
+
+                // Prepare the arguments for the method (since it's expecting out params, you should use a reference array)
+                object[] methodArgs = new object[] { pos, null, null };
+
+                // Invoke the method using reflection
+                getNodePositionMethod.Invoke(__instance, methodArgs);
+
+                // Extract the results from the out parameters
+                num = (int)methodArgs[1];
+                num2 = (int)methodArgs[2];
+
+                // Calculate the index
+                int index = num2 * 32 + num;
+
+                // Access the private _weatherDataCache field using the field reference
+                var weatherDataCache = _weatherDataCacheRef(__instance);
+
+                // Check if the index is out of bounds
+                if (index >= weatherDataCache.Length || index < 0) // Use array length for safety
+                {
+                    // Return WeatherEvent.Clear and skip the original method
+                    __result = MapWeatherModel.WeatherEvent.Clear;
+                    return false;
+                }
+
+                // Otherwise, return the cached weather data and skip the original method
+                __result = weatherDataCache[index];
+                return false;
+            }
+        }
+        ```
+
 
 ---
 
