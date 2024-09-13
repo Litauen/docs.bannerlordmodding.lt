@@ -37,3 +37,5 @@
 * [The Old Realms](https://github.com/TheOldRealms)
 * [RealmsForgotten](https://github.com/actualAnian/RealmsForgotten)
 * [BannerlordCoop](https://github.com/Bannerlord-Coop-Team/BannerlordCoop)
+* [PersistentEmpires-OpenSourced](https://github.com/AR-Development/PersistentEmpires-OpenSourced)
+
