@@ -178,7 +178,7 @@
     REASON: error/missing sandboxcore_equipment_sets.xml for the hero's culture. Hero turned 18
 
 ??? failure "TournamentGames - TournamentMatch - AddParticipant - TournamentBehavior - FillParticipants"
-    REASON: RBM Tournament expects local culture troops in the settlement for the Tournament. Troops were not implemented for that culture.
+    REASON: RBM Tournament expects local culture troops in the settlement for the Tournament. Not all tiers (0-6) of troops are implemented for that culture. Check your troop tree.
 
 ??? failure "Clan - OnFortificationAdded - PreAfterLoad"
     REASON: Old save loaded on a new map with new settlements not present in the old save
