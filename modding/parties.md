@@ -99,3 +99,20 @@ for (int i = 0; i < MobileParty.MainParty.MemberRoster.Count; i++)
     DestroyPartyAction
 
 [Don't use](https://discord.com/channels/411286129317249035/677511186295685150/1263112214873772043) MobileParty.RemoveParty()
+
+
+## Main party on game start
+
+Add 50 grain on start:
+
+``` cs
+[HarmonyPatch(typeof(Campaign), "InitializeMainParty")]
+public class CampaignPatch
+{
+    [HarmonyPostfix]
+    private static void CampaignPostfix(Campaign __instance)
+    {
+        __instance.MainParty.ItemRoster.AddToCounts(DefaultItems.Grain, 50);
+    }
+}
+```

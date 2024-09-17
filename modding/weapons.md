@@ -66,3 +66,7 @@ public enum WeaponClass
     NumClasses
 }
 ```
+
+## Crafting pieces
+
+Adding is_default="true" to craftingPiece in XML makes it unlocked in the new game.

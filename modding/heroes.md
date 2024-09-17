@@ -6,6 +6,12 @@
     Hero.OneToOneConversationHero           // Hero you are talking to in the dialog
 
 
+## Find by StringId
+
+``` cs
+Hero hero = Hero.FindFirst((Hero x) => x.StringId == "SOME_LORD_ID");
+```
+
 ## Skills/Attributes/Focus/Xp
 
 ![](/pics/ckk9hK4.png)

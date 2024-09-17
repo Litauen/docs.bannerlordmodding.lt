@@ -190,6 +190,9 @@
     Crash in CharacterObject.get_FirstBattleEquipment<br>
     REASON: troop with all &lt;EquipmentRoster civilian="true">, without &lt;EquipmentRoster>
 
+??? failure "CanTroopGainXP - MobilePartyHelper - OnBattleEnd - DefaultSkillLevelingManager"
+    REASON: character(troop?) with no upgrade targets?<br>
+    [Mod with fix](https://www.nexusmods.com/mountandblade2bannerlord/mods/7232)
 
 </p>
 
