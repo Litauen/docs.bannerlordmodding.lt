@@ -395,7 +395,48 @@
     <br><br>
     REASON4: NPCCharacter age="9.9" (not int) in lords.xml
 
+---
 
+??? failure "TickSiegeMachineCircles - MapScreen - OnFrameTick"
+    Crash when starting to siege a settlement<br>
+    REASON: Wrong number of siege engines on the map<br>
+    ??? abstract "Troubleshooting example:"
+        I used this Harmony patch to locate where is the problem:
+        ``` cs
+        [HarmonyPatch(typeof(MapScreen), "TickSiegeMachineCircles")]
+        public class MapScreen_TickSiegeMachineCircles_Patch
+        {
+            static bool Prefix()
+            {
+                if (PlayerSiege.PlayerSiegeEvent == null) return false;
+
+                SiegeEvent playerSiegeEvent = PlayerSiege.PlayerSiegeEvent;
+                Settlement besiegedSettlement = playerSiegeEvent.BesiegedSettlement;
+                PartyVisual visualOfParty = PartyVisualManager.Current.GetVisualOfParty(besiegedSettlement.Party);
+
+                LTLogger.Debug($"visualOfParty.GetDefenderRangedSiegeEngineFrames().Length {visualOfParty.GetDefenderRangedSiegeEngineFrames().Length}");
+                LTLogger.Debug($"playerSiegeEvent.GetSiegeEventSide(BattleSideEnum.Defender).SiegeEngines.DeployedRangedSiegeEngines.Length {playerSiegeEvent.GetSiegeEventSide(BattleSideEnum.Defender).SiegeEngines.DeployedRangedSiegeEngines.Length}");
+
+                LTLogger.Debug($"visualOfParty.GetAttackerRangedSiegeEngineFrames().Length {visualOfParty.GetAttackerRangedSiegeEngineFrames().Length}");
+                LTLogger.Debug($"playerSiegeEvent.GetSiegeEventSide(BattleSideEnum.Attacker).SiegeEngines.DeployedRangedSiegeEngines.Length {playerSiegeEvent.GetSiegeEventSide(BattleSideEnum.Attacker).SiegeEngines.DeployedRangedSiegeEngines.Length}");
+
+                LTLogger.Debug($"visualOfParty.GetAttackerBatteringRamSiegeEngineFrames().Length {visualOfParty.GetAttackerBatteringRamSiegeEngineFrames().Length}");
+                LTLogger.Debug($"playerSiegeEvent.GetSiegeEventSide(BattleSideEnum.Attacker).SiegeEngines.DeployedMeleeSiegeEngines.Length {playerSiegeEvent.GetSiegeEventSide(BattleSideEnum.Attacker).SiegeEngines.DeployedMeleeSiegeEngines.Length}");
+
+                LTLogger.Debug($"visualOfParty.GetAttackerTowerSiegeEngineFrames().Length {visualOfParty.GetAttackerTowerSiegeEngineFrames().Length}");
+                LTLogger.Debug($"playerSiegeEvent.GetSiegeEventSide(BattleSideEnum.Attacker).SiegeEngines.DeployedMeleeSiegeEngines.Length {playerSiegeEvent.GetSiegeEventSide(BattleSideEnum.Attacker).SiegeEngines.DeployedMeleeSiegeEngines.Length}");
+
+                return true;
+            }
+        }
+        ```
+        LTLogger.Debug is my custom function to output values to the debug file.<br><br>
+        Here it shows that there are too many attacker's Ranged Engines:
+        ![](/pics/2409171025.png)
+        <br>
+        Editor shows the problem:<br>
+        ![](/pics/2409171123.png)<br>
+        Deleting one of them solves the crash.
 
 <br><br>
 ## AccessViolationException
