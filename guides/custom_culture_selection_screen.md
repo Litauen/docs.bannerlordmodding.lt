@@ -200,3 +200,52 @@ This patch tells to use the Vlandia menu for custom baltic culture.
 
 Select the best vanilla culture for your custom culture and apply this patch with the necessary changes to have this menu working.
 
+
+
+## Coronation scene
+
+Without changes coronation scene could look like this with the new culture:
+
+![](/pics/2409180854.png)
+
+The default troop id for the coronation guards is 'fighter_sturgia' - so if you removed it - guards will have no clothes.
+
+Use this patch to fix this, change cultures/troopIDs in the example to yours:
+
+```cs
+[HarmonyPatch(typeof(CampaignSceneNotificationHelper), "GetBodyguardOfCulture")]
+public class CampaignSceneNotificationHelper_GetBodyguardOfCulture_Patch
+{
+    private static bool Prefix(ref SceneNotificationData.SceneNotificationCharacter __result, CultureObject culture)
+    {
+        string stringId = culture.StringId;
+        string troopId = "balt_14";
+        if (stringId == "baltic")
+        {
+            troopId = "balt_21";
+        }
+        else if (stringId == "crusader")
+        {
+            troopId = "crusader_26";
+        }
+        else if (stringId == "rus")
+        {
+            troopId = "rus_20";
+        }
+        __result = new SceneNotificationData.SceneNotificationCharacter(MBObjectManager.Instance.GetObject<CharacterObject>(troopId), null, default(BodyProperties), false, uint.MaxValue, uint.MaxValue, false);           
+        return false;
+    }
+}
+```
+
+The title in the string should be set with such text variables in module_strings.xml for each of your new culture:
+
+```xml
+<string id="str_liege_title.baltic" text="{=str_liege_title.baltic}Grand Duke" />
+<string id="str_liege_title_female.baltic" text="{=str_liege_title_female.baltic}Grand Duchess" />
+```
+
+Fixed scene:
+
+![](/pics/2409180859.png)
+
