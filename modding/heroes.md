@@ -526,3 +526,20 @@ Add an entry into [lords.xml](/modding/npc_character/)
 
 How to change starting gear info [here](https://discord.com/channels/411286129317249035/411286129317249038/1282512554656272459).
 
+## Clothes for dead heroes
+
+spcultures.xml
+``` xml
+default_battle_equipment_roster="EquipmentRoster.default_battle_equipment_roster_neutral"
+default_civilian_equipment_roster="EquipmentRoster.default_civilian_equipment_roster_neutral">
+```
+
+```cs
+class Campaign
+
+private void InitializeDefaultEquipments()
+{
+    this.DeadBattleEquipment = Game.Current.ObjectManager.GetObject<MBEquipmentRoster>("default_battle_equipment_roster_neutral").DefaultEquipment;
+    this.DeadCivilianEquipment = Game.Current.ObjectManager.GetObject<MBEquipmentRoster>("default_civilian_equipment_roster_neutral").DefaultEquipment;
+}
+```
