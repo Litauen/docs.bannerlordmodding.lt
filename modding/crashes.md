@@ -165,7 +165,7 @@
 
 ??? failure "CalculateDailyProductionAmount - GetWerehouseCapacity - TickProductions - OnNewGameCreatedPartialFollowUp"
     REASON: assigned a settlement to non-existant clan<br>
-    REASON2: error in defining minor_clan, I had label_color="FF7264D16" (one digit too much in the color code)<br>
+    REASON2: error in defining minor_clan, I had label_color="FF7264D16" (one digit too many in the color code)<br>
     REASON3: error in defining a clan, had NaN in banner_key="11.141.19.1836.1836.768.788.1.0.NaN.510...., wrong/duplicate Faction id=
 
 ??? failure "NameGenerator - CalculateNameScore - SelectNameIndex - GenerateHeroFirstName - CreateSpecialHero - InitialChildGenerationCampaignBehavior - OnNewGameCreatedPartialFollowUp"
@@ -486,9 +486,11 @@
     Crash by pressing on the lord's image in the Encyclopedia. <br>
     REASON: Lord's spause is deleted, but reference to it in the heroes.xml remains for the main lord. Eg: spouse="Hero.lord_4_2"
 
-
-
-
+??? failure "InvalidOperationException: Sequence contains no elements"
+    Crash on accepting [LesserNobleRevolt](https://mountandblade.fandom.com/wiki/Lieutenant's_Revolt) mission. CTD on normal run.<br>
+    REASON: bad troop ID in cultures.xml elite_basic_troop
+    ??? failure "Crash report on VS:"
+        ![](/pics/2409201550.png)
 
 
 

@@ -82,6 +82,18 @@ Close the resource browser and the Editor(game). You should now see a new file n
 ![](/pics/b3kmMwv.png)
 
 
+## Count sprites in the category
+
+```cs
+SpriteCategory sploadingCategory;
+if (!UIResourceManager.SpriteData.SpriteCategories.TryGetValue("ui_loading_custom", out sploadingCategory))
+{
+    // log error ($"Can't find SpriteCategory 'ui_loading_custom'");
+    return;
+}
+int totalGenericImageCount = sploadingCategory.SpriteParts.Count;
+```
+
 ## NineRegionSprites
 
 ![](/pics/Nine_Slice_1_Guides.png)
