@@ -472,6 +472,10 @@
     </game_entity>
     ```
 
+??? failure "GetMeshAtIndex - ScriptingInterfaceOfIMetaMesh - GetTableauMaterial - ItemCollectionElementViewExtensions"
+    Crash in the inventory screen. <br>
+    REASON: used the same mesh for a different shield when defining an &lt;Item>
+
 
 <br><br>
 ## Reflection.TargetInvocationException
