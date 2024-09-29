@@ -26,7 +26,7 @@
 * Vertex Paint
 * Make main mesh backup
 * Create LODs
-* Export to FBX
+* [Export to FBX](/3d/export_to_fbx)
 
 
 ### Blender additional
