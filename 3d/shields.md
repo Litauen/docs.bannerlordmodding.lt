@@ -197,7 +197,6 @@ Make sure to reference your physics meshes in `mesh`, `body_name` and `shield_bo
 
 `recalculate_body` - every Taleworlds shield has false, perhaps there is a hidden function here.
 
-`item_usage` - “hand_shield” “shield” - There are two types of options for the tag, I am unsure of the difference. [VLND] Harwin: Round shields has "hand_shield" and others like heater shields has "shield" option maybe thats the difference.
 
 `weapon_length` - Each shield has a weapon_length, 'kite_shield_e' here for an example, has a length of 118. When measured in Blender, this number comes to roughly 125, a clear discrepancy. I cannot extract the physics mesh to measure, so perhaps this is the length of that. Or there is another purpose behind the length, and an easy way to calculate it.
 
@@ -210,6 +209,27 @@ Make sure to reference your physics meshes in `mesh`, `body_name` and `shield_bo
 `using_tableau` ="true" - without it the sigil will not appear in-game
 
 This should NOT be present: &lt;Flags UseTeamColor="true"/>
+
+### item_usage
+
+Possible values: “hand_shield” / “shield”
+
+Determines how the shield is held in the hand and affects the troop's pose.
+
+`hand_shield` - The shield is held only with the palm of the left hand (e.g., round shields, large Battanian shields).
+
+![](/pics/2409301742.png)
+
+`shield` - The shield is held with the arm and the palm of the left hand (e.g., heater shields, kite shields).
+
+![](/pics/2409301742b.png)
+
+??? abstract "An example with item_usage='shield' when correct value should be 'hand_shield':"
+    <video width="560" height="661" controls autoplay loop muted>
+        <source src="/pics/shield_wrong_hold.webm" type="video/webm">
+        Your browser does not support the video tag.
+    </video>
+
 
 ### holster_position_shift
 
