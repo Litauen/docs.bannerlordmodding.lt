@@ -1,6 +1,7 @@
 # Shields
 
 * Based on: [Bannerlord 3D Asset Workflow](https://docs.google.com/document/d/1aHBsO3mzkT0JsbCt9aCOh6CWAFATXwKtSaVb__TYIoo/edit)
+* [Shield Tutorial by Major Roy Gaming](https://www.youtube.com/watch?v=SxHnJDHaKn0)
 
 
 ## Meshes
@@ -70,8 +71,15 @@ Renaming is done in your 3D program, when imported to the Editor, it’ll automa
 !!! tip "Make sure you create a matching material in the Editor _before_ you import your FBX. If not - you will get many errors and will have to assign material to all the LODs by hand."
 
 
+### Orientation
 
-### Material in Editor
+![](/pics/2410011431.png)
+
+If your texture is rotated 90 degrees - that would be the problem if you will want to place a sigil on the shield, because there is no way (at least in my knowledge) to rotate the sigil on the shiedl 90 degress in the Vector Argument 1 settings.
+
+I had to rotate textures and UVs in the Blender to fix this.
+
+### Material in the Editor
 
 Example settings for the shield's material in the Editor:
 
@@ -124,14 +132,14 @@ The clans's sigil/emblem is added to the shield by adjusting Vector Argument 1 u
 
 From Preview Mesh select Plane for better visualization.
 
-In Diffuse2Map add sigil_test_bounds_for_shields for better positioning (A shows top/bottom, inner red circle - the place where the sigil will be present). This is quick and easy way to properly position the sigil.
+In Diffuse2Map add sigil_test_bounds_for_shields for better positioning (Inner circle shows the place where the sigil will be present). This is quick and easy way to properly position the sigil.
 
 ??? abstract "Take it from here:"
     ![](/pics/sigil_test_bounds_for_shields.png)
 
 ![](/pics/2409291804.png)
 
-!!! tip "If you need to turn the sigil upside down, use minus sign for the y field in the Vector Argument 1"
+!!! tip "If you need to turn the sigil upside down, use minus sign for the y field in the Vector Argument 1. Mirror reflection - use minus x. Couldn't find the options to rotate 90 degrees though..."
 
 !!! danger "When the sigil is placed properly - REMOVE the Diffuse2Map and Save your material. Otherwise you will see this yellow picture instead of your real sigil in-game."
 

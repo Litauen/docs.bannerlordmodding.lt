@@ -155,7 +155,7 @@
 
 
 ??? failure "DefaultMapDistanceModel - GetDistance - UpdateFriendshipAndEnemies"
-    REASON 1: Lord/hero without a proper clan (clan not created/deleted)
+    REASON 1: Lord/hero without a proper clan/faction (faction not created/deleted/error in the ID). RGL log can show the error.
     <br><br>
     REASON 2: Incorrect load order when launching game, e.g. Lemmy's map was loaded after a mod using it.
 
