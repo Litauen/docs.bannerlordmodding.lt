@@ -381,6 +381,11 @@ Modules\SandBoxCore\ModuleData\items\head_armors.xml
 872-  <!-- #region Battania Light Head Armors -->
 873-  <Item id="thinhide_coif"
 874:        name="{=Q50hfNjW}Thinhide Coif"
+875-        subtype="head_armor"
+876-        mesh="battania_helmet_a"
+877-        culture="Culture.battania"
+878-        weight="0.5"
+879-        difficulty="0"
 ```
 
 This is what you need:
@@ -398,6 +403,15 @@ Then you can use it in your mod. Example:
             id="Item.thinhide_coif" />
 ```
 
+### ...and mesh
+
+Mesh (3D model's name) usually is different from the ItemID, and you can find it in the item's definition in the XML:
+
+``` xml
+876-        mesh="battania_helmet_a"
+```
+
+You will need it for export from [TpacTool](/resources/tpactool/) and working with 3D program such as Blender.
 
 ## Helmet Hair Coverage
 

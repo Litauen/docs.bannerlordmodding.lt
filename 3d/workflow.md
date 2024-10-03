@@ -17,10 +17,13 @@
 
 ## General Workflow
 
+* Prepare the [Environment](/3d/environment/)
+
 ### Blender
 
-* Import into Blender and rename the mesh
-* Adjust/Position
+* [FBX import into Blender](/3d/blender_fbx_import/)
+* [Armature/Skeleton](/3d/armature_skeleton/)
+* [Mesh Adjustment](/3d/mesh_adjustment/)
 * Rename Material
 * [Weight Painting](/3d/weight_painting/)
 * Vertex Paint
@@ -41,7 +44,7 @@
 ### Editor
 
 * Create Material
-* Import FBX
+* Import FBX into Editor
 * Apply Material
 * Set Cloth physics
 * Test in the Editor ([Model Viewer](/3d/model_viewer.md))

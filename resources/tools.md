@@ -18,7 +18,7 @@
 
 ## Assets
 
-* [TpacTool](https://github.com/szszss/TpacTool){_target=blank} - an open source asset explorer which can open TPAC format files, view and export the contents. [Fork](https://github.com/hunharibo/TpacTool){_target=blank}
+* [TpacTool](/resources/tpactool/) - an open source asset explorer which can open TPAC format files, view and export the contents.
 * [BannerEdge](https://github.com/hunharibo/BannerEdge){_target=blank} Its purpose is to provide ease of access to native game UI files by splitting the spritesheet atlas images into its individual sprite parts.
 * [Fmod Bank Tools](https://www.nexusmods.com/rugbyleaguelive3/mods/2){target=_blank} - Extracts and Rebuilds Fmod .bank files, for example: Mount & Blade II Bannerlord\Sounds\PC\voice.assets.bank
 

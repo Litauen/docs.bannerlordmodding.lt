@@ -438,6 +438,17 @@
         ![](/pics/2409171123.png)<br>
         Deleting one of them solves the crash.
 
+
+<br><br>
+## ArgumentOutOfRangeException
+
+    Message: Index was out of range. Must be non-negative and less than the size of the collection. Parameter name: index
+
+??? failure "TournamentFightMissionController - PrepareForMatch - SkipMatch"
+    REASON: in culture's file used bad template for &lt;tournament_team_templates_one_participant>
+
+
+
 <br><br>
 ## AccessViolationException
 
