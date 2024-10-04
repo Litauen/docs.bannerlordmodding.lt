@@ -16,14 +16,14 @@ Cause: Add Leaf Bones enabled in the Blender: [FBX Export](/3d/export_to_fbx/)
 ![](/pics/2409281039.png)
 
 
-### Missing/bad Armature
+### Missing/bad [Armature](/3d/armature_skeleton/)
 
 <video width="580" height="478" controls autoplay loop muted>
     <source src="/pics/fbx_armature_problem.webm" type="video/webm">
     Your browser does not support the video tag.
 </video>
 
-Cause: missing armature or wrong armature assigned:
+Cause: missing [armature (skeleton)](/3d/armature_skeleton/) or wrong armature assigned:
 
 ![](/pics/2409281050.png)
 

@@ -17,6 +17,7 @@
 
 ## General Workflow
 
+* [Terms](/3d/terms/)
 * Prepare the [Environment](/3d/environment/)
 
 ### Blender
@@ -24,11 +25,10 @@
 * [FBX import into Blender](/3d/blender_fbx_import/)
 * [Armature/Skeleton](/3d/armature_skeleton/)
 * [Mesh Adjustment](/3d/mesh_adjustment/)
-* Rename Material
+* [Rename Material](/3d/rename_material/)
 * [Weight Painting](/3d/weight_painting/)
 * Vertex Paint
-* Make main mesh backup
-* Create LODs
+* [Create LODs](/3d/create_lods.md)
 * [Export to FBX](/3d/export_to_fbx)
 
 
@@ -47,7 +47,7 @@
 * Import FBX into Editor
 * Apply Material
 * Set Cloth physics
-* Test in the Editor ([Model Viewer](/3d/model_viewer.md))
+* Test in the [Model Viewer](/3d/model_viewer.md)
 
 
 ### XML/Game

@@ -51,3 +51,19 @@ To be sure that mesh is assigned to the skeleton properly:
 3. Make sure Armature - Object is `human_skeleton_notused`
 
 ![](/pics/2410021220.png)
+
+
+## Problems
+
+### Missing/bad Armature
+
+This in the [Model Viewer](/3d/model_viewer/):
+
+<video width="580" height="478" controls autoplay loop muted>
+    <source src="/pics/fbx_armature_problem.webm" type="video/webm">
+    Your browser does not support the video tag.
+</video>
+
+Cause: missing armature or wrong armature assigned:
+
+![](/pics/2409281050.png)
