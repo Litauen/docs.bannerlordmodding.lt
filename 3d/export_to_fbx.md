@@ -44,6 +44,8 @@ Create preset for the future to avoid clicking those settings every time:
 
 ### Add Leaf Bones enabled
 
+You will get this in the [Model Viewer](/3d/model_viewer/):
+
 <video width="395" height="325" controls autoplay loop muted>
     <source src="/pics/add_leaf_bones.webm" type="video/webm">
     Your browser does not support the video tag.

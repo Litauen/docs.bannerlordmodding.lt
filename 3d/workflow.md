@@ -32,7 +32,7 @@
 * [Export to FBX](/3d/export_to_fbx)
 
 
-### Blender additional
+### Blender (additional)
 
 * For body armors
     * _slim version for gloves
@@ -43,11 +43,12 @@
 
 ### Editor
 
-* Create Material
-* Import FBX into Editor
-* Apply Material
+* [Create Material](/3d/create_material/)
+    * Transparency
+* [Import FBX into Editor](/3d/editor_fbx_import/)
+* [Material Issues](/3d/material_issues/)
 * Set Cloth physics
-* Test in the [Model Viewer](/3d/model_viewer.md)
+* Test in the [Model Viewer](/3d/model_viewer/)
 
 
 ### XML/Game

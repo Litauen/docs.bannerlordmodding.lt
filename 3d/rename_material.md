@@ -10,3 +10,5 @@ Rename by double clicking in the hierarchy menu or in the `Material Properties` 
 
 ![](/pics/2410030816.png)
 
+
+!!! failure "Click [here](/3d/editor_fbx_import/#wrong-material) to see what happens when material name is not correct."
