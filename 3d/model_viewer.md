@@ -37,6 +37,37 @@ For quick tests I am using:
 
 ![](/pics/2410042204.png)
 
+## Test horse caparison
+
+Select Entity Model > Mesh:
+
+![](/pics/2410061334.png)
+
+Select caparison as `Mesh` and horse animations as shown:
+
+![](/pics/2410061334b.png)
+
+Add horse as a second entity:
+
+![](/pics/2410061334c.png)
+
+Set same animation as for caparison:
+
+![](/pics/2410061334d.png)
+
+Click on `Animation Control` to start/stop animations until caparison and the horse are in sync (maybe there is a better way to sync animations?)
+
+## Good armors for testing
+
+Several armors that are bulky and are very good for testing with shoulder armors/gloves/shoes:
+
+![](/pics/2410061339.png)
+
+    tunic_ironplate_armor
+    vlandia_scale_armor
+    mail_hauberk
+    armor_hemp_tunic
+
 <br><br>
 ## Problems
 
