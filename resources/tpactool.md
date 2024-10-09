@@ -21,3 +21,16 @@ If it's Rigged, select Rigged, Human skeleton (if it's human, could be horse, et
 ![](/pics/2410020911b.png)
 
 
+## Textures
+
+Example exported textures:
+
+![](/pics/2410081307.png)
+
+Note the normals _n texture in ugly-yellow. For some reason it's inverted in the BL. 
+
+You can't import it into the Substance for example.
+
+To fix that, open it in the Photoshop ant invert it back with CTRL+i:
+
+![](/pics/2410081508.png)

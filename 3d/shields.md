@@ -52,6 +52,12 @@ Properly adjusting hand-grips is very important to make shield look normal in th
 
 ![](/pics/2409290939.png)
 
+You will be able to fine-tune the position and rotation in the [XML settings](/3d/shields/#xml).
+
+
+Bulky gloves good for testing grips and clipping:
+
+![](/pics/2410080938.png)
 
 <br><br>
 ## Material
@@ -238,6 +244,18 @@ Determines how the shield is held in the hand and affects the troop's pose.
         Your browser does not support the video tag.
     </video>
 
+### position
+
+Position when the shield is used.
+
+![](/pics/2410080936.png)
+
+### rotation
+
+Rotation when the shield is used.
+
+![](/pics/2410080931.png)
+
 
 ### holster_position_shift
 
@@ -292,4 +310,6 @@ Sets the shield's holstered position on the troop's back.
 
 17. Add XML
 
-18. Test in-game/fix/repeat
+18. Position shield properly
+
+19. Test in-game/fix/repeat

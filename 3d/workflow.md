@@ -44,6 +44,7 @@
 ### Editor
 
 * [Create Material](/3d/create_material/)
+    * [Team Colors](/3d/create_material/#team-colors)
     * Transparency
 * [Import FBX into Editor](/3d/editor_fbx_import/)
 * [Material Issues](/3d/material_issues/)

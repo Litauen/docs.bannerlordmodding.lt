@@ -285,7 +285,7 @@ For mods:
 ### Properties
 
 * 'mesh' - 3D mesh
-* 'using_tableau' - value is used to determine whether or not the item can be displayed in the game's 3D model viewer, also known as the tableau
+* 'using_tableau' - true if an item (usually body armor) has banner/sigil on it
 * 'is_merchandise' - is used to determine whether an item is a merchandise or not. Used in the game code to determine if Item can be lost, on deciding rewards and something else
 * 'appearance' - used in calculating the item value (CalculateValue): return (int)(num2 * num * (1f + 0.2f * (item.Appearance - 1f)) + 100f * MathF.Max(0f, item.Appearance - 1f));
 * 'value' - price
