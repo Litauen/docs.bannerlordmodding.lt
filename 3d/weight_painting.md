@@ -66,3 +66,15 @@ Weight painting is a technique used in rigging to assign influence to specific p
 ### Gloves with 3 bones
 
 ![](/pics/2408301906.png)
+
+
+## Problems
+
+### Bad Weight Painting
+
+<video width="389" height="422" controls autoplay loop muted>
+    <source src="/pics/2410102105.webm" type="video/webm">
+    Your browser does not support the video tag.
+</video>
+
+Redo the Weight Painting. Fastest way - do Weight Transfer.

@@ -108,6 +108,15 @@ Cause: Skinning disabled in material settings:
 ![](/pics/2409281102.png)
 
 
+### Bad [Weight Painting](/3d/weight_painting/)
+
+<video width="389" height="422" controls autoplay loop muted>
+    <source src="/pics/2410102105.webm" type="video/webm">
+    Your browser does not support the video tag.
+</video>
+
+Redo the [Weight Painting](/3d/weight_painting/). Fastest way - do [Weight Transfer](/3d/weight_painting/#weight-transfer).
+
 <br><br>
 ## Model Viewer Problems
 
