@@ -267,15 +267,31 @@ Equipment equipment = Hero.MainHero.CivilianEquipment;
 
 ## Relations
 
+### Get relation
+
+Use this method to get the same relation that is visible in the Encyclopedia:
+
+``` cs
+int relation = Hero.MainHero.GetRelation(hero);
+int relation = notable.GetRelation(clan.Leader);
+```
+
+This returns 'raw` relation not affected by the heroe's traits:
+
+``` cs
+int CharacterRelationManager.GetHeroRelation(Hero hero1, Hero hero2)
+```
+
+
+### Set relation
+
 ``` cs
 CharacterRelationManager.SetHeroRelation(Hero.MainHero, otherHero, -25);
 void CharacterRelationManager.SetHeroRelation(Hero hero1, Hero hero2, int value)
-int CharacterRelationManager.GetHeroRelation(Hero hero1, Hero hero2)
-int relation = notable.GetRelation(clan.Leader);
 ChangeRelationAction.ApplyRelationChangeBetweenHeroes(notable, clan.Leader, -20, true);
 ```
 
-Are we at war?
+### Are we at war?
 
 ``` cs
 if (hero?.Clan?.MapFaction?.IsAtWarWith(Hero.MainHero.MapFaction) == true) { // Your code here }
@@ -528,12 +544,52 @@ How to change starting gear info [here](https://discord.com/channels/41128612931
 
 ## Clothes for dead heroes
 
+Set clothes for `neutral` culture. A lot of dead heroes will use this:
+
+??? abstract "sandbox_equipment_sets.xml"
+    ```xml
+    <?xml version="1.0" encoding="utf-8"?>
+    <EquipmentRosters>
+    </EquipmentRosters>
+    ```
+
+??? abstract "sandboxcore_equipment_sets.xslt"
+    ```xml
+    <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+        <xsl:output omit-xml-declaration="yes"/>
+        <xsl:template match="@*|node()">
+            <xsl:copy>
+                <xsl:apply-templates select="@*|node()"/>
+            </xsl:copy>
+        </xsl:template>
+
+        <!-- dead lords gear -->
+        <xsl:template match="EquipmentRoster[@id='default_battle_equipment_roster_neutral']/EquipmentSet">
+            <EquipmentSet>
+                <equipment slot="Body" id="Item.tied_cloth_tunic"/>
+                <equipment slot="Leg" id="Item.strapped_shoes"/>
+            </EquipmentSet>
+        </xsl:template>
+
+        <xsl:template match="EquipmentRoster[@id='default_civilian_equipment_roster_neutral']/EquipmentSet">
+            <EquipmentSet>
+                <equipment slot="Body" id="Item.tied_cloth_tunic"/>
+                <equipment slot="Leg" id="Item.strapped_shoes"/>
+            </EquipmentSet>
+        </xsl:template>
+    </xsl:stylesheet>
+    ```
+
+
+Remaining lords will use equipment that set like this (not sure what's the difference):
+
 spcultures.xml
 ``` xml
 default_battle_equipment_roster="EquipmentRoster.default_battle_equipment_roster_neutral"
 default_civilian_equipment_roster="EquipmentRoster.default_civilian_equipment_roster_neutral">
 ```
 
+In the code it's set as:
 ```cs
 class Campaign
 
