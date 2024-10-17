@@ -143,3 +143,16 @@ public override void BeginGameStart(Game game)
     }
 }
 ```
+
+
+!!! failure "RGL log will complain that xsd file of YOURFILE.xml could not be found!"
+    Tried to include XSD schema directly into the XML - did not work.
+
+    Tried to include the external file - did not work:
+    ```xml
+    <?xml version="1.0" encoding="utf-8"?>
+        <Religions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:noNamespaceSchemaLocation="Religions.xsd">
+    ```
+
+    \Mount & Blade II Bannerlord\XmlSchemas folder is present, but no idea how to tell the game to look for my XSD schema file in the Mod's folder.
