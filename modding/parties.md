@@ -116,3 +116,20 @@ public class CampaignPatch
     }
 }
 ```
+
+## Party Size
+
+!!! quote "Sly:"
+
+    If anyone one day is looking for info on how the AI adjusts party sizes:
+
+    MakeClanFinancialEvaluation sets party wage caps : >90k clan gold = 10k, ]30k, 90k] = ]600, 1200], <30k = [200, 600]
+    a MobileParty has its PaymentLimit set by the above
+    CalculateMobilePartyMemberSizeLimit calculates party size limit
+    a party has a LimitedPartySize if the ClanFinancialEval sets one (always for  kingdom/minor faction clans)
+    this cap is only lower than the normal calculation if finances throttle PaymentLimit
+    the cap is roughly PaymentLimit/(average wage/troop in the default culture hero party template)
+    if a party exceeds its PaymentLimit, GetNumberOfDeserters calculates a number of deserters based on the (wages paid beyond the limit)/(4*AvgCulturalTemplateWage); a maxmimum of 20 desertions per day is allowed
+    PartiesCheckDesertionDueToPartySizeExceedsPaymentRatio checks for troops in excess of party limit or wage limit
+    it then attempts to remove the lowest tier units first until it reaches the  #ofDeserters
+    

@@ -81,7 +81,7 @@ Renaming is done in your 3D program, when imported to the Editor, it’ll automa
 
 ![](/pics/2410011431.png)
 
-If your texture is rotated 90 degrees - that would be the problem if you will want to place a sigil on the shield, because there is no way (at least in my knowledge) to rotate the sigil on the shiedl 90 degress in the Vector Argument 1 settings.
+If your texture is rotated 90 degrees - that would be the problem if you will want to place a sigil on the shield, because there is no way (at least in my knowledge) to rotate the sigil on the shield 90 degress in the Vector Argument 1 settings.
 
 I had to rotate textures and UVs in the Blender to fix this.
 
