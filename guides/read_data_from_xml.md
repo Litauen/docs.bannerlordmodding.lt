@@ -1,5 +1,7 @@
 # Read data from XML
 
+## Example
+
 ```cs
 public class Religion : MBObjectBase
 {
@@ -63,73 +65,77 @@ public class Religion : MBObjectBase
 }
 ```
 
-??? abstract "Data XML file"
-    ```xml
-    <?xml version="1.0" encoding="utf-8" ?>
-    <Religions>
-        <Religion id="baltic_paganism" Name="Baltic Paganism" Fervor="40">
-            <Cultures>
-                <Culture id="Culture.baltic" />
-                <Culture id="Culture.latvian" />
-                <Culture id="Culture.estonian" />
-            </Cultures>
-            <Heroes></Heroes>
-        </Religion>
+## Data XML file
 
-        <Religion id="catholicism" Name="Catholicism" Fervor="70">
-            <Cultures>
-                <Culture id="Culture.crusader" />
-            </Cultures>
-            <Heroes>
-                <Hero id="lord_lit_1_2" />
-            </Heroes>
-        </Religion>
+```xml
+<?xml version="1.0" encoding="utf-8" ?>
+<Religions>
+    <Religion id="baltic_paganism" Name="Baltic Paganism" Fervor="40">
+        <Cultures>
+            <Culture id="Culture.baltic" />
+            <Culture id="Culture.latvian" />
+            <Culture id="Culture.estonian" />
+        </Cultures>
+        <Heroes></Heroes>
+    </Religion>
 
-        <Religion id="orthodoxy" Name="Orthodoxy" Fervor="60">
-            <Cultures>
-                <Culture id="Culture.rus" />
-            </Cultures>
-            <Heroes>
-                <Hero id="lord_lit_1_5" />
-            </Heroes>
-        </Religion>
-    </Religions>
-    ```
+    <Religion id="catholicism" Name="Catholicism" Fervor="70">
+        <Cultures>
+            <Culture id="Culture.crusader" />
+        </Cultures>
+        <Heroes>
+            <Hero id="lord_lit_1_2" />
+        </Heroes>
+    </Religion>
 
-??? abstract "Strings XML file"
-    ```xml
-    <?xml version="1.0" encoding="utf-8"?>
-    <strings>
-        <string id="ee_religion_description.baltic_paganism" text= "{=!ee_religion_description.baltic_paganism}Baltic Paganism is the pre-Christian religion ..."/>
-        <string id="ee_religion_description.catholicism" text= "{=!ee_religion_description.catholicism}Catholicism is a major branch of Christianity that ..." />
-        <string id="ee_religion_description.orthodoxy" text= "{=!ee_religion_description.orthodoxy}Orthodoxy is a branch of Christianity that ..." />
-    </strings>
-    ```
+    <Religion id="orthodoxy" Name="Orthodoxy" Fervor="60">
+        <Cultures>
+            <Culture id="Culture.rus" />
+        </Cultures>
+        <Heroes>
+            <Hero id="lord_lit_1_5" />
+        </Heroes>
+    </Religion>
+</Religions>
+```
 
-??? abstract "Include those files in Submodule.xml"
-    ```xml
-    <XmlNode>
-        <XmlName id="Religions" path="ee_religions" />
-        <IncludedGameTypes>
-            <GameType value="Campaign" />
-            <GameType value="CampaignStoryMode" />
-            <GameType value = "CustomGame"/>
-            <GameType value = "EditorGame"/>
-        </IncludedGameTypes>
-    </XmlNode>
+## Strings XML file
 
-    <XmlNode>
-        <XmlName id="GameText" path="ee_strings"/>
-        <IncludedGameTypes>
-            <GameType value = "Campaign"/>
-            <GameType value = "CampaignStoryMode"/>
-            <GameType value = "CustomGame"/>
-            <GameType value = "EditorGame"/>
-        </IncludedGameTypes>
-    </XmlNode>
-    ```
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<strings>
+    <string id="ee_religion_description.baltic_paganism" text= "{=!ee_religion_description.baltic_paganism}Baltic Paganism is the pre-Christian religion ..."/>
+    <string id="ee_religion_description.catholicism" text= "{=!ee_religion_description.catholicism}Catholicism is a major branch of Christianity that ..." />
+    <string id="ee_religion_description.orthodoxy" text= "{=!ee_religion_description.orthodoxy}Orthodoxy is a branch of Christianity that ..." />
+</strings>
+```
+
+## Include into Submodule.xml
+
+```xml
+<XmlNode>
+    <XmlName id="Religions" path="ee_religions" />
+    <IncludedGameTypes>
+        <GameType value="Campaign" />
+        <GameType value="CampaignStoryMode" />
+        <GameType value = "CustomGame"/>
+        <GameType value = "EditorGame"/>
+    </IncludedGameTypes>
+</XmlNode>
+
+<XmlNode>
+    <XmlName id="GameText" path="ee_strings"/>
+    <IncludedGameTypes>
+        <GameType value = "Campaign"/>
+        <GameType value = "CampaignStoryMode"/>
+        <GameType value = "CustomGame"/>
+        <GameType value = "EditorGame"/>
+    </IncludedGameTypes>
+</XmlNode>
+```
 
 
+## SubModule.cs
 
 Load data from XML in SubModule.cs:
 
@@ -144,8 +150,30 @@ public override void BeginGameStart(Game game)
 }
 ```
 
+## Disable validation
 
-!!! failure "RGL log will complain that xsd file of YOURFILE.xml could not be found!"
+!!! info "RGL log will complain that xsd file of YOURFILE.xml could not be found!"
+
+
+Use this patch by `hunharibo` to skip validation:
+
+```cs
+[HarmonyPatch(typeof(MBObjectManager), "GetMergedXmlForManaged")]
+public class MBObjectManager_GetMergedXmlForManaged_SkipValidationPatch
+{
+    [HarmonyPrefix]
+    public static bool SkipValidation(string id, ref bool skipValidation)
+    {
+        if (id == "Religions")
+        {
+            skipValidation = true;
+        }
+        return true;
+    }
+}
+```
+
+??? failure "Other things I tried - did not work:"
     Tried to include XSD schema directly into the XML - did not work.
 
     Tried to include the external file - did not work:
@@ -154,5 +182,3 @@ public override void BeginGameStart(Game game)
         <Religions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
            xsi:noNamespaceSchemaLocation="Religions.xsd">
     ```
-
-    \Mount & Blade II Bannerlord\XmlSchemas folder is present, but no idea how to tell the game to look for my XSD schema file in the Mod's folder.
