@@ -83,7 +83,7 @@ Paths around lakes can be converted from lines into closed loops by the path_con
 
 ## Sound
 
-sound_emitter script can be attached to the Path. What it does it moves the sound emitter on that path with the camera. TW use it for river and coastlines sounds.
+sound_emitter script can be attached to the Path using path_converger script. What it does it moves the sound emitter on that path with the camera. TW use it for river and coastlines sounds.
 
 ![](/pics/2403261729.jpg)
 
