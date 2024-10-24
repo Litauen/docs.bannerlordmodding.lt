@@ -25,3 +25,8 @@ Use Show Display to instanly see the camera's view (with Render Skybox on).
 * Siege engines don't seems to care about destructible things as merlons and roofs, they destroy them by mistake trying to target troops/siege engines.
 
 It's all from just extensive observations and testing by changing things in scene editor.
+
+
+## Various
+
+search for "debug" in the entity browser, place it down and run it's script, there you can choose what type of scene you are making and see the requirements for it in terms of spawners and such
