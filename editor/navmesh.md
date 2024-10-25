@@ -15,6 +15,11 @@
 ![](/pics/FnZfJS5.png)
 
 
+## Faces
+
+![](/pics/2410241343.png)
+
+
 ## Problems/Solutions
 
 ### Can't select any navmesh element
@@ -29,3 +34,5 @@ Turn ON Helpers in the Visibility tab:
 Changing Mesh Edit Mode does not change visuals of the Navmesh
 
 Click on navmesh icon at the top menu several times
+
+
