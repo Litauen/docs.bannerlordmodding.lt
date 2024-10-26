@@ -17,3 +17,7 @@ such as:
 ```xml
 <NPCCharacter id="tournament_template_CULTURE_one_participant_set_v1" ...
 ```
+
+## Prizes
+
+Elite tournament rewards are hardcoded in `FightTournamentGame - CachePossibleEliteRewardItems()`

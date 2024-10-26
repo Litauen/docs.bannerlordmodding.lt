@@ -2,21 +2,81 @@
 
 * [Animations - Official Doc](https://moddocs.bannerlord.com/asset-management/asset-types/animations/)
 
-Make agent perform some animation:
+
+
+## SetActionChannel
+
+Activates animation on the agent
 
 ``` cs
+Agent.SetActionChannel(1, ActionIndexCache.act_none, false, (ulong)agent.GetCurrentActionPriority(1), 0f, 1f, 2f, 0.4f, 0f, false, -0.2f, 0, true);
+
+public bool SetActionChannel(int channelNo, ActionIndexCache actionIndexCache, bool ignorePriority = false, ulong additionalFlags = 0UL, float blendWithNextActionFactor = 0f, float actionSpeed = 1f, float blendInPeriod = -0.2f, float blendOutPeriodToNoAnim = 0.4f, float startProgress = 0f, bool useLinearSmoothing = false, float blendOutPeriod = -0.2f, int actionShift = 0, bool forceFaceMorphRestart = true)
+
+
 ActionIndexCache myAction = ActionIndexCache.Create("nameOfTheAction");
 targetAgent.SetActionChannel(0, myAction, true);
 ```
 
-## Channels
+## channelNo
 
 for agent.SetActionChannel(0, _actionIndexCache);, what's the difference between channel 0 and channel 1?
 
 channel 0 is for movement, channel 1 is for combat anims (like swings and stuff)
 
 
+!!! quote "hunharibo: afaik 0 is full body, 1 is upper body only (leg anims are still driven by movement)"
+
+
+## blendInPeriod
+
+float `blendInPeriod` - sets how fast animation should blend-in from the previous animation. Sometimes the best looking results to go to the .act_none state are achieved with 1f or 2f values
+
+default -0.2f is too fast ant looks unnatural
+
+
+## Example
+
+??? example "Cheer example"
+    ``` cs
+    private readonly ActionIndexCache[] _CheerActions = new ActionIndexCache[]
+    {
+        ActionIndexCache.Create("act_cheering_low_01"),
+        ActionIndexCache.Create("act_cheering_low_02"),
+        ActionIndexCache.Create("act_cheering_low_03"),
+        ActionIndexCache.Create("act_cheering_low_04"),
+        ActionIndexCache.Create("act_cheering_low_05"),
+        ActionIndexCache.Create("act_cheering_low_06"),
+        ActionIndexCache.Create("act_cheering_low_07"),
+        ActionIndexCache.Create("act_cheering_low_08"),
+        ActionIndexCache.Create("act_cheering_low_09"),
+        ActionIndexCache.Create("act_cheering_low_10"),
+        ActionIndexCache.Create("act_cheer_1"),
+        ActionIndexCache.Create("act_cheer_2"),
+        ActionIndexCache.Create("act_cheer_3"),
+        ActionIndexCache.Create("act_cheer_4"),
+        ActionIndexCache.Create("act_cheering_high_01"),
+        ActionIndexCache.Create("act_cheering_high_02"),
+        ActionIndexCache.Create("act_cheering_high_03"),
+        ActionIndexCache.Create("act_cheering_high_04"),
+        ActionIndexCache.Create("act_cheering_high_05"),
+        ActionIndexCache.Create("act_cheering_high_06"),
+        ActionIndexCache.Create("act_cheering_high_07"),
+        ActionIndexCache.Create("act_cheering_high_08")
+    };
+
+    agent.SetActionChannel(1, _CheerActions[MBRandom.RandomInt(_CheerActions.Length)], false, 0UL, 0f, 1f, 1f, 0.4f, 0f, false, -0.2f, 0, true);
+    agent.MakeVoice(SkinVoiceManager.VoiceType.Victory, SkinVoiceManager.CombatVoiceNetworkPredictionType.NoPrediction);
+
+    // stop cheering (after some time)
+    affectorAgent.SetActionChannel(1, ActionIndexCache.act_none, false, (ulong)agent.GetCurrentActionPriority(1), 0f, 1f, 2f, 0.4f, 0f, false, -0.2f, 0, true);
+    ```
+
+
+## Stop looping
+
 When agent plays a looping animation set with SetActionChannel to stop it set it to act_none action.
+
 
 ## Workflow
 
