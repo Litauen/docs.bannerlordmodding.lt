@@ -572,6 +572,27 @@ REASON: Bad troop id: villager_danish vs danish_villager
 
 
 
+
+--------
+
+
+<br><br>
+## Hang/Freeze/Deadlock
+
+
+??? failure "On Mission start"
+    Made a mistake in shield description (body_name and shield_body_name missing 'bo' parts):
+    ```xml
+        <Item
+        id="lt_teutonic_shield_anno"
+        name="{=lt_teutonic_shield_anno}Anno von Sangershausen's Shield"
+        body_name="lt_teutonic_shield_anno"
+        shield_body_name="lt_teutonic_shield_anno"
+    ```
+
+
+
+
 --------
 
 
