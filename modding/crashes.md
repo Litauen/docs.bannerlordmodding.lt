@@ -160,7 +160,8 @@
     REASON 2: Incorrect load order when launching game, e.g. Lemmy's map was loaded after a mod using it.
 
 ??? failure "Kingdom - OnNewGameCreated - InvokeList - OnNewGameCreated"
-    REASON: Deleted hero/lord, the 'owner' of the Kingdom
+    REASON: Deleted hero/lord, the 'owner' of the Kingdom<br>
+    REASON2: in `heroes.xml` for hero wrote `spouse="lord_prus_4_3"`, `should be spouse="Hero.lord_prus_4_3"`
 
 
 ??? failure "CalculateDailyProductionAmount - GetWerehouseCapacity - TickProductions - OnNewGameCreatedPartialFollowUp"
