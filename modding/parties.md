@@ -96,7 +96,7 @@ for (int i = 0; i < MobileParty.MainParty.MemberRoster.Count; i++)
 
 ## Destroy
 
-    DestroyPartyAction
+    DestroyPartyAction.Apply()
 
 [Don't use](https://discord.com/channels/411286129317249035/677511186295685150/1263112214873772043) MobileParty.RemoveParty()
 
@@ -132,4 +132,8 @@ public class CampaignPatch
     if a party exceeds its PaymentLimit, GetNumberOfDeserters calculates a number of deserters based on the (wages paid beyond the limit)/(4*AvgCulturalTemplateWage); a maxmimum of 20 desertions per day is allowed
     PartiesCheckDesertionDueToPartySizeExceedsPaymentRatio checks for troops in excess of party limit or wage limit
     it then attempts to remove the lowest tier units first until it reaches the  #ofDeserters
-    
+
+## Position on the World Map
+
+    party.Position2D.x
+    party.Position2D.y

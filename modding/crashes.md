@@ -464,6 +464,7 @@
     <br>
     [hunharibo](https://discord.com/channels/411286129317249035/677511186295685150/1274288069528256608): looks like a navmesh issue. Either a face with inverted normals or a concave quad or a face that is not connected to anything
 
+    REASON4: bad party with coordinates 0,0. I had this problem when Warlord or Deserters mod created deserters_... parties with coordinates 0,0. Game tries to get GetNavigationMeshCenterPosition(PathFaceRecord face) for those parties and crash. Example: https://report.butr.link/824A29
 
 </p>
 

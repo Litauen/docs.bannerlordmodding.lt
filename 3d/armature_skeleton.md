@@ -67,3 +67,9 @@ This in the [Model Viewer](/3d/model_viewer/):
 Cause: missing armature or wrong armature assigned:
 
 ![](/pics/2409281050.png)
+
+
+## Add your own skeleton
+
+!!! quote "Shawmuscle:"
+    You can add your own by creating a non human model, import the vanilla skeleton,rename it, edit it to align with your new base mesh, rig it. Import with armature settings X axis, -Y axis. Import the model as morph anim, and the skeleton also checked (be sure to remove the "notused" tag from skele) double click your new skele in editor. Find and selext it, change from "other" to "human" Assign/copy bones information same as human_skeleton *do for all bones. Go to file generate joints, then save. Now in xmls action sets and skins change the skeleton reference to *your newly imported skeleton name. Also add monsters and reference accordingly.
