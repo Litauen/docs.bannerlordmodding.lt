@@ -105,7 +105,7 @@ The system applies your moduleâ€™s XSLT files just before applying your moduleâ€
 ```
 
 
-### Example
+### Example - Change Lord
 
 Will change Caladog
 
@@ -189,6 +189,59 @@ Add lords.xml file there:
 
     </xsl:stylesheet>
     ```
+
+### Example - Delete native items
+
+Will delete some items from the `\Modules\SandBoxCore\ModuleData\items\head_armors.xml`
+
+In `YOUR_MOD\SubModule.xml` add:
+
+``` xml
+<XmlNode>
+    <XmlName id="Items" path="native_items"/>
+    <IncludedGameTypes>
+        <GameType value = "Campaign"/>
+        <GameType value = "CampaignStoryMode"/>
+        <GameType value = "CustomGame"/>
+        <GameType value = "EditorGame"/>
+    </IncludedGameTypes>
+</XmlNode>
+```
+
+In your Module data create folder `native_items`
+
+Add `head_armors.xml` file there:
+
+``` xml
+<?xml version="1.0" encoding="utf-8"?>
+<Items>
+</Items>
+```
+
+In file `head_armors.xslt` add:
+
+``` xml
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+    <xsl:output method="xml" omit-xml-declaration="no" indent="yes" />
+
+    <xsl:template match="@*|node()">
+        <xsl:copy>
+            <xsl:apply-templates select="@*|node()"/>
+        </xsl:copy>
+    </xsl:template>
+
+    <!-- remove native items -->
+    <xsl:template match="Item[@id='headscarf_d']" />
+    <xsl:template match="Item[@id='open_head_scarf']" />
+    <!--
+    <xsl:template match="Item[@id='ITEM_ID from \Modules\SandBoxCore\ModuleData\items\head_armors.xml']" />
+    -->
+
+</xsl:stylesheet>
+```
+
+In the game those items should not be present now.
+
 
 ### Custom spnpccharacters.xml case
 
