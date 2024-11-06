@@ -66,6 +66,27 @@ Set:
 
     MobileParty.MainParty.RecentEventsMorale += 10;
 
+This changes `Recent Events` and the change fades with time:
+
+![](/pics/2411051332.png)
+
+To add an additional line to the morale, it is necessary to patch `DefaultPartyMoraleModel - GetEffectivePartyMorale` or create own Morale Model.
+
+![](/pics/2411051404.png)
+
+??? example "Patch example:"
+    ``` cs
+    public class DefaultPartyMoraleModel_GetEffectivePartyMorale_Patch
+    {
+        public static void Postfix(MobileParty mobileParty, bool includeDescription, ref ExplainedNumber __result)
+        {
+            __result.Add(2, new TextObject("Camp Followers"), null);
+        }
+    }
+    ```
+    NOTE: I apply this as a late Harmony patch in OnGameStart
+
+
 
 ## Get party Companions
 

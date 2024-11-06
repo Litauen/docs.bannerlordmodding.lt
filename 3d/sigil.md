@@ -86,6 +86,22 @@ Find the mesh (armor) and give the material that uses the TableauMaskMap `banner
 
 ![](/pics/2410091348j.png)
 
+
+!!! bug "It seems that only LOD0 works!"
+    Looks like this for other LODs:
+    <center>
+        <video width="388" height="430" controls autoplay loop muted>
+            <source src="/pics/sigil_lod_problem.webm" type="video/webm">
+            Your browser does not support the video tag.
+        </video>
+    </center>
+
+    Temporary "solution" to disabled broken LODs (I leave LOD5 on because it's too far away to care with a hope to save on performance):<br>
+    <center>
+    ![](/pics/2411051654.png)
+    </center>
+
+
 !!! tip "Do the same for the _slim version if you have it."
 
 
