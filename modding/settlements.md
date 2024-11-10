@@ -61,7 +61,7 @@ Building building = Hero.MainHero.CurrentSettlement.Town.CurrentBuilding;
 Progress percent:
 
 ``` cs
-float perc = BuildingHelper.GetProgressOfBuilding(building, ettlements.Town) * 100;
+float perc = BuildingHelper.GetProgressOfBuilding(building, settlement.Town) * 100;
 ```
 
 Days to complete:

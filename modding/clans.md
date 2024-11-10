@@ -9,6 +9,10 @@
 
     int Tier [get]
 
+## Members
+
+    Clan.Heroes         // alive and dead
+
 ## Renown
 
     Clan.Renown
