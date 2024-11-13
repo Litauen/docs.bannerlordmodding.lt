@@ -594,6 +594,23 @@ REASON: Bad troop id: villager_danish vs danish_villager
 
 
 
+--------
+<br><br>
+## d3d_device_context
+
+
+![](/pics/2411120946.png)
+
+Crashes most frequently occur during battles, specifically when opening the command menu during the troop deployment phase.
+
+Potential solutions to try:
+
+* Reset NVIDIA settings: NVIDIA Control Panel -> 3D Settings -> Manage 3D Settings -> Global Settings -> Restore Defaults
+* Delete the Shaders folder: C:\ProgramData\Mount and Blade II Bannerlord\Shaders
+* Lower shader quality (in the game): Options -> Performance -> Graphics -> Set Shader Quality to Medium
+* If you're using an overclocked GPU, try reverting to default settings (some users reported crashes maybe due to overheating or insufficient voltage?)
+
+[Source](https://steamcommunity.com/app/261550/discussions/13/3192490990765522541)
 
 --------
 
@@ -616,3 +633,6 @@ REASON: Bad troop id: villager_danish vs danish_villager
 
 ??? failure "HarmonyLib.PatchClassProcessor.ReportException() - Patch()"
     When loading the game with DnSpy attached, make sure to disable the BannerColorPersistence in the load order.
+
+
+
