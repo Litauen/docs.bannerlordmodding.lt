@@ -150,7 +150,7 @@ so instead of atmosphere name: conv_CUSTOM_CULTURE_lordshall_0, we get conv_inva
 with hardcoded conv_vlandia_lordshall_skybox
 
 !!! failure "That would be kind-of-ok, BUT..."
-    But this is ONLY if you have not visited any other dialog before. If you already talked with somebody in the fields at noon, then comming to the town with custom culture and going to the keep ant talking with some lord, will show this lord as in the fields at noon.
+    But this is ONLY if you have not visited any other dialog before. If you already talked with somebody in the fields at noon, then comming to the town with custom culture and going to the keep and talking with some lord, will show this lord as in the fields at noon.
 
 
 !!! failure "I was unable to Harmony-patch IMapConversationDataProvider.GetAtmosphereNameFromData(MapConversationTableauData data) to solve this for now. Something something about interface changing name on compile, Harmony could not find the method... (Helping hand is welcome here)"
@@ -243,7 +243,10 @@ I tried many formats and the ONLY one that imports AND shows up is this:
 
 ![](/pics/2404161123.jpg)
 
-*Photoshop DDS plugin [here](https://drive.google.com/file/d/1sR03Bbf6uhSejA5uila3LkvQNZyo6QlP/view).*
+??? info "*Photoshop DDS plugins [here](https://drive.google.com/file/d/1sR03Bbf6uhSejA5uila3LkvQNZyo6QlP/view).*"
+    Close Photoshop<br>
+    Copy files to `C:\Program Files\Adobe\Adobe Photoshop 2025\Plug-ins`<br>
+    Start Photoshop
 
 Others do not import into the Editor at all, or imports but shows up as totally black.
 
