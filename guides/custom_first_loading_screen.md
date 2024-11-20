@@ -8,8 +8,14 @@
 </center>
 
 
-Upload PNG as loadingscreen_texture_1 in the Editor.
+Upload PNG as loadingscreen_texture_1 in the Editor `/YOUR_MOD/Assets/GauntletUI`:
 
-![](/pics/2406191909.png)
+![](/pics/2411190834.png)
+
+
+Mark to do not downgrade the quality:
+
+![](/pics/2411190834b.png)
+
 
 I use resolution 2560x1440 for better quality on wide screens.
