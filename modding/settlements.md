@@ -18,6 +18,10 @@
 Settlement.CurrentSettlement
 ```
 
+## Owner
+
+    Settlement.Owner (hero)
+
 ## The settlement hero is at currently
 
     Hero.CurrentSettlement
