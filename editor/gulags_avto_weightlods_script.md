@@ -12,7 +12,7 @@ Made by [GulagEnabler🍉](https://discord.com/channels/411286129317249035/69707
 
 ## Download
 
-* [Version without Hand-Morphs](https://drive.google.com/file/d/1T2-PSjuO_eY_Dgpvq9Mxj13xysPa8f3q/view?usp=drive_link)
+* [Version without Hand-Morphs](https://drive.google.com/file/d/1AVcaXiRo6SWVr3eP9EON7cwePCXRfeAK/view?usp=drive_link)
 * [Version with Hand-Morps](https://drive.google.com/file/d/1H9DslcyKdt_Ba6sPaKDm0CdhzUMS0n6_/view?usp=drive_link)
 
 

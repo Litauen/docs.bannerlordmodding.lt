@@ -28,7 +28,7 @@
 * [Rename Material](/3d/rename_material/)
 * [Weight Painting](/3d/weight_painting/)
 * Vertex Paint
-* [Create LODs](/3d/create_lods.md)
+* [Create LODs](/3d/create_lods)
 * [Export to FBX](/3d/export_to_fbx)
 
 

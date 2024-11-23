@@ -53,3 +53,19 @@ You will get this in the [Model Viewer](/3d/model_viewer/):
 
 ![](/pics/2409281039.png)
 
+
+### Not visible in the Inventory
+
+![](/pics/2411221718.png)
+
+Reason #1: Wrong mesh in the item description:
+
+![](/pics/2411221720.png)
+
+Reason #2: Model is too big in the Blender:
+
+![](/pics/2411221718b.png)
+
+After reimport with proper size:
+
+![](/pics/2411221718c.png)
