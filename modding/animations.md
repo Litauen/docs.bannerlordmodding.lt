@@ -1,7 +1,7 @@
 # Animations
 
 * [Animations - Official Doc](https://moddocs.bannerlord.com/asset-management/asset-types/animations/)
-
+* [Bannerlord Animation Documentation](https://docs.google.com/document/d/1fTZ80cahM0A4bgmTa9ermnBZiQY2APJ_sEXz22oKRjo/edit?tab=t.0)
 
 
 ## SetActionChannel

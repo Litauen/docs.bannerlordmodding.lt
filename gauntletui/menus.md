@@ -36,6 +36,53 @@ private void AddGameMenus(CampaignGameStarter starter)
 
 ```
 
+## Another example
+
+Town menu:
+
+```cs
+private void AddHolyPlaceMenus(CampaignGameStarter starter)
+{
+    starter.AddGameMenuOption("town", "holy_place", "Go to the {HOLY_PLACE}",
+    (MenuCallbackArgs args) => {
+        args.optionLeaveType = GameMenuOption.LeaveType.Submenu;
+        // set dynamic holy place name - church, mosque, etc
+        MBTextManager.SetTextVariable("HOLY_PLACE", "holy place", false);
+        return true;
+    },
+    delegate (MenuCallbackArgs args)
+    {
+        GameMenu.SwitchToMenu("holy_place");
+    }, false, 1, false);
+
+    starter.AddGameMenu("holy_place", "{MENU_TEXT}",
+    (MenuCallbackArgs args) => {
+
+        // set proper background picture
+        // args.MenuContext.SetBackgroundMeshName("some_bg_picture");
+
+        // set dynamic menu text
+        MBTextManager.SetTextVariable("MENU_TEXT", "You are in the holy place...", false);
+    }, TaleWorlds.CampaignSystem.Overlay.GameOverlays.MenuOverlayType.SettlementWithBoth);
+
+    starter.AddGameMenuOption("holy_place", "holy_place_enter", "Enter inside", (MenuCallbackArgs args) =>
+    {
+        args.optionLeaveType = GameMenuOption.LeaveType.Mission;
+        return true;
+    }, (MenuCallbackArgs args) =>
+    {
+        InformationManager.DisplayMessage(new InformationMessage("Closed!"));
+    }, true);
+
+    starter.AddGameMenuOption("holy_place", "leave", "Leave", (MenuCallbackArgs args) =>
+    {
+        args.optionLeaveType = GameMenuOption.LeaveType.Leave;
+        return true;
+    }, (MenuCallbackArgs args) => { GameMenu.SwitchToMenu("town"); }, true);
+}
+```
+
+
 ## Menus in-game
 
 - "town"
@@ -58,7 +105,7 @@ public void AddGameMenu(
     object relatedObject = null)
 ```
 
-## Background Image
+### Background Image
 
 ``` cs
 args.MenuContext.SetBackgroundMeshName("wait_raiding_village");
@@ -73,6 +120,25 @@ Can use custom 445x805 sprite there.
 - [Settlements Menu Image](/modding/settlements/#wait_mesh)
 - [Encounters](/modding/cultures/#xml) (encounter_background_mesh in cultures.xml)
 
+
+### MenuOverlayType
+
+`TaleWorlds.CampaignSystem.Overlay.GameOverlays.MenuOverlayType.SettlementWithBoth`
+
+Possible types:
+
+```cs
+public enum MenuOverlayType
+{
+    None,
+    SettlementWithParties,
+    SettlementWithCharacters,
+    SettlementWithBoth,
+    Encounter
+}
+```
+
+![](/pics/2411231500.jpg)
 
 
 ## AddGameMenuOption
