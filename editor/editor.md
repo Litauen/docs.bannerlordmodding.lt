@@ -46,7 +46,11 @@ Looking down to the ground also helps, so no entities will be visible.
 
 [slelukh](https://discord.com/channels/411286129317249035/677511186295685150/1217918112524140614): Install [Visual C++ Redistributable Packages for Visual Studio 2013](https://www.microsoft.com/en-us/download/details.aspx?id=40784)
 
+### Top Bar gone
 
+![](/pics/2411250838.png)
+
+Delete `..Documents\Mount and Blade II Bannerlord\Editor Files\Layouts`
 
 ### Editor Crashes
 

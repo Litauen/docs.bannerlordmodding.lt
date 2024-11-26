@@ -4,6 +4,12 @@
 * [Bannerlord Animation Documentation](https://docs.google.com/document/d/1fTZ80cahM0A4bgmTa9ermnBZiQY2APJ_sEXz22oKRjo/edit?tab=t.0)
 
 
+## Creat new clip in the Editor
+
+!!! quote "Kemo III:"
+    Make a new animation clip. Right click in the resource browser and create override (there's a bug if you try creating one that's not an override)<br>
+    You can then rename it if you don't want to override an existing clip.
+
 ## SetActionChannel
 
 Activates animation on the agent
