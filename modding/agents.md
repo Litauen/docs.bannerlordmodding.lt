@@ -115,6 +115,12 @@ agent.Position - position on the map in Vec3
 
 agent.Position.AsVec2 - position on the map in Vec2
 
+## Target
+
+    agent.GetTargetAgent()
+
+    agent.GetTargetPosition()
+
 ## Various
 
 How to get the position of a bone on an agent skeleton?

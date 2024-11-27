@@ -720,3 +720,11 @@ Implementation example: [Artem's Assassination Mod](https://www.nexusmods.com/mo
 
 
 !!! quote "hunharibo: I expanded on the NAudio integration idea a lot in TOR. Made a MixingSampleProvider so you can actually play multiple sound sources at the same time if you wanted to. It only takes 48khz stereo vorbis files though. [LINK](https://github.com/TheOldRealms/TOR_Core/tree/development/CSharpSourceCode/Audio). Also has rudimentary 3d spatial sound with stereo panning and distance attenuation"
+
+!!! warning "OGG for me worked only with NAudio v2.0.0 (crash otherwise)"
+    (VS) Tools - NuGet Package Manager - Package Manager Console<br>
+    `Install-Package NAudio -Version 2.0.0`
+
+    CRASH:<br>
+    Type: System.IO.FileNotFoundException<br>
+    Message: Could not load file or assembly 'NAudio.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=e279aa5131008a41' or one of its dependencies. The system cannot find the file specified.
