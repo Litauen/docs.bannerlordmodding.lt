@@ -4,6 +4,7 @@
 
 ``` cs
 Location tavern = LocationComplex.Current.GetLocationWithId("tavern");
+locationCharacter.SpecialTargetTag = "sp_notable";   // enforce where to place it
 tavern.AddCharacter(locationCharacter);
 ```
 

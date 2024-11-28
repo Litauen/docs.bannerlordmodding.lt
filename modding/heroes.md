@@ -329,6 +329,14 @@ Hero.ChangeState(Hero.CharacterStates.Active);
 * LastMeetingTimeWithPlayer - last time we met him
 * Hero.EncyclopediaText = new TextObject("Alive and kicking!"); - Encyclopedia text
 
+## Age
+
+    hero.Age
+
+Change:
+```cs
+hero.SetBirthDay(CampaignTime.Now - CampaignTime.Years(30));
+```
 
 ## Voice
 
