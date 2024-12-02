@@ -20,6 +20,43 @@ Where you control your character in 3D environment. Not a global map. Examples: 
 
 
 
+## MissionMode
+
+```cs
+if (Mission.Current?.Mode == MissionMode.Battle)...
+```
+
+```cs
+public enum MissionMode
+{
+    StartUp,
+    Conversation,
+    Battle,
+    Duel,
+    Stealth,
+    Barter,
+    Deployment,
+    Tournament,
+    Replay,
+    CutScene,
+    Benchmark
+}
+```
+
+## Method run order
+
+```
+OnCreated
+EarlyStart
+AfterStart
+    Mission.Current.PlayerEnemyTeam.ActiveAgents == 0 here
+OnDeploymentFinished
+    In the battle mission when actual battle starts
+    Mission.Current.PlayerEnemyTeam.ActiveAgents populated here
+OnRenderingStarted
+OnEndMission
+```
+
 ## OnAgentHit
 
 ``` cs

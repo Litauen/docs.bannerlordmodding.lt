@@ -178,3 +178,8 @@ public enum BoneBodyPartType : sbyte
 }
 ```
 
+## Make Voice
+
+``` cs
+agent.MakeVoice(SkinVoiceManager.VoiceType.Grunt, SkinVoiceManager.CombatVoiceNetworkPredictionType.NoPrediction);
+```
