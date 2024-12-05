@@ -20,6 +20,10 @@
 * [Terms](/3d/terms/)
 * Prepare the [Environment](/3d/environment/)
 
+### Native assets
+
+* [Export with TpacTool](/resources/tpactool/#model-export)
+
 ### Blender
 
 * [FBX import into Blender](/3d/blender_fbx_import/)

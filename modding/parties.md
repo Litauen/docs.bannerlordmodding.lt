@@ -21,6 +21,7 @@
 
 ``` cs
 PartyBase Settlement.Party
+party.CurrentSettlement
 ```
 
 ## MobileParty
@@ -114,6 +115,13 @@ for (int i = 0; i < MobileParty.MainParty.MemberRoster.Count; i++)
 
     AddCompanionAction.Apply()
 
+## Disorganized
+
+``` cs
+bool    IsDisorganized [get]
+void    SetDisorganized (bool isDisorganized)
+CampaignTime        DisorganizedUntilTime [get]
+```
 
 ## Destroy
 
