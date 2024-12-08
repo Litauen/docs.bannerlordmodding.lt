@@ -22,6 +22,12 @@
 
 By [hero](/modding/heroes/#renown)
 
+## Relation
+
+```cs
+int FactionManager.GetRelationBetweenClans(Clan clan1, Clan clan2)
+```
+
 ## Gold
 
 Clan leader's gold

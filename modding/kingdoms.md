@@ -6,7 +6,7 @@
 
 ## Notes
 
-Kingdom can exist without owning a Town. Castle is enough. (It was stated somewhere otherwise)
+Kingdom can exist without owning a Town. Castle is enough.
 
 With the existing Culture to create a Kingdom it is necessary to have:
 
@@ -31,6 +31,33 @@ foreach (Kingdom kingdom in Kingdom.All) { // do smthg }
 ## Strength
 
     float       TotalStrength [get]
+
+
+## Enemy kingdoms
+
+```cs
+IEnumerable<Kingdom> FactionManager.GetEnemyKingdoms(Kingdom faction)
+
+// gives bandits, minor factions also
+IEnumerable<IFaction> FactionManager.GetEnemyFactions(IFaction faction)
+```
+
+## Check stance
+
+```cs
+
+bool FactionManager.IsAtWarAgainstFaction(IFaction faction1, IFaction faction2)
+bool FactionManager.IsAlliedWithFaction(IFaction faction1, IFaction faction2)
+bool FactionManager.IsNeutralWithFaction(IFaction faction1, IFaction faction2)
+```
+
+## Set stance
+
+```cs
+void FactionManager.DeclareAlliance(IFaction faction1, IFaction faction2)
+void FactionManager.DeclareWar(IFaction faction1, IFaction faction2, bool isAtConstantWar = false)
+void FactionManager.SetNeutral(IFaction faction1, IFaction faction2)
+```
 
 
 ## Policies
