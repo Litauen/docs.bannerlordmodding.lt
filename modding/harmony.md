@@ -22,6 +22,17 @@ protected override void OnSubModuleLoad() {
     ...
 ```
 
+## Priority
+
+```cs
+[HarmonyPriority(999)]
+```
+
+then
+
+```cs
+[HarmonyPriority(998)]
+```
 
 ## Changing property with private setter
 
