@@ -1,6 +1,6 @@
 # Agents
 
-[TaleWorlds.MountAndBlade.Agent Class Reference](https://apidoc.bannerlord.com/v/1.1.0/class_tale_worlds_1_1_mount_and_blade_1_1_agent.html){target=_blank}
+[TaleWorlds.MountAndBlade.Agent Class Reference](https://apidoc.bannerlord.com/v/1.2.12/class_tale_worlds_1_1_mount_and_blade_1_1_agent.html){target=_blank}
 
 Agent - moving entity in the Mission: NPC, Player, horse, etc.
 

@@ -1,7 +1,7 @@
 # Missions
 
 - [TaleWorlds.MountAndBlade.Mission Class Reference](https://apidoc.bannerlord.com/v/1.1.0/class_tale_worlds_1_1_mount_and_blade_1_1_mission.html){target=_blank}
-- [MissionViews](/gauntletui/mission_views/)
+- [MissionView](/modding/missionview/)
 
 Where you control your character in 3D environment. Not a global map. Examples: Town, village, siege, battles, hideouts, prison break
 
@@ -42,6 +42,11 @@ public enum MissionMode
     Benchmark
 }
 ```
+
+## Check if siege
+
+    Mission.Current.IsSiegeBattle
+
 
 ## Method run order
 
@@ -95,7 +100,7 @@ SpectatorTeam
 
 ## Find Entity and it's position in scene
 
-TaleWorlds.Engine.Scene.FindEntityWithName or FindEntityWithTag and then you can get the entity Vec3 position from GameEntity.GlobalPosition
+`TaleWorlds.Engine.Scene.FindEntityWithName` or `FindEntityWithTag` and then you can get the entity Vec3 position from `GameEntity.GlobalPosition`
 
 
 ## Max scene coordinates
