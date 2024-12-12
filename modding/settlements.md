@@ -1,6 +1,6 @@
 # Settlements
 
-- [API](https://apidoc.bannerlord.com/v/1.1.0/class_tale_worlds_1_1_campaign_system_1_1_settlements_1_1_settlement.html){target=_blank}
+- [API](https://apidoc.bannerlord.com/v/1.2.12/class_tale_worlds_1_1_campaign_system_1_1_settlements_1_1_settlement.html){target=_blank}
 - [Calradia World Map Castles](https://docs.google.com/spreadsheets/d/1aXAwpqAKICjhjr4PGIeXeV1A5GcKsLHDAnNMjX6K1Qs/edit){target=_blank}
 - [Calradia World Map Villages](https://docs.google.com/spreadsheets/d/1VqSQAa1xDS3MwrWku55P_roDQS_HWXdLdgzOMhz_O3g/edit){target=_blank}
 - [Town Scenes](https://docs.google.com/presentation/d/1GMQqoVQnrmqpTq8xDSfySev2kmBMKiFxNVGRdOazRQs/edit#slide=id.p){target=_blank} by d&h
@@ -39,6 +39,11 @@ Settlement.CurrentSettlement
     .IsVillage
     .IsHideout
     .IsFortification (Town OR Castle)
+
+## Siege
+
+    bool        IsUnderSiege [get]
+    SiegeEvent  SiegeEvent [get, set]
 
 ## Granary/food
 
