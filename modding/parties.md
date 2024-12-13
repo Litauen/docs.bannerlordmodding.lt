@@ -1,6 +1,6 @@
 # Parties
 
-* [API 1.2.7](https://apidoc.bannerlord.com/v/1.2.7/class_tale_worlds_1_1_campaign_system_1_1_party_1_1_mobile_party.html)
+* [API](https://apidoc.bannerlord.com/v/1.2.12/class_tale_worlds_1_1_campaign_system_1_1_party_1_1_mobile_party.html)
 
 ## PartyBase
 
@@ -87,6 +87,13 @@ To add an additional line to the morale, it is necessary to patch `DefaultPartyM
     ```
     NOTE: I apply this as a late Harmony patch in OnGameStart
 
+
+## Food
+```cs
+int GetNumDaysForFoodToLast()
+float FoodChange                // how much eats / day
+int TotalFoodAtInventory
+```
 
 
 ## Get party Companions

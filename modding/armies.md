@@ -58,3 +58,42 @@ int             | TotalRegularCount                  | [get] | |
     PatrolAroundSettlement
     DefendingSettlement
 
+## Food
+
+```cs
+public static int GetDaysOfFoodLeftForArmy(Army army)
+{
+    if (army == null || army.Parties == null || army.Parties.Count == 0) return 0;
+
+    double totalDays = 0.0;
+    int partyCount = 0;
+
+    foreach (MobileParty mobileParty in army.Parties)
+    {
+        if (mobileParty.FoodChange < 0)
+        {
+            float daysUntilNoFood = mobileParty.Food / -mobileParty.FoodChange;
+            totalDays += Math.Max(daysUntilNoFood, 0f);
+            partyCount++;
+        }
+    }
+
+    int daysLeft = (int)MathF.Ceiling((float)(totalDays / partyCount));
+    return daysLeft;
+}
+```
+
+## Disband
+
+```cs
+DisbandArmyAction.ApplyByReleasedByPlayerAfterBattle(army);
+DisbandArmyAction.ApplyByArmyLeaderIsDead(army);
+DisbandArmyAction.ApplyByNotEnoughParty(army);
+DisbandArmyAction.ApplyByObjectiveFinished(army);
+DisbandArmyAction.ApplyByPlayerTakenPrisoner(army);
+DisbandArmyAction.ApplyByFoodProblem(army);
+DisbandArmyAction.ApplyByCohesionDepleted(army);
+DisbandArmyAction.ApplyByNoActiveWar(army);
+DisbandArmyAction.ApplyByUnknownReason(army);
+DisbandArmyAction.ApplyByLeaderPartyRemoved(army);
+```
