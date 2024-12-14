@@ -1,6 +1,6 @@
 # Items
 
-- [ItemObject TaleWorlds.Core.ItemObject Class Reference 1.2.7](https://apidoc.bannerlord.com/v/1.2.7/class_tale_worlds_1_1_core_1_1_item_object.html){target=_blank}
+- [ItemObject TaleWorlds.Core.ItemObject Class Reference](https://apidoc.bannerlord.com/v/1.2.12/class_tale_worlds_1_1_core_1_1_item_object.html){target=_blank}
 
 ## Tutorials
 
@@ -64,7 +64,26 @@ ItemObject grain = MBObjectManager.Instance.GetObject<ItemObject>("grain");
 
 ## ItemRoster
 
+* [API](https://apidoc.bannerlord.com/v/1.2.12/class_tale_worlds_1_1_campaign_system_1_1_roster_1_1_item_roster.html)
+
 Class to describe all items the Party/Town/Hero has.
+
+
+### Properties
+
+``` cs
+int     Count [get]
+float   TotalWeight [get]
+int     TotalFood [get]
+int     FoodVariety [get]
+int     TotalValue [get]
+int     TradeGoodsTotalValue [get]
+int     NumberOfPackAnimals [get]
+int     NumberOfLivestockAnimals [get]
+int     NumberOfMounts [get]
+```
+
+### Examples
 
 ??? example "Count all food items in the ItemRoster"
 

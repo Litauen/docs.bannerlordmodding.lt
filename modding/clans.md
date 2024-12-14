@@ -1,8 +1,10 @@
 # Clans
 
-[API 1.2.7](https://apidoc.bannerlord.com/v/1.2.7/class_tale_worlds_1_1_campaign_system_1_1_clan.html){target=_blank}
+* [API](https://apidoc.bannerlord.com/v/1.2.12/class_tale_worlds_1_1_campaign_system_1_1_clan.html){target=_blank}
 
-    Clan.PlayerClan
+
+
+`Clan.PlayerClan` - player's clan
 
 
 ## Tier

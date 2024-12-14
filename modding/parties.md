@@ -128,6 +128,7 @@ for (int i = 0; i < MobileParty.MainParty.MemberRoster.Count; i++)
 bool    IsDisorganized [get]
 void    SetDisorganized (bool isDisorganized)
 CampaignTime        DisorganizedUntilTime [get]
+DefaultPartyImpairmentModel -  bool CanGetDisorganized(PartyBase party)
 ```
 
 ## Destroy
