@@ -78,4 +78,5 @@ Why some modders don't like Steam:
 * In order to publish on Steam Workshop it's necessary to launch up the scene editor and do a whole bunch of extra steps
 * Auto updates look convenient at first glance but they are forced-fed and can brick hundreds of hours worth of saves easily
 * Nightmarish standard folder structure, based on workshop ID number instead of names. It's absolute garbage to backup/maintain a complex list
-
+* You have to pick your image right there; you can't leave it blank and you can't change it later
+* Unable to have multiple versions of your mod
