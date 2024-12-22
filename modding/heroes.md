@@ -90,6 +90,19 @@ Personality traits
 * Generosity - Generosity represents your loyalty to your kin and those who serve you, and your gratitude to those who have done you a favor.
 * Calculating - Calculating represents your ability to control your emotions for the sake of your long-term interests.
 
+??? example "Defined in &lt;NPCCharacters> files, like lords.xml:"
+    ```xml
+    <Traits>
+        <Trait id="Mercy" value="-1"/>
+        <Trait id="Valor" value="2"/>
+        <Trait id="Honor" value="0"/>
+        <Trait id="Generosity" value="1"/>
+        <Trait id="Calculating" value="2"/>
+        <Trait id="Egalitarian" value="-1"/>
+        <Trait id="Oligarchic" value="1"/>
+        <Trait id="Authoritarian" value="2"/>
+    </Traits>
+    ```
 
 ??? abstract "Other traits"
 
@@ -157,7 +170,7 @@ Personality traits
     * ArabianHair
     * SteppeHair
 
-??? abstract "NPC99: Approx relationship between Lord traits and skills:"
+??? abstract "NPC99.: Approx relationship between Lord traits and skills:"
 
     ![](/pics/JCtw0gl.png)
 
@@ -542,6 +555,19 @@ Add an entry into [lords.xml](/modding/npc_character/)
 ``` xml
 
     <NPCCharacter ...
+
+
+    <!-- Traits -->
+    <Traits>
+        <Trait id="Mercy" value="-1"/>
+        <Trait id="Valor" value="2"/>
+        <Trait id="Honor" value="0"/>
+        <Trait id="Generosity" value="1"/>
+        <Trait id="Calculating" value="2"/>
+        <Trait id="Egalitarian" value="-1"/>
+        <Trait id="Oligarchic" value="1"/>
+        <Trait id="Authoritarian" value="2"/>
+    </Traits>
 ```
 
 ## Player start
