@@ -475,6 +475,8 @@ agent.MakeVoice(SkinVoiceManager.VoiceType.Grunt, SkinVoiceManager.CombatVoiceNe
 
 Create your own soundtrack.xml in YOURMOD/music/soundtrack.xml
 
+You can take native file as a starting point from: `SteamLibrary\steamapps\common\Mount & Blade II Bannerlord\music\soundtrack.xml`
+
 ``` cs
 using System;
 using HarmonyLib;
