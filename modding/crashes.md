@@ -313,6 +313,8 @@
     InitializeCaravanOnCreation
     CharacterObject characterObject = CharacterObject.All.First((CharacterObject character) => character.Occupation == Occupation.CaravanGuard && character.IsInfantry && character.Level == 26 && character.Culture == mobileParty.Party.Owner.Culture);
     ```
+    SOLUTION: create CaravanGuard in your new culture<br>
+    and match this: Occupation.CaravanGuard && character.IsInfantry && character.Level == 26
 
 ??? failure "Single - CharacterCreationCultureStageVM - SortCultureList - CharacterCreationCultureStageView"
     REASON: Native culture is removed or is made is_main_culture=true
