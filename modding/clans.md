@@ -15,6 +15,20 @@
 
     Clan.Heroes         // alive and dead
 
+## Settlements
+
+    Clan.Settlements
+
+## Parties
+
+```cs
+foreach (WarPartyComponent warParty in clan.WarPartyComponents)
+{
+    MobileParty party = warParty.MobileParty;
+    // do something ...
+}
+```
+
 ## Renown
 
     Clan.Renown
