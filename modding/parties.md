@@ -138,6 +138,12 @@ DefaultPartyImpairmentModel -  bool CanGetDisorganized(PartyBase party)
 [Don't use](https://discord.com/channels/411286129317249035/677511186295685150/1263112214873772043) MobileParty.RemoveParty()
 
 
+## Desert troops
+
+```cs
+MobilePartyHelper.DesertTroopsFromParty(MobileParty party, int stackNo, int numberOfDeserters, int numberOfWoundedDeserters, ref TroopRoster desertedTroopList)
+```
+
 ## Main party on game start
 
 Add 50 grain on start:

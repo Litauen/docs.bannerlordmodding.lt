@@ -64,6 +64,12 @@ Clan leader's gold
     }
     ```
 
+## Influence
+
+```cs
+float Influence
+```
+
 
 ## XML
 
