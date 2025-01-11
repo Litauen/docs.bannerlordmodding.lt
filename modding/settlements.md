@@ -28,8 +28,10 @@ Settlement.CurrentSettlement
 
 ## Notables
 
-    Settlement.Notables
-    if (town.Notables.Contains(notable)) return true;
+```cs
+Settlement.Notables
+if (town.Notables.Contains(notable)) return true;
+```
 
 ## Type of Settlement
 
@@ -131,11 +133,23 @@ Is building default project?
 bool building.BuildingType.IsDefaultProject
 ```
 
+
 ## Town
+
+Applies to towns AND castles
 
 ### TradeBoundVillages
 
-    Settlement.Town.TradeBoundVillages
+```cs
+MBReadOnlyList<Village> Settlement.Town.TradeBoundVillages
+```
+
+### Wall Level
+
+```cs
+int Settlement.Town.GetWallLevel()
+```
+
 
 ## Village
 
