@@ -83,6 +83,12 @@ default -0.2f is too fast ant looks unnatural
 
 When agent plays a looping animation set with SetActionChannel to stop it set it to act_none action.
 
+## Revert to default animation
+
+```cs
+agent.SetActionChannel(1, ActionIndexCache.act_none, ignorePriority: true);
+```
+
 
 ## Workflow
 
