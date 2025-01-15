@@ -241,6 +241,30 @@ What is interesting/weird - if you change name in the settlements.xml - the name
     Make changes to the settlemens.xml, then make file copy to the CUSTOM_settlements.xml.
     Otherwise files will be different and Editor uses settlemens.xml and if you change something on the map, changes will go to settlements.xml, it's get deleted with xslt and your CUSTOM file will be used with mismatching map and you will get a crash.
 
+### Village Production
+
+    VillageType.silk_plant
+    VillageType.cattle_farm
+    VillageType.silver_mine
+    VillageType.iron_mine
+    VillageType.lumberjack
+    VillageType.wheat_farm
+    VillageType.fisherman
+    VillageType.europe_horse_ranch
+    VillageType.sheep_farm
+    VillageType.flax_plant
+    VillageType.vineyard
+    VillageType.date_farm
+    VillageType.olive_trees
+    VillageType.swine_farm
+    VillageType.clay_mine
+    VillageType.trapper
+    VillageType.desert_horse_ranch
+    VillageType.sturgian_horse_ranch
+    VillageType.salt_mine
+    VillageType.steppe_horse_ranch
+    VillageType.vlandian_horse_ranch
+    VillageType.battanian_horse_ranch
 
 ### background_mesh
 
