@@ -627,6 +627,13 @@ Use [Fmod Bank Tools](https://www.nexusmods.com/rugbyleaguelive3/mods/2?tab=docs
 
 ![](/pics/2409030815.png)
 
+
+## Custom culture dialog voices
+
+[Different dialects for your new culture's NPCs](https://docs.bannerlordmodding.lt/guides/custom_culture/#dialog-voices)
+
+
+
 ## NAudio
 
 !!! quote "Artem:"

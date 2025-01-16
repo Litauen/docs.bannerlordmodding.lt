@@ -1,4 +1,4 @@
-# Custom Culture Selection Screen
+# Custom Culture
 
 ![](/pics/c2soKfU.png)
 
@@ -249,3 +249,52 @@ Fixed scene:
 
 ![](/pics/2409180859.png)
 
+
+## Dialog Voices
+
+Make your culture's NPCs talk in different dialects.
+
+Change your culture's accordingly.
+
+```cs
+[HarmonyPatch(typeof(DefaultVoiceOverModel), "GetAccentClass")]
+public class DefaultVoiceOverModel_GetAccentClass_Patch
+{
+    static void Postfix(ref string __result, CultureObject culture, bool isHighClass)
+    {
+
+        if (culture.StringId == "baltic" || culture.StringId == "latvian" || culture.StringId == "estonian")
+        {
+            __result = "battanian";
+        }
+        else if (culture.StringId == "crusader")
+        {
+            __result = "vlandian";
+        }
+        else if (culture.StringId == "danish")
+        {
+            if (isHighClass)
+            {
+                __result = "imperial_high";
+            }
+            else
+            {
+                __result = "imperial_low";
+            }
+        }
+        else if (culture.StringId == "rus")
+        {
+            __result = "sturgian";
+        }
+
+        // other options: khuzait, aserai, forest_bandits, sea_raiders, mountain_bandits, desert_bandits, steppe_bandits, looters
+
+    }
+}
+```
+
+
+## Other changes
+
+* [Menu backgrounds](/guides/custom_menu_background/)
+* [Starting positions](/guides/custom_start_positions/)
