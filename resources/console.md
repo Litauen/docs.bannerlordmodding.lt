@@ -55,6 +55,8 @@ Alt + `
 - campaign.set_main_party_attackable 0
 - campaign.declare_war faction1 faction2
 - campaign.declare_peace faction1 faction2
+- campaign.add_modified_item [Item] | [Modifier]<br>
+    campaign.add_modified_item Spike Mace | Legendary
 
 NOTE: faction1/faction2 can be your clan's name
 

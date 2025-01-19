@@ -31,3 +31,34 @@ It's all from just extensive observations and testing by changing things in scen
 ## Various
 
 search for "debug" in the entity browser, place it down and run it's script, there you can choose what type of scene you are making and see the requirements for it in terms of spawners and such
+
+
+## Native scenes with terrain
+
+!!! quote "FoozleMcDoozle:"
+
+The only base game scenes that have terrain are:
+
+    sp:
+    empire_village_003
+    khuzait_village_g
+    battania_village_k
+    sturgia_village_l
+    khuzait_castle_002
+    sturgia_town_b
+    battle_terrain_v
+    empire_castle_keep_a_l3_interior
+    empire_house_c_tavern_a
+    empire_dungeon_a
+    arena_empire_a
+    Main_map
+    sea_bandit_a
+    mountain_hideout_002
+
+    mp:
+    mp_siege_map_003
+    mp_skirmish_map_002f
+    mp_sergeant_map_008
+    mp_tdm_map_001
+    mp_battle_map_002
+    mp_duel_mode_map_004
