@@ -71,7 +71,7 @@ After crash/restart Texture appears deleted
 
 - settlements.xml missing from /MOD/ModuleData folder
 
-- When there is some error in the XML files (settlements.xml?)
+- When there is some error in the XML file (settlements.xml)
     Double < Settlements/> for example
 
 - Last line in the log: opening ../../Modules/MODULE_NAME/ModuleData/settlements.xml - missing settlements.xml
