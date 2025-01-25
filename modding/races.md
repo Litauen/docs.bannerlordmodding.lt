@@ -1,5 +1,7 @@
 # Races
 
+* [How to import a new skeleton to Bannerlord](https://www.youtube.com/watch?v=gL0ZfNhnrn0)
+
 ## Create a new race
 
 Info by [TheCooler Jason](https://discord.com/channels/411286129317249035/697071354603765791/1269438122278653973)

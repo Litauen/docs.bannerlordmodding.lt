@@ -1,5 +1,7 @@
 # Armature/Skeleton
 
+* [How to import a new skeleton to Bannerlord](https://www.youtube.com/watch?v=gL0ZfNhnrn0)
+
 ![](/pics/2410021050.png)
 
 Skeleton is necessary for all the rigged items (body armors/helmets/shoulder coverings/gloves/shoes/horse armors).

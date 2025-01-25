@@ -199,6 +199,7 @@ These are the banner icons that the game will use when creating a banner for new
 
 ![](/pics/banner_icons.png)
 
+![](/pics/bannersASC.png)
 
 * [Creating Custom Banner Icons & Colors](https://moddocs.bannerlord.com/asset-management/creating_custom_banner_icons/)
 
