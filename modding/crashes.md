@@ -575,7 +575,15 @@ REASON2: error in the scene's xscene file
 REASON: Bad troop id: villager_danish vs danish_villager
 
 
+----
+    When cheat mode ON and Party icon is pressed
+REASON: upgrade_target for some troop set to non-existant troop
 
+!!! abstract "In such a case log shows:"
+    Exception occured inside invoke: ExecuteOpenParty<br>
+    Target type: TaleWorlds.CampaignSystem.VieModelCollection.Map.MapBar.MapNavigationVM<br>
+    Argument cound: 0<br>
+    Inner message: Object reference not set to an instance of an object.
 
 --------
 
