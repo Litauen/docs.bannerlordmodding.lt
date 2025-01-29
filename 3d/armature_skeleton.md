@@ -1,6 +1,7 @@
 # Armature/Skeleton
 
 * [How to import a new skeleton to Bannerlord](https://www.youtube.com/watch?v=gL0ZfNhnrn0)
+* [Download skeletons from here](https://drive.google.com/drive/folders/1mi2y_sO-ctpqScMlT5zvU1r01L2810_V)
 
 ![](/pics/2410021050.png)
 

@@ -432,6 +432,10 @@ Mesh (3D model's name) usually is different from the ItemID, and you can find it
 
 You will need it for export from [TpacTool](/resources/tpactool/) and working with 3D program such as Blender.
 
+## Remove Native Items
+
+Example [here](/modding/xml/#example-deleteremove-native-items)
+
 ## Helmet Hair Coverage
 
 ??? abstract "Helmet Hair Coverage"

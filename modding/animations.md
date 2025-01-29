@@ -89,6 +89,11 @@ When agent plays a looping animation set with SetActionChannel to stop it set it
 agent.SetActionChannel(1, ActionIndexCache.act_none, ignorePriority: true);
 ```
 
+## Pause the animation
+
+```cs
+agent.SetCurrentActionSpeed(0, 0f);
+```
 
 ## Workflow
 

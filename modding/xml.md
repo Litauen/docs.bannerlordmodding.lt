@@ -190,7 +190,7 @@ Add lords.xml file there:
     </xsl:stylesheet>
     ```
 
-### Example - Delete native items
+### Example - Delete/Remove native items
 
 Will delete some items from the `\Modules\SandBoxCore\ModuleData\items\head_armors.xml`
 
@@ -242,6 +242,30 @@ In file `head_armors.xslt` add:
 
 In the game those items should not be present now.
 
+
+!!! warning "Some items are hardcoded"
+    If you will remove them, it is possible to get a crash in the tournament.
+    To solve that you need to (harmony) patch this method:
+    ```cs
+        private void CachePossibleEliteRewardItems()
+        {
+            if (this._possibleEliteRewardItemObjectsCache == null)
+            {
+                this._possibleEliteRewardItemObjectsCache = new MBList<ItemObject>();
+            }
+            foreach (string text in new string[]
+            {
+                "winds_fury_sword_t3", "bone_crusher_mace_t3", "tyrhung_sword_t3", "pernach_mace_t3", "early_retirement_2hsword_t3", "black_heart_2haxe_t3", "knights_fall_mace_t3", "the_scalpel_sword_t3", "judgement_mace_t3", "dawnbreaker_sword_t3",
+                "ambassador_sword_t3", "heavy_nasalhelm_over_imperial_mail", "sturgian_helmet_closed", "full_helm_over_laced_coif", "desert_mail_coif", "heavy_nasalhelm_over_imperial_mail", "plumed_nomad_helmet", "ridged_northernhelm", "noble_horse_southern", "noble_horse_imperial",
+                "noble_horse_western", "noble_horse_eastern", "noble_horse_battania", "noble_horse_northern", "special_camel", "western_crowned_helmet", "northern_warlord_helmet", "battania_warlord_pauldrons", "aserai_armor_02_b", "white_coat_over_mail",
+                "spiked_helmet_with_facemask"
+            })
+            {
+                this._possibleEliteRewardItemObjectsCache.Add(Game.Current.ObjectManager.GetObject<ItemObject>(text));
+            }
+            this._possibleEliteRewardItemObjectsCache.Sort((ItemObject x, ItemObject y) => x.Value.CompareTo(y.Value));
+        }
+    ```
 
 ### Custom spnpccharacters.xml case
 
