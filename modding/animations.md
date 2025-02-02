@@ -95,6 +95,21 @@ agent.SetActionChannel(1, ActionIndexCache.act_none, ignorePriority: true);
 agent.SetCurrentActionSpeed(0, 0f);
 ```
 
+## Facial animations
+
+!!! quote "Artem:"
+
+Facial animations won't work properly if the agent is using a game object - each idle that an agent performs inside missions have a designated game object tied to them, like standing guard or tavern wench serving and there only the first frame of the facial animation will get used for some reason (weird behavior). You'd need to cancel the animation and call it again for facial animations to work - in the case of my bard here is the code that worked:
+```cs
+if (courtJester.GetCurrentAction(0).Name.Contains("act_artemfeast_playing_lyre_bard") && courtJester.IsUsingGameObject)
+{
+    courtJester.StopUsingGameObject(true); //makes agent stop using the object
+    courtJester.SetActionChannel(0, ActionIndexCache.act_none, true); //sets the action to none
+    courtJester.SetActionChannel(0, ActionIndexCache.Create("act_artemfeast_playing_lyre_bard"), true); //sets the new animation
+    courtJester.SetAgentFacialAnimation(Agent.FacialAnimChannel.High, "talking_engaged", true); //adds facial animation via loop (facial animations already work without this, but I want it to loop that's why I put it here)
+}
+```
+
 ## Workflow
 
 !!! quote "Artem:"

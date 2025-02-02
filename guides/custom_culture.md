@@ -250,45 +250,48 @@ Fixed scene:
 ![](/pics/2409180859.png)
 
 
-## Dialog Voices
+## Dialog Text/Voices
 
 Make your culture's NPCs talk in different dialects.
 
 Change your culture's accordingly.
 
 ```cs
-[HarmonyPatch(typeof(DefaultVoiceOverModel), "GetAccentClass")]
-public class DefaultVoiceOverModel_GetAccentClass_Patch
+[HarmonyPatch(typeof(ConversationManager), "FindMatchingTextOrNull")]
+public static class ConversationManager_FindMatchingTextOrNull_Patch
 {
-    static void Postfix(ref string __result, CultureObject culture, bool isHighClass)
+    static void Prefix(CharacterObject character, out CultureObject __state)
     {
+        // Save the original culture
+        __state = character.Culture;
 
-        if (culture.StringId == "baltic" || culture.StringId == "latvian" || culture.StringId == "estonian")
+        // Temporarily assign the fake culture
+        string fakeCulture = "empire";
+        if (__state.StringId == "baltic" || __state.StringId == "latvian" || __state.StringId == "estonian")
         {
-            __result = "battanian";
+            fakeCulture = "battania";
         }
-        else if (culture.StringId == "crusader")
+        else if (__state.StringId == "crusader")
         {
-            __result = "vlandian";
+            fakeCulture = "vlandia";
         }
-        else if (culture.StringId == "danish")
+        else if (__state.StringId == "danish")
         {
-            if (isHighClass)
-            {
-                __result = "imperial_high";
-            }
-            else
-            {
-                __result = "imperial_low";
-            }
+            fakeCulture = "empire";
         }
-        else if (culture.StringId == "rus")
+        else if (__state.StringId == "rus" || __state.StringId == "polish")
         {
-            __result = "sturgian";
+            fakeCulture = "sturgia";
         }
+        // aserai / khuzait
 
-        // other options: khuzait, aserai, forest_bandits, sea_raiders, mountain_bandits, desert_bandits, steppe_bandits, looters
+        character.Culture = Game.Current.ObjectManager.GetObjectTypeList<CultureObject>().FirstOrDefault(c => c.StringId == fakeCulture);
+    }
 
+    // Restore the original culture
+    static void Postfix(CharacterObject character, CultureObject __state)
+    {
+        character.Culture = __state;
     }
 }
 ```
