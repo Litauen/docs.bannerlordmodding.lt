@@ -2,7 +2,7 @@
 
 - [API 1.2.10](https://apidoc.bannerlord.com/v/1.2.10/class_tale_worlds_1_1_core_1_1_item_object.html)
 - [XML Culture doc](https://docs.bannerlordmodding.com/_xmldocs/spcultures/culture/)
-- [Custom Culture Selection Screen](/guides/custom_culture_selection_screen/)
+- [Custom Culture](/guides/custom_culture/)
 
 ## Default cultures
 
