@@ -266,7 +266,7 @@ public static class ConversationManager_FindMatchingTextOrNull_Patch
         __state = character.Culture;
 
         // Temporarily assign the fake culture
-        string fakeCulture = "empire";
+        string fakeCulture = "";
         if (__state.StringId == "baltic" || __state.StringId == "latvian" || __state.StringId == "estonian")
         {
             fakeCulture = "battania";
@@ -285,7 +285,7 @@ public static class ConversationManager_FindMatchingTextOrNull_Patch
         }
         // aserai / khuzait
 
-        character.Culture = Game.Current.ObjectManager.GetObjectTypeList<CultureObject>().FirstOrDefault(c => c.StringId == fakeCulture);
+        if (fakeCulture != "") character.Culture = Game.Current.ObjectManager.GetObjectTypeList<CultureObject>().FirstOrDefault(c => c.StringId == fakeCulture);
     }
 
     // Restore the original culture
@@ -295,7 +295,7 @@ public static class ConversationManager_FindMatchingTextOrNull_Patch
     }
 }
 ```
-
+!!! warning "Some users reported that this patch does not always work properly. Use it at your own risk."
 
 ## Other changes
 
