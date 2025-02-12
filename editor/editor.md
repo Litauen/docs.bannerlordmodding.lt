@@ -11,6 +11,12 @@
 * ["Start Mission" does not work](https://forums.taleworlds.com/index.php?threads/v1-2-7-test-function-in-scene-creator-start-mission-dont-work.460937/)
 
 
+## Controller cursor
+
+![](/pics/2402110846.png)
+
+If you see this cursor and you can't access any menus - make sure to not have any controller plugged in while using the Editor. (Xbox controller or any other kind).
+
 ## Notes
 
 - Editor needs to be on the same disk as the Game, as the modding tools use the base games files - they both install to the same folder, and that only works if they are on the same disk
