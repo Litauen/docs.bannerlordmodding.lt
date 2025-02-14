@@ -38,7 +38,7 @@
 
 ### Blender (additional)
 
-* For body armors
+* For body armors/hats
     * _slim version for gloves
     * _converted version for females
 * For helmets:
