@@ -17,6 +17,9 @@ Now, Never, IsFuture, IsPast, IsNow, IsDayTime, IsNightTime
 
 GetHourOfDay, GetDayOfWeek, GetDayOfSeason, GetDayOfYear, GetSeasonOfYear, GetYear
 
+```cs
+if (CampaignTime.Now.GetSeasonOfYear == CampaignTime.Seasons.Winter) {}
+```
 
 
 ### Time diff from/to in normal time units
