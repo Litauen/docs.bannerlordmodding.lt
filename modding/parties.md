@@ -39,6 +39,14 @@ PartyBase MobileParty.Party
 .MemberRoster
 ```
 
+## Garrison
+
+``` cs
+bool MobileParty.IsGarrison
+```
+
+Garrison party does not have `.ActualClan`. To check the clan use `MobileParty.CurrentSettlement.OwnerClan`
+
 ## Count members
 
 TroopRoster

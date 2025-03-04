@@ -167,7 +167,33 @@
 ??? failure "CalculateDailyProductionAmount - GetWerehouseCapacity - TickProductions - OnNewGameCreatedPartialFollowUp"
     REASON: assigned a settlement to non-existant clan<br>
     REASON2: error in defining minor_clan, I had label_color="FF7264D16" (one digit too many in the color code)<br>
-    REASON3: error in defining a clan, had NaN in banner_key="11.141.19.1836.1836.768.788.1.0.NaN.510...., wrong/duplicate Faction id=
+    REASON3: error in defining a clan, had NaN in banner_key="11.141.19.1836.1836.768.788.1.0.NaN.510...., wrong/duplicate Faction id=<br>
+
+
+
+??? failure "MapScreen.OnInitialize - ScreenBase.HandleInitialize - CleanAndPushScreen"
+    REASON: deleted such __empty_entity from the World Map (by BuBu):
+    ```xml
+    <game_entity name="__empty_object" old_prefab_name="__empty_object" mobility="1">
+        <transform position="699.963, 750.106, 2.149" rotation_euler="0.000, 0.000, 0.000"/>
+        <scripts>
+            <script name="CampaignMapSiegePrefabEntityCache">
+                <variables>
+                    <variable name="_attackerBallistaPrefab" value="ballista_a_mapicon"/>
+                    <variable name="_defenderBallistaPrefab" value="ballista_b_mapicon"/>
+                    <variable name="_attackerFireBallistaPrefab" value="ballista_a_fire_mapicon"/>
+                    <variable name="_defenderFireBallistaPrefab" value="ballista_b_fire_mapicon"/>
+                    <variable name="_attackerMangonelPrefab" value="mangonel_a_mapicon"/>
+                    <variable name="_defenderMangonelPrefab" value="mangonel_b_mapicon"/>
+                    <variable name="_attackerFireMangonelPrefab" value="mangonel_a_fire_mapicon"/>
+                    <variable name="_defenderFireMangonelPrefab" value="mangonel_b_fire_mapicon"/>
+                    <variable name="_attackerTrebuchetPrefab" value="trebuchet_a_mapicon"/>
+                    <variable name="_defenderTrebuchetPrefab" value="trebuchet_b_mapicon"/>
+                </variables>
+            </script>
+        </scripts>
+    </game_entity>
+    ```
 
 ??? failure "NameGenerator - CalculateNameScore - SelectNameIndex - GenerateHeroFirstName - CreateSpecialHero - InitialChildGenerationCampaignBehavior - OnNewGameCreatedPartialFollowUp"
     REASON: Clan's owner was non-existant Lord

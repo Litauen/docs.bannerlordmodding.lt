@@ -29,6 +29,7 @@ foreach (WarPartyComponent warParty in clan.WarPartyComponents)
 }
 ```
 
+
 ## Renown
 
     Clan.Renown
