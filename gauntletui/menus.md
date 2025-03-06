@@ -82,6 +82,12 @@ private void AddHolyPlaceMenus(CampaignGameStarter starter)
 }
 ```
 
+## Open menu
+
+```cs
+GameMenu.SwitchToMenu("holy_place");
+```
+
 
 ## Menus in-game
 
@@ -194,22 +200,23 @@ args.optionLeaveType = GameMenuOption.LeaveType.ICON_NAME;
 
 ## Menu with waiting
 
-??? info "AddWaitGameMenu"
+Basic example:
 
 
-    ``` cs
-    Basic example:
+``` cs
 
     private static CampaignTime actionStart = CampaignTime.Now;
 
     campaignGameStarter.AddWaitGameMenu("wait_menu_name", "top text", delegate (MenuCallbackArgs args)
     {
+        // how long to wait
         args.MenuContext.GameMenu.SetTargetedWaitingTimeAndInitialProgress(10f, 0f);
+
         actionStart = CampaignTime.Now;
-    }, delegate (MenuCallbackArgs args)
+    }, delegate (MenuCallbackArgs args) // condition
     {
         return true;
-    }, delegate (MenuCallbackArgs args)
+    }, delegate (MenuCallbackArgs args) // consequence
     {
         GameMenu.ExitToLast();
     }, delegate (MenuCallbackArgs args, CampaignTime dt)
@@ -217,6 +224,7 @@ args.optionLeaveType = GameMenuOption.LeaveType.ICON_NAME;
         args.MenuContext.GameMenu.SetProgressOfWaitingInMenu((float)actionStart.ElapsedHoursUntilNow / 10);
     }, GameMenu.MenuAndOptionType.WaitMenuShowOnlyProgressOption, GameOverlays.MenuOverlayType.None, 0f, GameMenu.MenuFlags.None, null);
 
+    // if this AddGameMenuOption is missing - progress bar will not be visible
     campaignGameStarter.AddGameMenuOption("wait_menu_name", "leave", "Leave", delegate (MenuCallbackArgs args)
     {
         args.optionLeaveType = GameMenuOption.LeaveType.Leave;
@@ -224,10 +232,12 @@ args.optionLeaveType = GameMenuOption.LeaveType.ICON_NAME;
     }, delegate (MenuCallbackArgs args)
     {
         GameMenu.ExitToLast();
-    }, false, -1, false);
-    ```
+    },
+    true, // (bool isLeave) if true here and there is no GameMenu.ExitToLast() above or similar -> wait menu will hang and game will need a reload
+          // if no action is needed - make it false here to avoid hang
+    -1, false);
+```
 
-args.MenuContext.GameMenu.SetTargetedWaitingTimeAndInitialProgress(10, 0f); - set's how long to wait
 
 !!! warning "args.MenuContext.GameMenu.SetProgressOfWaitingInMenu(100); - stops the waiting (even if previously wait time is not reached yet)"
 

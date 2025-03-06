@@ -12,6 +12,9 @@ Campaign.CurrentTime { return (float)CampaignTime.Now.ToHours; }
 
 Now, Never, IsFuture, IsPast, IsNow, IsDayTime, IsNightTime
 
+```cs
+if (lastPrayTime == CampaignTime.Never) {}
+```
 
 ### Get details
 
@@ -34,17 +37,28 @@ RemainingMillisecondsFromNow ...
 
 MillisecondsFromNow, SecondsFromNow, MinutesFromNow, HoursFromNow, DaysFromNow, WeeksFromNow, YearsFromNow
 
+```cs
+if (lastPrayTime.ElapsedHoursUntilNow > 24) {}
+```
 
 
 ### Conversion to normal Time units
 
 ToMilliseconds, ToSeconds. ToMinutes, ToHours, ToDays, ToWeeks, ToSeasons, ToYears
 
+```cs
+CampaignTime value.ToSeconds
+```
 
 
 ### Conversion to CampaignTime
 
 public static CampaignTime Milliseconds(long valueInMilliseconds), Seconds, Minutes, Hours, Days, Weeks, Seasons, Years
+
+```cs
+return CampaignTime.Seconds((long)seconds);
+```
+
 
 ### SetTimeSpeed
 

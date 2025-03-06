@@ -301,6 +301,8 @@ int CharacterRelationManager.GetHeroRelation(Hero hero1, Hero hero2)
 ``` cs
 CharacterRelationManager.SetHeroRelation(Hero.MainHero, otherHero, -25);
 void CharacterRelationManager.SetHeroRelation(Hero hero1, Hero hero2, int value)
+
+// use this one
 ChangeRelationAction.ApplyRelationChangeBetweenHeroes(notable, clan.Leader, -20, true);
 ```
 
