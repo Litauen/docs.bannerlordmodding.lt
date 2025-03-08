@@ -3,6 +3,7 @@
 ## Debug
 
 - [ButterLib](https://www.nexusmods.com/mountandblade2bannerlord/mods/2018) - catches (almost) all exceptions in BEW style and gives the ability to save the crash report
+- [Useful Ui Debug Ex](https://www.nexusmods.com/mountandblade2bannerlord/mods/7733) - Tool for UI modders. Add more useful info to UI debug window.
 
 ## Workflow
 
