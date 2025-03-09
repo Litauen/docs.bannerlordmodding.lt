@@ -28,12 +28,12 @@ Widgets can be moved around with drag and drop
 ## Drop
 * AcceptDrop - Set to true to allow droping the draggable items onto this widget
 * CommandParameter.Drop - Optional, additional string parameter to pass to the drop method
-* Command.Drop - method to call on drop, with arguments of these types:
-  * <ViewModel> - some specific type of your dragged ViewModel or Widget
-  * int - index of position to insert if the AcceptDrop widget is list.
+* Command.Drop - Method to call on drop, with arguments of these types:
+  * \<ViewModel\> - Some specific type of your dragged ViewModel or Widget
+  * int - Index of position to insert if the AcceptDrop widget is list.
     * Also, list with drops has automatic visual behavior of parting items to show insertion point
     * Otherwise for not lists the index will be -1
-  * string - Only if Drop parameter was passed,
+  * string - Only if Drop parameter was passed
   
   The order of arguments must be as above, and if the Drop parameter was used in XML, it must be also included in the method, or the game will crash. Likewise, the game will crash if the VM argument type does not match
 
