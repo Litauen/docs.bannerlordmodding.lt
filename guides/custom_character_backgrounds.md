@@ -1,31 +1,33 @@
 ﻿# Custom character backgrounds
 
+!!! info "Guide by TheMadProphet"
+
 `CharacterCreationState` is a [Game State](/modding/game_states/) which controls what options should be displayed during character creation.
 
 We can create and inject our own `CharacterCreationState`, which can either extend or completely replace the existing options.
 
 By default, game uses `SandboxCharacterCreationContent`, which is created inside `SandBoxGameManager`:
 ```cs
-private void LaunchSandboxCharacterCreation()  
-{  
+private void LaunchSandboxCharacterCreation()
+{
     CharacterCreationState characterCreationState = Game.Current.GameStateManager.CreateState<CharacterCreationState>( new object[] { new SandboxCharacterCreationContent() } );  
-    Game.Current.GameStateManager.CleanAndPushState(characterCreationState, 0);  
+    Game.Current.GameStateManager.CleanAndPushState(characterCreationState, 0);
 }
 ```
 
 Using [harmony](/modding/harmony/), we can modify this method and insert our own state:
 ```cs
-[HarmonyPatch]  
-public class CharacterCreationPatch  
-{  
-    [HarmonyPrefix]  
-    [HarmonyPatch(typeof(SandBoxGameManager), "LaunchSandboxCharacterCreation")]  
-    public static bool LaunchCustomCharacterCreation()  
+[HarmonyPatch]
+public class CharacterCreationPatch
+{
+    [HarmonyPrefix]
+    [HarmonyPatch(typeof(SandBoxGameManager), "LaunchSandboxCharacterCreation")]
+    public static bool LaunchCustomCharacterCreation()
     {
-        var characterCreationState = Game.Current.GameStateManager.CreateState<CharacterCreationState>( new CustomCharacterCreationContent() );  
-        Game.Current.GameStateManager.CleanAndPushState(characterCreationState, 0);  
-  
-        return false;  
+        var characterCreationState = Game.Current.GameStateManager.CreateState<CharacterCreationState>( new CustomCharacterCreationContent() );
+        Game.Current.GameStateManager.CleanAndPushState(characterCreationState, 0);
+
+        return false;
     }
 }
 ```
