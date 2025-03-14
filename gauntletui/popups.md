@@ -125,10 +125,10 @@ Close with: InformationManager.HideInquiry();
 ![](/pics/dRrDaYF.png)
 
 ``` cs
-MBInformationManager.AddQuickInformation(TextObject content, int priority, CharacterObject announcer, string sounEventPath);
+MBInformationManager.AddQuickInformation(TextObject content, int priority, CharacterObject announcer, string soundEventPath);
 ```
 
-Priority determines how long the message stays, approximate values:
+`priority` determines how long the message stays, approximate values:
 
 - 0 - 2.5s
 - 1000 - 3.5s

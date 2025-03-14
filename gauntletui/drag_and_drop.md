@@ -1,5 +1,7 @@
 # Drag and Drop
 
+!!! info "Guide by TheMadProphet"
+
 Widgets can be moved around with drag and drop
 
 ## Drag
