@@ -9,6 +9,12 @@ Skeleton is necessary for all the rigged items (body armors/helmets/shoulder cov
 
 Usually model comes without the skeleton.
 
+## Bones
+
+??? abstract "Human Bones"
+
+    ![](/pics/2503191018.png)
+
 ## Import
 
 [Import this FBX](https://drive.google.com/file/d/1Pasf8ZmngJGP5eKlTIG_JS8LlFG7u42Q/view?usp=drive_link) to get the skeleton and male body at once.
