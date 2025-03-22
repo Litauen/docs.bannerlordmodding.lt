@@ -18,6 +18,8 @@ To avoid super slow zoom I enlarge my human x10. That allows to look around him 
 
 ![](/pics/2410042158.png)
 
+!!! danger "Do not do this when working with cloth physics. <br>For some reason when scale is not 1;1;1 - cloth physics are ruined."
+
 !!! tip "Holding SHIFT while zooming helps also"
 
 
