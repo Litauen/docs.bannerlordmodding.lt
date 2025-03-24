@@ -82,6 +82,14 @@ Close the resource browser and the Editor(game). You should now see a new file n
 ![](/pics/b3kmMwv.png)
 
 
+## Sprite Widget Options
+
+`HorizontalFlip="true"` - flips sprite horizontally
+
+`VerticalFlip="true"` - flips sprite vertically
+
+
+
 ## Count sprites in the category
 
 ```cs
