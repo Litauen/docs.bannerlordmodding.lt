@@ -44,6 +44,12 @@ Result should look like this:
     ![](/pics/2410041152.png)<br>
     Reason: There are non-Latin characters in the folder's name where the PNG files are located. ¯\\\_(ツ)\_/¯
 
+??? question "What does the specular _s texture do again?"
+    Kemo III:<br>
+    The RED channel is metallic, so fully red is a metal<br>
+    GREEN is smoothness. (Opposite of roughness in blender)<br>
+    And BLUE is ambient occlusion
+
 ## Create Material
 
 RMB on the empty space, `Create - Material`:
