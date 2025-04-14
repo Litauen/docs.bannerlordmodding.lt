@@ -5,6 +5,10 @@
 * [Creating a quest](https://forums.taleworlds.com/index.php?threads/creating-a-quest.415596/){target=_blank}
 * [Additional Quests](https://www.nexusmods.com/mountandblade2bannerlord/mods/3066) - demo mod for quests
 
+## Tools
+
+* [Quest Debugger](https://www.nexusmods.com/mountandblade2bannerlord/mods/8132) - Modding tool that allows to start quest from native console and adds the Quest Debug Console that shows active quests instances properties and fields and their values.
+
 
 ## Chars for quests/etc
 

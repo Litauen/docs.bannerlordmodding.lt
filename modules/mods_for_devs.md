@@ -4,6 +4,7 @@
 
 - [ButterLib](https://www.nexusmods.com/mountandblade2bannerlord/mods/2018) - catches (almost) all exceptions in BEW style and gives the ability to save the crash report
 - [Useful Ui Debug Ex](https://www.nexusmods.com/mountandblade2bannerlord/mods/7733) - Tool for UI modders. Add more useful info to UI debug window.
+- [Quest Debugger](https://www.nexusmods.com/mountandblade2bannerlord/mods/8132) - Mod that allows to start quest from native console and adds the Quest Debug Console that shows active quests instances properties and fields and their values.
 
 ## Workflow
 
