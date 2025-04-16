@@ -611,6 +611,13 @@ REASON: upgrade_target for some troop set to non-existant troop
     Argument cound: 0<br>
     Inner message: Object reference not set to an instance of an object.
 
+
+----
+    CTD on the world map ~1 day after the start
+REASON: Mercenary clan initial start location outside the playable area
+
+Attaching dnSpy it shows that the crash happens in the `ScriptingInterfaceOfIScene-GetNavMeshFaceCenterPosition`
+
 --------
 
 
