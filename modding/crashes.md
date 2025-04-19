@@ -77,8 +77,10 @@
     REASON: ??? (maybe something related to party templates with non-existant troop IDs, but not confirmed)
 
 ??? failure "CharacterObject - GetSkillValue - DefaultPartyMoraleModel - GetMoraleEffectsFromSkill - GetEffectivePartyMorale"
-    REASON: used not existant troop ID in the &lt;MBPartyTemplate id="villager_CUSTOM_CULTURE_template"><br>
-    HINT: Check Encyclopedia-Troops if necessary troop is actually in the game.
+    REASON1: used not existant troop ID in the &lt;MBPartyTemplate id="villager_CUSTOM_CULTURE_template"><br>
+    HINT: Check Encyclopedia-Troops if necessary troop is actually in the game.<br>
+    <br>
+    REASON2: When you get this error after character creation, it's because trooptrees/their equipments have either a double "/>/>" somewhere, or because there is invalid slot ID (e.g. "Shoulder" instead of correct "Cape") (Bubu)
 
 ??? failure "DefaultPartyWageModel - GetTotalWage - MobileParty - get_TotalWage - get_LimitedPartySize - CalculateGarrisonChangeInternal"
     REASON: Troop ID used in partyTemplates.xml refers to a non-existing troop ID in the trooptree. 
