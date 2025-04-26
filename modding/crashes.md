@@ -223,6 +223,12 @@
     REASON: character(troop?) with no upgrade targets?<br>
     [Mod with fix](https://www.nexusmods.com/mountandblade2bannerlord/mods/7232)
 
+??? failure "GetEncounterTargetPoint - HandleEncounterForMobileParty - HandleEncounters"
+    REASON: [Complex Characters mod](https://www.nexusmods.com/mountandblade2bannerlord/mods/7565) - try without it. <br>
+    NOTE: Impossible to troubleshoot, because mod is obfuscated.
+
+
+
 </p>
 
 
