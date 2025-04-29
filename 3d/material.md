@@ -44,6 +44,10 @@ Result should look like this:
     ![](/pics/2410041152.png)<br>
     Reason: There are non-Latin characters in the folder's name where the PNG files are located. ¯\\\_(ツ)\_/¯
 
+??? failure "Texture is not uploaded"
+    Try to rename it (maybe texture with the same name already exists)<br>
+    Try to upload the texture not from the OneDrive
+
 ??? question "What does the specular _s texture do again?"
     Kemo III:<br>
     The RED channel is metallic, so fully red is a metal<br>

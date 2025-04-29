@@ -8,8 +8,7 @@
 
 ## Bugs
 
-* ["Start Mission" does not work](https://forums.taleworlds.com/index.php?threads/v1-2-7-test-function-in-scene-creator-start-mission-dont-work.460937/)
-
+* ["Start Mission" does not work](https://forums.taleworlds.com/index.php?threads/v1-2-7-test-function-in-scene-creator-start-mission-dont-work.460937/) ([Testing Custom Scene Ingame](https://docs.google.com/document/d/1Rwsd9pdv5QA5s3K4oOuJX16_K9A5NaoWh0p78IcUi1w/edit?tab=t.0))
 
 ## Controller cursor
 
@@ -46,11 +45,25 @@ Looking down to the ground also helps, so no entities will be visible.
 - Version mismatch with the base game - does not start at all, no process - install same version (not always true)
 - Hanged previous process - Close on Steam or check the Task Manager, kill the old process
 
-### Closes when Play button is clicked
+!!! info "Install [Visual C++ Redistributable Packages for Visual Studio 2013](https://www.microsoft.com/en-us/download/details.aspx?id=40784)"
+    ![](/pics/2504280817.png)
+
+
+### MSVCP120.dll was not found
 
 ![](/pics/2403231933.png)
 
-[slelukh](https://discord.com/channels/411286129317249035/677511186295685150/1217918112524140614): Install [Visual C++ Redistributable Packages for Visual Studio 2013](https://www.microsoft.com/en-us/download/details.aspx?id=40784)
+??? info "Install [Visual C++ Redistributable Packages for Visual Studio 2013](https://www.microsoft.com/en-us/download/details.aspx?id=40784)"
+    ![](/pics/2504280817.png)
+
+
+### Closes when Play button is clicked
+
+This function is broken for a long time. Do not use it. 
+
+* ["Start Mission" does not work](https://forums.taleworlds.com/index.php?threads/v1-2-7-test-function-in-scene-creator-start-mission-dont-work.460937/)
+* [Testing Custom Scene Ingame](https://docs.google.com/document/d/1Rwsd9pdv5QA5s3K4oOuJX16_K9A5NaoWh0p78IcUi1w/edit?tab=t.0)
+
 
 ### Top Bar gone
 
@@ -158,3 +171,12 @@ Bad (with assert spam):
 </base>
 ```
 
+## Distance Tool
+
+If this appears:
+
+![](/pics/2504280827.png)
+
+Fear not, turn it off with:
+
+![](/pics/2504280828.png)
