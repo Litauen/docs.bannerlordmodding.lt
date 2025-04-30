@@ -82,6 +82,19 @@ Close the resource browser and the Editor(game). You should now see a new file n
 ![](/pics/b3kmMwv.png)
 
 
+
+## Overwrite native sprites
+
+Let's say we want to change the crossbow skill icon to a musket.
+
+The files we need are in the `\ui_group1\SPGeneral\Skills` (find them with [BannerEdge](https://github.com/hunharibo/BannerEdge))
+
+![](/pics/2504290832.png)
+
+Create your custom SpriteCategory, add \SPGeneral\Skills folder in it with only those modified files and you will overwrite only those files/sprites.
+
+!!! danger "If you create SpriteCategory with the name `ui_group1` - you will overwrite whole category and many sprites will be empty (if you will not replace them)"
+
 ## Sprite Widget Options
 
 `HorizontalFlip="true"` - flips sprite horizontally
