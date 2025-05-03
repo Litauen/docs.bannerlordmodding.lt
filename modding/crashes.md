@@ -227,6 +227,9 @@
     REASON: [Complex Characters mod](https://www.nexusmods.com/mountandblade2bannerlord/mods/7565) - try without it. <br>
     NOTE: Impossible to troubleshoot, because mod is obfuscated.
 
+??? failure "GetIssueEffectsOfSettlement - CalculateTownFoodChangeInternal"
+    Crash on save file load.<br>
+    REASON: Settlements on the map do not match settlements in the save file. (Old/incompatible save?)
 
 
 </p>
