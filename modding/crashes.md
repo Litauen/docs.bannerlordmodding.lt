@@ -528,6 +528,9 @@
     Crash in the inventory screen. <br>
     REASON: used the same mesh for a different shield when defining an &lt;Item>
 
+??? failure "ScriptingInterfaceOfIMBMission - AddMissile - Mission.AddMissileAux"
+    REASON: ??
+
 
 <br><br>
 ## Reflection.TargetInvocationException
@@ -547,7 +550,6 @@
     REASON: bad troop ID in cultures.xml elite_basic_troop
     ??? failure "Crash report on VS:"
         ![](/pics/2409201550.png)
-
 
 
 
