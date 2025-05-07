@@ -6,6 +6,14 @@ Settlement icons added without definitions are just meshes no different from roc
 
 [There is a limit around 512k for game entities](https://forums.taleworlds.com/index.php?threads/is-there-a-game_entity-limit-for-scenes.455430/) / [50k limit?](https://forums.taleworlds.com/index.php?threads/map-entity-limit.460994/#post-9887478). Adding more leads to a crash.
 
+!!! question "What to do?"
+    Bubu:<br>
+    Yeah only option is to create a Prefab folder in the module folder<br>
+    Then select multiple towns/villages/castles, assign them to some capsule<br>
+    And then save that capsule as a prefab<br>
+    I saved entirity of France for example as a prefab<br>
+    Same with multiple other regions
+
 
 ## Temporary Vista with Settlement placement
 
