@@ -33,6 +33,9 @@ Settlement.Notables
 if (town.Notables.Contains(notable)) return true;
 ```
 
+??? info "Notables amount by Prosperity"
+    ![](/pics/2505080910.png)
+
 ## Type of Settlement
 
     bool value

@@ -180,3 +180,15 @@ If this appears:
 Fear not, turn it off with:
 
 ![](/pics/2504280828.png)
+
+
+## Custom scripts
+
+!!! quote "Artem:"
+
+    Should have usablemachine class as a base
+
+    You need to create folder `Win64_Shipping_wEditor` and add your dll inside
+
+    Then script shows up in the Editor
+
