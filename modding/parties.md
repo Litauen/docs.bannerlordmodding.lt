@@ -188,3 +188,25 @@ public class CampaignPatch
 
     party.Position2D.x
     party.Position2D.y
+
+
+## Party templates
+
+### Example
+
+```xml
+<MBPartyTemplate id="looters_template">
+    <stacks>
+        <PartyTemplateStack min_value="4" max_value="36" troop="NPCCharacter.looter"/>
+        <PartyTemplateStack min_value="1" max_value="4" troop="NPCCharacter.deserter"/>
+        <PartyTemplateStack min_value="1" max_value="1" troop="NPCCharacter.camp_whore"/>
+    </stacks>
+</MBPartyTemplate>
+```
+
+
+### min_value max_value
+
+!!! quote "hunharibo:"
+    Those numbers are not absolute, they are defining ratios<br>
+    If you sum up all the min_values and max_values (respectively) of all the partytemplate stacks within a partytemplate, that is your total. The values of each individual stack gets divided by the total to get a ratio of percentage for that troop type in the party 
