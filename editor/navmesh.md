@@ -36,3 +36,19 @@ Changing Mesh Edit Mode does not change visuals of the Navmesh
 Click on navmesh icon at the top menu several times
 
 
+## Civilian vs Siege
+
+!!! quote "Hart:"
+    you need to have seperate navmesh in siege and in civilian<br>
+    ideally your navmesh should be set in 6 layers<br>
+    Civilian:<br>
+    * level 1<br>
+    * level 2<br>
+    * level 3<br>
+    Siege<br>
+    * level 1<br>
+    * level 2<br>
+    * level 3<br>
+    select all of your navmesh faces(faces, not verticies or whatever) then at the left menu look for visibility masks<br>
+    and set the entire thing to civilian 1+2+3<br>
+    then with all of the faces selected, copy them, paste them and re-align them to the same exact spots you had them before, now change civilian visibility off and siege on<br>

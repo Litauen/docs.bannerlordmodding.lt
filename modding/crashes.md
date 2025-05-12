@@ -505,6 +505,8 @@
 
     REASON4: bad party with coordinates 0,0. I had this problem when Warlord or Deserters mod created deserters_... parties with coordinates 0,0. Game tries to get GetNavigationMeshCenterPosition(PathFaceRecord face) for those parties and crash. Example: https://report.butr.link/824A29
 
+    !!! tip "Use [Settlement Position Script](/editor/settlementpositionscript/) to find problems with navmesh and settlement placement."
+
 </p>
 
 
