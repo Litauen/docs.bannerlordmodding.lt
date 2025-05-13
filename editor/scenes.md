@@ -62,3 +62,11 @@ The only base game scenes that have terrain are:
     mp_tdm_map_001
     mp_battle_map_002
     mp_duel_mode_map_004
+
+
+## Seasons
+
+Change here:
+
+![](/pics/2505121229.png)
+
