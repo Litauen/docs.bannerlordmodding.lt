@@ -162,8 +162,9 @@
     REASON 2: Incorrect load order when launching game, e.g. Lemmy's map was loaded after a mod using it.
 
 ??? failure "Kingdom - OnNewGameCreated - InvokeList - OnNewGameCreated"
-    REASON: Deleted hero/lord, the 'owner' of the Kingdom<br>
-    REASON2: in `heroes.xml` for hero wrote `spouse="lord_prus_4_3"`, `should be spouse="Hero.lord_prus_4_3"`
+    REASON: Deleted hero/lord, the `owner` of the Kingdom<br>
+    REASON2: in `heroes.xml` for hero wrote `spouse="lord_prus_4_3"`, `should be spouse="Hero.lord_prus_4_3"`<br>
+    REASON3: `<relationships>` was empty in `kingdoms.xml` for a new kingdom
 
 
 ??? failure "CalculateDailyProductionAmount - GetWerehouseCapacity - TickProductions - OnNewGameCreatedPartialFollowUp"
@@ -198,7 +199,8 @@
     ```
 
 ??? failure "NameGenerator - CalculateNameScore - SelectNameIndex - GenerateHeroFirstName - CreateSpecialHero - InitialChildGenerationCampaignBehavior - OnNewGameCreatedPartialFollowUp"
-    REASON: Clan's owner was non-existant Lord
+    REASON: Clan's owner was non-existant Lord<br>
+    REASON2: Created heroes (Hero), forgot to create npc_lords (NPCCharacter)
 
 ??? failure "DefaultMapDistanceModel - GetClosestSettlementForNavigationMesh - GetDistance - FindNearestSettlement - TryToAssignTradeBoundForVillage - UpdateTradeBounds"
     REASON: saved a Main_map when game was open, xscene file gone, map gone. Game started with vanilla Main_map with custom settlements.xml
