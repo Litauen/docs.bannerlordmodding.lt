@@ -17,6 +17,13 @@
 
 * [Setup video](https://youtu.be/SUBcBx9WWgA?list=PLzebdAxJeltRwfJ8jzsNolgHkRvLjoCRC)
 
+### What DLLs to Open
+
+* M&B/bin/Win64_Shipping_Client - all DLLs that start with TaleWorlds...
+* M&B/Modules/Native/bin/Win64_Shipping_Client - all DLLs
+* M&B/Modules/Sandbox/bin/Win64_Shipping_Client - all DLLs
+
+
 
 ## How to attach dnSpy to Bannerlord and catch the exception
 
