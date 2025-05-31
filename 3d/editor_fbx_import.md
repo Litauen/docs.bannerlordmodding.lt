@@ -65,3 +65,10 @@ You can assign the material for each LOD manually:
 
 !!! tip "I usually just delete the FBX, fix material in the Blender, export FBX and reimport FBX OR just rename the material in the Editor to match what came from the Blender."
 
+
+
+## Hand Morph Import Settings For Gloves
+
+![](/pics/2505301511.png)
+
+!!! warning "You cannot use skinning  precise option in the glove material if you do morphs"
