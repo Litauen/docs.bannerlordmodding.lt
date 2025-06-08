@@ -98,8 +98,8 @@ starter.AddPlayerLine("tavernkeeper_book", "tavernkeeper_talk", "tavernkeeper_bo
 {
     if (Hero.MainHero.Gold < 5)
     {
-        explanation = new TextObject("{=LTE01209}Not enough gold...");
-        return false; // lines is disabled
+        explanation = new TextObject("Not enough gold...");
+        return false; // line is disabled
     }
     else
     {
