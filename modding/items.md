@@ -192,6 +192,13 @@ party.ItemRoster.Remove(itemRosterElement);     // from party
     }
     ```
 
+
+## Sell
+
+```cs
+SellItemsAction.Apply(mobileParty.Party, settlement.Party, itemRosterElement, number, settlement);
+```
+
 ## Price
 
 Returns weird price, not the same as in the Trade screen.
