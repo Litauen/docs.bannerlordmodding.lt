@@ -8,6 +8,24 @@
 ??? quote "Snorri:"
     ![](/pics/2403070727.png)
 
+
+## Debug Entity Script
+
+search for "debug" in the entity browser, place it down and run it's script, there you can choose what type of scene you are making and see the requirements for it in terms of spawners and such
+
+
+!!! quote "Zedforen:"
+
+when you select the add entities button type in spawnpointdebug and select the only option<br>
+place the item anywhere and select the entity (it wont have a physical shape unless you give it one)<br>
+select the scripts dropdown for the item then the SpawnPointDebugView and enable the ActiveDebugUIEditor<br>
+there now should be a minimized debug window somewhere on ur UI open it then press Scene Basic Information<br>
+select whatever option youre trying to make then select the Scene Entity Check Tab checkmark the NPC/Passages/Others/Animals and it shall show you what you need for that kind of scene<br>
+if you want to check if you have any of those things already press the Count Entities button and it will scan for any of the items in the scene<br>
+if there are any it will show in the current column<br>
+obv u need to have the minimum required entities that the scene demands for it to work and you can find out what those entities are by selecting the respective button on the right of the debug window I.E. battle_set   sp_guard   sp_king etc<br>
+
+
 ## Camera Instance
 
 ![](/pics/2402262002.png)
@@ -28,9 +46,6 @@ Use Show Display to instanly see the camera's view (with Render Skybox on).
 It's all from just extensive observations and testing by changing things in scene editor.
 
 
-## Various
-
-search for "debug" in the entity browser, place it down and run it's script, there you can choose what type of scene you are making and see the requirements for it in terms of spawners and such
 
 
 ## Native scenes with terrain
