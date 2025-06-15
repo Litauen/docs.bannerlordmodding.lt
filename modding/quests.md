@@ -50,3 +50,10 @@
     - cutscene_midwife
     - cutscene_monk
     - sp_hermit
+
+
+## Check if quest is active
+
+``` cs
+Campaign.Current.QuestManager.IsThereActiveQuestWithType(typeof(YOURQuest));
+```
