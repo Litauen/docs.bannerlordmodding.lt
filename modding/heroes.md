@@ -370,6 +370,16 @@ Voice types:
 
 Also depends on the culture.
 
+## Crime Rating
+
+
+``` cs
+Kingdom.MainHeroCrimeRating
+
+public float MainHeroCrimeRating { get; set; }
+```
+
+
 ## Kill Character
 
 ``` cs

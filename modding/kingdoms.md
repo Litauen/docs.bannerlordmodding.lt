@@ -141,3 +141,11 @@ public static Kingdom FindKingdomByStringID(string stringID)
     return null;
 }
 ```
+
+## Crime rating
+
+``` cs
+Kingdom.MainHeroCrimeRating
+
+public float MainHeroCrimeRating { get; set; }
+```
