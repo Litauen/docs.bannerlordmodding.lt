@@ -149,3 +149,9 @@ Kingdom.MainHeroCrimeRating
 
 public float MainHeroCrimeRating { get; set; }
 ```
+
+## Colors
+
+Choose from these colors:
+
+![](/pics/2506241454.png)
