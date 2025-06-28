@@ -42,6 +42,12 @@ IEnumerable<Kingdom> FactionManager.GetEnemyKingdoms(Kingdom faction)
 IEnumerable<IFaction> FactionManager.GetEnemyFactions(IFaction faction)
 ```
 
+## At war?
+
+```cs
+if (Enumerable.Any<Kingdom>(Campaign.Current.Kingdoms, (Kingdom x) => x.IsAtWarWith(some_kingdom))) ...
+```
+
 ## Check stance
 
 ```cs
