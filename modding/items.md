@@ -320,6 +320,7 @@ For mods:
 * 'difficulty' - (need confirmation) is used to indicate the level of difficulty in crafting an item
 * 'item_category' - (need confirmation) influences price range based on the market. Example - if item_category="jewelry" and item value="1000", in-game item can cost from ~1000 at start and drop to 150 after few weeks. Because jewelry prices drop in the region. If this item_category is changed to let's say 'book', then in-game same item costs ~1000 again.
 * 'subtype' - is used to provide additional information about the type of item being defined. The subtype property is often used in conjunction with the item_category property to further refine the classification of an item
+* 'covers_body' - true/false, property for an armor to tell if body should be hidden (true) or not (false)
 
 ### ItemObject
 
@@ -382,6 +383,13 @@ So lets say you have a list of 100 items. If item 32 is broken, everything after
 If you want to more easily find out which it is check your logs in programdata (its a hidden folder so you gotta make hidden folders visible) and search for null or invalid.
 
 ![](/pics/2403080814.png)
+
+
+### Transparent Body
+
+![](/pics/202507070944.png)
+
+Use `covers_body="false"` in items.xml for that item
 
 
 <br>

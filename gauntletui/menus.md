@@ -257,3 +257,16 @@ args.MenuContext.SetPanelSound("event:/ui/panels/settlement_village");
 args.MenuContext.SetAmbientSound("event:/map/ambient/node/settlements/2d/village");
 ```
 
+
+## Which menu is open?
+
+```cs
+if (Campaign.Current.CurrentMenuContext != null)
+{
+    string currentMenuId = Campaign.Current.CurrentMenuContext.GameMenu.StringId;
+}
+else
+{
+    // no menu is open
+}
+```
