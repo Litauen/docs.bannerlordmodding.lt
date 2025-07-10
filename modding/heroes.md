@@ -178,6 +178,61 @@ Personality traits
 
     ![](/pics/47ysvNJ.png)
 
+### How to add custom trait
+
+!!! quote "Kemo III:"
+
+```cs
+public class CustomTraits
+{
+  private static CustomTraits Current;
+  private TraitObject _newTrait;
+  public static TraitObject NewTrait
+  {
+      get
+      {
+          return Current._newTrait;
+      }
+  }
+  public CustomTraits()
+  {   
+  Current= this;
+  _newTrait = Game.Current.ObjectManager.RegisterPresumedObject(new TraitObject("TraitStringId"));
+  _newTrait.Initialize(new TextObject("{=!}Trait Name"), new TextObject("{=!}Trait description."), false, -2, 2);
+  }
+}
+```
+
+You'll need to instantiate this class when loading/starting a campaign. I do it in SubModule `InitializeGameStarter`.
+
+For the new trait to appear in the character screen you'll need to add this harmony patch:
+
+```cs
+[HarmonyPatch(typeof(CampaignUIHelper), nameof(CampaignUIHelper.GetHeroTraits))]
+public class GetHeroTraitsPatch
+{
+    static void Postfix(ref IEnumerable<TraitObject> __result)
+    {
+        __result.AddItem(CustomTraits.NewTrait);
+    }
+}
+```
+You also need strings for the trait levels. An xml like this:
+
+``` xml
+<?xml version="1.0" encoding="utf-8"?>
+<strings>
+  <string id="str_trait.TraitStringId" text="Trait Name" />
+  <string id="str_trait_name_TraitStringId.0" text="New Trait Lvl -2"/>
+  <string id="str_trait_name_TraitStringId.1" text="New Trait Lvl -1"/>
+  <string id="str_trait_name_TraitStringId.3" text="New Trait Lvl +1"/>
+  <string id="str_trait_name_TraitStringId.4" text="New Trat Lvl +2"/>
+</strings>
+```
+You need to create sprites with that same naming scheme as well. "TraitStringId_-2", "TraitStringId.-1", etc...
+
+!!! warning "Kemo III: Though, I just realized parts of this might be outdated and don't work any more."
+
 
 ## Health
 
