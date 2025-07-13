@@ -453,6 +453,8 @@ Example [here](/modding/xml/#example-deleteremove-native-items)
 
 ## Helmet Hair Coverage
 
-??? abstract "Helmet Hair Coverage"
+![](/pics/Iq2hAG0.png)
 
-    ![](/pics/Iq2hAG0.png)
+## Beard Coverage
+
+![](/pics/2507120905.png)
