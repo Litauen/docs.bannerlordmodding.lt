@@ -1,5 +1,9 @@
 # Sprites
 
+## Downloads
+
+* [All native sprites extracted with BannerEdge](https://drive.google.com/drive/folders/1gfE8ERq6hzKGy6Ya_RbpaUPVy3DXsP6u)
+
 ## Tutorials
 
 * [Generating and Loading UI Sprite Sheets](https://moddocs.bannerlord.com/asset-management/generating_and_loading_ui_sprite_sheets/){target=_blank}

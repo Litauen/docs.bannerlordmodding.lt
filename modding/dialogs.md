@@ -305,9 +305,16 @@ For random text, generate it in the ConditionDelegate which is run on each menu 
 
 
 <br>
-## Start battle after the dialog
+## Action after the dialog
 
-!!! danger "Not tested"
+In ConsequenceDelegate:
+
+``` cs
+Campaign.Current.ConversationManager.ConversationEndOneShot += delegate
+{
+    Mission.Current.EndMission();
+};
+```
 
 You can try declaring the battle as an action and execute it after the conversation ended like this:
 
