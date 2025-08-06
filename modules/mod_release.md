@@ -72,6 +72,10 @@ For primary image to show properly, aspect ratio is important. Resized image is 
 
 [Preparing Your Module For Publishing](https://moddocs.bannerlord.com/steam-workshop/uploading_updating_mod/){target=_blank}
 
+!!! abstract "Notes"
+    * If you have a custom map, you'd need to patch the path to the settlements_distance_cache.bin in the SettlementPositionScript. It does not format the steam workshop file path correctly.
+    * [Example Steam publish scripts/configs](https://github.com/kirnosenko/BannerlordMods/tree/master/publish)
+
 Why some modders don't like Steam:
 
 * They don't earn money from downloads on Steam Workshop
