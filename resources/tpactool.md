@@ -34,3 +34,12 @@ You can't import it into the Substance for example.
 To fix that, open it in the Photoshop ant invert it back with CTRL+i:
 
 ![](/pics/2410081508.png)
+
+
+## Vertex Paint
+
+!!! warning "Tpac tool changes the vertex paint, which in case of crossbows need to be blue instead of red."
+
+![](/pics/2508062236.png)
+
+[Video](https://www.youtube.com/watch?v=6hG_6RDqgFg)
