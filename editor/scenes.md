@@ -9,6 +9,13 @@
     ![](/pics/2403070727.png)
 
 
+## How to to test your scenes
+
+!!! tip "As native Test scene functionality in the Editor is broken, you can use this mod."
+
+[Editor Test Mode mod](/editor/editor_test_mode_mod) by Gotha
+
+
 ## Debug Entity Script
 
 search for "debug" in the entity browser, place it down and run it's script, there you can choose what type of scene you are making and see the requirements for it in terms of spawners and such

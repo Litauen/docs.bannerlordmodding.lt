@@ -43,10 +43,16 @@ public enum MissionMode
 }
 ```
 
-## Check if siege
+### Check if siege
 
     Mission.Current.IsSiegeBattle
 
+
+### Check if tournament
+
+``` cs
+if (Mission.Current.GetMissionBehavior<TournamentBehavior>() != null) {}
+```
 
 ## Method run order
 

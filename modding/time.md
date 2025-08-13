@@ -16,6 +16,12 @@ Now, Never, IsFuture, IsPast, IsNow, IsDayTime, IsNightTime
 if (lastPrayTime == CampaignTime.Never) {}
 ```
 
+### From game start
+
+```cs
+(int)Campaign.Current.CampaignStartTime.ElapsedDaysUntilNow
+```
+
 ### Get details
 
 GetHourOfDay, GetDayOfWeek, GetDayOfSeason, GetDayOfYear, GetSeasonOfYear, GetYear
