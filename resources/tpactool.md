@@ -21,6 +21,9 @@ If it's Rigged, select Rigged, Human skeleton (if it's human, could be horse, et
 ![](/pics/2410020911b.png)
 
 
+!!! warning ".obj files often are not imported into Blender properly. Try .dae instead. Select in the file window -> Save as type: COLLADA (*.dae)"
+
+
 ## Textures
 
 Example exported textures:
