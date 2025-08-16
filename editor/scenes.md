@@ -15,6 +15,11 @@
 
 [Editor Test Mode mod](/editor/editor_test_mode_mod) by Gotha
 
+## How to be sure the mission/scene is actually loaded?
+
+```cs
+if (!Mission.Current.IsLoadingFinished || Agent.Main == null) return;
+```
 
 ## Debug Entity Script
 
