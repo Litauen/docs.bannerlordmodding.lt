@@ -536,6 +536,9 @@
     REASON: ??
 
 
+??? failure "ScriptingInterfaceOfIMBMission.GetBoundaryPoints - MBBoundaryCollection.ContainsKey - SetCameraFrameToMapView"
+    REASON: Trying to open InventoryManager.OpenScreenAsReceiveItems in a mission :) ([example](https://report.butr.link/D2E5C2))
+
 <br><br>
 ## Reflection.TargetInvocationException
 

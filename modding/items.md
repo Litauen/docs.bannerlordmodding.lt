@@ -270,7 +270,13 @@ InventoryManager.OpenScreenAsReceiveItems(itemRoster, new TextObject("Top Left N
     public static void OpenTradeWithCaravanOrAlleyParty(MobileParty caravan, InventoryCategoryType merchantItemType = InventoryCategoryType.None)
     ```
 
-
+??? danger "Crash if used in mission"
+    Type: System.AccessViolationException
+    Message: Attempted to read or write protected memory. This is often an indication that other memory is corrupt.
+    Stacktrace:
+    at void ManagedCallbacks.ScriptingInterfaceOfIMBMission.GetBoundaryPoints(UIntPtr missionPointer, string name, int boundaryPointOffset, Vec2[] boundaryPoints, int boundaryPointsSize, ref int retrievedPointCount)
+    at List<Vec2> TaleWorlds.MountAndBlade.Mission+MBBoundaryCollection.GetBoundaryPoints(string name)
+    at bool TaleWorlds.MountAndBlade.Mission+MBBoundaryCollection.ContainsKey(string name
 
 
 ## Get Items in-game
