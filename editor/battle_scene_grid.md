@@ -1,6 +1,8 @@
 # Battle Scene Grid
 
 * [Battle Scenes List](https://docs.google.com/spreadsheets/d/1mpRIgj6pH34Lkpe30AVHdyEw_8uQ7liPqmRbwYqQlec/edit?gid=0#gid=0)
+* [Battle Scenes List](https://docs.google.com/spreadsheets/d/1gyDYwDKxxefs2y3v6KNGbag9jQCxtG0BQg7f_n78z1E/edit?gid=0#gid=0) by Fatrod
+
 <br><br>
 
 `worldmap_battle_scene_grid` image together with `\ModuleData\sp_battle_scenes.xml` define which battle scene will be used in the battle based on the position of the battle on the world map.

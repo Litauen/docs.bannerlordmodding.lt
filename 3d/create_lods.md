@@ -11,3 +11,15 @@ Install it and use it. 1 click and it's done:
     Your browser does not support the video tag.
 </video>
 
+
+## Weapon LODs
+
+!!! quote "PlebeianKilo [ER]:"
+
+    For weapons game uses LOD1 in battle and LOD0 in crafting menu.
+
+    That's why I remove LOD1 for weapons.
+
+    If it looks fine in the crafting menu but off in a scene, remove the LOD1.
+
+![](/pics/202508260949.png)

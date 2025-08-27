@@ -24,6 +24,12 @@ if (wieldedWeaponIndex != EquipmentIndex.None)
 }
 ```
 
+## Crafting pieces
+
+Adding is_default="true" to craftingPiece in XML makes it unlocked in the new game.
+
+
+
 ## Make civilian
 
 In crafting_pieces:
@@ -67,9 +73,6 @@ public enum WeaponClass
 }
 ```
 
-## Crafting pieces
-
-Adding is_default="true" to craftingPiece in XML makes it unlocked in the new game.
 
 
 ## Force agents to use couch lance
@@ -108,3 +111,8 @@ agent.EquipWeaponWithNewEntity(EquipmentIndex.WeaponItemBeginSlot, ref missionWe
 Moreover, you can disable weapons for agents on foot by applying the requires_mount flag in the usage set variant. 
 
 However, this method requires you to manage AI weapon logic during battles. It’s experimental and might not work perfectly in all scenarios. But I used this approach successfully to force AI to couch lances for a jousting tournament.
+
+
+## Weapon LODs
+
+Infe [here](/3d/create_lods/#weapon-lods)
