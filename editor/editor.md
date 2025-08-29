@@ -1,22 +1,8 @@
 # Editor
 
-## Versions
-
-- Crashes - 1.1.4/1.1.6/1.2.8
-- Works (with problems) - 1.2.5beta/1.2.7
 
 
-## Bugs
-
-* ["Start Mission" does not work](https://forums.taleworlds.com/index.php?threads/v1-2-7-test-function-in-scene-creator-start-mission-dont-work.460937/) ([Testing Custom Scene Ingame](https://docs.google.com/document/d/1Rwsd9pdv5QA5s3K4oOuJX16_K9A5NaoWh0p78IcUi1w/edit?tab=t.0))
-
-## Controller cursor
-
-![](/pics/2402110846.png)
-
-If you see this cursor and you can't access any menus - make sure to not have any controller plugged in while using the Editor. (Xbox controller or any other kind).
-
-## Notes
+## General Notes
 
 - Editor needs to be on the same disk as the Game, as the modding tools use the base games files - they both install to the same folder, and that only works if they are on the same disk
 - On map save overwrites settlements.xml (crashes if this file is not present or has errors)
@@ -25,13 +11,6 @@ If you see this cursor and you can't access any menus - make sure to not have an
 !!! quote "NPC99: Saving uses extra memory. So, sometimes if you are over 80% use of your RAM its worth waiting for 10 minutes or so for the idle Editor to release some memory before saving."
 
 
-### High CPU usage
-
-In the Visibility tab turn off Game Entities, Helpers and Shadows
-
-![](/pics/B6B7BMC.png)
-
-Looking down to the ground also helps, so no entities will be visible.
 
 <br>
 ## Problems/Solutions
@@ -49,7 +28,7 @@ Looking down to the ground also helps, so no entities will be visible.
     ![](/pics/2504280817.png)
 
 
-### MSVCP120.dll was not found
+#### MSVCP120.dll was not found
 
 ![](/pics/2403231933.png)
 
@@ -57,12 +36,14 @@ Looking down to the ground also helps, so no entities will be visible.
     ![](/pics/2504280817.png)
 
 
-### Closes when Play button is clicked
+### Test Mode not working
 
-This function is broken for a long time. Do not use it. 
+Closes when Play button is clicked. This function is broken for a long time. Do not use it.
 
 * ["Start Mission" does not work](https://forums.taleworlds.com/index.php?threads/v1-2-7-test-function-in-scene-creator-start-mission-dont-work.460937/)
 * [Testing Custom Scene Ingame](https://docs.google.com/document/d/1Rwsd9pdv5QA5s3K4oOuJX16_K9A5NaoWh0p78IcUi1w/edit?tab=t.0)
+
+* Use [Editor Test Mode Mod](/editor/editor_test_mode_mod/) by Gotha
 
 
 ### Top Bar gone
@@ -143,11 +124,20 @@ NOTE: after the save Editor often crashes. (At least you saved your last changes
 Reload/Restart?
 
 
-## Assert Spam
+### High CPU usage
+
+In the Visibility tab turn off Game Entities, Helpers and Shadows
+
+![](/pics/B6B7BMC.png)
+
+Looking down to the ground also helps, so no entities will be visible.
+
+
+### Assert Spam
 
 Spams ASSERT windows on start.
 
-### FairyTale assert
+#### FairyTale assert
 
 ![](/pics/2404120847.jpg)
 
@@ -180,6 +170,12 @@ If this appears:
 Fear not, turn it off with:
 
 ![](/pics/2504280828.png)
+
+## Controller cursor
+
+![](/pics/2402110846.png)
+
+If you see this cursor and you can't access any menus - make sure to not have any controller plugged in while using the Editor. (Xbox controller or any other kind).
 
 
 ## Custom scripts

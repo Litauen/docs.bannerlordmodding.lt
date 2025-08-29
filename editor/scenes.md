@@ -97,3 +97,15 @@ Change here:
 
 ![](/pics/2505121229.png)
 
+
+## Open palm pose
+
+![](/pics/2508281109.png)
+
+!!! quote "Artem"
+
+Set/force agent to LOD0.
+
+`MBAgentVisuals.SetAgentLodZeroOrMax`
+
+Custom cameras have this issue though. If you spawn the camera too far away from the agents and then zoom in on them their hand/face morphs won't change during the entirety of the cameras duration.
