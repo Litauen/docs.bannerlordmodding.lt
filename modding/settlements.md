@@ -64,7 +64,9 @@ Max granary amount:
 Settlement.CurrentSettlement.Town.FoodStocksUpperLimit()
 ```
 
-## Build projects
+## Build projects / buildings
+
+* [More info here](/modding/buildings)
 
 Current build project:
 
