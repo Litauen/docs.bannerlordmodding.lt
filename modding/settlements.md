@@ -158,6 +158,35 @@ int Settlement.Town.GetWallLevel()
 
 ## Village
 
+### Village States
+
+```cs
+public enum VillageStates
+{
+    Normal,
+    BeingRaided,
+    ForcedForVolunteers,
+    ForcedForSupplies,
+    Looted
+}
+```
+
+- Looted (same as .IsDeserted)?
+
+
+### Events
+
+```cs
+OnVillageStateChanged(Village village, Village.VillageStates oldState, Village.VillageStates newState, MobileParty raiderParty)
+OnVillageBecomeNormal(Village village)
+OnVillageBeingRaided(Village village)
+OnVillageLooted(Village village)
+
+CampaignEvents.VillageStateChanged.AddNonSerializedListener(this, new Action<Village, Village.VillageStates, Village.VillageStates, MobileParty>(this.OnVillageStateChanged));
+CampaignEvents.VillageBeingRaided.AddNonSerializedListener(this, new Action<Village>(this.OnVillageBeingRaided));
+CampaignEvents.VillageLooted.AddNonSerializedListener(this, new Action<Village>(this.OnVillageLooted));
+```
+
 ### GetItemPrice
 
 ``` cs
@@ -165,13 +194,6 @@ int GetItemPrice(ItemObject item, MobileParty tradingParty = null, bool isSellin
     return this.TradeBound.Town.MarketData.GetPrice(itemRosterElement, tradingParty, isSelling, null);
 ```
 
-### VillageState
-
-- Normal
-- BeingRaided
-- ForcedForVolunteers
-- ForcedForSupplies
-- Looted (same as .IsDeserted)
 
 ### TradeBound
 
