@@ -8,6 +8,25 @@
 - [Village Scenes](https://docs.google.com/presentation/d/1t6DQuyzKwazqfxxs1_NIQDJk8Pxaj513uT8-T5pVvpg/edit?usp=sharing){target=_blank} by d&h
 - [Hideout Scenes](https://docs.google.com/presentation/d/1bhTmkf9ti--o-Jc_qvikNLkVMQw0k5YO-UwtFX_eXaM/edit?usp=drive_link){target=_blank} by d&h
 
+## Find Settlement
+
+```cs
+SettlementHelper:
+    FindNearestSettlement
+    FindNearestHideout
+    FindNearestTown
+    FindNearestFortification
+    FindNearestCastle
+    FindNearestVillage
+    FindNextSettlementAroundMapPoint
+    FindRandomSettlement
+    FindRandomHideout
+    GetRandomTown
+    GetBestSettlementToSpawnAround
+```
+
+
+
 ## Gold
 
     Settlement.SetttlementComponent.Gold
@@ -35,6 +54,13 @@ if (town.Notables.Contains(notable)) return true;
 
 ??? info "Notables amount by Prosperity"
     ![](/pics/2505080910.png)
+
+## Garrison
+
+`settlement.Town.GarrisonParty`
+
+`SettlementHelper.IsGarrisonStarving`
+
 
 ## Type of Settlement
 

@@ -39,6 +39,14 @@ PartyBase MobileParty.Party
 .MemberRoster
 ```
 
+## Leader
+
+```cs
+Hero mobileParty.LeaderHero
+mobileParty.RemovePartyLeader();
+mobileParty.ChangePartyLeader(newHeroLeader);
+```
+
 ## Garrison
 
 ``` cs
@@ -210,3 +218,18 @@ public class CampaignPatch
 !!! quote "hunharibo:"
     Those numbers are not absolute, they are defining ratios<br>
     If you sum up all the min_values and max_values (respectively) of all the partytemplate stacks within a partytemplate, that is your total. The values of each individual stack gets divided by the total to get a ratio of percentage for that troop type in the party 
+
+
+## IsVisualDirty
+
+In C# code:
+
+IsVisualDirty = true is just a “needs visual refresh” flag.
+
+When something about a party changes in a way that could affect how it looks on the campaign map (visibility, banner/colors, nameplate, icon, etc.), the code calls SetVisualAsDirty(), which sets IsVisualDirty to true. A visual system elsewhere will notice this and rebuild/update the party’s visuals once, then call OnVisualsUpdated() to set it back to false.
+
+A few notes:
+
+* It’s marked [CachedData], so it’s not saved to the save file—purely runtime state.
+* Setting it to true doesn’t redraw immediately; it lets the engine defer the work and avoid re-building visuals every tiny change.
+* You should flip it when changing anything that affects appearance (e.g., owner/banner/culture/visibility).
