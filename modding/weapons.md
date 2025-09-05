@@ -36,6 +36,12 @@ In crafting_pieces:
 
     <Flag name="Civilian" type="ItemFlags" />
 
+## Use on horseback
+
+Q. what exactly decides that a weapon is not usable on horseback?
+
+A. `requires_no_mount` flag in `item_usage_sets.xml`
+
 
 ## Weapon Class
 
