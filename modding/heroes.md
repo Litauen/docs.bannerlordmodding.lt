@@ -28,6 +28,14 @@ Hero.MainHero.HeroDeveloper.AddSkillXp(DefaultSkills.OneHanded, 100, true, true)
 Hero.MainHero.AddSkillXp(DefaultSkills.Charm, MBRandom.RandomFloatRanged(10, 50)); // no learning rate applied
 ```
 
+??? info "How to reduce skill:"
+    HeroDeveloper.ChangeSkillLevel does not accept negative values.
+
+    ```cs
+    int currentSkill = hero.GetSkillValue(DefaultSkills.Athletics);
+    if (currentSkill > 0) hero.SetSkillValue(DefaultSkills.Athletics, currentSkill - 1);
+    ```
+
 ### Get
 
 ``` cs
