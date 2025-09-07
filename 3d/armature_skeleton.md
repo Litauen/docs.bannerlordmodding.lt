@@ -62,6 +62,11 @@ To be sure that mesh is assigned to the skeleton properly:
 ![](/pics/2410021220.png)
 
 
+## Bones
+
+![](/pics/2509061900.png)
+
+
 ## Problems
 
 ### Missing/bad Armature
@@ -73,9 +78,13 @@ This in the [Model Viewer](/3d/model_viewer/):
     Your browser does not support the video tag.
 </video>
 
-Cause: missing armature or wrong armature assigned:
+Cause #1: missing armature or wrong armature assigned:
 
 ![](/pics/2409281050.png)
+
+Cause #2: FBX exported without skeleton:
+
+![](/pics/2509061922.png)
 
 
 ## Add your own skeleton

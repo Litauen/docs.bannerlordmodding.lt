@@ -4,6 +4,17 @@
 * [Bannerlord Animation Documentation](https://docs.google.com/document/d/1fTZ80cahM0A4bgmTa9ermnBZiQY2APJ_sEXz22oKRjo/edit?tab=t.0)
 
 
+## Export/Import
+
+!!! quote "Kemo III"
+
+    Get TpacTools and export the animation to FBX, and then import to blender.<br>
+    You'll find info on https://docs.bannerlordmodding.lt/ about the correct import/export settings in Blender.<br>
+    It's going to need some clean up before you can edit it well because it has key frames on every frame.<br>
+    And make sure when you're importing the fbx back to Bannerlord to only import skeletal animations and not the skeleton.<br>
+    Once you import the animation back to BL, you'll find you have a new skeletal animation resource. Right click anywhere and create-override whichever animation clip you want to override.
+
+
 ## Create a new clip in the Editor
 
 !!! quote "Kemo III:"

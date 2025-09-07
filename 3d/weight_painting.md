@@ -53,6 +53,10 @@ Weight painting is a technique used in rigging to assign influence to specific p
 </video>
 </center>
 
+## Bones
+
+![](/pics/2509061900.png)
+
 ## Examples
 
 ### Helmet with Aventail
