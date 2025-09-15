@@ -24,6 +24,10 @@ If it's Rigged, select Rigged, Human skeleton (if it's human, could be horse, et
 !!! warning ".obj files often are not imported into Blender properly. Try .dae instead. Select in the file window -> Save as type: COLLADA (*.dae)"
 
 
+!!! danger "If crashing - Try to export without textures and with all the LODs."
+
+
+
 ## Textures
 
 Example exported textures:
@@ -47,8 +51,4 @@ To fix that, open it in the Photoshop ant invert it back with CTRL+i:
 
 [Video](https://www.youtube.com/watch?v=6hG_6RDqgFg)
 
-
-## Crash
-
-Try to export without textures and with all lods.
 

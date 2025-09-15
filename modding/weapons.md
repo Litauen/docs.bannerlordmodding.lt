@@ -45,16 +45,19 @@ Crafting Pieces are the 'ingredients' (parts) from which weapons by their 'recip
 
 Defined in `/Native/ModuleData/crafting_pieces.xml`
 
+Hide in the crafting menu:
+
+    <CraftingPiece
+        ...
+        is_hidden="true">
 
 
+Make it unlocked in the new game:
+
+    is_default="true"
 
 
-Adding is_default="true" to craftingPiece in XML makes it unlocked in the new game.
-
-
-### Make civilian
-
-In crafting_pieces:
+Make civilian:
 
     <Flag name="Civilian" type="ItemFlags" />
 
