@@ -45,6 +45,36 @@ Crafting Pieces are the 'ingredients' (parts) from which weapons by their 'recip
 
 Defined in `/Native/ModuleData/crafting_pieces.xml`
 
+??? warning "Comments inside the Flags tag are not allowed. XML will not be loaded. Click for example:"
+
+    ```xml
+    <CraftingPiece
+        id="lt_javelin_head_type_3_rus"
+        name="{=lt_javelin_head_type_3}Javelin Head [Type 3]"
+        tier="2"
+        piece_type="Blade"
+        mesh="spear_blade_38"
+        length="23.7"
+        weight="0.364"
+        excluded_item_usage_features="swing"
+        is_hidden="false">
+        <BladeData
+            stack_amount="5"
+            physics_material="wood_weapon"
+            body_name="bo_spear_b"
+            holster_mesh="throwing_spear_quiver_3_2"
+            holster_body_name="bo_throwing_spear_quiver_3_2"
+            holster_mesh_length="96.8">
+            <Thrust damage_type="Pierce" damage_factor="2.4" />
+        </BladeData>
+        <Flags>
+            <Flag name="BonusAgainstShield" />
+            <!-- <Flag name="NotStackable" type="ItemFlags" /> -->
+        </Flags>
+        <Materials>     <Material id="Iron2" count="1" /> </Materials>
+    </CraftingPiece>
+    ```
+
 Hide in the crafting menu:
 
     <CraftingPiece
@@ -63,6 +93,13 @@ Make civilian:
 
 !!! failure "&lt;Flags Civilian="true" /> in the &lt;Items>&lt;CraftedItem> does not work"
 
+### Javelins
+
+!!! failure "&lt;Flag name="NotStackable" type="ItemFlags" /> when used on the Blade of the javelin - AI will not throw those javelins in battle."
+
+??? abstract "BladeData - holster_mesh"
+
+    ![](/pics/2509151011.png)
 
 ## Weapon Descriptions
 
