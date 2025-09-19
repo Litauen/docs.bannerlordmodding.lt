@@ -1,6 +1,6 @@
 # Drag and Drop
 
-!!! info "Guide by TheMadProphet"
+!!! info "Guide by Mati-k"
 
 Widgets can be moved around with drag and drop
 
