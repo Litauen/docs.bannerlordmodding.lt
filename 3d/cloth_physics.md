@@ -9,3 +9,10 @@
 !!! warning "Some scenes do not support cloth physics (for example Sargoth town scene)."
 
     More details and solution [here](https://forums.taleworlds.com/index.php?threads/cloth-physics-do-not-work-in-some-scenes.461291/&__cf_chl_tk=RyRtOZ8zwdY_YbwiJ7Ukx.6nsPKp8PJgDSJOqs_AeyY-1707557414-0-4496).
+
+
+---
+
+Q. How to prevent the mesh from sinking/floating away after applying cloth physics?
+
+A. Attach it to some bone with weight painting and leave that part where it is attached without cloth physics. You have to paint your mesh with vertex alpha, but you have to leave some of it black so it doesn't all just fall. The mesh with physics must be painted white and the rest black.
