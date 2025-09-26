@@ -11,5 +11,22 @@
 
 This happens when the map is saved under the custom name.
 
-Save/load your map as Main_map and spacing will be OK.
+Save/load your map as "Main_map" and spacing will be OK.
 
+
+
+## Fix grass
+
+If grass is standing like this in the scene:
+
+![](/pics/2509251742a.png)
+
+Sellect `Terrain Elevation` Alt+8, Mode: Smoothen, Weight and Hardness to 0.00:
+
+![](/pics/2509251742b.png)
+
+And tap anywhere on the ground:
+
+![](/pics/2509251742c.png)
+
+Save the scene.
