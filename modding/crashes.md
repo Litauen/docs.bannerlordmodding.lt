@@ -588,6 +588,16 @@
     REASON: Translation line in the xslt, like {=skalvians}Skalvians. Move this to XML
 
 
+<br><br>
+## KeyNotFoundException
+
+    Message: The given key was not present in the dictionary.
+
+??? failure "Dictionary - GetInfestedHideoutCount - BanditSpawnCampaignBehavior"
+    REASON: some defined bandit faction has no hideout on the map
+
+
+
 
 <br><br>
 ## CTD without any message
