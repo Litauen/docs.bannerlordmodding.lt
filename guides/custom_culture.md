@@ -1,5 +1,8 @@
 # Custom Culture
 
+!!! warning "WARNING: This guide is for v1.2.12"
+
+
 ![](/pics/c2soKfU.png)
 
 
@@ -182,7 +185,7 @@ because menu selections are hardcoded for vanilla cultures only.
     ![](/pics/co4ShqN.png)
     ![](/pics/hiHlbOV.png)
 
-To make this menu work for your custom culture we need a simple Harmony patch:
+To make this menu work for your custom culture we need a simple Harmony patch (1.2.12):
 
 ``` cs
 [HarmonyPatch(typeof(SandboxCharacterCreationContent))]
