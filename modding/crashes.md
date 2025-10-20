@@ -5,17 +5,32 @@
 
     Message: Object reference not set to an instance of an object.
 
-    Source: SandBox
+
+??? failure "BesiegerCamp - RemoveSiegePartyInternal - OnPartyLeftSiegeInternal ... RemoveParty"
+    REASON: ???
+
+??? failure "GetBornSettlement - DefaultHeroCreationModel - InitializeHeroFromSettings - DeliverOffSpring"
+    REASON: ???
+
+??? failure "GetCivilianEquipments - DefaultHeroCreationModel - InitializeHeroFromSettings - DeliverOffSpring"
+    REASON: Missing equipment template from `sandbox_equipment_sets`, like `child_template_baltic_noble_female`
+
+??? failure "CharacterObject - GetSkillValue - AddSkillBonusForParty - DefaultPartyTradeModel - GetTradePenaltyFactor"
+    REASON: No caravan troops defined.
+
+??? failure "MergeElements - CreateMergedXmlFile - LoadXML"
+    REASON: Error in the XML file. Check the RGL log to see in which one.
+
+??? failure "HeroCreator - CreateHero - CreateNotable - SpawnNotablesAtGameStart"
+    REASON1: No notable template<br>
+    REASON2: Used Hero.id that is not defined yet, e.g. mother="Hero.dead_lord_lit_5_2"<br>
+    REASON3: No EquipmentSet for a lord<br>
+    REASON4: Used non-existant culture for a lord
 
 ??? failure "GetSuitableSpear - PrepareGuardAgentDataFromGarrison - TakeGuardAgentFromGarrisonTroopList - CreateStandGuardWithSpear"
     I'm getting this crash whenever I take a settlement with my custom culture and try to go to Lord's hall or dungeon
     <br>
     REASON: Custom culture guards entries in spgenericcharacters.xml (sandbox folder) need to go in spnpcharacters.xml in your mod's folder
-
-</p>
-
-    Source: TaleWorlds.CampaignSystem
-
 
 
 ??? failure "CampaignObjectManager - InitializeCachedData - InitializeOnNewGame - OnInitialize - DoLoadingForGameType"
