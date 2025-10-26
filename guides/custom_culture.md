@@ -1,12 +1,12 @@
 # Custom Culture
 
-!!! warning "WARNING: This guide is for v1.2.12"
+!!! warning "WARNING: This guide is for v1.2.12 with some adjustments for 1.3 until fully converted"
 
 
 ![](/pics/c2soKfU.png)
 
 
-On new game start character culture can be selected if it's marked in the culture XML as is_main_culture="true":
+On new game start character culture can be selected if it's marked in the culture XML as is_main_culture="true" (+ additional Harmony patches are necessary for 1.3+):
 
 ``` xml
 <Culture

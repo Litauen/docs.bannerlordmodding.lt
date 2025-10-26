@@ -624,7 +624,9 @@ CTD - Crash To Desktop
 
     On new game start
 
-REASON: non-existant troop refferenced in party_templates.xml &lt;PartyTemplateStack ... />
+1. Non-existant troop refferenced in party_templates.xml &lt;PartyTemplateStack ... />
+
+2. When new culture is added: check culture's [Feats](/modding/cultures/#cultural_feats). Sturgian feats changed in 1.2.12->1.3.
 
 ----
 

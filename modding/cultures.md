@@ -105,26 +105,51 @@ encounter_background_mesh - menu pic for encounter with the troops of this cultu
 
 ### &lt;cultural_feats>
 
+??? abstract "1.2.12"
+    | Feat | Description |
+    | ------------ | --------- |
+    | empire_decreased_garrison_wage | <span style="color:green">20% less garrison troop wage</span> |
+    | empire_army_influence | <span style="color:green">Being in army brings 25% more influence</span> |
+    | empire_slower_hearth_production | <span style="color:red">Village hearths increase 20% less</span> |
+    | aserai_cheaper_caravans | <span style="color:green">Caravans are 30% cheaper to build. 10% less trade penalty</span> |
+    | aserai_desert_speed | <span style="color:green">No speed penalty on desert</span> |
+    | aserai_increased_wages | <span style="color:red">Daily wages of troops in the party are increased by 5%</span> |
+    | sturgian_cheaper_recruits_infantry | <span style="color:green">Recruiting and upgrading infantry troops are 25% cheaper</span> |
+    | sturgian_decreased_cohesion_rate | <span style="color:green">Armies lose 20% less daily cohesion</span> |
+    | sturgian_increased_decision_penalty | <span style="color:red">20% more relationship penalty from kingdom decisions</span> |
+    | vlandian_renown_mercenary_income | <span style="color:green">5% more renown from the battles, 15% more income while serving as a mercenary</span> |
+    | vlandian_villages_production_bonus | <span style="color:green">10% production bonus to villages that are bound to castles</span> |
+    | vlandian_increased_army_influence_cost | <span style="color:red">Recruiting lords to armies costs 20% more influence</span> |
+    | battanian_forest_speed | <span style="color:green">50% less speed penalty and 15% sight range bonus in forests</span> |
+    | battanian_militia_production | <span style="color:green">Towns owned by Battanian rulers have +1 militia production</span> |
+    | battanian_slower_construction | <span style="color:red">10% slower build rate for town projects in settlements</span> |
+    | khuzait_cheaper_recruits_mounted | <span style="color:green">Recruiting and upgrading mounted troops are 10% cheaper</span> |
+    | khuzait_increased_animal_production | <span style="color:green">25% production bonus to horse, mule, cow and sheep in villages owned by Khuzait rulers</span> |
+    | khuzait_decreased_town_tax | <span style="color:red">20% less tax income from towns</span> |
+
+!!! abstract "1.3+"
+
 | Feat | Description |
 | ------------ | --------- |
-| empire_decreased_garrison_wage | <span style="color:green">20% less garrison troop wage</span> |
-| empire_army_influence | <span style="color:green">Being in army brings 25% more influence</span> |
-| empire_slower_hearth_production | <span style="color:red">Village hearths increase 20% less</span> |
 | aserai_cheaper_caravans | <span style="color:green">Caravans are 30% cheaper to build. 10% less trade penalty</span> |
 | aserai_desert_speed | <span style="color:green">No speed penalty on desert</span> |
 | aserai_increased_wages | <span style="color:red">Daily wages of troops in the party are increased by 5%</span> |
-| sturgian_cheaper_recruits_infantry | <span style="color:green">Recruiting and upgrading infantry troops are 25% cheaper</span> |
-| sturgian_decreased_cohesion_rate | <span style="color:green">Armies lose 20% less daily cohesion</span> |
+| battanian_forest_speed | <span style="color:green">50% less speed penalty and 15% sight range bonus in forests</span> |
+| battanian_militia_production | <span style="color:green">Towns owned by Battanian rulers have +1 militia production</span> |
+| battanian_slower_construction | <span style="color:red">10% slower build rate for town projects in settlements</span> |
+| empire_decreased_garrison_wage | <span style="color:green">20% less garrison troop wage</span> |
+| empire_army_influence | <span style="color:green">Being in army brings 25% more influence</span> |
+| empire_slower_hearth_production | <span style="color:red">Village hearths increase 20% less</span> |
+| khuzait_cheaper_recruits_mounted | <span style="color:green">Recruiting and upgrading mounted troops are 10% cheaper</span> |
+| khuzait_increased_animal_production | <span style="color:green">25% production bonus to horse, mule, cow and sheep in villages owned by Khuzait rulers</span> |
+| khuzait_decreased_town_tax | <span style="color:red">20% less tax income from towns</span> |
+| sturgian_increased_grain_production | :new: <span style="color:green">Villages grain production is increased by 10%</span> |
+| sturgian_decreased_army_influence_cost | :new: <span style="color:green">Armies are gathered with 50% less influence</span> |
 | sturgian_increased_decision_penalty | <span style="color:red">20% more relationship penalty from kingdom decisions</span> |
 | vlandian_renown_mercenary_income | <span style="color:green">5% more renown from the battles, 15% more income while serving as a mercenary</span> |
 | vlandian_villages_production_bonus | <span style="color:green">10% production bonus to villages that are bound to castles</span> |
 | vlandian_increased_army_influence_cost | <span style="color:red">Recruiting lords to armies costs 20% more influence</span> |
-| battanian_forest_speed | <span style="color:green">50% less speed penalty and 15% sight range bonus in forests</span> |
-| battanian_militia_production | <span style="color:green">Towns owned by Battanian rulers have +1 militia production</span> |
-| battanian_slower_construction | <span style="color:red">10% slower build rate for town projects in settlements</span> |
-| khuzait_cheaper_recruits_mounted | <span style="color:green">Recruiting and upgrading mounted troops are 10% cheaper</span> |
-| khuzait_increased_animal_production | <span style="color:green">25% production bonus to horse, mule, cow and sheep in villages owned by Khuzait rulers</span> |
-| khuzait_decreased_town_tax | <span style="color:red">20% less tax income from towns</span> |
+
 
 
 ??? example "To change the description of the native feats, use Harmony patch (remove 'Battanian' example):"
