@@ -29,7 +29,7 @@ The culture's name that is visible under the picture is defined in the module_st
 ![](/pics/nnjvduV.png)
 
 
-Image dimensions for the culture's picture: 366 x 668
+Image dimensions for the culture's picture in 1.3+: 541 x 94  (1.2.12: 366 x 668)
 
 I leave some transparent space at the bottom to not cover the culture's name.
 
@@ -50,9 +50,9 @@ Sprites should be [imported](/gauntletui/sprites/#import) from:
 
     \MODULE_NAME\GUI\SpriteParts\ui_charactercreation\CharacterCreation\Culture\
 
-That means that we are overwriting the native sprite category: ui_charactercreation
+That means that we are overwriting the native sprite category: `ui_charactercreation`
 
-and vanilla culture images will be gone. If we want them back - export them with [TpacTool/BannerEdge](/resources/tools/) and reimport them together with your new culture's sprites with the correct names: battania, aserai, etc.
+and vanilla culture images will be gone. If we want them back - change `ui_charactercreation` category to something like: `ui_my_charactercreation`
 
 The game uses these sprites for your new cultures automatically - nothing to be done here anymore.
 
