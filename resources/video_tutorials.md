@@ -66,6 +66,10 @@ Mod setup, dialogs, game menu, GauntletUI, etc.
 18. [How to make a prefab](https://www.youtube.com/watch?v=cYPKWWew8O4&list=PLkLMOvLG8q6bVmWqjXSduwhmzsJ9bLO0u&index=18){target=_blank}
 19. [Barriers](https://www.youtube.com/watch?v=4HMwFUVIeto&list=PLkLMOvLG8q6bVmWqjXSduwhmzsJ9bLO0u&index=19){target=_blank}
 
+## Hart
+
+* [Scene Editor guide [2025-10-04]](https://www.youtube.com/watch?v=B3vwFS5OFwM)
+
 ## [Banner Lab](https://forums.taleworlds.com/index.php?threads/pure-xml-modding-pdf-and-videos-tutorials-with-templates.431408/){target=_blank}
 
 ### [Modding Through XML Editing](https://www.youtube.com/playlist?list=PLxhni8XI_dRDjRRDsCzEBZg4eUInzkzQT){target=_blank}

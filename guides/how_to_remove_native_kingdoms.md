@@ -1,5 +1,7 @@
 # How to remove native kingdoms
 
+!!! warning "Guide for v1.2.12"
+
 This should be done in steps, testing after each step.
 
 

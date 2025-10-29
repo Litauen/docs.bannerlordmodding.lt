@@ -1,5 +1,6 @@
 # Editor
 
+* [Video Guides & Tutorials Here](/resources/video_tutorials/)
 
 
 ## General Notes
