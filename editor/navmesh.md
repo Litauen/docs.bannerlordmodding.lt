@@ -52,3 +52,8 @@ Click on navmesh icon at the top menu several times
     select all of your navmesh faces(faces, not verticies or whatever) then at the left menu look for visibility masks<br>
     and set the entire thing to civilian 1+2+3<br>
     then with all of the faces selected, copy them, paste them and re-align them to the same exact spots you had them before, now change civilian visibility off and siege on<br>
+
+
+## Tips
+
+![](/pics/2510300803.png)
