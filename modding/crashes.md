@@ -6,6 +6,13 @@
     Message: Object reference not set to an instance of an object.
 
 
+??? failure "SpawnCaravan - CaravansCampaignBehavior"
+    REASON: no/wrong caravan template for some culture
+
+??? failure "CalculatePerkEffects - DefaultMobilePartyFoodConsumptionModel - CalculateDailyFoodConsumptionf"
+    REASON: party has troops with undefined culture
+
+
 ??? failure "BesiegerCamp - RemoveSiegePartyInternal - OnPartyLeftSiegeInternal ... RemoveParty"
     REASON: ???
 
