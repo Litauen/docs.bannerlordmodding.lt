@@ -2,6 +2,8 @@
 
 [TpacTool](https://github.com/szszss/TpacTool) - an open source asset explorer which can open TPAC format files, view and export the contents. [Fork](https://github.com/hunharibo/TpacTool).
 
+* [TpacTool for 1.3+](https://github.com/hunharibo/TpacTool/releases/tag/0.4.1)
+
 ## Model export
 
 Before exporting a model, you need to [find it's mesh name](/modding/items/#how-to-find-itemid).
