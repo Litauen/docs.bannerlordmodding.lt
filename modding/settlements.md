@@ -251,6 +251,8 @@ settlement.Village.Hearth
 
 ## XML
 
+* [settlements.xml deserialized](/modding/settlements_xml) by Sly
+
 To be able to change the owner of the settlement in your mod, you need such files:
 
 - settlements.xml
