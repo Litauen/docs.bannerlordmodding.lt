@@ -1,6 +1,8 @@
 # Cutscenes
 
 
+* [Guide](https://docs.google.com/document/d/1iyZaWk9gq3CPm25VWJuCtrtReW65Jzlwk8H8_6lMStM/edit?tab=t.z6s77vm4l37x) by Snorri
+
 Subclass of `SceneNotificationData`:
 
 ![](/pics/2508290819.png)

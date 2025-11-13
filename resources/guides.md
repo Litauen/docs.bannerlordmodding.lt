@@ -16,6 +16,7 @@
 * [Testing Custom Scene Ingame](https://docs.google.com/document/d/1Rwsd9pdv5QA5s3K4oOuJX16_K9A5NaoWh0p78IcUi1w/edit){target=_blank} by ??
 * [Prepping a Singleplayer Town](https://docs.google.com/document/d/1aLo0vrdXvKbnanfaGBzyehZ9xZxxAQ7_fFCkBI3I3Og/edit?pli=1){target=_blank} by Sheepbitter
 * [Hand Morphing Tool and Tutorial (3DS Max and Blender)](https://forums.taleworlds.com/index.php?threads/hand-morphing-tool-and-tutorial-3ds-max-and-blender.444631/){target=_blank} by Enpremi/John_M
+* [Cutscenes guide](https://docs.google.com/document/d/1iyZaWk9gq3CPm25VWJuCtrtReW65Jzlwk8H8_6lMStM/edit?tab=t.z6s77vm4l37x) by Snorri
 
 ## XML Editing
 
