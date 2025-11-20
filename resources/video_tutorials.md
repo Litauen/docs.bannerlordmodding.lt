@@ -5,6 +5,7 @@
 * [C# Tutorial - Full Course for Beginners 4:31:08](https://www.youtube.com/watch?v=GhQdlIFylQ8){target=_blank}
 * [C# Programming All-in-One Tutorial Series 6:20:34](https://www.youtube.com/watch?v=qOruiBrXlAw)
 * [C# Fundamentals for Beginners 8:13:29](https://www.youtube.com/watch?v=0QUgvfuKvWU)
+* [C# Programming for Absolute Beginners 11:46:25](https://www.youtube.com/watch?v=ALXpVlPYqYE)
 
 ## [Lesser Scholar](https://www.youtube.com/playlist?list=PLzebdAxJeltSo-OtvxQ0crQVtD-1u4VXS){target=_blank}
 
