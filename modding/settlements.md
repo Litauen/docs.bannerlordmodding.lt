@@ -29,7 +29,9 @@ SettlementHelper:
 
 ## Gold
 
-    Settlement.SetttlementComponent.Gold
+```cs
+Settlement.SettlementComponent.Gold
+```
 
 ## Current Settlement we are at
 
