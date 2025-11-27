@@ -1,5 +1,7 @@
 # XML Modding
 
+* [XML Editor (Official)](https://moddocs.bannerlord.com/bestpractices/xml_editor/)
+
 ![](/pics/yZvCYRb.png)
 
 * spcultures.xml - [Cultures](/modding/cultures/)
