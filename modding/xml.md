@@ -32,6 +32,63 @@ Online tools:
 - [Fix Tab spaces](https://jsonformatter.org/xml-formatter){target=_blank}
 
 
+## Comments
+
+Sometimes comments in the XML files lead to a crash.
+
+For example Culture XML file is very sensitive to the comments. Commenting out one name or one of `basic_mercenary_troops` will crash the game.
+
+??? warning "Analysis by Sly:"
+    ```cs
+    while (enumerator2.MoveNext())
+    {
+        object obj15 = enumerator2.Current;
+        XmlNode xmlNode14 = (XmlNode)obj15;
+        mblist13.Add(objectManager.ReadObjectReferenceFromXml<CharacterObject>("name", xmlNode14));
+    }
+    continue;
+    ```
+
+    ye, the merc troops aren't protected against against comments
+
+    ```cs
+    if (xmlNode12.NodeType != XmlNodeType.Comment)
+    {
+    string name = xmlNode12.Name;
+    ItemComponent itemComponent;
+    if (!(name == "Armor"))
+    {
+        if (!(name == "Weapon"))
+        {
+            if (!(name == "Horse"))
+    ```
+
+    item components on objects are comment protected
+    seems to be pretty variable what has protection for anything below the top-level nodes
+    strings.xml is protected at all levels from comments
+    it's weird because they have most of the code needed to have protection everywhere, it's just not applied
+    When any xml is being read, it protects the first 2 levels of nodes by default, but anything after is quite variable and generally object-type specific.
+    ```cs
+    for (XmlNode xmlNode = doc.ChildNodes[i].ChildNodes[0];
+    {
+        if (xmlNode.NodeType != XmlNodeType.Comment)
+    ```
+
+    ```cs
+    <?xml version="1.0" encoding="utf-8"?>
+    <!--here is fine-->
+    <SPCultures>
+        <!--here is fine-->
+        <Culture 
+            id="empire"
+            .....>
+            <!--possibly here too? unsure-->
+            <caravan_party_templates>
+        </Culture>
+    ```
+    and everything after that is hit or miss; you generally need to have an existing example of a comment to be sure it won't cause an issue
+    the first 2 levels should be true across all xmls deserialized by the object manager extension which contains the start of the xml read 
+
 
 ## XSLT
 

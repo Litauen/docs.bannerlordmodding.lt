@@ -56,6 +56,17 @@ It is important to know the VOICETYPE of the character you want to add custom au
 
 ID can be numeric or made from random letters. TW uses both, check \SandBox\ModuleData\Languages\VoicedLines\EN\PC. As the maximum ID from TW is 020, I used IDs starting from 100 to be safe. Maybe it's a good idea to make ID unique per-mod, so different mods would not conflict.
 
+### Fallback
+
+You can use `CULTURE_GENDER_generic_AUDIOID` or `GENDER_generic_AUDIOID` as fallbacks if you don't want to have separate voices for each voice type or culture.
+
+The search order is like this:
+
+    CULTURE_GENDER_VOICETYPE_AUDIOID
+    CULTURE_GENDER_generic_AUDIOID
+    GENDER_generic_AUDIOID
+
+Code in `DefaultVoiceOverModel - GetSoundPathForCharacter`
 
 ## LipSync XML
 
@@ -142,7 +153,7 @@ XML files should be generated for each OGG file with the same file name. Like th
     <Base xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" type="string">
         <VoiceOvers>
             <VoiceOver id="AUDIO_ID">
-              <Voice path="VoicedLines/EN/$PLATFORM/sturgian_male_earnest_101" />
+              <Voice path="VoicedLines\EN\$PLATFORM\sturgian_male_earnest_101" />
             </VoiceOver>
         </VoiceOvers>
     </Base>
@@ -156,6 +167,9 @@ Copy your XML/OGG file(s) to \ModuleData\Languages\VoicedLines\EN\PC and add inf
 
 ## Playing audio in dialogs
 
+Audio should play automatically in dialogs if everything is set up properly
+
+!!! info "If you need to change text in the condition delegate, do like this:"
 
 In AddDialogLine conditionDelegate add line:
 
