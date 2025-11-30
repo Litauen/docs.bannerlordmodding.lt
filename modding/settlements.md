@@ -73,6 +73,10 @@ if (town.Notables.Contains(notable)) return true;
     .IsHideout
     .IsFortification (Town OR Castle)
 
+## Tournament
+
+    Campaign.Current.TournamentManager.GetTournamentGame(town) != null
+
 ## Siege
 
     bool        IsUnderSiege [get]
