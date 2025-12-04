@@ -88,6 +88,8 @@ int intelligence = hero.GetAttributeValue(DefaultCharacterAttributes.Intelligenc
 int Hero.GetTraitLevel(TraitObject trait)
 void Hero.SetTraitLevel(TraitObject trait, int value)
 void Hero.ClearTraits()
+
+if (hero.GetTraitLevel(DefaultTraits.Honor) < 0) ...
 ```
 
 Personality traits
