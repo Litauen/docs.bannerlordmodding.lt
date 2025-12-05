@@ -94,11 +94,11 @@ if (hero.GetTraitLevel(DefaultTraits.Honor) < 0) ...
 
 Personality traits
 
-* Mercy - Mercy represents your general aversion to suffering and your willingness to help strangers or even enemies. Cruel tag if Mercy < 0.
-* Valor - Valor represents your reputation for risking your life to win glory or wealth or advance your cause.
-* Honor - Honor represents your reputation for respecting your formal commitments, like keeping your word and obeying the law. Devious tag if Honor < 0.
-* Generosity - Generosity represents your loyalty to your kin and those who serve you, and your gratitude to those who have done you a favor.
-* Calculating - Calculating represents your ability to control your emotions for the sake of your long-term interests.
+* `Mercy` - Mercy represents your general aversion to suffering and your willingness to help strangers or even enemies. `Compassionate` (2), `Merciful` (1), `Cruel` (-1), `Sadistic` (-2).
+* `Valor` - Valor represents your reputation for risking your life to win glory or wealth or advance your cause. `Fearless` (2), `Daring` (1), `Cautious` (-1), `Very cautious` (-2)
+* `Honor` - Honor represents your reputation for respecting your formal commitments, like keeping your word and obeying the law. `Honorable` (2), `Honest` (1), `Devious` (-1), `Deceitful` (-2)
+* `Generosity` - Generosity represents your loyalty to your kin and those who serve you, and your gratitude to those who have done you a favor. `Munificent`(2), `Generous` (1), `Closefisted` (-1), `Tightfisted` (-2)
+* `Calculating` - Calculating represents your ability to control your emotions for the sake of your long-term interests. `Celebral` (2), `Calculating`, (1) `Impulsive` (-1), `Hotheaded` (-2)
 
 ??? example "Defined in &lt;NPCCharacters> files, like lords.xml:"
     ```xml

@@ -5,15 +5,64 @@
 
 ![](/pics/c2soKfU.png)
 
+!!! note "1.3+"
 
-On new game start character culture can be selected if it's marked in the culture XML as is_main_culture="true" (+ additional Harmony patches are necessary for 1.3+):
+    This patch adds only your cultures to the selection screen:
 
-``` xml
-<Culture
-    id="baltic"
-    name="Baltic"
-    is_main_culture="true"
-```
+    ```cs
+    [HarmonyPatch(typeof(CharacterCreationCampaignBehavior), "InitializeCharacterCreationCultures")]
+    public class AddOnlyOurCulturesPatch
+    {
+        // add only our cultures to the selection screen, skip the original method
+        static bool Prefix(CharacterCreationManager characterCreationManager)
+        {
+            foreach (CultureObject cultureObject in Game.Current.ObjectManager.GetObjectTypeList<CultureObject>())
+            {
+                if (cultureObject.StringId == "baltic" || cultureObject.StringId == "crusader" || cultureObject.StringId == "danish" || cultureObject.StringId == "rus" || cultureObject.StringId == "polish") // Replace with your culture's StringId
+                {
+                    characterCreationManager.CharacterCreationContent.AddCharacterCreationCulture(cultureObject, 1, 10);
+                }
+            }
+            return false;
+        }
+    }
+    ```
+
+    ??? abstract "Sort cultures by name"
+        ```cs
+        // sorts cultures by name in the Culture selection list
+        [HarmonyPatch(typeof(CharacterCreationCultureStageVM), "SortCultureList")]
+        public static class SortCultureList_ByNameText_Prefix
+        {
+            static bool Prefix(MBBindingList<CharacterCreationCultureVM> listToWorkOn)
+            {
+                listToWorkOn.Sort(new NameTextComparer());
+                return false;
+            }
+
+            private sealed class NameTextComparer : IComparer<CharacterCreationCultureVM>
+            {
+                public int Compare(CharacterCreationCultureVM x, CharacterCreationCultureVM y)
+                {
+                    // Prefer NameText; fallback to ShortenedNameText; then Culture.StringId
+                    string sx = x?.NameText ?? x?.ShortenedNameText ?? x?.Culture?.StringId ?? string.Empty;
+                    string sy = y?.NameText ?? y?.ShortenedNameText ?? y?.Culture?.StringId ?? string.Empty;
+                    return StringComparer.InvariantCultureIgnoreCase.Compare(sx, sy);
+                }
+            }
+        }
+        ```
+
+??? warning "1.2.12"
+
+    On new game start character culture can be selected if it's marked in the culture XML as is_main_culture="true":
+
+    ``` xml
+    <Culture
+        id="baltic"
+        name="Baltic"
+        is_main_culture="true"
+    ```
 
 ## Culture's Selection Cards
 

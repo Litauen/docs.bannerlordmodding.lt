@@ -57,12 +57,32 @@ if (town.Notables.Contains(notable)) return true;
 ??? info "Notables amount by Prosperity"
     ![](/pics/2505080910.png)
 
+
+## Militia
+
+```cs
+float Settlement.Militia
+
+Settlement.Militia += 1
+```
+
 ## Garrison
 
 `settlement.Town.GarrisonParty`
 
 `SettlementHelper.IsGarrisonStarving`
 
+Create garrison:
+
+```cs
+if (settlement.Town.GarrisonParty == null) settlement.AddGarrisonParty();
+```
+
+Add troops to garrison:
+
+```cs
+settlement.Town.GarrisonParty.MemberRoster.AddToCounts(settlement.Culture.BasicTroop, 1, false, 0, 0, true, -1);
+```
 
 ## Type of Settlement
 
@@ -73,7 +93,9 @@ if (town.Notables.Contains(notable)) return true;
     .IsHideout
     .IsFortification (Town OR Castle)
 
-## Tournament
+## [Tournament](/modding/tournaments/)
+
+
 
     Campaign.Current.TournamentManager.GetTournamentGame(town) != null
 
@@ -82,6 +104,45 @@ if (town.Notables.Contains(notable)) return true;
     bool        IsUnderSiege [get]
     SiegeEvent  SiegeEvent [get, set]
 
+### Walls
+
+Fix ~4% of damaged walls:
+``` cs
+AccessTools.Method(typeof(Town), "RepairWallsOfSettlementDaily").Invoke(settlement.Town, null);
+```
+
+Get % of walls hitpoints:
+
+```cs
+float wallHealthPercent = settlement.SettlementWallSectionHitPointsRatioList.Average() * 100f;
+```
+
+### Last Conquest Time
+
+??? abstract "C#:"
+    ```cs
+    public static CampaignTime GetLastConquestTime(Settlement settlement)
+    {
+        for (int i = Campaign.Current.LogEntryHistory.GameActionLogs.Count - 1; i >= 0; i--)
+        {
+            LogEntry logEntry = Campaign.Current.LogEntryHistory.GameActionLogs[i];
+            ChangeSettlementOwnerLogEntry changeLog = logEntry as ChangeSettlementOwnerLogEntry;
+
+            if (changeLog != null && changeLog.Settlement == settlement)
+            {
+                // Check if this was a true conquest (between different factions)
+                IFaction previousFaction = changeLog.PreviousClan?.MapFaction;
+                IFaction newFaction = changeLog.NewClan?.MapFaction;
+
+                if (previousFaction != null && newFaction != null && previousFaction != newFaction)
+                {
+                    return changeLog.GameTime; // This is a true conquest
+                }
+            }
+        }
+        return CampaignTime.Never;
+    }
+    ```
 ## Granary/food
 
 How much food in the granary:
@@ -100,75 +161,6 @@ Settlement.CurrentSettlement.Town.FoodStocksUpperLimit()
 
 * [More info here](/modding/buildings)
 
-Current build project:
-
-``` cs
-Building building = Hero.MainHero.CurrentSettlement.Town.CurrentBuilding;
-```
-
-Progress percent:
-
-``` cs
-float perc = BuildingHelper.GetProgressOfBuilding(building, settlement.Town) * 100;
-```
-
-Days to complete:
-
-``` cs
-int days = BuildingHelper.GetDaysToComplete(building, settlement.Town);
-```
-
-Building tier:
-
-``` cs
-int tier = BuildingHelper.GetTierOfBuilding(building.BuildingType, settlement.Town)
-```
-
-Buildings in the queue:
-
-``` cs
-Queue<Building> settlement.Town.BuildingsInProgress
-```
-
-Gold in Reserve:
-
-![](/pics/2409042141.jpg)
-
-``` cs
-int settlement.Town.BoostBuildingProcess
-```
-
-Construction / "Bricks"
-
-![](/pics/2409042140.jpg)
-
-``` cs
-int bricks = settlement.Town.Construction
-```
-
-Construction Cost
-
-![](/pics/2409050808.jpg)
-
-```cs
-int Building.GetConstructionCost()
-```
-
-Building progress - how much is built
-
-![](/pics/2409050819.jpg)
-
-```cs
-float Building.BuildingProgress
-```
-
-Is building default project?
-
-![](/pics/2409050823.jpg)
-
-```cs
-bool building.BuildingType.IsDefaultProject
-```
 
 
 ## Town
@@ -185,6 +177,16 @@ MBReadOnlyList<Village> Settlement.Town.TradeBoundVillages
 
 ```cs
 int Settlement.Town.GetWallLevel()
+```
+
+### Governor
+
+```cs
+Hero Town.Governor
+
+ChangeGovernorAction.RemoveGovernorOf(Hero governor);
+ChangeGovernorAction.RemoveGovernorOfIfExists(Town town);
+ChangeGovernorAction.Apply(Town fortification, Hero governor);      // assign new
 ```
 
 
