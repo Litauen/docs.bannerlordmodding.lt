@@ -33,7 +33,7 @@ int             | TotalRegularCount                  | [get] | |
     Defender
     Patrolling
 
-## AIBehaviorFlags
+## AIBehaviorFlags (1.2.12)
 
     Unassigned = 0
     PreGathering
@@ -47,7 +47,7 @@ int             | TotalRegularCount                  | [get] | |
     Patrolling
     GoToSettlement
 
-## MainPartyCurrentAction
+## MainPartyCurrentAction (1.2.12)
 
     Idle
     GatherAroundHero

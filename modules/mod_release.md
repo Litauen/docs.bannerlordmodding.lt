@@ -84,3 +84,7 @@ Why some modders don't like Steam:
 * Nightmarish standard folder structure, based on workshop ID number instead of names. It's absolute garbage to backup/maintain a complex list
 * You have to pick your image right there; you can't leave it blank and you can't change it later
 * Unable to have multiple versions of your mod
+
+!!! quote "Bloc"
+    A lot of reasons. Steam Workshop doesn't have a proper bug tracker like nexusmods. Its comment-based system is just a mess. Version management is lackluster as well. Plus, publishing something on Steam Workshop is way more tedious than on nexusmods for me, since I've been publishing here for years. Keeping updates in sync between sites is pretty much problematic as well, it's better to have a single trusted source where people can download mods directly from the owners. When there are two or more sources, things get hairy and users have to "verify" they're downloading from the correct author, otherwise they risk getting something broken or, worse, malicious.
+    All things considered, using Steam Workshop isn't just pointless but it's a major waste of my time and effort for me 
