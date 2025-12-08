@@ -37,6 +37,19 @@
 
 [Source with pictures here by LogRaam](https://www.nexusmods.com/mountandblade2bannerlord/mods/2667)
 
+### 1.3+
+
+Add /no_watchdog to the Steam
+
+![](/pics/2512070856.png)
+
+Attach dnSpy not in the Launcher but when game is in the main menu state.
+
+??? quote "Dejan"
+    We have also made these two modding related changes with v121, for anyone interested:<br>
+    Added the ability to detach the crash dump upload system (watchdog) at runtime via Utilities.DetachWatchdog routine.<br>
+    Added a command line functionality "no_watchdog" which prevents the game from initializing the system.
+
 
 ## Not working breakpoints
 
