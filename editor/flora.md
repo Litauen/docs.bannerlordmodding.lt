@@ -1,5 +1,48 @@
 # Flora
 
+## Terrain Layer Flora Guide
+
+by Horris
+
+Tested all of the below on a 1.6km x 1.6km map, just to see the differences on a larger scale using larger numbers. On small patches it is really hard to figure out what these individual settings do I've found out.
+
+Everything below is explained with trees as an example, but works the same for grass, rocks, etc.
+
+
+`Colony`<br>
+Is a group of trees
+
+`Density`<br>
+How close individual trees are together within a colony.
+
+`Seed`<br>
+Different seeds cause different noise patterns to be generated. <br>
+Can be helpful to slightly adjust the tree placements if clipping with rocks occur for example. Or you simply don't like the current arrangement's looks.
+
+Another use case for it is if you are combining different tree types for example, and want the colonies to either overlap in the exact same location, or not overlap and not mix as much.
+
+* Same seed = colony locations overlap exactly
+* Different seed = colony locations are different
+
+`Colony Radius`<br>
+Distance between groups of trees<br>
+lower value = less distance between groups of trees
+
+`Colony Threshold`<br>
+Size of every single group of trees.<br>
+lower value = bigger groups<br>
+It can seem as if it also creates new colonies, but it doesn't. It sometimes looks like trees spawn in new places, but that position is already part of an existing colony, however small it might be.
+Colonies can be made to overlap one another if the threshold is set low enough, combined with a low enough colony radius.
+
+`Size min/Size max`<br>
+Minimal and maximal sizes of the individual trees you are placing
+
+`Weight`<br>
+Affects areas where you have only lightly applied the terrain layer.<br>
+It determines whether colonies can spawn when only a light layer of terrain is applied.<br>
+Usually around edges of your terrain, where it blends into other terrain.<br>
+Or where you quickly 'painted' over another layer and can still see the layer below it through the top one.
+
 
 ## Wide spacing for trees on the world map
 
