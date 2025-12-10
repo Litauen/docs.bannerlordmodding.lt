@@ -5,6 +5,14 @@
 
     Message: Object reference not set to an instance of an object.
 
+??? failure "get_StealthEquipments - SetInitialValuesFromCharacter - CreateHero - CreateSpecialHero - CreateMinorFactionHeroFromTemplate"
+    Happens on new game start.<br>
+    ??? warning "Often just CTD, without any error report."
+        Checking the code, it crashes when tries to create `spc_ghilman_leader_0` and template's culture is NULL.<br>
+        This template is never read from the XML, only reference to it.
+    REASON: `<EquipmentSet id="fighter_vlandia"/>` in `spnpccharactertemplates.xml` <br>
+    Commenting it out removes the crash.
+
 
 ??? failure "SpawnCaravan - CaravansCampaignBehavior"
     REASON: no/wrong caravan template for some culture
