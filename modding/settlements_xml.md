@@ -21,15 +21,10 @@
 - ***port_posX*** : value is converted to a double, then cast to a float
 - ***port_posY*** : value is converted to a double, then cast to a float
 	- PortPosition by default is the same as the settlement's Position (same coordinates, but with isOnLand = false) so this can be omitted safely
+		- however, this means every single settlement has a valid port position including villages and hideouts
 	- the coordinates are only updated if ***port_posX*** and ***port_posY*** exist in the xml
-	- settlement.HasPort = true when the PortPosition != Vec2.Zero
-		- this is only possible if the settlement has no ***posX*** and ***posY*** in the xml as the default port location *is* the same as the settlement's Position and all settlements must have a position within the map bounds to be useable
-			- is this a potential source of problems for coastal settlements where port coordinates are not entered in the xml? 
-				- the settlement will be positioned on land and therefore inaccessible to boats (via the PathFaceRecord), but will be considered to have a port for the purposes of Ai destinations
-					- at worst this would lead to useless calculations, but, at a glance, I don't see a reason it would crash
-	- **EFFECTIVELY, EVERY SETTLEMENT HAS A PORT!**
-		- Because HasPort is checked in so many locations, particularly for Ai pathing, it may be wise to explicitly define ***port_posX*** = "0" and ***port_posY*** = "0" so that HasPort = false and therefore any pathing calculations avoid attempting to needlessly calculate both the land and sea routes.
-		- This includes villages and hideouts as this is not inside of the SettlementComponent and given that CustomSettlements will also have these attributes, any added settlement type will also have a port.
+		- settlement.HasPort = true when the PortPosition != Vec2.Zero **and** when both port positions have a valid number in the xml
+			- consequently, checking a settlement for a non-zero port position is *insufficient* because it will consider every settlement to be a port settlement. You must check HasPort beforehand to conclude if a settlement actually has a port.
 - ***culture*** : the id is looked up in MBObjectManager and the relevant object is stored on the settlement
 	- the format *must be* : `"Culture.(culture's StringId)"` as the string is split at the period :
 		- `Culture` is used to find the object type in the manager
