@@ -35,7 +35,7 @@
 
 * [Bannerlord source v1.2.12](https://github.com/DarthNoxix/BannerlordSourceGPT)
 * [Banner Kings](https://github.com/R-Vaccari/bannerlord-banner-kings)
-* [The Old Realms](https://github.com/TheOldRealms)  / [1.3](https://github.com/TheOldRealms/TOR_Core/tree/1.3beta)
+* [The Old Realms](https://github.com/TheOldRealms)  / [1.3](https://github.com/TheOldRealms/TOR_Core/tree/development)
 * [RealmsForgotten](https://github.com/actualAnian/RealmsForgotten)
 
 ### Multiplayer
