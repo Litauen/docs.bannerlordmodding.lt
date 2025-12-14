@@ -6,7 +6,7 @@
 
 * spcultures.xml - [Cultures](/modding/cultures/)
 * heroes.xml / lords.xml - [Heroes](/modding/heroes/#herolord-xml)
-* settlements.xml - [Settlements](/modding/settlements/#xml)
+* [settlements.xml](/modding/settlements_xml) - [Settlements](/modding/settlements/#xml)
 * spclans.xml - [Clans](/modding/clans/)
 * spkingdoms.xml - [Kingdoms](/modding/kingdoms/)
 * npc/characters/templates - [NPC Character](/modding/npc_character)
