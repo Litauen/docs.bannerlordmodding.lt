@@ -2,6 +2,7 @@
 
 * [How to import a new skeleton to Bannerlord](https://www.youtube.com/watch?v=gL0ZfNhnrn0)
 * [Download skeletons from here](https://drive.google.com/drive/folders/1mi2y_sO-ctpqScMlT5zvU1r01L2810_V)
+* [FULL Skeleton/Race Tutorial](https://www.youtube.com/watch?v=eXHd8yjoxk0)
 
 ![](/pics/2410021050.png)
 

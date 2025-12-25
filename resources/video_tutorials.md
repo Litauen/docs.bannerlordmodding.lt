@@ -71,6 +71,10 @@ Mod setup, dialogs, game menu, GauntletUI, etc.
 
 * [Scene Editor guide [2025-10-04]](https://www.youtube.com/watch?v=B3vwFS5OFwM)
 
+## BabyLettuce
+
+* [FULL Skeleton/Race Tutorial](https://www.youtube.com/watch?v=eXHd8yjoxk0)
+
 ## [Banner Lab](https://forums.taleworlds.com/index.php?threads/pure-xml-modding-pdf-and-videos-tutorials-with-templates.431408/){target=_blank}
 
 ### [Modding Through XML Editing](https://www.youtube.com/playlist?list=PLxhni8XI_dRDjRRDsCzEBZg4eUInzkzQT){target=_blank}
