@@ -5,6 +5,11 @@
 
     Message: Object reference not set to an instance of an object.
 
+
+??? failure "CharacterCreationCampaignBehavior - GetAdultMenuNarrativeMenuCharacterArgs"
+    REASON: missing some equipments on character creation
+
+
 ??? failure "get_StealthEquipments - SetInitialValuesFromCharacter - CreateHero - CreateSpecialHero - CreateMinorFactionHeroFromTemplate"
     Happens on new game start.<br>
     ??? warning "Often just CTD, without any error report."
@@ -574,6 +579,7 @@
 
     Message: Exception has been thrown by the target of an invocation.
     Source: mscorlib
+
 
 ??? failure "InvokeMethod - Invoke - CreateInstanceImpl - CreateInstance - CreateScreen"
     REASON: map xscene settlement ID mismatch with settlements.xml settlement ID. settlements.xml has a settlement with ID, which is not present in the xscene file
