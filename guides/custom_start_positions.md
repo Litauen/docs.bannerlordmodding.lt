@@ -1,5 +1,14 @@
 # Custom Start Positions
 
+!!! abstract "For 1.3+"
+    Set in culture.xml file:
+    ```xml
+    start_point_position_x="213.01"
+    start_point_position_y="471.19"
+    ```
+
+!!! warning "For 1.2.12:"
+
 Example Harmony patch. Set your own cultures/coordinates.
 
 Get player's coordinates with:

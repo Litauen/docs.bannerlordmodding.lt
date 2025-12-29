@@ -12,6 +12,7 @@
 * knuzait
 * sturgia
 * vlandia
+* nord (with DLC)
 
 and small other cultures, like looters, etc
 
@@ -50,6 +51,7 @@ foreach (var culture in allCultures)
 * CULTURE_arena.png
 * CULTURE_keep.png
 * CULTURE_tavern.png
+* CULTURE_port.png (with DLC)
 
 
 More [info](/guides/custom_menu_background/#alleyarenakeeptavern).
@@ -127,7 +129,7 @@ encounter_background_mesh - menu pic for encounter with the troops of this cultu
     | khuzait_increased_animal_production | <span style="color:green">25% production bonus to horse, mule, cow and sheep in villages owned by Khuzait rulers</span> |
     | khuzait_decreased_town_tax | <span style="color:red">20% less tax income from towns</span> |
 
-!!! abstract "1.3+"
+!!! abstract "1.3+ (DefaultCulturalFeats + NavalCulturalFeats)"
 
 | Feat | Description |
 | ------------ | --------- |
@@ -149,7 +151,10 @@ encounter_background_mesh - menu pic for encounter with the troops of this cultu
 | vlandian_renown_mercenary_income | <span style="color:green">5% more renown from the battles, 15% more income while serving as a mercenary</span> |
 | vlandian_villages_production_bonus | <span style="color:green">10% production bonus to villages that are bound to castles</span> |
 | vlandian_increased_army_influence_cost | <span style="color:red">Recruiting lords to armies costs 20% more influence</span> |
-
+| nord_hostile_action_speed | :new: <span style="color:green">20% raid speed bonus while raiding.</span> |
+| nord_hostile_action_bonus | :new: <span style="color:green">+30% more loot from villages, villagers and caravans.</span> |
+| nord_ship_movemenet_increase | :new: <span style="color:green">20% ship movement speed in rivers and coastal seas.</span> |
+| nord_decreased_cohesion_rate | :new: <span style="color:red">Armies that are commanded by a Nord commander lose 30% more cohesion on land.</span> |
 
 
 ??? example "To change the description of the native feats, use Harmony patch (remove 'Battanian' example):"

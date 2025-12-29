@@ -66,7 +66,12 @@
 
 ## Culture's Selection Cards
 
-![](/pics/dAbzEt7.png)
+<center>
+![](/pics/2512281121.png)
+</center>
+
+??? warning "1.2.12"
+    ![](/pics/dAbzEt7.png)
 
 
 The culture's name that is visible under the picture is defined in the module_strings.xml :
@@ -80,11 +85,13 @@ The culture's name that is visible under the picture is defined in the module_st
 
 Image dimensions for the culture's picture in 1.3+: 541 x 94  (1.2.12: 366 x 668)
 
-I leave some transparent space at the bottom to not cover the culture's name.
+??? warning "1.2.12"
 
-Also round the corners, so the highlight would not look weird.
+    I leave some transparent space at the bottom to not cover the culture's name.
 
-![](/pics/cPK9nuC.png)
+    Also round the corners, so the highlight would not look weird.
+
+    ![](/pics/cPK9nuC.png)
 
 These images should be named the same as culture ID:
 
@@ -106,7 +113,7 @@ and vanilla culture images will be gone. If we want them back - change `ui_chara
 The game uses these sprites for your new cultures automatically - nothing to be done here anymore.
 
 
-### Remove Native Cultures
+### Remove Native Cultures (1.2.12)
 
 To get rid of native cultures from this selection:
 
@@ -218,7 +225,7 @@ Demo:
 
 
 
-## You were born into a family of...
+## You were born into a family of... (1.2.12)
 
 With the custom culture, this window is empty by default:
 
