@@ -17,8 +17,7 @@
 
 ## Faces
 
-![](/pics/2410241343.png)
-
+![](/pics/2512291315.png)
 
 ## Problems/Solutions
 

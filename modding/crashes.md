@@ -533,6 +533,9 @@
     Source: TaleWorlds.MountAndBlade
 
 
+??? failure "GetPathBetweenAIFaceIndicesWithRegionSwitchCost"
+    REASON: settlement.xml has port info, scene.xscene does not have it
+
 ??? failure "MapScene - GetNavigationMeshCenterPosition - DefaultMapDistanceModel - GetClosestSettlementForNavigationMesh - GetDistance - CalculatePartyInfluenceCost - CalculateTotalInfluenceCost"
     REASON: settlement not covered by Navmesh<br>
     REASON2: [hole](https://discord.com/channels/411286129317249035/677511186295685150/1272497615140945991) in the Navmesh<br>

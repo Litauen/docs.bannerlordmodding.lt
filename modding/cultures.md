@@ -105,6 +105,11 @@ These lines determine the equipment rosters for lords that turn 18:
 
 encounter_background_mesh - menu pic for encounter with the troops of this culture
 
+### naval_factor
+
+`CultureObject.NavalFactor` - not used anywhere (1.3.13)
+
+
 ### &lt;cultural_feats>
 
 ??? abstract "1.2.12"

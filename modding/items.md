@@ -62,6 +62,10 @@ ItemObject grain = MBObjectManager.Instance.GetObject<ItemObject>("grain");
 
     stolen_goods
 
+    planks           (1.3)<br>
+    walrus_tusk      (DLC)<br>
+    whale_oil        (DLC)
+
 ## ItemRoster
 
 * [API](https://apidoc.bannerlord.com/v/1.2.12/class_tale_worlds_1_1_campaign_system_1_1_roster_1_1_item_roster.html)
