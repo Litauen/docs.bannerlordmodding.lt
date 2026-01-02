@@ -1,4 +1,21 @@
-# Settlement xml Deserialize
+# settlements.xml
+
+## 1.3 changes related to DLC
+
+`<Settlement` (Top Level) attributes:
+
+* port_posX
+* port_posY
+
+`<Buildings>`:
+
+* `<Building id="building_shipyard" level="1"/>`
+
+`<Locations>`:
+
+* `<Location id="port" scene_name="empire_shipyard"/>`
+
+## Deserialize
 
 - **If there is no note about omission of an attribute, assume that it must be present - most of these have no null protection during read.**
 - Attributes are in the order listed in the deserialize method which differs from the xml ordering.

@@ -610,6 +610,14 @@
 
 
 <br>
+## System.UriFormatException
+
+    Message: Invalid URI: The URI is empty.
+
+??? failure "Uri.CreateThis - LoadXmlWithValidation - CreateDocumentFromXmlFile - LoadXML"
+    REASON: error in the XML file, I had a missing space :) : `arm_armor="40"has_gender_variations="false"`
+
+<br>
 ## System.Xml.Xsl.XslTransformException
 
     Message: Attribute and namespace nodes cannot be added to the parent element after a text, comment, pi, or sub-element node has already been added.
