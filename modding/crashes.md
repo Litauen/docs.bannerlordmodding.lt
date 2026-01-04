@@ -293,6 +293,7 @@
     Message: Value cannot be null. Parameter name: source
     Source: System.Core
 
+
 ??? failure "CreateHeroAtOccupation"
     REASON: in CUSTOM_culture.xml commented out one name:
     ``` xml
@@ -353,7 +354,7 @@
 
 
 ??? failure "Linq.Enumerable.Any - Extensions.IsEmpty - NameGenerator - GetNameListForCulture - GenerateHeroFirstName"
-    REASON: error in the culture xml file
+    REASON: error in the culture xml file, non-existant culture used for some lord/clan
 
 
 
