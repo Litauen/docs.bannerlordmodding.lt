@@ -42,6 +42,11 @@ Import it into the Editor and assign it to the `TableuMaskMap`:
 
 ![](/pics/2410091348d.png)
 
+!!! warning "The surface of the armor model where the sigil pattern is will not show any textures (such as the mud and the cloth fold) other than the flag pattern itself."
+    There are two solutions:<br>
+    1. Make the TableauMaskMap a greyscale image instead of a pure black and white image.<br>
+    2. Use the method same with the vanilla [shields](/3d/shields). You will see that the vanilla shields also use banner sigil.
+
 ## Configure material
 
 Enable `use_tableau_blending` and `use_tableau_mask_as_separate_texture` flags on the material of the armor:
