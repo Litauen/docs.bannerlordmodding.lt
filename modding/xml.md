@@ -92,6 +92,8 @@ For example Culture XML file is very sensitive to the comments. Commenting out o
 
 ## XSLT
 
+* [XSLT Introduction](https://www.w3schools.com/xml/xsl_intro.asp)
+
 Use XSLT files to remove or modify the elements of XML files that are loaded from other modules. You don’t have to use the XSLT system for adding new elements to the XML files.
 
 You simply create an XSLT file with the same name as the XML file and place it to the same path with your XML file. This added XSLT file is going to make the changes to the XML files of the same type located in modules that were loaded before your module. 

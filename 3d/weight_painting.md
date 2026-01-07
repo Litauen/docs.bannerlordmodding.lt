@@ -81,4 +81,8 @@ Weight painting is a technique used in rigging to assign influence to specific p
     Your browser does not support the video tag.
 </video>
 
-Redo the Weight Painting. Fastest way - do Weight Transfer.
+Solution: Redo the Weight Painting. Fastest way - do Weight Transfer.
+
+![](/pics/2601060837.png)
+
+Solution: Assign whole helmet to the head bone.

@@ -92,6 +92,8 @@ Find the mesh (armor) and give the material that uses the TableauMaskMap `banner
 ![](/pics/2410091348j.png)
 
 
+### LOD problem
+
 !!! bug "It seems that only LOD0 works!"
     Looks like this for other LODs:
     <center>
@@ -107,8 +109,9 @@ Find the mesh (armor) and give the material that uses the TableauMaskMap `banner
     </center>
 
 
-!!! tip "Do the same for the _slim version if you have it."
+    !!! tip "Do the same for the _slim version if you have it."
 
+    !!! quote "Snorri: hmmm... it will require more work, but what if make two materials, one that change whole texture to bannner, and use it for lod 1, and make another material that just change armor collor to one banner use and use this to other lods? It will be less viable then rapid full color swap and allow more lods to be used"
 
 ## XML
 

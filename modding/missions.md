@@ -104,9 +104,6 @@ SpectatorTeam
 ```
 
 
-## Find Entity and it's position in scene
-
-`TaleWorlds.Engine.Scene.FindEntityWithName` or `FindEntityWithTag` and then you can get the entity Vec3 position from `GameEntity.GlobalPosition`
 
 
 ## Max scene coordinates
@@ -118,3 +115,17 @@ Mission.Scene.GetTerrainData(out Vec2i nodeDimension, out float nodeSize, out _,
 terrainSize.x = nodeDimension.X * nodeSize;
 terrainSize.y = nodeDimension.Y * nodeSize;
 ```
+
+## Entities
+
+### Find Entity
+
+`TaleWorlds.Engine.Scene.FindEntityWithName` or `FindEntityWithTag`
+
+### Find position in scene
+
+Vec3 position -  `GameEntity.GlobalPosition`
+
+### Enable collision/physics
+
+`GameEntity.SetPhysicsState(true, true)`

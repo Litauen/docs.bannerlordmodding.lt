@@ -1,5 +1,7 @@
 # Character Customization
 
+* [Hair/Beards/Tatoos/Scars](https://docs.google.com/spreadsheets/d/1fUAcrA_z3STKYQ-SWlt7LGVrpS_8B0gmIO8xuUyrI-Y/edit?gid=1598217896#gid=1598217896) by Fatrod
+
 Info provided by NPC99
 
 Related forum post: [How to creat a new race and use my new face model](https://forums.taleworlds.com/index.php?threads/how-to-creat-a-new-race-and-use-my-new-face-model.455092/#post-9837517){target=_blank}
