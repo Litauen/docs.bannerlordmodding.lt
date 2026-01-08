@@ -53,6 +53,9 @@ Click on navmesh icon at the top menu several times
     then with all of the faces selected, copy them, paste them and re-align them to the same exact spots you had them before, now change civilian visibility off and siege on<br>
 
 
+!!! quote "Snorri:"
+    it's recomended, but not needed, as you can make single navmesh faces dissaper in some lvls, it's enough in many scenes for civilian use, to just disble ladders, destroyed walls, and stuff like this
+
 ## Tips
 
 ![](/pics/2510300803.png)
