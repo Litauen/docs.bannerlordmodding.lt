@@ -1,6 +1,6 @@
 # How to report a crash
 
-Crash report without a crash log is not very helpful. To get a crash log follow these steps:
+Crash report without a crash log is (useless) not very helpful. To get a crash log follow these steps:
 
 1. Install [ButterLib](https://www.nexusmods.com/mountandblade2bannerlord/mods/2018){_target=blank} mod
 
@@ -21,3 +21,6 @@ Crash report without a crash log is not very helpful. To get a crash log follow 
 
 6. Also add a description what you were doing when the crash happened.
 
+!!! warning "Send ONLY the link. <br><br>Do NOT send HTML file, do NOT send screenshots, do NOT send archives, etc.<br><br> SEND ONLY THE LINK!!!"
+
+<br><br><br>
