@@ -49,6 +49,26 @@ needs:
 </game_entity>
 ```
 
+??? info "How it looks in the Editor (v1.3.13)"
+    ![](/pics/2601101412.png)
+
+
+### Fishing Village
+
+Each fishing village should have 'drop_point' entity for fishing parties to spawn.
+
+```xml
+<game_entity name="drop_point" old_prefab_name="" mobility="1">
+    <tags>
+        <tag name="main_map_village_dropoff"/>
+    </tags>
+    <transform position="1, 1, 0" rotation_euler="0, 0, 0"/>
+</game_entity>
+```
+
+!!! note "Adjust the coordinates so the entity would be on the water near the village."
+
+!!! abstract "Related code: FishingPartyCampaignBehavior - CanHaveFishingParties"
 
 ### Pirate Spawn Points
 

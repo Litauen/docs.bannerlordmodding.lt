@@ -522,6 +522,9 @@
 
     Message: Index was out of range. Must be non-negative and less than the size of the collection. Parameter name: index
 
+??? failure "AddBlockadeVisuals - RefreshPartyIcon"
+    REASON: incorrectly set town_port, town_blockade_end or town_blockade_start entities in scene.xscene file (Main_map)
+
 ??? failure "TournamentFightMissionController - PrepareForMatch - SkipMatch"
     REASON: in culture's file used bad template for &lt;tournament_team_templates_one_participant>
 
