@@ -211,7 +211,28 @@ public enum WeaponClass
 }
 ```
 
+### Usage
 
+!!! quote "TeaLeaf: In case anyone else needs this, I did find the function to call: MBItem.GetItemUsageSetFlags"
+
+    ```cs
+    //Mount-only usages are things like couch-lance
+    bool hasMountOnlyUsage = false;
+    //Foot-only usages are things like spear brace and throwing spear throw
+    bool hasFootOnlyUsage = false;
+    foreach (WeaponComponentData weaponMode in weaponComponent.Weapons)
+    {
+        ItemObject.ItemUsageSetFlags usageSetFlags = MBItem.GetItemUsageSetFlags(weaponMode.ItemUsage);
+        if (usageSetFlags.HasFlag(ItemObject.ItemUsageSetFlags.RequiresMount))
+        {
+            hasMountOnlyUsage = true;
+        }
+        if (usageSetFlags.HasFlag(ItemObject.ItemUsageSetFlags.RequiresNoMount))
+        {
+            hasFootOnlyUsage = true;
+        }
+    }
+    ```
 
 ## Force agents to use couch lance
 

@@ -75,12 +75,14 @@ Several armors that are bulky and are very good for testing with shoulder armors
 
 ### Add Leaf Bones enabled
 
+Floating helmet:
+
 <video width="395" height="325" controls autoplay loop muted>
     <source src="/pics/add_leaf_bones.webm" type="video/webm">
     Your browser does not support the video tag.
 </video>
 
-Cause: Add Leaf Bones enabled in the Blender: [FBX Export](/3d/export_to_fbx/)
+Cause: Add Leaf Bones enabled in the Blender export settings: [FBX Export](/3d/export_to_fbx/) 
 
 ![](/pics/2409281039.png)
 
@@ -98,6 +100,8 @@ Cause: missing [armature (skeleton)](/3d/armature_skeleton/) or wrong armature a
 
 
 ### Disabled skinning
+
+Not moving helmet:
 
 <video width="285" height="269" controls autoplay loop muted>
     <source src="/pics/material_skinning_problem.webm" type="video/webm">

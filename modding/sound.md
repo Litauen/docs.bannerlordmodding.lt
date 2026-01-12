@@ -475,7 +475,7 @@ agent.MakeVoice(SkinVoiceManager.VoiceType.Grunt, SkinVoiceManager.CombatVoiceNe
 
 Create your own soundtrack.xml in YOURMOD/music/soundtrack.xml
 
-You can take native file as a starting point from: `SteamLibrary\steamapps\common\Mount & Blade II Bannerlord\music\soundtrack.xml`
+You can take native file as a starting point from: `SteamLibrary\steamapps\common\Mount & Blade II Bannerlord\Modules\Native\Music\soundtrack.xml` or `Modules\NavalDLC\Music...`
 
 ``` cs
 using System;
@@ -516,15 +516,17 @@ namespace Patches
 }
 ```
 
-In your MOD/music/soundtrack.xml you can reference native audio by adding ..\\..\\..\\..\music\PC\ in their &lt;Path>
+In your MOD/music/soundtrack.xml you can reference native audio like this:
 
 Original:
 
-    <Path>MBII_Campaign_Maintheme_Variation.wav</Path>
+    <Path>medieval_04_DG2_ARO_the_maiden.wav</Path>
 
 After the patch:
 
-    <Path>..\..\..\..\music\PC\MBII_Campaign_Maintheme_Variation.wav</Path>
+    <Path>../../Native/Music/medieval_04_DG2_ARO_the_maiden.wav</Path>
+
+!!! info "Game adds '/PC' before file name automatically."
 
 ## Custom Music in Taverns
 

@@ -648,6 +648,14 @@
     REASON: some defined bandit faction has no hideout on the map
 
 
+<br><br>
+## DivideByZeroException
+
+    Message: Attempted to divide by zero.
+
+??? failure "LordsHallFightMissionController+MissionSide.SpawnTroops"
+    REASON: error in the scene, not enough spawn points?
+
 
 
 <br><br>
