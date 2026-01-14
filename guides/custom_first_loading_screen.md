@@ -19,3 +19,6 @@ Mark to do not downgrade the quality:
 
 
 I use resolution 2560x1440 for better quality on wide screens.
+
+
+For DLC the file name is loadingscreen_naval

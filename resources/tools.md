@@ -35,19 +35,23 @@
 * [SceneFromGIS](https://scenefromgis.14egaming.com/){_target=_blank} - Create scenes for video game maps from real geographic data.
 * [SceneObjData Extractor?](https://github.com/lewisajax/bl-terrain-ed)
 
+## grep/search
 
-## ripgrep
+### ripgrep
 
-* [ripgrep](https://github.com/BurntSushi/ripgrep){target=_blank} - file grep/search program
+* [ripgrep](https://github.com/BurntSushi/ripgrep){target=_blank} - command line file grep/search program
 
-* Edit System environment variables: https://youtu.be/gb3YA-1ml7E?t=476
-* Usage: https://youtu.be/gb3YA-1ml7E?t=577
+* Edit System environment variables: [video](https://youtu.be/gb3YA-1ml7E?t=476)
+* Usage: [video](https://youtu.be/gb3YA-1ml7E?t=577)
 
 ```
     cd to the game folder
     rg -C 3 "is_merchandise="
 ```
 
+### grepWin
+
+* [grepWin](https://tools.stefankueng.com/grepWin.html) - file grep/search program with GUI
 
 ## rhubarb-lip-sync
 
