@@ -97,3 +97,9 @@ Change here:
 
 ![](/pics/2505121229.png)
 
+
+## Block the sun
+
+(To avoid lit areas in the buildings)
+
+Capt Cole: Use editor_plane to block the sun
