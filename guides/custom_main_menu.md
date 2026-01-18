@@ -4,6 +4,106 @@
 ![](/pics/initial_screen_demo.gif)
 </center>
 
+
+!!! warning "This  guide is for 1.3.13"
+
+To play random video (from available videos) in your main menu, you will need this patch:
+
+```cs
+[HarmonyPatch(typeof(MBInitialScreenBase), "RefreshScene")]
+public class RefreshScenePatch
+{
+    [HarmonyPrefix]
+    private static bool Prefix(MBInitialScreenBase __instance)
+    {
+        try
+        {
+            // Stop and cleanup existing video player
+            var videoPlayerViewField = Traverse.Create(__instance).Field("_videoPlayerView");
+            VideoPlayerView videoPlayerView = videoPlayerViewField.GetValue<VideoPlayerView>();
+
+            if (videoPlayerView != null)
+            {
+                videoPlayerView.StopVideo();
+                videoPlayerView.FinalizePlayer();
+                videoPlayerViewField.SetValue(null);
+            }
+
+            // Create new video player
+            videoPlayerView = VideoPlayerView.CreateVideoPlayerView();
+            videoPlayerViewField.SetValue(videoPlayerView);
+
+            // Only read from your module
+            List<KeyValuePair<string, string>> videoList = new List<KeyValuePair<string, string>>();
+            string modulePath = System.IO.Path.Combine(BasePath.Name, "Modules/LT_EE1259_Assets/Videos/initial_menu");
+
+            if (Directory.Exists(modulePath))
+            {
+                string videoPattern = "*_pc.ivf";
+
+                foreach (string subDirectory in Directory.GetDirectories(modulePath))
+                {
+                    string[] audioFiles = Directory.GetFiles(subDirectory, "*.ogg");
+                    string[] videoFiles = Directory.GetFiles(subDirectory, videoPattern);
+
+                    if (audioFiles.Length > 0 && videoFiles.Length > 0)
+                    {
+                        videoList.Add(new KeyValuePair<string, string>(videoFiles[0], audioFiles[0]));
+                    }
+                }
+            }
+
+            // Play random video if any found
+            float fps = 24f;
+            if (videoList.Count > 0)
+            {
+                int randomIndex = new Random(DateTime.Now.Second).Next(videoList.Count);
+                videoPlayerView.PlayVideo(videoList[randomIndex].Key, videoList[randomIndex].Value, fps, true);
+            }
+
+            // Refresh video aspect
+            Vec2 screenResolution = MBWindowManager.GetScreenResolution();
+            var refreshVideoAspectMethod = AccessTools.Method(typeof(MBInitialScreenBase), "RefreshVideoAspect");
+            refreshVideoAspectMethod.Invoke(__instance, new object[] { screenResolution });
+
+            return false; // Skip original method
+        }
+        catch (Exception ex)
+        {
+            LTLogger.Debug($"Exception in RefreshScene prefix: {ex.Message}");
+            return true; // Run original method on error
+        }
+    }
+}
+```
+
+I make video resolution 2560x1440 to look it good on widescreens.
+
+Make sure your video is 24 frames per second:
+
+![](/pics/2601170901a.png)
+
+2-pass conversion commands for high quality:
+
+    ffmpeg -i march24.mp4 -c:v libvpx -b:v 12M -crf 4 -quality best -cpu-used 0 -pass 1 -passlogfile vp8pass -an -f ivf NUL
+    ffmpeg -i march24.mp4 -c:v libvpx -b:v 12M -crf 4 -quality best -cpu-used 0 -pass 2 -passlogfile vp8pass march24.ivf
+
+
+Video file name should end in _pc, audio file - whatever.
+
+Place them the folder you set in your Harmony patch:
+
+![](/pics/2601170901b.png)
+
+
+Sometimes audio is lagging when playing in game. I was unable to find the reason, so I just extended the audio duration in Audacity to sync:
+
+![](/pics/2601170901c.png)
+
+<br><br>
+!!! warning "Following guide is for 1.2.12 [OUTDATED]"
+
+
 You can create any scene here, my intention was to change it slightly using the same model with cloth physics. As far as I know - custom imported models do not support cloth physics (I may be wrong here).
 
 ## Workflow
