@@ -98,6 +98,19 @@ Cause: missing [armature (skeleton)](/3d/armature_skeleton/) or wrong armature a
 
 ![](/pics/2409281050.png)
 
+Another case:
+
+<center>
+  <video width="410" height="620" controls autoplay loop muted>
+    <source src="/pics/caparison_problem.webm" type="video/webm">
+    Your browser does not support the video tag.
+  </video>
+</center>
+
+The cause - export to FBX did not include the horse_skeleton_notused:
+
+![](/pics/2601190811.png)
+
 
 ### Disabled skinning
 

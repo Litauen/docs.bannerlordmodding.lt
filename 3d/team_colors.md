@@ -43,6 +43,18 @@ You can give half values to the color mask textures, something like 0.5. Then it
 
 !!! quote "Sh1ny4: Since 1.3 some lances parts (the banner ones) have team color enabled, no idea of if it can be used on other weapons but at least we have some form of progress"
 
-## Horse Armor Problem
+## Horse Armors
 
-!!! bug "Team colors on horse armors/caparisons are not supported by the game. Bug report [here](https://forums.taleworlds.com/index.php?threads/horse-armors-with-useteamcolor-do-not-work-in-the-game-they-work-in-the-save-game-screen-though.463039/)."
+
+<center>
+<video width="755" height="692" controls autoplay loop muted>
+    <source src="/pics/caparisons_tc.webm" type="video/webm">
+    Your browser does not support the video tag.
+</video>
+</center>
+
+
+
+!!! warning "Team colors on horse armors/caparisons are not supported by the native game."
+
+Code to make it work [here](https://forums.taleworlds.com/index.php?threads/horse-armors-with-useteamcolor-do-not-work-in-the-game-they-work-in-the-save-game-screen-though.463039/) by BabyLettuce.
