@@ -28,6 +28,10 @@ Analyzing the Wait Chain shows that there is no deadlock.
 
 In Visual Studio:
 
+Make sure `Just My Code` is turned off in debug settings:
+
+![](/pics/2601241702.png)
+
 ![](/pics/2410281201b.png)
 
 ![](/pics/2410281201c.png)
