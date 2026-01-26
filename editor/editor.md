@@ -28,6 +28,9 @@
 !!! info "Install [Visual C++ Redistributable Packages for Visual Studio 2013](https://www.microsoft.com/en-us/download/details.aspx?id=40784)"
     ![](/pics/2504280817.png)
 
+    After installation, make sure you have it like this:
+    ![](/pics/2601251701.png)
+
 
 #### MSVCP120.dll was not found
 
@@ -35,6 +38,7 @@
 
 ??? info "Install [Visual C++ Redistributable Packages for Visual Studio 2013](https://www.microsoft.com/en-us/download/details.aspx?id=40784)"
     ![](/pics/2504280817.png)
+
 
 
 ### Test Mode not working
