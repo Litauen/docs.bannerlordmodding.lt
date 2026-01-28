@@ -90,7 +90,79 @@ void Hero.SetTraitLevel(TraitObject trait, int value)
 void Hero.ClearTraits()
 
 if (hero.GetTraitLevel(DefaultTraits.Honor) < 0) ...
+
 ```
+
+
+??? bug "private (why TW? WHY??) TraitLevelingHelper.AddPlayerTraitXPAndLogEntry"
+
+    Used in game like this:
+
+    `TraitLevelingHelper.AddPlayerTraitXPAndLogEntry(DefaultTraits.Mercy, -30, ActionNotes.VillageRaid, null);`
+
+    But because it's private, we can't use it directly without harmony.
+
+    We can write a duplicate:
+    ``` cs
+        // duplicate to private TraitLevelingHelper AddPlayerTraitXPAndLogEntry/AddTraitXp methods
+        public static void AddPlayerTraitXPAndLogEntry(TraitObject trait, int xpValue, ActionNotes context, Hero referenceHero)
+        {
+            int traitLevel = Hero.MainHero.GetTraitLevel(trait);
+
+            // AddTraitXp logic
+            int currentXp = Campaign.Current.PlayerTraitDeveloper.GetPropertyValue(trait);
+            int newXpAmount = xpValue + currentXp;
+            int newLevel;
+            int newXpValue;
+            Campaign.Current.Models.CharacterDevelopmentModel.GetTraitLevelForTraitXp(Hero.MainHero, trait, newXpAmount, out newLevel, out newXpValue);
+            Campaign.Current.PlayerTraitDeveloper.SetPropertyValue(trait, newXpValue);
+            if (newLevel != Hero.MainHero.GetTraitLevel(trait))
+            {
+                Hero.MainHero.SetTraitLevel(trait, newLevel);
+            }
+
+            // Log and dispatch
+            if (traitLevel != Hero.MainHero.GetTraitLevel(trait))
+            {
+                CampaignEventDispatcher.Instance.OnPlayerTraitChanged(trait, traitLevel);
+            }
+            if (MathF.Abs(xpValue) >= 10)
+            {
+                LogEntry.AddLogEntry(new PlayerReputationChangesLogEntry(trait, referenceHero, context));
+            }
+        }
+    ```
+
+
+??? abstract "ActionNotes"
+    * DefaultNote
+    * NoQuarrel
+    * CourtshipQuarrel
+    * FiefQuarrel
+    * ValorStrategyQuarrel
+    * ResponsibilityStrategyQuarrel
+    * CalculatingStrategyQuarrel
+    * VengeanceQuarrel
+    * DishonestBusinessQuarrel
+    * RuthlessBusinessQuarrel
+    * CorruptGangLeaderQuarrel
+    * CompetingGangLeaderQuarrel
+    * TroublemakerQuarrel
+    * ExtortingQuarrel
+    * HereticQuarrel
+    * LandCheatingQuarrel
+    * QuestBetrayal
+    * QuestSuccess
+    * QuestFailed
+    * BattleValor
+    * HostileAction
+    * PersuadedToDefect
+    * PartyHungry
+    * PartyTakenCareOf
+    * VillageRaid
+    * SacrificedTroops
+    * NPCFreed
+    * SiegeAftermath
 
 Personality traits
 
