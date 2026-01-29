@@ -65,6 +65,13 @@ You can assign the material for each LOD manually:
 
 !!! tip "I usually just delete the FBX, fix material in the Blender, export FBX and reimport FBX OR just rename the material in the Editor to match what came from the Blender."
 
+### Model too big/small
+
+![](/pics/2601280813.png)
+
+You imported the model in the wrong scale. Should be m (meters):
+
+![](/pics/2601280817.png)
 
 
 ## Hand Morph Import Settings For Gloves

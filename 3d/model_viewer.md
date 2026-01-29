@@ -136,6 +136,16 @@ Cause: Skinning disabled in material settings:
 
 Redo the [Weight Painting](/3d/weight_painting/). Fastest way - do [Weight Transfer](/3d/weight_painting/#weight-transfer).
 
+
+### Model too big/small
+
+![](/pics/2601280813.png)
+
+You [imported](/3d/editor_fbx_import/) the model in the wrong scale. Should be m (meters):
+
+![](/pics/2601280817.png)
+
+
 <br><br>
 ## Model Viewer Problems
 
