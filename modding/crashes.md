@@ -6,6 +6,10 @@
     Message: Object reference not set to an instance of an object.
 
 
+??? failure "InitializeCraftingOrderOnLoad - CraftingOrder - OnBeforeNonReadyObjectsDeleted"
+    REASON: game saved with RBM, loaded without RBM
+
+
 ??? failure "CharacterCreationCampaignBehavior - GetAdultMenuNarrativeMenuCharacterArgs"
     REASON: missing some equipments on character creation
 
