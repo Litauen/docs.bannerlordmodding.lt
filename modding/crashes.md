@@ -6,6 +6,8 @@
     Message: Object reference not set to an instance of an object.
 
 
+
+
 ??? failure "InitializeCraftingOrderOnLoad - CraftingOrder - OnBeforeNonReadyObjectsDeleted"
     REASON: game saved with RBM, loaded without RBM
 
@@ -525,6 +527,9 @@
 ## ArgumentOutOfRangeException
 
     Message: Index was out of range. Must be non-negative and less than the size of the collection. Parameter name: index
+
+??? failure "FillGarrisonPartyOnNewGame - GarrisonTroopsCampaignBehavior - OnNewGameCreatedPartialFollowUpEvent"
+    REASON: no Party Template for some culture's garrison
 
 ??? failure "AddBlockadeVisuals - RefreshPartyIcon"
     REASON: incorrectly set town_port, town_blockade_end or town_blockade_start entities in scene.xscene file (Main_map)

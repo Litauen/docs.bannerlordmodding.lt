@@ -28,6 +28,44 @@ Elite tournament rewards are hardcoded in `FightTournamentGame - CachePossibleEl
     Campaign.Current.TournamentManager.GetTournamentGame(town) != null
 
 
+## Arena Practice
+
+Practice weapons defined by NPCCharacter templates:
+
+* `weapon_practice_stage_1_CULTURE`
+* `weapon_practice_stage_2_CULTURE`
+* `weapon_practice_stage_3_CULTURE`
+
+
+Practice armor defined by NPCCharacter template: `gear_practice_dummy_CULTURE`
+
+(reverts to _empire if missing in `DefaultTournamentModel.GetParticipantArmor`)
+
+## Arena Spectators
+
+Arena spectators are using battle equipment, patch to fix it:
+
+```cs
+// enables civiliant equipment for arena spectators
+// native uses battle equipment
+[HarmonyPatch(typeof(Mission), "SpawnAgent")]
+public static class MissionSpawnAgentPatch
+{
+    public static void Prefix(AgentBuildData agentBuildData)
+    {
+        // Check if this is an audience spawn by looking at call stack
+        var stackTrace = new System.Diagnostics.StackTrace();
+        foreach (var frame in stackTrace.GetFrames())
+        {
+            if (frame.GetMethod()?.DeclaringType?.Name == "MissionAudienceHandler")
+            {
+                agentBuildData.CivilianEquipment(true);
+                break;
+            }
+        }
+    }
+}
+```
 
 
 ## Tournament Spawn Mechanics:
