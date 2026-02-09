@@ -183,6 +183,11 @@ Fear not, turn it off with:
 If you see this cursor and you can't access any menus - make sure to not have any controller plugged in while using the Editor. (Xbox controller or any other kind).
 
 
+## Rainbow country
+
+
+![](/pics/2602080840.png)
+
 ## Custom scripts
 
 !!! quote "Artem:"
