@@ -517,7 +517,7 @@ public float MainHeroCrimeRating { get; set; }
 ```
 
 
-## Kill Character
+## Kill Hero
 
 ``` cs
 KillCharacterAction.ApplyByDeathMarkForced(vendor, true);
@@ -558,6 +558,8 @@ Based on how the hero was killed, Hero.DeathMark is created
 
 Also Hero.DeathMarkKillerHero points to the killer Hero if applicable (public void AddDeathMark).
 
+!!! note "To kill a player, make sure do this before KillCharacterAction:"
+    PlayerEncounter.Finish(true);
 
 
 ## Not-wounded party heroes list
