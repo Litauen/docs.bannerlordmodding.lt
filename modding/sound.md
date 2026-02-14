@@ -160,7 +160,10 @@ soundEventPath looks like:
     "event:/ui/notification/levelup"
 
 
-Defined in [GAME_FOLDER]\Sounds\GUIDs.txt
+Defined in:
+
+* [GAME_FOLDER]\Modules\Native\ModuleData\sound_event_data.gen.xml (1.3.14)
+* [GAME_FOLDER]\Sounds\GUIDs.txt (1.2.12)
 
 ??? example "event:/ui list"
 

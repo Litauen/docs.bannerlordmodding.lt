@@ -129,3 +129,11 @@ if (courtJester.GetCurrentAction(0).Name.Contains("act_artemfeast_playing_lyre_b
 export with 24 fps and import into blender with proper orientation x and - y
 
 Do my editing, export work proper values and import into bannerlord
+
+## Problems
+
+### Feet above the ground
+
+![](/pics/2602131324.png)
+
+Clear transformations on frame 0
