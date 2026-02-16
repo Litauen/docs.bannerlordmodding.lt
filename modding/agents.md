@@ -92,6 +92,20 @@ bool CheckSkillForMounting(Agent mountAgent) - can mount that mountAgent?
 agent.SetMaximumSpeedLimit - change speed
 ```
 
+## Kill Agent
+
+```cs
+Blow blow = new Blow(agent.Index);
+blow.WeaponRecord.FillAsMeleeBlow(null, null, -1, 0);
+blow.DamageType = DamageTypes.Blunt;
+blow.BaseMagnitude = 10000f;
+blow.WeaponRecord.WeaponClass = WeaponClass.Undefined;
+blow.GlobalPosition = agent.Position;
+blow.DamagedPercentage = 1f;
+if (agent.IsActive()) agent.Die(blow, Agent.KillInfo.Invalid);
+```
+
+
 ## Animations
 
 Use [SetActionChannel](/modding/animations/#setactionchannel)
