@@ -137,3 +137,7 @@ Do my editing, export work proper values and import into bannerlord
 ![](/pics/2602131324.png)
 
 Clear transformations on frame 0
+
+In Blender: At frame 0 in both Object mode and Posture mode, reset all transforamtions: ALT + S, ALT + R, ALT + G
+
+Then make your animation start from frame 1
