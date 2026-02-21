@@ -17,3 +17,10 @@ such as `OnGameInitializationFinished` or `OnGameStart` by calling `Harmony.Patc
 Refer to this for more details: [https://harmony.pardeike.net/articles/basics.html#manual-patching](https://harmony.pardeike.net/articles/basics.html#manual-patching)
 
 And don't forget to call `Harmony.Unpatch` at OnGameEnd
+
+
+## action_sets
+
+!!! quote "Artem: When I added new actions via `action_sets.xslt` files this happened aswell"
+
+Solution: just use `action_sets.xml`
