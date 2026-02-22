@@ -205,33 +205,39 @@ Basic example:
 
 ``` cs
 
-    private static CampaignTime actionStart = CampaignTime.Now;
+    private static CampaignTime _menuWaitStart = CampaignTime.Now;
+    float _waitHours = 10f;
 
     campaignGameStarter.AddWaitGameMenu("wait_menu_name", "top text", delegate (MenuCallbackArgs args)
     {
-        // how long to wait
-        args.MenuContext.GameMenu.SetTargetedWaitingTimeAndInitialProgress(10f, 0f);
+        // _waitHours can be changed here dynamically, applies for each new menu
 
-        actionStart = CampaignTime.Now;
+        // how long to wait
+        args.MenuContext.GameMenu.SetTargetedWaitingTimeAndInitialProgress(_waitHours, 0f);
+        args.MenuContext.SetBackgroundMeshName("captive_at_sea_escape");        // menu background picture
+
+        _menuWaitStart = CampaignTime.Now;
     }, delegate (MenuCallbackArgs args) // condition
     {
         return true;
     }, delegate (MenuCallbackArgs args) // consequence
     {
         GameMenu.ExitToLast();
-    }, delegate (MenuCallbackArgs args, CampaignTime dt)
+    }, delegate (MenuCallbackArgs args, CampaignTime dt) // tick
     {
-        args.MenuContext.GameMenu.SetProgressOfWaitingInMenu((float)actionStart.ElapsedHoursUntilNow / 10);
-    }, GameMenu.MenuAndOptionType.WaitMenuShowOnlyProgressOption, GameOverlays.MenuOverlayType.None, 0f, GameMenu.MenuFlags.None, null);
+        args.MenuContext.GameMenu.SetProgressOfWaitingInMenu((float)_menuWaitStart.ElapsedHoursUntilNow / _waitHours);
+        if ((float)_menuWaitStart.ElapsedHoursUntilNow > 1f) args.MenuContext.SetBackgroundMeshName("baltic_alley");    // can change bg here dynamically
+    }, GameMenu.MenuAndOptionType.WaitMenuShowOnlyProgressOption, GameMenu.MenuOverlayType.None, 0f, GameMenu.MenuFlags.None, null);
 
     // if this AddGameMenuOption is missing - progress bar will not be visible
-    campaignGameStarter.AddGameMenuOption("wait_menu_name", "leave", "Leave", delegate (MenuCallbackArgs args)
+    campaignGameStarter.AddGameMenuOption("wait_menu_name", "stop_waiting", "Stop waiting", delegate (MenuCallbackArgs args)
     {
-        args.optionLeaveType = GameMenuOption.LeaveType.Leave;
+        args.optionLeaveType = GameMenuOption.LeaveType.Leave;  // .Default - no icon
         return true;
     }, delegate (MenuCallbackArgs args)
     {
-        GameMenu.ExitToLast();
+        GameMenu.ExitToLast();  // exit from menu
+        //GameMenu.ActivateGameMenu("town");    // go to other menu
     },
     true, // (bool isLeave) if true here and there is no GameMenu.ExitToLast() above or similar -> wait menu will hang and game will need a reload
           // if no action is needed - make it false here to avoid hang

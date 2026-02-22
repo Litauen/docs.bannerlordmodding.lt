@@ -192,10 +192,11 @@ public class CampaignPatch
     PartiesCheckDesertionDueToPartySizeExceedsPaymentRatio checks for troops in excess of party limit or wage limit
     it then attempts to remove the lowest tier units first until it reaches the  #ofDeserters
 
-## Position on the World Map
+## Position
 
-    party.Position2D.x
-    party.Position2D.y
+    Vec2 mobileParty.GetPosition2D
+    CampaignVec2 mobileParty.Position
+    Vec3 GetPositionAsVec3()
 
 
 ## Party templates
