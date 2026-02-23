@@ -88,3 +88,17 @@ Why some modders don't like Steam:
 !!! quote "Bloc"
     A lot of reasons. Steam Workshop doesn't have a proper bug tracker like nexusmods. Its comment-based system is just a mess. Version management is lackluster as well. Plus, publishing something on Steam Workshop is way more tedious than on nexusmods for me, since I've been publishing here for years. Keeping updates in sync between sites is pretty much problematic as well, it's better to have a single trusted source where people can download mods directly from the owners. When there are two or more sources, things get hairy and users have to "verify" they're downloading from the correct author, otherwise they risk getting something broken or, worse, malicious.
     All things considered, using Steam Workshop isn't just pointless but it's a major waste of my time and effort for me 
+
+### Errors
+
+Your screenshot thumbnail filesize is too large:
+
+    SimpleEquipmentExporter/SubModule.xml
+    Status: k_EItemUpdateStatusPreparingConfig 0 / 0
+    Status: k_EItemUpdateStatusPreparingContent 0 / 0
+    Status: k_EItemUpdateStatusPreparingContent 0 / 2109187
+    Status: k_EItemUpdateStatusPreparingContent 6408 / 2109187
+    Status: k_EItemUpdateStatusUploadingContent 0 / 0
+    Status: k_EItemUpdateStatusInvalid 0 / 0
+    Uploading item failed with result: k_EResultLimitExceeded
+    Finished...
