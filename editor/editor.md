@@ -188,6 +188,15 @@ If you see this cursor and you can't access any menus - make sure to not have an
 
 ![](/pics/2602080840.png)
 
+
+## Black helpers
+
+![](/pics/2602240843.png)
+
+Delete `CoreShaders` and `TerrainShaders` folders in `C:\ProgramData\Mount and Blade II Bannerlord\Shaders`
+
+
+
 ## Custom scripts
 
 !!! quote "Artem:"
@@ -197,4 +206,3 @@ If you see this cursor and you can't access any menus - make sure to not have an
     You need to create folder `Win64_Shipping_wEditor` and add your dll inside
 
     Then script shows up in the Editor
-
