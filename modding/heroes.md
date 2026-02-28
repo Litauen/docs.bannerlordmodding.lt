@@ -562,6 +562,14 @@ Also Hero.DeathMarkKillerHero points to the killer Hero if applicable (public vo
     PlayerEncounter.Finish(true);
 
 
+## Make wounded
+
+```cs
+Hero.MainHero.MakeWounded(null, KillCharacterAction.KillCharacterActionDetail.None);
+```
+
+!!! warning "KillCharacterAction.KillCharacterActionDetail.WoundedInBattle - kill the player after some time"
+
 ## Not-wounded party heroes list
 
 ``` cs
