@@ -412,7 +412,7 @@
     Usually crash when going to the very edge of the map.
 
     REASON: Marked 'Use Dynamic Weather Effects' without the a flowmap.<br>
-    OTHER REASONS: Maybe map is not a square. Maybe flowmap is not 1024x1024.
+    OTHER REASONS: Maybe map is not a square. Maybe flowmap is not 1024x1024. Maybe you're missing `SnowAndRainTextureDefiner` script.
 
     ![](/pics/202402032219.png)
 
