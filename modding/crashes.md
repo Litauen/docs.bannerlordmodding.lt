@@ -584,7 +584,10 @@
     REASON: used the same mesh for a different shield when defining an &lt;Item>
 
 ??? failure "ScriptingInterfaceOfIMBMission - AddMissile - Mission.AddMissileAux"
-    REASON: ??
+    Crash when firing from siege weapon. <br>
+    REASON: Missing projectile item. <br>
+    If you're using custom GameType, make sure to define all projectile items referenced in `RangedSiegeWeapon` class. <br>
+    As of 1.3.15, projectiles are: `grapeshot_fire_stack`, `grapeshot_fire_projectile`, `grapeshot_stack`, `grapeshot_projectile`, `pot`, `pot_projectile`, `boulder`, `boulder_projectile`
 
 
 ??? failure "ScriptingInterfaceOfIMBMission.GetBoundaryPoints - MBBoundaryCollection.ContainsKey - SetCameraFrameToMapView"
