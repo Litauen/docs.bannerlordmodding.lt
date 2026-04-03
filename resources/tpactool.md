@@ -45,6 +45,18 @@ To fix that, open it in the Photoshop ant invert it back with CTRL+i:
 ![](/pics/2410081508.png)
 
 
+## Animations
+
+Can't export an animation I want to export. How do I do it? Always get this error:
+
+![](/pics/2604020815.png)
+
+You can only export animations from the vanilla assets because the human skeleton has to be present for it. Mod assets usually don't package that so it's not possible to export anims from other mods.
+
+Workaround: Just put the human.tpac from native in the same folder as the assets and you should be good to go. Don't forget to remove it afterwards, though, so the game won't load it.
+
+
+
 ## Vertex Paint
 
 !!! warning "Tpac tool changes the vertex paint, which in case of crossbows need to be blue instead of red."
