@@ -251,6 +251,9 @@ By price for other types of armors also:
 
 ![](/pics/2402160845.png)
 
+!!! quote "Ulfkarl: Can be set manually in the items.xml with tier_override= (1..6)"
+
+
 ## InventoryManager
 
 Screen(s) to trade/exchange items
