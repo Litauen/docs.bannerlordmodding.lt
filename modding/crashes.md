@@ -782,3 +782,14 @@ Potential solutions to try:
 
 
 
+??? failure "Value cannot be null. Parameter name: s"
+    ```
+    Inner Exception
+    Source: No module
+    No inner exception was thrown
+    Outer exception callstack:
+    at System.IO.StringReader..ctor(String s)
+    at Bannerlord.ButterLib.Options.SettingsProvider.PopulateSubSystemSettings[TSubSystem](TSubSystem subSystem) in /_/src/Bannerlord.ButterLib/Options/SettingsProvider.cs:line 93
+    ```
+    REASON: messed up Butterlib installation <br>
+    SOLUTION: go to `\Documents\Mount and Blade II Bannerlord\Configs\ModSettings\`  delete folder: `ButterLib`
