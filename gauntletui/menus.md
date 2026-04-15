@@ -186,6 +186,8 @@ args.Tooltip = new TextObject("{=yNMrF2QF}You are wounded", null);
 args.optionLeaveType = GameMenuOption.LeaveType.ICON_NAME;
 ```
 
+Defined in `\Modules\Native\GUI\Brushes\GameMenu.xml`
+
 ??? abstract "ICON_NAMEs 1.1.0+"
     ![](/pics/bWOtObC.png)
 
