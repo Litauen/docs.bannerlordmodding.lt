@@ -21,6 +21,8 @@
 
 ### Does not start
 
+- "There is no target file! Please verify your files." [How to fix](https://www.youtube.com/watch?v=iFlfOSMawi0)
+
 - If installed on another drive than the main game it will not start
 - Version mismatch with the base game - does not start at all, no process - install same version (not always true)
 - Hanged previous process - Close on Steam or check the Task Manager, kill the old process
