@@ -23,6 +23,11 @@
 
 - "There is no target file! Please verify your files." [How to fix](https://www.youtube.com/watch?v=iFlfOSMawi0) or switch to Steam beta
 
+```
+Steam → Settings → Interface → Client Beta Participation → Steam Beta Update
+After restarting Steam, it should install/place the Modding Kit files correctly.
+```
+
 - If installed on another drive than the main game it will not start
 - Version mismatch with the base game - does not start at all, no process - install same version (not always true)
 - Hanged previous process - Close on Steam or check the Task Manager, kill the old process
