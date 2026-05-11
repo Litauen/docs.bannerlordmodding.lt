@@ -233,3 +233,7 @@ Mod setup, dialogs, game menu, GauntletUI, etc.
 ## Capt Cole
 
 * [Scene Editor Tutorial - Envmap_prop and local_envmap_prop](https://www.youtube.com/watch?v=iz-4XXyZl6I)
+
+## Haterade / Tales From The Age of Men
+
+* [How to make a scene siegable](https://www.youtube.com/watch?v=f-wOpbIZLaw)
