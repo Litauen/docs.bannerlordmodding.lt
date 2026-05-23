@@ -1,5 +1,15 @@
 # Create LODs
 
+```
+LOD0 → LOD1    15 m
+LOD1 → LOD2    22.5 m
+LOD2 → LOD3    30 m
+LOD3 → LOD4    50 m
+LOD4 → LOD5    70 m
+LOD5 → LOD6    130 m
+LOD6 → culled/very cheap 210 m+
+```
+
 It can be done by hand, but believe me, you will hate doing this over and over and over again manually.
 
 We will use amazing [script made by GulagEnabler🍉](/editor/gulags_avto_weightlods_script/#lods).
