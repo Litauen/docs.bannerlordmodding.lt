@@ -69,6 +69,6 @@ Looks like this:
 
 ## Github Copilot
 
-It's worth every cent:
+UPDATE 2026-05-25 - Copilot in VS Studio is crap. Better solution is to use Cursor and use any model you like. Currently I get best results with Composer 2.5 and Sonnet 4.6
 
-![](/pics/2603031611.png)
+
