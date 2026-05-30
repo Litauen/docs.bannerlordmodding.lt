@@ -105,6 +105,11 @@ These lines determine the equipment rosters for lords that turn 18:
 
 encounter_background_mesh - menu pic for encounter with the troops of this culture
 
+
+### can_have_settlement
+
+If bandit culture has `can_have_settlement=false` then those bandits will have type=LOOTER and they will be spawned everywhere in large quantities, same as looters. And their hideouts will always be empty. (1.4.5)
+
 ### naval_factor
 
 `CultureObject.NavalFactor` - not used anywhere (1.3.13)
