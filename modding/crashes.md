@@ -22,7 +22,8 @@
         Checking the code, it crashes when tries to create `spc_ghilman_leader_0` and template's culture is NULL.<br>
         This template is never read from the XML, only reference to it.
     REASON: `<EquipmentSet id="fighter_vlandia"/>` in `spnpccharactertemplates.xml` <br>
-    Commenting it out removes the crash.
+    Commenting it out removes the crash.<br>
+    REASON2: incorrect equipment set IDs in spspecialcharacters. As in one of my <npccharacters> was pointing at an equipment set that didn't exist. It throws this error, but it had nothing to do with a stealth equipment set.
 
 
 ??? failure "SpawnCaravan - CaravansCampaignBehavior"
