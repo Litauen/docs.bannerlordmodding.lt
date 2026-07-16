@@ -16,6 +16,29 @@ Set these flags and press Save:
 
 ![](/pics/HGFsx0I.png)
 
+!!! warning "For 1.4"
+
+### Using the same load screens for warsails and base game - by anian
+How loading screens work is:
+base game loading screens are loaded => warsails overwrite the base game files. We can trick the game into thinking it already loaded the war sails loading screens, when it actually hasn't
+meaning it will showcase base game load screens, the ones named: ui_loading_[x]
+```cs
+protected override void OnSubModuleLoad()
+{
+    if (IsWarSailsLoaded)
+    {
+        var modules = Module.CurrentModule.CollectSubModules();
+        var navalGauntletModule = modules.FirstOrDefault(m => m is NavalDLCGauntletUISubModule);
+        FieldInfo category = AccessTools.Field(typeof(NavalDLCGauntletUISubModule), "_initializedLoadingCategory");
+        category.SetValue(navalGauntletModule, true);
+    }
+}
+```
+```cs 
+//where:
+public static bool IsWarSailsLoaded => ModuleHelper.IsModuleActive("NavalDLC");
+```
+put it somewhere global.
 
 ??? question "How to change the default image on the game start?"
 
