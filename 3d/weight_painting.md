@@ -1,5 +1,7 @@
 # Weight Painting
 
+* [Blender Plugin](https://superhivemarket.com/products/weight-shaper)
+
 Weight painting defines how much a bone's movement will influence the shape of the mesh at different points.
 
 Weight painting is a technique used in rigging to assign influence to specific parts of a 3D model by painting weights onto the vertices of the model. These weights determine how much each bone in the rig affects the deformation of the model at any given vertex. 
