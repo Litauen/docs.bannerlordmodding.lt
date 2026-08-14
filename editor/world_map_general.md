@@ -1,8 +1,10 @@
 # World Map
 
+* [Official Documentation - War Sails World Map](https://moddocs.bannerlord.com/war-sails/wsworldmap/)
+
 ## Custom World Map for War Sails DLC Guide
 
-`(1.3.13)`
+`(1.3+)`
 
 !!! quote "Egg:"
 
