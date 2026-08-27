@@ -55,6 +55,6 @@ You can give half values to the color mask textures, something like 0.5. Then it
 
 
 
-!!! warning "Team colors on horse armors/caparisons are not supported by the native game."
+!!! warning "Team colors on horse armors/caparisons work in inventory/missions but not in the world map :) (1.4.8)"
 
 Code to make it work [here](https://forums.taleworlds.com/index.php?threads/horse-armors-with-useteamcolor-do-not-work-in-the-game-they-work-in-the-save-game-screen-though.463039/) by BabyLettuce.
