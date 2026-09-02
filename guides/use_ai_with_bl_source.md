@@ -1,10 +1,9 @@
 # Use Decompiled Bannerlord sources with AI
 
-> Set up BL reference sources for GitHub Copilot in Visual Studio
+!!! danger "DO NOT USE GITHUB'S COPILOT. IT'S TOTAL CRAP/SCAM. USE CURSOR OR CLAUDE INSTEAD."
 
-
-!!! danger "THIS IS A HUGE PRODUCTIVITY BOOST"
-    This method gives the AI full access to the Bannerlord source to explore and analyse, and allows me to save up to 80% of the time I previously spent searching for where and how things are implemented.
+!!! warning "THIS IS A HUGE PRODUCTIVITY BOOST"
+    This method gives the AI full access to the Bannerlord source to explore and analyse, and allows me to save up to 80% of the time I previously spent searching for where and how things are implemented. Actually I am lying. It saves me 100% of time. I don't remember when I searched something in the BLs code.
 
 ---
 
@@ -31,7 +30,7 @@ Inside your mod project directory, create a dedicated folder `BLSource`
 ## Step 3 — Copy decompiled files into `BLSource`
 
 Move the output from Step 1 into `BLSource`. <br>
-Keep the original folder structure so Copilot can navigate namespaces naturally.
+Keep the original folder structure so AI can navigate namespaces naturally.
 
 ![](/pics/2603031604a.png)
 
@@ -41,7 +40,7 @@ Keep the original folder structure so Copilot can navigate namespaces naturally.
 
 Right-click `BLSource` in Solution Explorer -> **Exclude From Project**.
 
-This keeps the files visible on disk (and to Copilot) without polluting your build — VS won't try to compile them.
+This keeps the files visible on disk (and to AI) without polluting your build — VS won't try to compile them.
 
 
 ![](/pics/2603031604b.png)
@@ -54,9 +53,9 @@ Your project tree now contains readable BL source as a silent reference layer. N
 
 ---
 
-## Step 6 — Ask Copilot to explore `BLSource`
+## Step 6 — Ask AI to explore `BLSource`
 
-GitHub Copilot indexes local files in your workspace. Example prompts:
+AI indexes local files in your workspace. Example prompts:
 
 - *"In /BLSource, how does `MissionAgentSpawnLogic` decide spawn positions?"*
 - *"Find the base class for campaign behaviors in /BLSource and explain the tick pattern."*
@@ -69,6 +68,4 @@ Looks like this:
 
 ## Github Copilot
 
-UPDATE 2026-05-25 - Copilot in VS Studio is crap. Better solution is to use Cursor and use any model you like. Currently I get best results with Composer 2.5 and Sonnet 4.6
-
-
+!!! danger "UPDATE 2026-05-25<br> Copilot in VS Studio is crap. Better solution is to use Cursor/Claude."
