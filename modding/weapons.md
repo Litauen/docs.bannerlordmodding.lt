@@ -2,6 +2,7 @@
 
 * [Official doc](https://moddocs.bannerlord.com/asset-management/weapon_smithing/){target=_blank}
 * [What is weapon handling?](https://www.gurugameguides.com/post/understanding-weapon-handling-in-mount-blade-ii-bannerlord)
+* [Item Position Editor](https://www.nexusmods.com/mountandblade2bannerlord/mods/13041) by sakinolemir
 
 Weapons are constructed from:
 

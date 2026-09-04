@@ -22,6 +22,10 @@
 * [BannerEdge](https://github.com/hunharibo/BannerEdge){_target=blank} Its purpose is to provide ease of access to native game UI files by splitting the spritesheet atlas images into its individual sprite parts.
 * [Fmod Bank Tools](https://www.nexusmods.com/rugbyleaguelive3/mods/2){target=_blank} - Extracts and Rebuilds Fmod .bank files, for example: Mount & Blade II Bannerlord\Sounds\PC\voice.assets.bank
 
+## Weapons
+
+* [Item Position Editor](https://www.nexusmods.com/mountandblade2bannerlord/mods/13041) by sakinolemir
+* [In-Game Shield-Editor](https://github.com/cz9085/Shield-Editor) by cz9085
 
 ## Various
 

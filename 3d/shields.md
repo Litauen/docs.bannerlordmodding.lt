@@ -3,6 +3,7 @@
 * Based on: [Bannerlord 3D Asset Workflow](https://docs.google.com/document/d/1aHBsO3mzkT0JsbCt9aCOh6CWAFATXwKtSaVb__TYIoo/edit)
 * [Shield Tutorial by Major Roy Gaming](https://www.youtube.com/watch?v=SxHnJDHaKn0)
 * [In-Game Shield Editor](https://github.com/cz9085/Shield-Editor) by cz9085
+* [In-Game Item Editor](https://www.nexusmods.com/mountandblade2bannerlord/mods/13041) by sakinolemir
 
 ## Meshes
 
