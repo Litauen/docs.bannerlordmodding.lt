@@ -3,6 +3,8 @@
 [TpacTool](https://github.com/szszss/TpacTool) - an open source asset explorer which can open TPAC format files, view and export the contents. [Fork](https://github.com/hunharibo/TpacTool).
 
 * [TpacTool for 1.3+](https://github.com/hunharibo/TpacTool/releases)
+* [Another fork](https://github.com/Wuan23/TpacTool)
+* [TpacToolMax](https://www.patreon.com/ironmoddingbannerlord/posts/tpac-tool-max-166609999) - [Downlad](https://www.patreon.com/ironmoddingbannerlord/posts/tpactool-max-167121251)
 
 ## Model export
 
