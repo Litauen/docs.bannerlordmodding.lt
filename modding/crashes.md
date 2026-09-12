@@ -700,6 +700,20 @@ REASON: this entity was commented out in the xscene:
 REASON: scene does not exist<br>
 REASON2: error in the scene's xscene file
 
+
+REASON3: `scene.xscene` is too large. Native load CTDs with **no C# exception**. `rgl_log` stops at loading the xscene / atmosphere (mission `AfterStart` never runs).
+
+Mission / siege / interior files start failing around **9–11 thousand KB**. ~11k KB is the remembered siege ceiling; it **varies** — an interior can already CTD a few KB above ~9.1k KB. World-map `scene.xscene` can be 20 MB; that is a different load path and does **not** mean interiors can be that big. Vanilla town scenes are typically under ~9k KB.
+
+Check: `Modules\<Mod>\SceneObj\<scene>\scene.xscene` file size in KB.
+
+HINT: If a cut of the same scene loads, and adding one more entity CTDs, it is size, not a cursed mesh.
+
+SOLUTION: In the editor, select a bulky repeated group (**floors first**), pack it into a prefab, **save the prefab**, then save the scene. The xscene stores one prefab instance instead of hundreds of inlined `game_entity` trees. Same art, smaller file.
+
+Example: a custom hall CTD at ~10800 KB; packing a large part into prefabs made the same scene load.
+
+
 ----
     When entering settlement
 REASON: Bad troop id: villager_danish vs danish_villager

@@ -22,6 +22,27 @@
 if (!Mission.Current.IsLoadingFinished || Agent.Main == null) return;
 ```
 
+
+## Scene file size limit
+
+Mission / siege / interior `scene.xscene` files have a **native size ceiling**. Go over it and the game **CTDs on enter with no C# exception**. `rgl_log` stops at loading the xscene / atmosphere.
+
+| | Typical size |
+|---|---|
+| Vanilla town / interior | under ~9k MB |
+| Custom interiors / sieges — danger zone | **~9–11 MB** |
+| Remembered siege ceiling | ~11 MB (varies; an interior can already CTD a few KB above ~9.1 MB) |
+| World map `scene.xscene` | can be 20 MB — **different load path**, does not mean interiors can be that big |
+
+Check: `Modules\<Mod>\SceneObj\<scene>\scene.xscene` → size in MB.
+
+If a cut of the same scene loads, and adding one more entity CTDs, it is **size**, not a cursed mesh.
+
+**Fix:** pack a bulky repeated group into a prefab (**floors first**), **save the prefab**, then save the scene. The xscene stores one prefab instance instead of hundreds of inlined `game_entity` trees. Same art, smaller file.
+
+See [Prefabs](/editor/prefabs/) and [CTD without any message](/modding/crashes/#ctd-without-any-message).
+
+
 ## Debug Entity Script
 
 search for "debug" in the entity browser, place it down and run it's script, there you can choose what type of scene you are making and see the requirements for it in terms of spawners and such
