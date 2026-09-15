@@ -43,6 +43,19 @@ In ...\Modules\\\*YOUR_MOD*\
 </base>
 ```
 
+Native's charge example uses several files under one name. The engine picks a variation by `weight`:
+
+``` xml
+<module_sound
+    name="example/voice/charge"
+    sound_category="mission_voice_shout"
+    min_pitch_multiplier="0.9"
+    max_pitch_multiplier="1.1">
+  <variation path="example_sound_modders.ogg" weight="1.0" />
+  <variation path="example_sound_modders_2.ogg" weight="0.75" />
+</module_sound>
+```
+
 #### Pitch
 
 Can set pitch for the sound like this: min_pitch_multiplier="0.9" max_pitch_multiplier="1.1"
@@ -73,6 +86,8 @@ Same min/max pattern as pitch. Not listed in Native's `module_sounds.xml` commen
 </base>
 ```
 
+Without this `type="module_sound"` line, `SoundEvent.GetEventIdFromString` returns `-1` (`SoundEvent` treats `-1` as invalid). Restart the game after changing XML.
+
 ## Sound Categories
 
     From: \Native\ModuleData\module_sounds.xml
@@ -99,8 +114,13 @@ Same min/max pattern as pitch. Not listed in Native's `module_sounds.xml` commen
 | alert                     | max 10 sec.| Pseudo-3D in-mission alerts like warning bells
 | campaign_node             | persistent | Campaign map point sound like rivers etc.
 | campaign_bed              | persistent | Campaign amboent bed
+| music                     | persistent | Music streams
 
 - Sounds that dont have valid categories wont be played!
+
+`persistent` categories loop (fireplace / map bed / music). The others are one-shots with a max length. Do not put a short voice clip on `mission_ambient_*` — use `mission_voice` / `mission_voice_shout` / `mission_voice_trivial`, or `Stop()` after the clip ([Delayed stop](#delayed-stop-to-prevent-ambient-sounds-from-looping)).
+
+Category is also the mix bus, not only duration. Official TW: `mission_voice_shout` is heard far (battle yell), `mission_voice` is grunts, `mission_voice_trivial` is quiet (jump / climb). Ambient 3d big / medium / small are long / medium / nearby.
 
 
 ## How to play a sound
@@ -138,11 +158,27 @@ eventRef.SetPosition(_mission.MainAgent.Position);
 eventRef.Play();
 ```
 
+Hold the event to follow an agent. `SetEventMinMaxDistance`: full level inside min, silent at max (`Vec3` x = min, y = max). `Release()` stops if playing, then frees the event — do that on mission end, not only `= null`.
+
+``` cs
+eventRef.SetPosition(agent.GetEyeGlobalPosition());
+eventRef.SetVelocity(agent.Velocity);
+eventRef.SetEventMinMaxDistance(new Vec3(2f, 40f));
+eventRef.Play();
+// each tick while playing:
+eventRef.SetPosition(agent.GetEyeGlobalPosition());
+eventRef.SetVelocity(agent.Velocity);
+// mission end:
+eventRef.Release();
+```
+
 ## is2D option
 
-Setting is2D to true makes it play at a constant volume throughout the entire scene.
+Official TW: `is_2d` means the sound's spatial properties are not used; 3D events have position, velocity, etc.
 
-is_2d="true" in XML
+`is_2d="true"` in XML does **not** mean constant volume for the whole scene. With `CreateEvent` + `SetPosition`, loudness still falls off with distance.
+
+Windwhistle's note below is a different bug: `mission_ambient_3d_small` / `mission_ambient_3d_medium` with `is_2d="false"` — peak volume depends on spawn distance to the player. Ticking `SetPosition` does not fix that. That is not "2D = full volume everywhere."
 
 ## Sound in menus
 
@@ -160,7 +196,7 @@ args.MenuContext.SetAmbientSound("event:/map/ambient/node/settlements/2d/village
 
 Possible to play sound (events) with InformationManager.AddQuickInformation(text, 0, null, <span style="color:green">string SoundEventPath</style>)
 
-You need to null the SoundEvent when you leave the mission.
+You need to `Stop()` / `Release()` the SoundEvent when you leave the mission (nulling the field alone does not free the native event).
 
 Same with MultiSelectionInquiryData and in the menus
 
@@ -450,6 +486,8 @@ Defined in:
     [Source](https://discord.com/channels/411286129317249035/677511186295685150/1123190415420555344){target=_blank}
 
 ## Delayed stop to prevent ambient sounds from looping
+
+`mission_ambient_*`, `campaign_*`, and `music` are persistent. A one-shot clip on those buses repeats until `Stop()`. Prefer a one-shot category for short voices; use delayed `Stop()` only if you must stay on ambient.
 
 ``` cs
 private async void DelayedStop(SoundEvent eventRef)
