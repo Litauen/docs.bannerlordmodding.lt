@@ -49,6 +49,21 @@ Can set pitch for the sound like this: min_pitch_multiplier="0.9" max_pitch_mult
 
 If values are different - random value between min-max is selected. If you need constant pitch - make both values equal.
 
+#### Volume
+
+Same min/max pattern as pitch. Not listed in Native's `module_sounds.xml` comment. The engine reads `min_volume_multiplier` / `max_volume_multiplier` (`TaleWorlds.Native.dll`). Omit both → `1.0`. Different min/max → random each play. Equal values → fixed gain.
+
+``` xml
+<module_sound
+    name="example/voice/whisper"
+    sound_category="mission_voice_trivial"
+    path="example_sound_modders.ogg"
+    min_volume_multiplier="0.4"
+    max_volume_multiplier="0.4" />
+```
+
+`0.4` is quieter than default. `3.0` is louder. Category is still the mix bus.
+
 ### project.mbproj
 
 ``` xml
