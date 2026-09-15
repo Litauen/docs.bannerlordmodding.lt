@@ -12,6 +12,7 @@
 
 * [Community documentation](https://docs.bannerlordmodding.com){target=_blank}
 * [TW Forum - Documentation & Tutorials](https://forums.taleworlds.com/index.php?forums/documentation-tutorials.753/){target=_blank}
+* [Unofficial Bannerlord API](https://bannerlordapi.butr.link/){target=_blank} (BUTR; every game version, plus Server API and Modding Kit API) / [compare versions](https://bannerlordapi.butr.link/compare.html?from=1.4.8&to=1.5.2){target=_blank}
 
 * [English Modding Discord](https://discord.gg/ykFVJGQ){target=_blank}
 * [French Modding Discord](https://discord.com/invite/S5G2HBw){target=_blank}
