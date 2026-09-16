@@ -53,3 +53,8 @@ Metres are the game equivalent in a normal mission scene. A world map is a third
 ![](/pics/2403140806.png)
 
 !!! quote "Swan [ADOD/IAF]: go to your vista texture and rename the tileset to 'none' then add a basic white albedo texture in the vista category"
+
+
+## Flat terrain + rglBuffer::allocate(0) failed
+
+Editor load, not a heightmap-import mistake. `SceneEditData` is corrupted — restore/import terrain from a backup. See Editor → rglBuffer::allocate(0) failed / flat terrain on map load.

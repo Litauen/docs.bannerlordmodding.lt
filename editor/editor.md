@@ -88,6 +88,27 @@ After crash/restart Texture appears deleted
 
 - Last line in the log: opening ../../Modules/MODULE_NAME/ModuleData/settlements.xml - missing settlements.xml
 
+
+#### rglBuffer::allocate(0) failed / flat terrain on map load
+
+Editor pops `rglBuffer::allocate(0) failed!` while opening the map. Terrain comes in **flat**.
+
+REASON: `SceneEditData` for that scene is corrupted.
+
+Official split ([TW: Overriding Scenes and Prefabs](http://moddocs.bannerlord.com/asset-management/asset-types/overriding_scenes_prefabs/)):
+
+- `SceneObj` — what the **game** needs to load the scene
+- `SceneEditData` — what the **Editor** needs to edit it (`Modules\<Mod>\SceneEditData\<scene>\`)
+
+The client copy can still be fine while the editor copy is dead. Then the Editor shows a flat mesh.
+
+SOLUTION: restore `SceneEditData` from a backup and **import the terrain** from that backup (do not keep working on the flat mesh).
+
+Make backups of `SceneEditData` (and `SceneObj`) before heavy terrain work. A save that “succeeds” after a hang/crash can still leave this folder bad.
+
+NOTE: the same `rglBuffer::allocate(0) failed!` string also appears in **in-game** threads (campaign start, entering towns). Those are usually verify-files / GPU / disk — not this SceneEditData case.
+
+
 #### Crash on the interior scene save
 
 !!! quote "[hunharibo:](https://discord.com/channels/411286129317249035/761302555308720148/1202691179896897536)"
