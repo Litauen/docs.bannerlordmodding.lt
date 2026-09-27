@@ -3,20 +3,39 @@
 How to add a new creature to Bannerlord: a mesh, a skeleton, animation clips, the XML that binds
 them together, and the item that makes it rideable.
 
-* [Custom Creature: the skeleton](/guides/custom_creature_skeleton/)
-* [Custom Creature: the animation clips](/guides/custom_creature_animation/)
-* [Custom Creature: the XML](/guides/custom_creature_xml/)
-* [Custom Creature: troubleshooting](/guides/custom_creature_troubleshooting/)
-* [Custom Creature: reference tables](/guides/custom_creature_reference/)
+Two reading orders, by what you are building.
+
+**A mount** (a creature a troop rides):
+
+1. [Custom Creature: the skeleton](/guides/custom_creature_skeleton/)
+2. [Custom Creature: the animation clips](/guides/custom_creature_animation/)
+3. [Custom Creature: the XML](/guides/custom_creature_xml/)
+4. [Custom Creature: the clip inspector](/guides/custom_creature_clip_inspector/)
+5. [Custom Creature: big creatures in battle](/guides/custom_creature_battle/)
+6. [Custom Creature: troubleshooting](/guides/custom_creature_troubleshooting/)
+
+**A humanoid race** (a two-legged soldier with its own size or proportions):
+
+1. [Races](/modding/races/), for the basic `skins.xml` race
+2. [Custom Creature: a humanoid race on its own skeleton](/guides/custom_creature_race/)
+3. [Custom Creature: the clip inspector](/guides/custom_creature_clip_inspector/)
+4. [Custom Creature: melee attack clips](/guides/custom_creature_melee/)
+5. [Custom Creature: big creatures in battle](/guides/custom_creature_battle/)
+6. [Custom Creature: troubleshooting](/guides/custom_creature_troubleshooting/)
+
+A race on its own skeleton also needs [the skeleton page](/guides/custom_creature_skeleton/) before
+step 2. Both look things up in [Custom Creature: reference tables](/guides/custom_creature_reference/).
 
 Related pages you will need: [Armature/Skeleton](/3d/armature_skeleton/) for how rigging works at
 all, [Animations](/modding/animations/) for playing a clip from C#, and
 [TpacTool](/resources/tpactool/) for reading the engine's own assets.
 
 !!! note "Version"
-    Everything here was measured against **Bannerlord v1.4.8**. Where v1.4.5 and v1.4.6 behave
-    differently it is called out, because v1.4.6 changed which data mistakes are survivable. See
-    [The 1.4.6 rule](/guides/custom_creature_xml/#the-146-rule) before porting anything older.
+    Measured on **Bannerlord v1.4.5 to v1.5.3**. Engine-code findings come from TAOM's reverse
+    engineering of the v1.5.3 game and Modding Kit DLLs; native crash offsets move with every engine
+    update, and each page marks facts measured on an older version. v1.4.6 changed which data mistakes
+    are survivable: see [The 1.4.6 rule](/guides/custom_creature_xml/#the-146-rule) before porting
+    anything older.
 
 ## What a creature is, to the engine
 
@@ -42,6 +61,31 @@ agent for the creature itself.
     available here. TAOM built that architecture twice and deleted it twice. If your creature
     carries a rider, make it a mount.
 
+!!! note "Terms used across these pages"
+    * **Usage** has three meanings: a skeleton's `Usage` (`horse`, `human` or `other`; an import
+      arrives as `other`); a **clip usage**, a typed record on a clip such as `quad_movement`; and a
+      Monster's `monster_usage`, which names the **monster usage set** that tells the engine which
+      action to fire, and when.
+    * **Action**: a named engine action such as `act_release_overswing_2h`, declared in
+      `action_types.xml` as `<action name="..." type="...">` and bound to a clip per action set in
+      `action_sets.xml` (where the attribute naming the action is also called `type`).
+    * **Action type**: the kind in that declaration's `type` attribute, such as `actt_kick` or
+      `actt_defend_shield`, which the engine branches on.
+    * **Action code**: the runtime index the engine gives an action name.
+    * **The human animation system**: the engine's native animation system for humans (horses have
+      their own). Only it applies facial animation and hand poses; which monsters run it is not
+      established.
+    * **TAOM's reading**: a conclusion from TAOM's reverse engineering, not yet confirmed in game.
+    * **Fab**: Epic's asset marketplace (fab.com), where TAOM bought its cave troll and Animalia clips.
+    * **LOD0**: a mesh's full-detail level; LOD1 and later take over with distance
+      ([Create LODs](/3d/create_lods/)). Race meshes carry morph channels on LOD0 only.
+    * **`d6`**: a ragdoll joint type with six lock states, each `locked`, `limited` or `free`; the
+      others are `hinge` and `ik`.
+    * **BodyProperty**: a face range (a minimum and a maximum) each troop's face is rolled from.
+      Its `key`, the **body key**, is the face itself: 128 hex characters from the in-game face editor.
+    * **`DeformPercent`**: the FBX field holding a shape key's value; whether the Kit or the engine
+      applies it is not established.
+
 ## There are two paths, and one is much cheaper
 
 The expensive path is not always the right one. Decide this first, because it changes everything
@@ -57,7 +101,7 @@ This works because `Monster.Deserialize` copies `Flags`, `ActionSetCode`, `Femal
 name keeps its inherited value. Its defaults are guarded behind a "has a base_monster" check, so
 naming a base turns the whole record into a diff.
 
-TAOM's war ram is this. Here is the entire Monster definition:
+TAOM's war ram started as exactly this. Here is its entire Monster definition as a pure reskin:
 
 ```xml
 <Monsters>
@@ -75,6 +119,15 @@ TAOM's war ram is this. Here is the entire Monster definition:
 That inherits `Mountable`, `CanRear`, `RunsAwayWhenHit`, `CanCharge`, `CanWander`,
 `family_type="1"`, `monster_usage="horse"`, `num_paces="6"`, every bone name, the ground-slope
 block, and all twelve rein attributes. For free, and correctly.
+
+A reskin that needs one clip stays on this path: the war ram's head-butt lives in a thin set,
+`action_set="as_war_ram"`, that inherits `as_horse` and adds one action
+([the XML](/guides/custom_creature_xml/#the-minimum-if-you-are-reskinning)). With no clip, keep `as_horse`.
+
+!!! warning "A thin set needs its `_map` child"
+    The campaign map builds a mounted leader's mount from the Monster's set name plus `_map`, and the
+    engine code throws when that set is missing. Build it on the donor's: `as_war_ram_map` inherits
+    `as_horse_map`. A `_town_and_village` child is optional.
 
 !!! warning "A reskin inherits the donor's behaviour, not just its animations"
     The property that makes it cheap is the same one that couples it. Your creature now shares an
@@ -99,8 +152,26 @@ This is weeks of work rather than an afternoon, and nearly every crash in the
 | Your creature is roughly horse-shaped and horse-sized | **Reskin.** Skin it to `horse_skeleton` and stop. |
 | It is horse-shaped but a very different size | **Reskin**, and scale it. Read the `body_length` warning in [the XML page](/guides/custom_creature_xml/#size). |
 | It has a different number of legs, or a radically different spine | **Bespoke.** |
-| You want it to attack with something other than a kick | **Bespoke**, or author one clip onto the existing rig. The horse rig has no attack animation. |
+| It walks on two legs with its own proportions (a race, not a mount) | **Own skeleton, human bone names and axes.** See [a humanoid race on its own skeleton](/guides/custom_creature_race/). |
+| You want it to attack with something other than a kick | **Bespoke**, or author one clip onto the existing rig, whose only attack clip is the kick. **A clip does not attack by itself:** code, such as a behaviour tree, has to play it and apply the blow. The only attack the engine fires on its own is the usage set's `kick_action`, and no test records a new creature's own kick action firing. See [scripted creature attacks](/guides/custom_creature_battle/#scripted-creature-attacks). |
 | You are not sure | **Reskin first.** Get something walking in game, then decide. A working creature is a much better place to iterate from than a half-built rig. |
+
+### The creatures on these pages
+
+| Creature | Shape | Path | Size |
+|---|---|---|---|
+| War ram | a dwarf's war goat | **reskin** of `horse_skeleton`, one head-butt clip in a thin set | 1x: 2.27 m to the horns |
+| Great elk | an elk | **reskin** playing the ram's set, the head-butt as an antler charge | 1.1x: 3.38 m to the antler tips |
+| Animalia elk and moose | from purchased Fab packs | **reskin** playing the pack's own clips, retargeted | elk 1x, moose 1.5x |
+| Giant spider | eight legs | **bespoke**: own 62-bone skeleton, clips and sets | 1x to 1.25x by skin |
+| War elephant | an elephant with a howdah crew | **bespoke**: 60-bone skeleton and clips from Artem's ADOD_Beasts | 1x |
+| Mumakil | the war elephant with a war tower | **bespoke**: the elephant's skeleton, sets and clips | 3x |
+| Chariot | two horses and a cart on one skeleton | **bespoke**: one 60-bone skeleton, data only | not recorded |
+| Cave troll | a large humanoid | **race** on `human_skeleton`, scaled by its skin | about 1.9x |
+| Hill troll | a hunched humanoid | **race** on its own 28-bone skeleton: human names, order and axes | 3.6 m tall |
+| Dwarf | a short humanoid | **race** on its own skeleton, human axes | about 82% of human height |
+
+Byak0's warg, TAOM's control creature, is under Acknowledgements.
 
 ## What you need installed
 

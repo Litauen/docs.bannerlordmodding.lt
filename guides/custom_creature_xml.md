@@ -37,6 +37,23 @@ block, and all twelve rein attributes.
     A self-closing `<Monster ... />` does not have one, so the base's flags survive intact. This is
     what makes the one-liner safe.
 
+When the war ram gained one clip, a head-butt, its Monster moved to `action_set="as_war_ram"`, a thin
+set over `as_horse`. Two of its sets, from TAOM's `action_sets.xml`:
+
+```xml
+<action_set id="as_war_ram" skeleton="horse_skeleton" base_set="as_horse">
+	<action type="act_war_ram_butt" animation="war_ram_butt" />
+</action_set>
+<action_set id="as_war_ram_map" skeleton="horse_skeleton" base_set="as_horse_map">
+	<action type="act_war_ram_butt" animation="war_ram_butt" />
+</action_set>
+```
+
+The attack is its own action, typed `actt_kick`, not a re-pointed `act_horse_kick`, which the inherited
+usage set fires itself as its `kick_action`. The `_map` set is required and builds on the donor's
+([below](/guides/custom_creature_xml/#action_typesxml-and-action_setsxml)); a `_town_and_village` set is
+optional.
+
 ### The full form, for a bespoke creature
 
 TAOM's warg, which is the reference implementation for a rideable creature on its own skeleton:
@@ -174,19 +191,29 @@ An action type is a name plus a **type**. An action set binds that name to a cli
 Two required siblings and one that is not:
 
 * **`as_<creature>_map` is required.** The campaign map builds its mount visual through
-  `MBGlobals.GetActionSet(monster.ActionSetCode + "_map")` at three unguarded call sites. Author it
-  as `base_set="as_<creature>"` with no actions.
+  `MBGlobals.GetActionSet(monster.ActionSetCode + "_map")` at three unguarded call sites.
+  A bespoke creature builds it on `base_set="as_<creature>"`; TAOM's warg, spider, elephant and
+  chariot also bind the four `act_map_mount_attack_*` actions to a clip of their own, as Native's
+  `as_horse_map` does. A reskin's thin set builds on its donor's `_map` instead, keeping the donor's
+  map clips: `as_war_ram_map` on `as_horse_map`, which Native builds on `as_horse`. A reskin that
+  keeps `as_horse` gets `as_horse_map` for free.
 * **`as_<creature>_town_and_village` is NOT required.** This is worth stating because the opposite
   claim circulates, including in TAOM's own older notes. On v1.4.8 no managed code anywhere appends
   that suffix, and vanilla's `as_camel` ships without one.
-* The **rider partial**, an `<action_set id="as_human_warrior">` fragment carrying your
-  `act_<mount>_*` rider actions, **must sit at the top of the file**. `base_set` inheritance
-  snapshots at definition time, so a partial defined later is not seen by sets defined earlier.
+* The **rider partial**, an `<action_set id="as_human_warrior">` fragment carrying your `act_<mount>_*`
+  rider actions. On v1.5.3 the game merges every module's `as_human_warrior` into Native's before the
+  engine parses any set, so its position should not matter (read from the code, not tested in game).
+  At the top of the file it is harmless.
 
 !!! warning "A root-level `<action>` boots the client and kills a dedicated server"
     An `<action>` element parented directly by `<action_sets>` instead of by an `<action_set>` loads
     fine in single player and throws during element merging on a dedicated server, taking it down at
     boot.
+
+!!! note "A missing clip name logs and keeps the slot"
+    On v1.5.3 an `animation=` that names no registered clip logs `Could not find animation` and leaves
+    the slot as it was: inherited from the `base_set`, or empty. A crash needs a later reader that
+    skips the empty-slot check, so search the log for that line after every clip rename.
 
 ### Standalone action sets rot across engine updates
 
@@ -308,13 +335,14 @@ Give that item to a troop in its Horse equipment slot and you have cavalry.
 `body_length` scales the agent: the engine calls `SetInitialAgentScale(0.01f * BodyLength)`, so 100
 is identity.
 
-!!! danger "`body_length` scales the RIDER too, not just the mount"
-    `EquipmentIndex.Horse` and `EquipmentIndex.ArmorItemEndSlot` are the same value, the scale block
-    has no "is this a mount" guard, and it runs for the rider as well as the mount while the Horse
-    item is still in the rider's spawn equipment.
+!!! warning "`body_length` scales the mount, not the rider, and not your own offsets"
+    Skeleton, capsules and ragdoll scale together; the rider does not. TAOM's mumakil, a war elephant at
+    `body_length="300"`, carries a human-size rider beside human-size crew. The managed code reads as if
+    the rider would scale, but the game does not.
 
-    So a `body_length` of 300 gives you a giant creature **and** a giant rider. If you want a large
-    creature, prefer authoring the mesh at its real size and leaving `body_length` at 100.
+    Anything your own code positions against the creature (a platform, a seat, an attack reach) does
+    not scale either: read `Agent.AgentScale`. More in
+    [big creatures in battle](/guides/custom_creature_battle/#size).
 
 ### The campaign map
 
@@ -339,10 +367,11 @@ Two concrete failures, both on the horse rig:
 **refuses a mount whose channel-0 action type is `Rear`**. Bind your creature's attack to it and the
 creature goes unmountable in the middle of a fight.
 
-**`act_horse_strike_front` and `_back` are typed `actt_mount_strike`,** which sits inside the band
-`Agent.IsInBeingStruckAction` reads as **being struck**. The underlying clips are literally named
-`horse_hit_from_front` and `horse_hit_from_back`. Bind an attack to those and the creature flinches
-as though it has been hit, at the exact moment it deals damage.
+**`act_horse_strike_front` and `_back` play hit reactions,** clips literally named `horse_hit_from_front`
+and `horse_hit_from_back`. Bind an attack to those and the creature flinches as though hit at the moment
+it deals damage. The type, `actt_mount_strike` (52), is harmless on its own:
+`Agent.IsInBeingStruckAction` reads only 48 to 51 as being struck, and the warg's `actt_mount_strike`
+attacks play.
 
 !!! note "The fact underneath both"
     **Vanilla horses have no attack animation at all.** They deal damage by charge collision. So

@@ -18,15 +18,21 @@ The engine supplies the translation itself, from the movement system. If you bak
 walk, the engine adds its translation to yours and the creature moves at double speed while its feet
 skate.
 
-The corresponding flag is `anf_displace_position`, which turns root motion on. **Never set it on a
-cyclic walk or run.** See [the reference tables](/guides/custom_creature_reference/#animation-flags).
+`anf_displace_position` is not root motion from your keys: it moves the agent by the vector in the
+clip's **displacement** clip usage, up to that usage's end progress, and without the usage the engine
+reads null. Vanilla sets it on 337 clips, all with that usage, such as `death_fall_front`. **Keep it
+off walks and runs:** their travel is the `bip_mov_ik` or `quad_movement` usage's loop displacement.
+See [the clip inspector](/guides/custom_creature_clip_inspector/#clip-usages).
 
 ## `quad_movement`, or: the six-hour crash
 
 This is the single most expensive lesson on these pages, so it goes near the top.
 
-**Every gait clip compiled for a `movement_system="quadrupedal"` action set must carry the
-`quad_movement` clip usage, plus step points.** Walks, runs, strafes, turns in motion, jumps.
+**Every gait clip in a `movement_system="quadrupedal"` action set must carry the `quad_movement` clip
+usage.** Walks, runs, strafes, turns in motion, jumps. TAOM's reverse engineering of v1.5.3 found ten
+places that read it with no null check. Step points make the footsteps (with `make_walk_sound`); they
+are not shown to be needed against the crash, and 42 of the 142 vanilla clips with `quad_movement` have
+none.
 
 Without it:
 
@@ -34,8 +40,9 @@ Without it:
 2. It even plays correctly on a detached, non-mount agent. So it tests clean.
 3. Then a quadrupedal action set measures it, builds a **null** native gait structure, and the first
    `Skeleton.TickAnimations` or `GetWalkSpeedLimitOfMountable` dereferences it.
-4. Access violation at offset `+0x10`, in **every** mount context at once: the inventory thumbnail,
-   the character tableau, and mission deployment.
+4. Access violation at offset `+0x10`, in **every** mount context at once: the inventory thumbnail, the
+   character tableau, and mission deployment. That offset was seen on v1.4.x; the v1.5.3 offset has not
+   been observed.
 
 The secondary fingerprint, if you are staring at a log: resolving an unbound action through the
 poisoned set returns a runtime-synthesised garbage name, something shaped like
@@ -52,15 +59,26 @@ Attack, hit and death clips correctly do **not** carry `quad_movement`. Only mov
 
 ### Per-category recipe
 
-A working quadruped's clips, by category:
+A working quadruped's clips on its own skeleton, by category:
 
 | Clip category | Flags | Clip usages |
 |---|---|---|
-| gait (walk, run, turn, strafe) | `make_walk_sound` | **`quad_movement`** + step points |
-| gallop-pace run | `make_walk_sound` | `quad_movement` + step points + `cyclic` |
+| gait (walk, run, gallop, turn, strafe) | `make_walk_sound` | **`quad_movement`**, plus step points for footsteps |
 | attack | `client_prediction`, `lock_movement`, `enforce_all` | none |
 | death | `make_bodyfall_sound`, `client_prediction`, `do_not_keep_track_of_sound`, `enforce_all`, `update_bounding_volume` | none |
 | rear | `lock_movement`, `enforce_lowerbody` | none |
+
+Gallop runs no longer get `cyclic`: vanilla's carry only `make_walk_sound`, and no native requirement
+was found. A clip on the **horse** rig should copy vanilla's horse recipe:
+
+| Vanilla clip | Priority | Flags | Blend in / out |
+|---|---|---|---|
+| `horse_kick` (attack) | 34 | `enforce_lowerbody`, `enforce_all` | 0.2 / 0.4 |
+| `horse_rear` | 74 | `lock_movement`, `enforce_lowerbody`, `update_bounding_volume`, `ignore_slope` | 0.3 / 0.3 |
+| `horse_hit_from_front` | 2 | `enforce_lowerbody` | 0.2 / 0.4 |
+
+**Every vanilla horse clip read carries `enforce_lowerbody`.** Why priority decides what shows in battle:
+[the clip inspector](/guides/custom_creature_clip_inspector/#priority-why-a-clip-plays-in-the-viewer-and-not-in-battle).
 
 ## Gait theory, or: why it looked wrong when everything was technically correct
 
@@ -124,18 +142,35 @@ Two traps in the export settings themselves:
 
 ## Compiling in the Kit
 
-Import as a **Skeleton Animation**, set its **Owner Skeleton**, then create an **Animation Clip**
-from it: Source 1 = 0, Source 2 = the last frame, and check that Duration comes out greater than
-zero. Blend in around 0.1.
+Import as a **Skeleton Animation**, set its **Owner Skeleton**, then create an **Animation Clip**:
+**Source 1 = 1** and Source 2 = the master's last frame, because frame 0 is the rest frame
+([the export mapping](/guides/custom_creature_animation/#the-export-mapping)); Duration must come out
+above zero. Set Loading Type to Always keep in memory (0) on any clip you bind: the conservative
+choice, not a proven requirement
+([why](/guides/custom_creature_clip_inspector/#the-fields-one-by-one)). Keep the name to **63
+characters** (the Kit warns `Could not set fixed-size(64) string`). Every field:
+[the clip inspector](/guides/custom_creature_clip_inspector/).
+
+!!! warning "A new clip starts at priority 0 with no flags, and may never show in battle"
+    The model viewer plays it unopposed; in battle, by TAOM's reading, locomotion takes the channel
+    back. TAOM's war ram logged 1,300 head-butts at priority 0 and 1,005 at 34 with no visible head
+    drop; it now copies `horse_kick`'s flags and blends too, not yet seen in battle. Copy the nearest
+    vanilla clip's whole recipe and judge it in a battle.
 
 !!! danger "Do not rename a clip inside the Modding Kit"
     Renaming corrupts it. The Kit keeps resolving the old name, the inspector reports
     `Size in KB = 0`, it refuses to save, the model viewer draws a scrambled pose, and the renamed
-    file can vanish outright. The only in-Kit remedy is restarting the tools after **every single
-    rename**.
+    file can vanish outright. Restarting the tools clears that state, but nobody has recorded
+    checking a clip renamed in the Kit afterwards: **no rename inside the Kit, with or without a
+    restart, is known to give a usable clip.**
 
-    Instead: create the clip, leave it on the default `new_animation_clip` name, set its source
-    range, sample rate and flags, save, **close the Kit**, rename the file on disk, and reopen.
+    Instead: create the clip on the default `new_animation_clip` name, set its source range and
+    flags, save and **close the Kit**. Then rename the clip **item** inside its `_anm.tpac`, not just
+    the file: the game registers a clip by that stored name. TAOM's optional
+    [rename_anim_clip_tpac.py](https://github.com/haterade22/TAOM/blob/bannerlord-1.5.x/tools/rename_anim_clip_tpac.py)
+    does it, keeping the item's GUID, and writes `<name>_anm.tpac`; a hex editor can make the same
+    two-field edit ([the byte layout](/guides/custom_creature_clip_inspector/#clip-names)). Reopen
+    the Kit.
 
 The clip name itself does not need a particular prefix form. Bare names, single-prefixed and
 double-prefixed all work; the `<skeleton>|` prefix you see on compiled clips comes from the Kit's
@@ -171,12 +206,17 @@ spider reuses the warg's `rider_warg_*` clips.
 
 Do these in order. Each is cheap and eliminates a whole class.
 
-1. **Render a FRONT view.** A yaw is almost invisible from the side, and it is very easy to spend
+1. **Read the compiled master back** in TpacTool and compare each bone's rotation with the FBX's local
+   and the engine's rest local. If limbs play another limb's motion, match each slot at frame 0 to the
+   bone whose rest it equals; a mismatch means the node order is wrong
+   ([the export mapping](/guides/custom_creature_animation/#the-export-mapping), point 4).
+2. **Check frame 0 is the rest pose** when the limbs move right but the body floats or the feet skate.
+3. **Render a FRONT view.** A yaw is almost invisible from the side, and it is very easy to spend
    hours looking only at side views. Assert on bone **direction** vectors, not head positions.
-2. **Count the bones the Kit will drop.** Any `*_nub_notused` is a difference from every shipped
+4. **Count the bones the Kit will drop.** Any `*_nub_notused` is a difference from every shipped
    clip.
-3. **Diff the FBX globals** against a shipped clip: UpAxis, FrontAxis, CoordAxisSign, node types.
-4. **Compare the rig against the engine skeleton.** Parenting and bone axis are the two things a
+5. **Diff the FBX globals** against a shipped clip: UpAxis, FrontAxis, CoordAxisSign, node types.
+6. **Compare the rig against the engine skeleton.** Parenting and bone axis are the two things a
    mesh FBX gets wrong with no visible symptom.
 
 !!! warning "A verification that cannot fail is not a verification"
@@ -205,17 +245,38 @@ Measured against same-shaped creatures, a creature's animation FBX uses the **sa
 as its own mesh FBX: median differences of 6.79 and 16.83 degrees, which are rest-pose differences,
 not a 90 degree flip.
 
-## An honest status note
+## The export mapping
 
-TAOM's own internal write-up of the export mapping closes with **UNRESOLVED**, as of its last
-revision. The engine-data facts on [the skeleton page](/guides/custom_creature_skeleton/) are read
-straight out of the engine's own assets and are solid. The step from those facts to an export
-setting that reproduces a perfect clip on a **reskinned** rig is still open: the best result so far
-comes from `primary_bone_axis='Y'` off the mesh rig with the neck bone re-parented to match the
-engine, and the residual over-rotation is not fully explained.
+Measured by reading Kit-compiled masters back against the FBX and the engine's rest frames, on
+`human_skeleton` (52 clips) and `horse_skeleton`:
 
-Clips authored on bespoke rigs (spider, elephant, warg) work correctly. This caveat is specific to
-authoring new clips onto a **vanilla** rig you did not build.
+1. **The Kit stores an FBX's bone-local transforms as they are**, with no axis conversion. So the
+   armature you export from must carry the engine's bone frames: each bone's `matrix_local` equal to
+   the accumulated rest frame (`tail = head + Y column`, `align_roll(Z column)`). The bones then draw
+   sideways in Blender, harmlessly. Export with `primary_bone_axis='Y'`, `secondary_bone_axis='X'`.
+2. **The root is stored as its FBX world pose turned 180 degrees about Z,** with the armature object's
+   transform applied on top. Keep the object at identity and bake the 180 degree turn into the pose.
+3. **Frame 0 is the rest frame.** The root position track is stored relative to it, and every vanilla
+   master opens on rest with its clip at Source 1 = 1. Open on a posed frame and the pelvis offset is
+   lost: a hunched character stands too high and its feet skate. Key rest at frame 0, motion from
+   frame 1 (the site's [animation notes](/modding/animations/#feet-above-the-ground) agree). Vanilla
+   walks carry one root track, the pelvis bob; drop a pack's root travel and give it to the engine as
+   the `bip_mov_ik` usage's loop displacement.
+4. **Tracks are stored in FBX node order, and the engine reads slot i as bone i of the skeleton's
+   list.** Blender writes nodes depth-first. `human_skeleton`'s list is depth-first; `horse_skeleton`'s
+   is not (neck last), so a horse clip from the true hierarchy plays the tail on the neck. Export from a
+   hierarchy whose depth-first walk equals the list (`horseneck1` under `horsetail3`, as TaleWorlds'
+   own horse and goat FBX have it), with each local relative to its **engine** parent.
+5. **The take name is the master's identity.** The master is named after the FBX take (the Blender
+   action). A re-import under the same take keeps its GUID and its clips. A `.001` suffix makes a new
+   master with an empty skeleton, and the old clip loses its animation.
+
+TpacTool's `FixBoneForBlender` export has bone frames 90 to 180 degrees off the engine's: use its
+meshes, not its bones. Optional helpers, where Blender and TpacTool do the same by hand: TAOM's
+[transfer_clip_to_engine_rig.py](https://github.com/haterade22/TAOM/blob/bannerlord-1.5.x/tools/blender/transfer_clip_to_engine_rig.py)
+moves a clip onto an engine-frame rig with points 2 to 4 handled;
+[read_anim_keyframes_tpac.ps1](https://github.com/haterade22/TAOM/blob/bannerlord-1.5.x/tools/read_anim_keyframes_tpac.ps1)
+reads a master back (set `-TpacToolBin`, `-NativeDir` and `-OutDir`; the defaults are one machine's).
 
 ## Next
 

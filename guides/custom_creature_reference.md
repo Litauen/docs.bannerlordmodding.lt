@@ -6,7 +6,8 @@ and known-good skeleton fingerprints.
 Part of the [Custom Creatures](/guides/custom_creatures/) guide.
 
 !!! note "Version"
-    Read out of **Bannerlord v1.4.8**. Flag values are from the engine enum.
+    Flag values and their effects are checked against **Bannerlord v1.5.3**, the effects through TAOM's
+    reverse engineering of its game and Modding Kit DLLs. The rest was measured on v1.4.8 to v1.5.3.
 
 ## Animation flags
 
@@ -20,12 +21,12 @@ Part of the [Custom Creatures](/guides/custom_creatures/) guide.
 Reading the low byte as bits is a real mistake with real consequences, because ORing a stray value
 into it changes which clip wins an arbitration.
 
-!!! warning "You cannot toggle these from a Harmony patch"
-    Only **two** flags are ever bit-tested in managed C#: `anf_synch_with_ladder_movement` and
-    `anf_displace_position`. Every other flag is consumed entirely inside the native engine DLL.
-
-    You can OR additional flags in through `SetActionChannel`'s `additionalFlags` parameter, but you
-    cannot inspect or clear a clip's authored flags from managed code. Set them in the Modding Kit.
+!!! warning "Code can add flags to one request; it cannot clear a clip's own"
+    The Kit saves flags as a list of **names**: an unknown name is dropped silently, and a bit with no
+    name cannot be saved. TAOM's reverse engineering of v1.5.3 found nine flags tested in seven managed
+    files. `SetActionChannel` can OR extra flags into one request and replace
+    its priority byte, but cannot clear a flag the clip was authored with. A row marked "no native
+    consumer found" describes an unverified effect.
 
 ### Priority levels (the low byte)
 
@@ -53,30 +54,30 @@ The category that decides whether your creature slides.
 
 | Flag | Bit | What it does |
 |---|---|---|
-| `anf_synch_with_movement` | `0x2000000` | Time-warps a locomotion clip to the agent's real ground speed. **The main anti-skate flag. Required on walk, run and turn.** |
-| `anf_displace_position` | `0x400000000000` | **Root motion on:** the clip's baked root travel moves the agent. One-shot lunges only, **never** on a cyclic walk or run. |
-| `anf_use_last_step_point_as_data` | `0x800` | Marks the stride-reference clip the gait builder samples for stride length. |
-| `anf_affected_by_movement` | `0x40000000000` | Clip is blended by movement state. Broader than synch. |
+| `anf_synch_with_movement` | `0x2000000` | Takes the clip's progress from the agent's movement phase. On 65 vanilla rider and head-turn overlays, **none** of 435 human gait clips, and Artem's working elephant walks: allowed on a walk, not required. |
+| `anf_displace_position` | `0x400000000000` | Moves the agent by the **displacement** clip usage's vector. **Needs that usage,** or the engine reads null. Deaths and other one-shots, not locomotion. |
+| `anf_use_last_step_point_as_data` | `0x800` | Silences the fourth step point. On 62 vanilla equip clips; what reads the point as data is not established. |
+| `anf_affected_by_movement` | `0x40000000000` | Clip is blended by movement state. Broader than synch. **No native consumer found on v1.5.3.** |
 | `anf_lock_movement` | `0x1000000` | Pins the agent in place for the clip's duration. |
 | `anf_enforce_root_rotation` | `0x8000000000` | Facing follows the clip's baked root rotation. Turn clips. |
-| `anf_align_with_ground` | `0x100000000000` | Tilts the body to the terrain normal. |
-| `anf_ignore_slope` | `0x200000000000` | The inverse: keep the authored orientation. |
-| `anf_ignore_scale_on_root_position` | `0x1000000000000` | Apply root displacement without the body-scale multiply. Useful on a scaled creature whose lunge overshoots. |
+| `anf_align_with_ground` | `0x100000000000` | On a human, ramps ground alignment over the **blend** clip usage's range. **Needs that usage,** or the engine reads null. |
+| `anf_ignore_slope` | `0x200000000000` | The inverse: keep the authored orientation. **No native consumer found on v1.5.3.** |
+| `anf_ignore_scale_on_root_position` | `0x1000000000000` | Apply root displacement without the body-scale multiply. Useful on a scaled creature whose lunge overshoots. **No native consumer found on v1.5.3.** |
 | `anf_synch_with_horse` | `0x200000` | Rider clip synced to the mount's gait. Rider clips only. |
 
 ### Body enforcement and lifecycle
 
 | Flag | Bit | What it does |
 |---|---|---|
-| `anf_cyclic` | `0x4000000000` | **Loops.** Required on idle and all locomotion, or they play once and stop. |
+| `anf_cyclic` | `0x4000000000` | **Loops** the action at clip end. Not required on locomotion: 0 of 435 vanilla human gait clips and 48 of 142 `quad_movement` clips have it. A clip reused for an inventory or conversation idle takes that action's vanilla flags; without `cyclic` it plays once, by TAOM's reading. |
 | `anf_enforce_all` | `0x2000000000` | Overrides the whole skeleton, no blend smear. Death, hard transitions. |
 | `anf_enforce_lowerbody` | `0x1000000000` | Overrides the leg bones only. |
 | `anf_allow_head_movement` | `0x10000000000` | Carves the head out so look-at keeps steering it. |
 | `anf_keep` | `0x4000` | Freeze on the last frame. Do not combine with `anf_cyclic`. |
 | `anf_restart` | `0x8000` | Re-trigger from frame 0 even if already playing. |
-| `anf_disable_alternative_randomization` | `0x80000000` | Opt this clip out of the random variant pool. |
+| `anf_disable_alternative_randomization` | `0x80000000` | **Not a clip flag:** no checkbox or saved name exists. Code passes it to `SetActionChannel` to skip the random pick among alternatives. |
 | `anf_disable_auto_increment_progress` | `0x100000000` | The engine stops advancing progress. Never on a normal clip; it would freeze. |
-| `anf_animation_layer_flags_mask` | `0xFFFF000000000` | A 16-bit layer-routing field at bits 36 to 51. Do not hand-set. |
+| `anf_animation_layer_flags_mask` | `0xFFFF000000000` | Bits 36 to 51: ordinary Kit checkboxes, also passed to the renderer as layer bits. |
 | `anf_animation_layer_flags_bits` | `0x24` | **The shift value (36) locating that field. This is metadata, not a flag.** Never OR it into a clip: it overlaps the priority byte. |
 
 ### IK, collision, physics
@@ -84,16 +85,15 @@ The category that decides whether your creature slides.
 | Flag | Bit | What it does |
 |---|---|---|
 | `anf_disable_foot_ik` | `0x20000000000` | Turns off foot grounding. **Do not set on a grounded walk or run.** Do set on jump, rear and death. |
-| `anf_disable_hand_ik` | `0x40000` | Hands play as authored. Sensible on creature clips, which have no grip target. |
+| `anf_disable_hand_ik` | `0x40000` | Hands play as authored. Sensible on creature clips, which have no grip target. **No native consumer found on v1.5.3.** |
 | `anf_update_bounding_volume` | `0x80000000000` | Recompute cull and hit bounds from the live pose. **Wide-pose clips** (rear, lunge, death) so limbs sweeping past the rest bounds are not culled or mis-hit-tested. |
-| `anf_disable_agent_agent_collisions` | `0x100` | Pass through other agents. Useful so a large creature's death does not bulldoze troops. |
-| `anf_ignore_static_body_collisions` | `0x400` | Ignore world geometry, stay solid against agents. |
+| `anf_disable_agent_agent_collisions` | `0x100` | Pass through other agents. Useful so a large creature's death does not bulldoze troops. **No native consumer found on v1.5.3.** |
+| `anf_ignore_static_body_collisions` | `0x400` | Ignore world geometry, stay solid against agents. **No native consumer found on v1.5.3.** |
 | `anf_ignore_all_collisions` | `0x200` | Ignore both. Dangerous; can sink through the floor. |
 
-!!! warning "The vanilla rig grounds only two feet"
-    Foot IK solves for `r_foot` and `l_foot`. A creature with more than two legs can only ever have
-    two of them grounded by the engine. Plan the gait around that rather than expecting eight-legged
-    terrain adaptation.
+!!! note "Foot IK belongs to the human animation system"
+    `anf_disable_foot_ik` makes the engine's human animation system skip foot IK. Nothing is established
+    about foot grounding on a quadruped, or about which monsters run that system.
 
 ### Sound and networking
 
@@ -102,7 +102,7 @@ The category that decides whether your creature slides.
 | `anf_make_walk_sound` | `0x20000` | Footstep foley in gait cadence. Walk and run clips. |
 | `anf_make_bodyfall_sound` | `0x1000` | The heavy body-impact thud. Death and collapse. |
 | `anf_attach_sound_to_agent` | `0x400000000` | Spawned sound follows the moving agent. |
-| `anf_spawn_particle` | `0x800000000` | Enables baked particle keys. Blender-authored clips have none. |
+| `anf_spawn_particle` | `0x800000000` | Spawns the **particle** clip usage's particle at its bone. **Needs that usage,** or the engine reads null. |
 | `anf_do_not_keep_track_of_sound` | `0x20000000` | Fire and forget. |
 | `anf_client_prediction` | `0x2000` | Multiplayer prediction on any client. Irrelevant in single player. |
 
@@ -111,23 +111,19 @@ pair, and the rest) are humanoid-only. Leave them unset on a creature.
 
 ### Per-clip recipe
 
-Confirmed against shipped clips:
+Read from vanilla's own clips on v1.5.3; copy the nearest and judge it in a battle.
 
-| Clip type | Flags |
-|---|---|
-| **Walk / movement** | `anf_synch_with_movement` + `anf_cyclic` |
-| **Attack** | `anf_lock_movement` + `anf_enforce_all` |
+| Vanilla clip | Priority | Flags | Clip usages | Blend in / out |
+|---|---|---|---|---|
+| `walk_forward_unarmed` | 0 | `make_walk_sound` | `bip_mov_ik` | 0.3 / 0 |
+| `troop_stand_unarmed_1` (idle) | 1 | `allow_head_movement` | none | 0.5 / 0 |
+| `strike_chest_front` (hit reaction) | 80 | `client_prediction`, `restart`, `enable_hand_blend_ik`, `enforce_root_rotation`, `update_bounding_volume` | none | 0.1 / 0.1 |
+| `death_fall_front` | 95 | `make_bodyfall_sound`, `client_prediction`, `keep`, `disable_hand_ik`, `lock_movement`, `enforce_all`, `enforce_root_rotation`, `disable_foot_ik`, `update_bounding_volume`, `align_with_ground`, `displace_position`, `reset_camera_height` | `blend`, `displacement` | 0.3 / 0 |
+| `horse_kick` | 34 | `enforce_lowerbody`, `enforce_all` | not recorded | 0.2 / 0.4 |
 
-Convention, and worth confirming in the Kit against a shipped creature rather than taking on faith:
-
-| Clip type | Flags |
-|---|---|
-| **Run / canter / gallop** | the walk set + `anf_enforce_lowerbody` + `anf_make_walk_sound` |
-| **Turn left / right** | `anf_enforce_root_rotation` + `anf_synch_with_movement` + `anf_cyclic` |
-| **Idle / stand** | `anf_cyclic` + `anf_align_with_ground` |
-| **Stand-for-movement-data** | `anf_use_last_step_point_as_data` |
-| **Death** | `anf_enforce_all` + `die` priority, **no** `anf_cyclic` |
-| **Rear** | `anf_enforce_all` + `rear` priority |
+Every vanilla horse clip read carries `enforce_lowerbody`. Artem's elephant walks use
+`synch_with_movement` and `cyclic` instead, and also work. Runtime effects:
+[the clip inspector](/guides/custom_creature_clip_inspector/#flags-at-runtime).
 
 !!! note "Flags are not the same thing as clip usages"
     None of the above is `quad_movement`, which is a **clip usage** and lives in a separate section
@@ -152,8 +148,9 @@ The engine dispatches on an action's **type**, so these are not cosmetic. For a 
 | `act_<c>_idle_1` | `actt_idle` |
 | `act_<c>_jump`, the one named by `jump_start_action` | **`actt_dash`, never `actt_jump`** |
 
-The engine's own classification constants, which is what makes the
-[reskin trap](/guides/custom_creature_xml/#the-reskin-trap) work the way it does:
+The engine's own classification constants. Of these, only `Rear` drives the
+[reskin trap](/guides/custom_creature_xml/#the-reskin-trap): `Agent.Mount` refuses a mount whose
+channel-0 action is typed `Rear`.
 
 | Constant | Value |
 |---|---|
@@ -163,7 +160,8 @@ The engine's own classification constants, which is what makes the
 | `ActionCodeType.MountStrike` | 52 |
 | `StrikeEnd` | 52 |
 
-Anything in `StrikeBegin .. StrikeEnd` is read by `Agent.IsInBeingStruckAction` as **being struck**.
+`Agent.IsInBeingStruckAction` reads types from `StrikeBegin` up to but not including `StrikeEnd` (48 to
+51) as **being struck**, so `MountStrike` (52) is not included.
 
 ## The `.tpac` container format
 
@@ -200,6 +198,12 @@ type_guid(16) | item_guid(16) | item_version(u32, if container version > 1)
 
 Segment header: `offset u64, actual_size u64, storage_size u64, owner_guid 16, type_guid 16,
 unknown u64, unknown u32, storage_format u8` where storage format 0 is raw and 1 is LZ4HC.
+
+The item `checksum` is xxHash64, seed 0, over `metadata_size` (as an int64) followed by the metadata;
+each segment carries xxHash64 of its **decompressed** payload. Recompute it after any metadata edit
+(TAOM's [tpac_fix_item_checksums.py](https://github.com/haterade22/TAOM/blob/bannerlord-1.5.x/tools/tpac_fix_item_checksums.py)
+does). TpacTool.Lib writes zero, and such a package loads only with a
+[RuntimeDataCache entry](/guides/custom_creature_clip_inspector/#what-save-writes-and-the-runtimedatacache).
 
 ### Segment type GUIDs
 
@@ -239,16 +243,17 @@ a constraint list. Each **Body** carries `bone_name`, `body_type` (`abdomen`, `n
 
 For sanity-checking a compile. A healthy creature skeleton has a real `usage`, typed collision
 bodies, and roughly one ragdoll constraint per bone. Zero constraints with every body typed `none`
-means the physics data was dropped, which an FBX re-import does silently.
+means the physics data was dropped, which a re-import that rebuilds the skeleton does silently. A humanoid race carries the human's 34.
 
 | Skeleton | Bones | Usage | Ragdoll constraints |
 |---|---|---|---|
-| `human_skeleton` | 28 | `human` | |
+| `human_skeleton` | 28 | `human` | 34 (15 `d6`, 19 `ik`) |
 | `horse_skeleton` | 32 | `horse` | |
 | `skeleton_warg` | 49 | `horse` | 48 |
 | `elephant_skeleton` | 60 | `horse` | 59 |
 | `chariot_skeleton` | 60 | | |
-| `spider_skeleton` | 62 | `other` | |
+| `spider_skeleton` | 62 | **`horse`** | |
+| `troll_skeleton_a` (a humanoid race) | 28 | `human` | 34 |
 
 Healthy creatures in this sample carry between 48 and 61 constraints.
 
@@ -257,8 +262,7 @@ Healthy creatures in this sample carry between 48 and 61 constraints.
 
 ## Sources and credits
 
-Flag values and engine constants are read from the shipped assemblies and asset packages of
-Bannerlord v1.4.8. The container format derives from
+Flag values and engine constants are read from Bannerlord v1.5.3. The container format derives from
 [TpacTool](https://github.com/szszss/TpacTool) by szszss, MIT licensed.
 
 Measurements came out of building creatures for **TAOM (Tales From the Age of Men)**, working with
