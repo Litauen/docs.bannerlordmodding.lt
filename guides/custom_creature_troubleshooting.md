@@ -8,8 +8,9 @@ involved, see [How to report a crash](/guides/how_to_report_a_crash/) and
 [Advanced stacktrace analytics](/guides/advanced_stacktrace_analytics_of_crash_reports/).
 
 !!! note "Version"
-    Measured against **Bannerlord v1.4.8**. Several of these only became crashes in **1.4.6**; see
-    [The 1.4.6 rule](/guides/custom_creature_xml/#the-146-rule).
+    Measured on **Bannerlord v1.4.6 to v1.5.3**; each crash offset names the version it was seen on,
+    because offsets move with every engine update. Several of these only became crashes in **1.4.6**:
+    see [The 1.4.6 rule](/guides/custom_creature_xml/#the-146-rule).
 
 ## Quick index
 
@@ -27,7 +28,7 @@ involved, see [How to report a crash](/guides/how_to_report_a_crash/) and
 | All colour variants render the same colour | Materials lost on FBX re-import (same cause) |
 | Rider floats at his own feet | `rider_sit_bone` name does not match, so it resolved to -1 |
 | Creature becomes unmountable mid-fight | An attack was bound to an `actt_rear` action |
-| Creature flinches while dealing damage | An attack was bound to an `actt_mount_strike` action |
+| Creature flinches while dealing damage | [An attack bound to a hit-reaction clip](/guides/custom_creature_xml/#the-reskin-trap) |
 | Character renders in bind pose in UI tableaux | The action set is valid but binds no clip for that action |
 | Crash when a unit walks into water | A standalone action set is missing the dive actions |
 | Dedicated server dies at boot, client is fine | A root-level `<action>` element |
@@ -35,12 +36,30 @@ involved, see [How to report a crash](/guides/how_to_report_a_crash/) and
 | Enormous memory use for one creature | Texture dimensions not divisible by 4 |
 | Animation FBX exports at ~0.06 MB | [The bake found no keyframes](#the-animation-fbx-is-tiny) |
 | Kit says "Item with same name already exists" | [That is correct behaviour](#the-kit-refuses-a-duplicate-name) |
+| Crash on a race's **first swing** or blocked recoil | [A swing clip with no melee-table row](/guides/custom_creature_melee/#the-first-swing-crash) |
+| Crash about a second into deployment with a new race | [A race head with no face morph channels](/guides/custom_creature_race/#face-and-hand-morph-channels) |
+| A package never appears, log silent | [No RuntimeDataCache entry](/guides/custom_creature_clip_inspector/#what-save-writes-and-the-runtimedatacache) |
+| A mount's clip plays in the Kit viewer, never in battle | [Its priority and flags](/guides/custom_creature_clip_inspector/#priority-why-a-clip-plays-in-the-viewer-and-not-in-battle) |
+| Body floats or feet skate, limbs right | [Frame 0 is not the rest pose](/guides/custom_creature_animation/#the-export-mapping) |
+| Some limbs play another limb's motion | [Bone-track order](/guides/custom_creature_animation/#the-export-mapping) |
+| Master renamed `<name>.001`, clip lost its animation | [The take name changed](/guides/custom_creature_animation/#the-export-mapping) |
+| `Assigned skeleton animation not found` after a re-import | A junk `<armature>_notused.001` skeleton: delete it, re-import the FBX as an animation, remake the clip |
+| Blows pass through parts of the creature | [Default hit capsules](/guides/custom_creature_battle/#three-collision-layers) |
+| Broad units stand inside each other | [Foot units are spaced for a human](/guides/custom_creature_battle/#formation-spacing) |
+| A big race carries the formation banner | [Banner jobs are open to any humanoid race](/guides/custom_creature_battle/#banners-and-other-jobs-meant-for-humans) |
+| A race's fingers never close on the weapon | [No hand-pose morph channels](/guides/custom_creature_race/#face-and-hand-morph-channels) |
+| A race character renders as a toddler | [No `<face>`](/guides/custom_creature_race/#what-a-race-is-to-the-engine) |
+| An idle plays once in the inventory or a conversation | [A reused clip without that action's flags](/guides/custom_creature_clip_inspector/#flags-at-runtime) |
+| Kit warns `Could not set fixed-size(64) string` | [Clip name over 63 characters](/guides/custom_creature_clip_inspector/#clip-names) |
+| `Unable to find material` after a re-import | [A material name the module lacks](/guides/custom_creature_skeleton/#check-materials-after-every-fbx-re-import) |
+| Null read while a clip plays | [A flag without its clip usage](/guides/custom_creature_clip_inspector/#clip-usages) |
+| Crash just after a clip ends | [A Continue to action the set lacks](/guides/custom_creature_clip_inspector/#the-fields-one-by-one) (likely; not reproduced) |
 | Kit clip reports `Size in KB = 0` and will not save | [The clip was renamed inside the Kit](#a-clip-reports-zero-size-and-will-not-save) |
 
 ## Crash in every mount context at once
 
 **Signature.** Access violation at offset `+0x10`, in `Skeleton.TickAnimations` or
-`GetWalkSpeedLimitOfMountable`. It fires in the inventory thumbnail, the character tableau **and**
+`GetWalkSpeedLimitOfMountable`, seen on v1.4.x; the v1.5.3 offset has not been observed. It fires in the inventory thumbnail, the character tableau **and**
 mission deployment, which is the distinguishing feature: three unrelated code paths breaking at once
 means the data they share is poisoned, not that any of them is wrong.
 
@@ -54,8 +73,8 @@ non-mount agent. It only detonates on quadruped mount machinery.
 **Secondary tell.** Resolving an unbound action through the poisoned set returns a runtime-synthesised
 garbage name, shaped like `1002467048434979358_0`.
 
-**Fix.** [Add the tag and step points](/guides/custom_creature_animation/#quad_movement-or-the-six-hour-crash).
-It is a Clip **usage**, not a Flag.
+**Fix.** [Add the `quad_movement` clip usage](/guides/custom_creature_animation/#quad_movement-or-the-six-hour-crash).
+It is a Clip **usage**, not a Flag. Step points make footsteps; they are not shown to prevent this crash.
 
 ## Divide by zero on the first spawn
 
@@ -216,8 +235,112 @@ Also: the Kit refuses to save it, the model viewer draws a scrambled pose, and t
 
 **Cause.** The clip was renamed inside the Modding Kit. The Kit keeps resolving the old name.
 
-**Fix.** Restart the tools. Then rename on disk with the Kit closed instead, and reopen. See
+**Fix.** Restart the tools to clear the Kit's state. That recovers the Kit, not the clip: no clip
+renamed inside the Kit is known to be usable afterwards. Rename with the Kit closed, and rename the
+clip **item** stored inside its `_anm.tpac`, not only the file name, because the game registers a clip
+by that stored name. See [Clip names](/guides/custom_creature_clip_inspector/#clip-names) and
 [Compiling in the Kit](/guides/custom_creature_animation/#compiling-in-the-kit).
+
+## Crash on the first swing
+
+**Signature.** On v1.5.3, an access violation at `TaleWorlds.Native.dll+0x6590B9` reading `0x8` to
+`0x50` when a race first swings or recoils from a block. The wind-ups play; the release never does.
+
+**Cause.** The clip bound to a release or blocked action has no row in the engine's melee attack table,
+or the action is unbound. Only the Kit's "Blends with animation" box gives a clip a row, so a clip
+copied from a vanilla template must be keyed again with its own name.
+
+**Fix.** [Melee attack clips](/guides/custom_creature_melee/#three-ways-to-make-a-swing-safe).
+
+## Crash about a second into deployment
+
+**Signature.** On v1.5.3, an access violation at `TaleWorlds.Native.dll+0x57070C` the first time an agent
+of a new race is built, in the engine's static face morph ("No morph data found for face mesh").
+
+**Cause.** The race's LOD0 head, eye or mouth has no face morph channels: the Kit writes an empty morph
+record, and the engine checks only its pointer.
+
+**Fix.** Give each of them the 101 face morph channels a working race head carries. Zero-offset shape
+keys stop the crash, so no reference head is needed; check by counting 101 each on the LOD0 head, eye
+and mouth. See [the race page](/guides/custom_creature_race/#face-and-hand-morph-channels).
+
+## A package's items never appear
+
+**Signature.** Meshes, skins or clips from one package never show, and the log is silent.
+
+**Cause.** The game renders a package only when `<module>/RuntimeDataCache/<package GUID>.rdc` exists,
+and only the Modding Kit writes it, on save. Animation masters are the exception.
+
+**Fix.** Open the module in the Kit and save. To prove a skip, redefine an existing item name in a
+throwaway package: no `Overriding item` log line means it never loaded. See
+[the clip inspector](/guides/custom_creature_clip_inspector/#what-save-writes-and-the-runtimedatacache).
+
+## Debugging a native crash
+
+Windows logs the faulting module and offset of a crash to desktop in its Application log, so no symbols
+are needed. In PowerShell:
+
+```powershell
+Get-WinEvent -FilterHashtable @{LogName='Application'; ProviderName='Application Error'; StartTime=(Get-Date).AddHours(-6)} |
+  Where-Object { $_.Message -match "Bannerlord" } |
+  ForEach-Object { ($_.Message -split "`n" | Select-Object -First 8) -join "`n"; "---" }
+```
+
+**The `Fault offset` is the same for one crash site on one engine build, so compare it across runs:**
+the same offset after a fix means the fix failed; a new one is a different crash.
+
+* A crash held by a debugger never reaches that log. Use instruction pointer minus module base, both
+  from the same run: the DLL can load at a new address on each launch.
+* The Modding Kit's own `TaleWorlds.Native.dll` has different offsets and updates on its own schedule.
+  Compare `bin/Win64_Shipping_wEditor/Version.xml` with the game's version before trusting one.
+* An assert dialog is a paused state: copy the `rgl_log` and take a full dump (Task Manager, Create dump
+  file) before clicking. After Ignore, the logged offset is a secondary site.
+
+Disassemble around the offset: shipping builds keep their assert strings, so functions often name
+themselves. A read at a small offset from null means a missing data surface, such as the usage a flag
+needs. A hash-map walk ending in a read means a table missing a key: make it total (extra rows are
+inert); the key often survives in a register in the dump. TAOM's optional
+[native_crash_triage.py](https://github.com/haterade22/TAOM/blob/bannerlord-1.5.x/tools/native_crash_triage.py)
+names the function and its strings from an offset or a minidump (pass `--dll`; the default path is
+one machine's); any disassembler does the same by hand.
+
+### Known signatures
+
+| Signature | Cause | Evidence |
+|---|---|---|
+| Access violation at `+0x6590B9` on the first swing | [No melee-table row](/guides/custom_creature_melee/#the-first-swing-crash) | seen in game, v1.5.3 |
+| Access violation at `+0x57070C` a second into deployment | [No face morph channels](/guides/custom_creature_race/#face-and-hand-morph-channels) | seen in game, v1.5.3 |
+| Access violation at `+0x10` in every mount context | [No `quad_movement`](/guides/custom_creature_troubleshooting/#crash-in-every-mount-context-at-once) | seen in game, v1.4.x |
+| Null read at `+0x18`, `+8` or `+0x2C` while a clip plays | [A flag without its usage](/guides/custom_creature_clip_inspector/#clip-usages) | engine code, not reproduced |
+
+### Method
+
+* **Fight a control creature of the same shape first,** a single-creature mount such as a warg.
+* **When a rework breaks a working creature, restore its whole backup first:** one file copy can save
+  a day.
+* **Check the failure signal was absent before your change,** and test in game early: one launch beats
+  a long analysis.
+
+## What to search for in the log
+
+The engine log is `C:\ProgramData\Mount and Blade II Bannerlord\logs\rgl_log_<pid>.txt`; read the newest.
+
+| Log text | Meaning |
+|---|---|
+| `Loading packages` | Which asset trees loaded |
+| `Could not find animation:` | A set names an unregistered clip; the slot kept its old value |
+| `Trying to use undefined action` | An action missing from `action_types.xml` |
+| `could not be found, using default action set!` | A missing `base_set` |
+| `Skeleton model could not be found` | A wrong `skeleton=` |
+| `does not contain` | A request for an unbound action |
+| `Combat parameter not found:` | A clip with no collision window |
+| `Sound not found:` | A missing sound code |
+| `Could not find face animation record with name:` | A missing facial animation id |
+| `Clip usage data couldn't assigned` | A third clip usage, dropped |
+| `Unable to register animation clip` | A duplicate clip name |
+| `Please set hit_bone_index` | No usable hit bone |
+| `get_monster_usage_set_index failed` | A `monster_usage` with no usage set |
+| `not found for combat animation blending!` (Kit) | A missing `_balanced` twin |
 
 ## Two debugging rules worth more than any single entry above
 

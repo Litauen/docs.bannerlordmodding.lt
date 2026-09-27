@@ -7,7 +7,8 @@ Part of the [Custom Creatures](/guides/custom_creatures/) guide. If you only nee
 mesh, [Armature/Skeleton](/3d/armature_skeleton/) already covers that and this page is not for you.
 
 !!! note "Version"
-    Measured against **Bannerlord v1.4.8**.
+    Measured against **Bannerlord v1.4.8**, except the export facts in the danger box, the humanoid
+    physics and the hit capsules, measured on **v1.5.3**.
 
 ## The one rule
 
@@ -46,7 +47,11 @@ Compared against a mesh FBX that skins to that same skeleton and animates correc
 | Bone axis | X along the bone | Blender imports it Y along the bone |
 | `_nub_notused` bones | none | 7, which the Kit drops on import |
 
-The mesh rig parents the neck to a **tail** bone. It skins fine anyway. It animates wrong.
+The mesh rig parents the neck to a **tail** bone on purpose. The engine lists `horse_skeleton`'s neck
+**last**, after the rear legs and the tail. The Kit stores an animation's bone tracks in FBX node order,
+which is depth-first, and never remaps them by name, so the tail parent is what makes the two orders
+agree. Re-parent the neck to `horsespine3` and its tracks land in the rear legs' slots. The mesh rig's
+bone **frames** are still wrong: see [the export mapping](/guides/custom_creature_animation/#the-export-mapping).
 
 ## Getting the real skeleton
 
@@ -59,6 +64,12 @@ vanilla skeleton is in that one file, with bone names, parents and rest frames.
     `animation_clips.tpac` and `Assets.tpac` all throw `Frames not equal` or
     `capacity was less than the current size`. A day was lost treating that as "the skeleton is
     unobtainable". `skeletons.tpac` holds them all and works.
+
+    The clip and master items inside are still readable from code. TAOM's optional
+    [read_anim_keyframes_tpac.ps1](https://github.com/haterade22/TAOM/blob/bannerlord-1.5.x/tools/read_anim_keyframes_tpac.ps1)
+    loads `animation_clips.tpac` and `animations.tpac` through TpacTool.Lib, the library in
+    TpacTool's `bin` folder, and with `-ByClip` resolves each clip name to its master. Its default
+    paths are one machine's.
 
 If you would rather script it, TAOM has a PowerShell wrapper over `TpacTool.Lib` that dumps a
 skeleton to JSON, which is convenient if you want to rebuild the rig in Blender programmatically:
@@ -96,9 +107,11 @@ collapses to a point. That bug survived a while because the only check being run
     This inference is natural, it was made, and it was tested. It produced the worst result of the
     entire session: the creature folded in on itself.
 
-    The convention the engine **stores** rest frames in and the Blender export setting that
-    reproduces a clip the Kit reads correctly are two different questions, and knowing the first
-    does not answer the second. Export with `primary_bone_axis='Y'`, `secondary_bone_axis='X'`.
+    The convention the engine **stores** rest frames in and the export setting that reproduces a clip
+    are two different questions. Export with `primary_bone_axis='Y'`, `secondary_bone_axis='X'`, **from
+    an armature whose bone frames equal the engine's**, and bake a 180 degree turn about world Z into
+    the keyed pose. The X-along construction above is for viewing the rig; how to build the export rig
+    is in [the export mapping](/guides/custom_creature_animation/#the-export-mapping).
 
 ## Bone limits
 
@@ -216,10 +229,12 @@ Lowercase is safe either way.
 `colorspace_settings.name = 'Non-Color'` and the view transform to Standard at gamma 1.0 before
 saving, or you get a creature with subtly wrong lighting that nobody can explain later.
 
-## Materials do not survive an FBX re-import
+## Check materials after every FBX re-import
 
-An FBX carries only the material slots it actually has. Anything assigned by hand in the editor
-exists **only** inside the compiled tpac, and a re-import silently loses it.
+The Kit binds each imported mesh to the material its FBX names, lowercased, looked up across the whole
+module. No match logs `Unable to find material` and leaves the mesh unbound. **An older Kit material with
+the same name wins silently**: that is how TAOM's new hill troll came out wearing the old model's
+textures. A re-import may also reset bindings assigned by hand in the editor.
 
 One TAOM rig carried three material slots for five meshes; four more had been editor-assigned by the
 original author. After re-import the creature had every XML row, every material asset and every clip
@@ -230,26 +245,42 @@ correct, and still did not appear in battle.
     creature can render correctly in a close-up UI preview and be invisible in the world, where it
     draws at a lower LOD.
 
-Re-assign materials in the Kit after any re-import, and check every LOD.
+After every re-import, check each mesh at every LOD. Fix a name in Blender's material panel or with
+TAOM's optional [fbx_remap_materials.py](https://github.com/haterade22/TAOM/blob/bannerlord-1.5.x/tools/blender/fbx_remap_materials.py).
 
 ## Physics: bodies and ragdoll joints
 
 A freshly imported skeleton comes in with `Usage = 'other'`, every collision body empty
-(`body_type='none'`, mass 0, radii at an unset sentinel) and **zero** joint constraints. An FBX
-re-import rebuilds the bone definition but not this data.
+(`body_type='none'`, mass 0, radii at an unset sentinel) and **zero** joint constraints.
+A re-import that left the skeleton unchanged kept this data byte for byte in TAOM's checks; one that
+rebuilds the skeleton empties it. Compare **decompressed** skeleton segments, not file bytes: the Kit's
+LZ4 output differs on every compile.
 
 A healthy creature skeleton has typed bodies and roughly one constraint per bone. For comparison:
 
 | Skeleton | Bones | Usage | Ragdoll constraints |
 |---|---|---|---|
-| `human_skeleton` | 28 | `human` | |
+| `human_skeleton` | 28 | `human` | 34 (15 `d6`, 19 `ik`) |
 | `horse_skeleton` | 32 | `horse` | |
 | `skeleton_warg` | 49 | `horse` | 48 |
 | `elephant_skeleton` | 60 | `horse` | 59 |
-| `spider_skeleton` | 62 | `other` | |
+| `spider_skeleton` | 62 | **`horse`** | |
+| `troll_skeleton_a` (a humanoid race) | 28 | `human` | 34 |
+
+The human's `ik` joints are ragdoll constraints, not animation IK. TAOM's spider skeleton launch-crashed
+as a raw `other` import with no constraints; as `horse` it fights. A race on its own skeleton
+[carries the human's physics across](/guides/custom_creature_race/#physics-copy-the-humans-through-the-rest-pose).
 
 Zero constraints and every body typed `none` means the data was dropped. Setting it by hand in the
 Kit is real work: for a 58-bone creature that is 57 joints times roughly 12 fields each.
+
+### Hit capsules are what weapons strike
+
+Each body has a **hit** capsule, which weapons and arrows strike (read from the field names and body
+zones; no in-game hit test yet), and a **ragdoll** capsule, which only moves the corpse. Other agents
+walk into the Monster's `body_capsule` instead. The Kit's default hit capsule is a rod whose radius is
+about a ninth of its length: TAOM's war elephant had 41 of 60 like that, with under half its skin inside
+any hit capsule. See [big creatures in battle](/guides/custom_creature_battle/#three-collision-layers).
 
 ## Next
 
