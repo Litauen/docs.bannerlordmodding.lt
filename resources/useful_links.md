@@ -21,6 +21,8 @@
 * [Bannerlord Modding CN](https://yigu-studio.gitbook.io/bannerlord-modding-cn/_csharp-api){target=_blank}
 * [3D Models](https://drive.google.com/drive/folders/1mi2y_sO-ctpqScMlT5zvU1r01L2810_V?usp=sharing){target=_blank}
 * [Bannerlord Perks](https://www.bannerlordperks.com) OUTDATED
+* [Bannerlord Character Builder](https://alcaras.github.io/bannerlord-character-builder/){target=_blank} - planner with all perks, v1.4.7 rules incl. War Sails
+* [Bannerlord Best Perks per Skill and Role](https://gamerofpassion.com/bannerlord-best-perks/){target=_blank} - which perk to pick per tier for player, governor, quartermaster, First Mate etc., checked on v1.4.8 + War Sails
 * [Моддинг Bannerlord](https://commando.com.ua/commando/gmpr/modding-bannerlord/)
 
 ## MOD Launchers
