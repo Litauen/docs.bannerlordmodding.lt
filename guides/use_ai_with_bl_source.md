@@ -9,13 +9,43 @@
 
 ## Step 1 — Decompile BL files using the script
 
-Run the decompilation script against the Bannerlord game binaries.
+The batch script calls `ilspycmd` for every Bannerlord DLL. Install that tool first so it is available from the command line.
+
+### Install `ilspycmd`
+
+1. Install the [.NET SDK](https://dotnet.microsoft.com/download) (includes the `dotnet` CLI). Current `ilspycmd` on NuGet targets **.NET 10**; use an SDK that can run that tool.
+2. Install the global tool ([NuGet: ilspycmd](https://www.nuget.org/packages/ilspycmd), [ILSpyCmd README](https://github.com/icsharpcode/ILSpy/blob/master/ICSharpCode.ILSpyCmd/README.md)):
+
+```bat
+dotnet tool install --global ilspycmd
+```
+
+3. Make sure the global-tools folder is on your `PATH` (required for `ilspycmd` to work in cmd/PowerShell):
+
+| OS | Default install path |
+| --- | --- |
+| Windows | `%USERPROFILE%\.dotnet\tools` |
+| Linux / macOS | `$HOME/.dotnet/tools` |
+
+On Windows, the .NET SDK installer usually adds that folder to `PATH`. If a new terminal still says `ilspycmd` is not recognized, add `%USERPROFILE%\.dotnet\tools` to your user `PATH` and open a new terminal.
+
+On Linux / macOS, add `$HOME/.dotnet/tools` to `PATH` in your shell profile (for example `~/.bashrc` or `~/.zshrc`) if it is not already there. See [dotnet tool install](https://learn.microsoft.com/en-us/dotnet/core/tools/dotnet-tool-install).
+
+4. Verify:
+
+```bat
+ilspycmd --version
+```
+
+To update later: `dotnet tool update --global ilspycmd`.
+
+### Run the decompile script
 
 Get script [here](https://drive.google.com/file/d/10njkFEEIb5-kUhf4YhwpPSXqqX9e_aG0/view?usp=drive_link).
 
 (Copy from Noxix Targaryen's [script](https://github.com/DarthNoxix/BannerlordSourceGPT/blob/d73d823f7690747b59605a005a92ed2571e68550/decompile.bat))
 
-Adjust destination folder in the script based on your environment.
+Adjust destination folder in the script based on your environment. Set `BANNERLORD_GAME_DIR` to your game install (the folder that contains `bin\Win64_Shipping_Client`).
 
 
 ---
