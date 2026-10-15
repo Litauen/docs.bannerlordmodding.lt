@@ -236,10 +236,28 @@ Delete `CoreShaders` and `TerrainShaders` folders in `C:\ProgramData\Mount and B
     Then script shows up in the Editor
 
 
-## Filter by script
+## Filter
 
-Scene panel → Filter. `s:` plus the script name keeps only entities that already have that script.
+Scene panel → Filter. Tokens are separated by spaces. The prefix is case-sensitive (`s:` works, `S:` does not). The text after it is not.
+
+- `t:` tag
+- `s:` script
+- `l:` level
+- `-t:` exclude that tag
+- `-s:` exclude that script
+- `-l:` exclude that level
+- no prefix: entity name
+
+Placeholder: `use t: for tags, s: for scripts, l: for levels`
+
+The tooltip adds `-l: -t: -s:` for negatives.
+
+One term in a category is a wildcard (`*` and `?`). Several terms in the same category must all match, as substrings. Every active category has to pass. A negative prefix drops the entity when it matches.
 
 `s:mesh_bender`
 
+`s:mesh_bender t:castle`
+
 ![](/pics/smesh_bender.png)
+
+These switches are the Scene entity list. The prefab browser does not use them.
