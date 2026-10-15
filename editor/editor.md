@@ -234,3 +234,12 @@ Delete `CoreShaders` and `TerrainShaders` folders in `C:\ProgramData\Mount and B
     You need to create folder `Win64_Shipping_wEditor` and add your dll inside
 
     Then script shows up in the Editor
+
+
+## Filter by script
+
+Scene panel → Filter. `s:` plus the script name keeps only entities that already have that script.
+
+`s:mesh_bender`
+
+![](/pics/2610151936.png)
