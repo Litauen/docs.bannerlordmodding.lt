@@ -242,4 +242,4 @@ Scene panel → Filter. `s:` plus the script name keeps only entities that alrea
 
 `s:mesh_bender`
 
-![](/pics/2610151936.png)
+![](/pics/smesh_bender.png)
