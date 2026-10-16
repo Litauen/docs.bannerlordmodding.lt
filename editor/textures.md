@@ -24,10 +24,8 @@ On the `_s` map, red is metallic, green is smoothness, and blue is ambient occlu
 2. Open the material.
 3. Set the shader to `pbr_shading`, or to `pbr_metallic` when the `_s` map is metalness.
 4. Assign `_d` to `DiffuseMap`, `_n` to `NormalMap`, and `_s` to `SpecularMap`. Names that do not match still work if you pick each slot yourself.
-5. Under **Material Shader Flags**, turn on `use_specular`. Under **Vertex Layout**, turn on Bumpmap, and Skinning when the mesh is skinned (armor, clothing).
+5. Under **Material Shader Flags**, turn on `use_specular`. Under **Vertex Layout**, turn on Bumpmap, and Skinning when the mesh is skinned (armor, clothing). The [Set Settings](/3d/material/#set-settings) screenshot lists both checkboxes.
 6. Save the material and the mesh.
-
-The flag screenshots are on [Material → Set Settings](/3d/material/#set-settings).
 
 # Resize the texture on the object
 
