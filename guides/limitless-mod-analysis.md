@@ -117,7 +117,17 @@ Observed init behavior (from status strings / imports):
 
 Recipe labels seen in the binary include Mission allocation, primary/second agent pools, link tables and counters, slot init/fill counts, Agent-ID bit packing (stock: `min=-1, max=2046, bits=11`), bone matrix/mapping block growth, corpse renderer pool sizes, and private RIP-relative animation denominators.
 
-This is why Limitless is **version-fragile**: a new native build needs new hashes and new immediates.
+### Why so many sites?
+
+Community confirmation ([BUTR] Aragas): the C++ engine **hardcodes** the battle max-size / agent-pool length as an **inlined constant**, not a single runtime variable. Compilers duplicate that immediate across allocations, loops, ID packing, and related geometry — on the order of **~1600 occurrences** in a typical build (ballpark, not a fixed contract). Limitless (and equivalent experiments) locate each relevant immediate and rewrite it.
+
+That is exactly why the mod is **one game version at a time**:
+
+- Every Bannerlord / native rebuild reshuffles code and immediates → new offsets / recipes.
+- There is **no** stable Harmony-style hook for “change one capacity field and inherit forever.”
+- Backwards-compatible tooling that must survive patches generally cannot ship this approach; maintainers re-run the find-and-patch pass per update (community estimate: often under an hour with modern AI-assisted scanning, still mandatory each release).
+
+A cleaner engine-side fix would be a **mutable static (or config-driven) capacity** instead of a compile-time constant, so one write updates all consumers. Whether TaleWorlds adopts that is unknown; until then, inlined-constant relocation remains the only practical path for raising the native ceiling.
 
 ---
 
@@ -178,6 +188,7 @@ Limitless.dll (main menu)
 ## Takeaways for modders
 
 1. Managed battle-size mods that only change spawn counts still hit `MBAPI.IMBAgent.GetMaximumNumberOfAgents()`.
-2. Raising that ceiling means **native** work (or shipping a forked engine), not Harmony alone.
-3. Any native recipe set is tied to a specific `TaleWorlds.Native.dll` hash — plan for per-patch maintenance.
+2. Raising that ceiling means **native** work (or shipping a forked engine), not Harmony alone — and specifically **relocating an inlined constant** across a large recipe set (~thousand-scale sites), not flipping one global.
+3. Any native recipe set is tied to a specific `TaleWorlds.Native.dll` hash — plan for **per-patch** maintenance; this will not be backwards-compatible across game updates.
 4. After growing the pool, still retarget campaign spawn / reinforcement math so mounts and both sides fit the new budget.
+5. Prefer asking TW for a **static / configurable** max-agent capacity if the goal is long-lived modding APIs; patching inlined immediates is workable but forever version-locked.
