@@ -1,5 +1,8 @@
 # Engine Notes
 
+
+* [Limitless mod by Bloc analysis](/guides/limitless-mod-analysis)
+
 !!! warning "These are notes about the engine by SuicideParty - for the 'future brave boys' :) "
 
 The first and most important notice TW engine has fucked up binding architecture. it looks like that arch was planned by junior C++ dev
