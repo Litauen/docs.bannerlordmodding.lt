@@ -1,5 +1,7 @@
 # Ships
 
+* [War Sails Ship Implementation - Mount & Blade Modding Discord Stream](https://www.youtube.com/watch?v=HDVQjIhoXSc)
+
 War Sails (`NavalDLC`). Campaign object is `TaleWorlds.CampaignSystem.Naval.Ship`. Its type / stats come from `ShipHull` XML.
 
 * [Ship Creation](https://moddocs.bannerlord.com/war-sails/ship_creation/) — mission prefab / physics / boarding pipeline (editor). This page is campaign XML + C#.
