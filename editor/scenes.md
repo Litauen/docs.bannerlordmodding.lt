@@ -5,6 +5,7 @@
 - [Hideout Template with Tutorial and savegame](https://www.nexusmods.com/mountandblade2bannerlord/mods/3036)
 - [Testing Custom Scene Ingame](https://docs.google.com/document/d/1Rwsd9pdv5QA5s3K4oOuJX16_K9A5NaoWh0p78IcUi1w/edit)
 - [Troubleshooting crashing Siege Scene](/guides/troubleshooting_siege_scene/)
+- [War Sails Seaborne Village Raid Scene Design](https://www.youtube.com/watch?v=0CR4IuBP23c)
 
 ??? quote "Snorri:"
     ![](/pics/2403070727.png)
